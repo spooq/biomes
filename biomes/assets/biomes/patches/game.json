@@ -5,7 +5,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "nearctic", "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "nearctic", "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -15,7 +15,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -25,7 +25,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -35,7 +35,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -45,7 +45,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -55,7 +55,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -65,7 +65,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -75,7 +75,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -85,7 +85,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -95,7 +95,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -139,9 +139,9 @@
         "neotropical",
         "afrotropical",
         "indomalayan",
-        "western paleartic",
-        "central paleartic",
-        "eastern paleartic"
+        "western palearctic",
+        "central palearctic",
+        "eastern palearctic"
       ],
       "hemisphere": [ "south", "north" ]
     }
@@ -156,9 +156,9 @@
         "neotropical",
         "afrotropical",
         "indomalayan",
-        "western paleartic",
-        "central paleartic",
-        "eastern paleartic"
+        "western palearctic",
+        "central palearctic",
+        "eastern palearctic"
       ],
       "hemisphere": [ "south", "north" ]
     }
@@ -173,9 +173,9 @@
         "neotropical",
         "afrotropical",
         "indomalayan",
-        "western paleartic",
-        "central paleartic",
-        "eastern paleartic"
+        "western palearctic",
+        "central palearctic",
+        "eastern palearctic"
       ],
       "hemisphere": [ "south", "north" ]
     }
@@ -216,7 +216,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -226,7 +226,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -236,7 +236,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -246,7 +246,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -256,7 +256,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -266,7 +266,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -276,7 +276,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -286,7 +286,7 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "biorealm": [ "western palearctic", "central palearctic", "eastern palearctic" ],
       "hemisphere": [ "north" ]
     }
   }

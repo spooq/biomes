@@ -1,5 +1,4 @@
-﻿using Cairo;
-using HarmonyLib;
+﻿using HarmonyLib;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,6 @@ using Vintagestory.API.Server;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
 using Vintagestory.ServerMods.NoObf;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace biomes
 {
@@ -87,17 +85,21 @@ namespace biomes
                 {
                     NorthernRealms = new List<string>
                     {
-                        "nearctic",
-                        "western paleartic",
-                        "central paleartic",
-                        "eastern paleartic"
+                        "pacific nearctic",
+                        "atlantic nearctic",
+                        "atlantic palearctic",
+                        "central palearctic",
+                        "eastern palearctic",
+                        "pacific palearctic"
                     },
                     SouthernRealms = new List<string>
                     {
-                        "neotropical",
-                        "afrotropical",
-                        "indomalayan",
-                        "austrolasian"
+                        "pacific neotropic",
+                        "atlantic neotropic",
+                        "atlantic afrotropic",
+                        "eastern afrotropic",
+                        "austrolasian",
+                        "oceanic"
                     },
                     SpawnWhiteList = new List<string>
                     {
@@ -116,8 +118,8 @@ namespace biomes
                     },
                     TreeBiomes = new Dictionary<string, List<string>>
                     {
-                        { "scotspine", new List<string> { "nearctic", "western paleartic", "central paleartic", "eastern paleartic" } },
-                        { "englishoak", new List<string> { "western paleartic", "central paleartic", "eastern paleartic" } }
+                        { "scotspine", new List<string> { "atlantic palearctic" } },
+                        { "englishoak", new List<string> { "atlantic palearctic" } }
                     }
                 };
                 sapi.StoreModConfig(config, Mod.Info.ModID + ".json");
@@ -147,22 +149,6 @@ namespace biomes
         public void OnMapRegionGeneration(IMapRegion mapRegion, int regionX, int regionZ, ITreeAttribute chunkGenParams)
         {
             BlockPos blockPos = new BlockPos(regionX * sapi.WorldManager.RegionSize, 0, regionZ * sapi.WorldManager.RegionSize);
-            /*
-            ClimateCondition baseClimate = sapi.World.BlockAccessor.GetClimateAt(blockPos, EnumGetClimateMode.WorldGenValues);
-            if (baseClimate != null)
-            {
-                float baseTemperature = baseClimate.Temperature;
-            }*/
-
-            /*
-            int heightInRegions = sapi.WorldManager.MapSizeZ / sapi.WorldManager.RegionSize;
-            int hemiHeightInRegions = heightInRegions / 2;
-            int hemi = 0;
-            if (heightInRegions > 0)
-                hemi = regionZ / hemiHeightInRegions;
-
-            EnumHemisphere hemisphere = hemi == 0 ? EnumHemisphere.North : EnumHemisphere.South;
-                        */
 
             EnumHemisphere hemisphere = sapi.World.Calendar.GetHemisphere(blockPos);
             if (hemisphere == EnumHemisphere.North)
