@@ -118,8 +118,8 @@ namespace biomes
                     },
                     TreeBiomes = new Dictionary<string, List<string>>
                     {
-                        { "scotspine", new List<string> { "atlantic palearctic" } },
-                        { "englishoak", new List<string> { "atlantic palearctic" } }
+                        { "scotspine", new List<string> { "atlantic palearctic", "central palearctic", "eastern palearctic" } },
+                        { "englishoak", new List<string> { "atlantic palearctic", "central palearctic", "eastern palearctic" } }
                     }
                 };
                 sapi.StoreModConfig(config, Mod.Info.ModID + ".json");
@@ -200,19 +200,10 @@ namespace biomes
                     return true;
 
             // Only blessed animals get in.
-            if (type.Attributes == null
-                || !type.Attributes.KeyExists(realmProperty)
-                || !type.Attributes.KeyExists(hemisphereProperty))
-            {
+            if (type.Attributes == null || !type.Attributes.KeyExists(realmProperty))
                 return false;
-            }
 
             // Test map region attributes
-            string regionHemisphere = mapRegion.GetModdata<string>(hemisphereProperty);
-            var animalHemisphere = type.Attributes[hemisphereProperty].AsArray<string>();
-            if (!animalHemisphere.Contains(regionHemisphere))
-                return false;
-
             string regionRealm = mapRegion.GetModdata<string>(realmProperty);
             var animalRealms = type.Attributes[realmProperty].AsArray<string>();
             if (!animalRealms.Contains(regionRealm))
@@ -232,7 +223,6 @@ namespace biomes
             IWorldGenBlockAccessor blockAccessor = Traverse.Create(__instance).Field("blockAccessor").GetValue() as IWorldGenBlockAccessor;
 
             IMapRegion mapRegion = blockAccessor.GetMapRegion(pos.X / blockAccessor.RegionSize, pos.Z / blockAccessor.RegionSize);
-            string regionHemisphere = mapRegion.GetModdata<string>(hemisphereProperty);
             string regionRealm = mapRegion.GetModdata<string>(realmProperty);
 
             __state = treeGenProps.ShrubGens.ToList();
@@ -273,7 +263,6 @@ namespace biomes
             IWorldGenBlockAccessor blockAccessor = Traverse.Create(__instance).Field("blockAccessor").GetValue() as IWorldGenBlockAccessor;
 
             IMapRegion mapRegion = blockAccessor.GetMapRegion(pos.X / blockAccessor.RegionSize, pos.Z / blockAccessor.RegionSize);
-            string regionHemisphere = mapRegion.GetModdata<string>(hemisphereProperty);
             string regionRealm = mapRegion.GetModdata<string>(realmProperty);
 
             __state = treeGenProps.TreeGens.ToList();
@@ -318,7 +307,7 @@ namespace biomes
                         var region = chunk.MapRegion;
                         if (region != null)
                         {
-                            serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, $"Hemi: {region.GetModdata<string>(hemisphereProperty)} Realm: {region.GetModdata<string>(realmProperty)}", EnumChatType.Notification);
+                            serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, $"Hemisphere: {region.GetModdata<string>(hemisphereProperty)} Realm: {region.GetModdata<string>(realmProperty)}", EnumChatType.Notification);
                             return new TextCommandResult { Status = EnumCommandStatus.Success };
                         }
                     }
