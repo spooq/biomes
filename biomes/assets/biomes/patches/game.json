@@ -1,11 +1,71 @@
 [
   {
+    "file": "game:entities/land/bear.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "nearctic", "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/chicken-baby.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/chicken-hen.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/chicken-rooster.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
     "file": "game:entities/land/hare-baby.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "nearctic" ],
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/fox-arctic-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/fox-arctic-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
       "hemisphere": [ "north" ]
     }
   },
@@ -15,7 +75,218 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "palearctic" ],
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/fox-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/fox-pup.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/gazelle.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "afrotropical" ],
+      "hemisphere": [ "south" ]
+    }
+  },
+  {
+    "file": "game:entities/land/hyena-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "afrotropical" ],
+      "hemisphere": [ "south" ]
+    }
+  },
+  {
+    "file": "game:entities/land/hyena-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "afrotropical" ],
+      "hemisphere": [ "south" ]
+    }
+  },
+  {
+    "file": "game:entities/land/pig-wild-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "neotropical",
+        "afrotropical",
+        "indomalayan",
+        "western paleartic",
+        "central paleartic",
+        "eastern paleartic"
+      ],
+      "hemisphere": [ "south", "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/pig-wild-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "neotropical",
+        "afrotropical",
+        "indomalayan",
+        "western paleartic",
+        "central paleartic",
+        "eastern paleartic"
+      ],
+      "hemisphere": [ "south", "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/pig-wild-piglet.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "neotropical",
+        "afrotropical",
+        "indomalayan",
+        "western paleartic",
+        "central paleartic",
+        "eastern paleartic"
+      ],
+      "hemisphere": [ "south", "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/racoon-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "nearctic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/racoon-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "nearctic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/racoon-pup.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "nearctic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/sheep-bighorn-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/sheep-bighorn-lamb.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/sheep-bighorn-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/wolf-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/wolf-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/wolf-pup.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/water/bass.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/water/salmon.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "western paleartic", "central paleartic", "eastern paleartic" ],
       "hemisphere": [ "north" ]
     }
   }
