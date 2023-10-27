@@ -14,7 +14,7 @@ using Vintagestory.Server;
 using Vintagestory.ServerMods;
 using Vintagestory.ServerMods.NoObf;
 
-namespace biomes
+namespace Biomes
 {
     public class BiomeConfig
     {
@@ -118,8 +118,136 @@ namespace biomes
                     },
                     TreeBiomes = new Dictionary<string, List<string>>
                     {
-                        { "scotspine", new List<string> { "atlantic palearctic", "central palearctic", "eastern palearctic" } },
-                        { "englishoak", new List<string> { "atlantic palearctic", "central palearctic", "eastern palearctic" } }
+                        { "acacia", new List<string> {
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic",
+                            "austrolasian",
+                            "oceanic"
+                        }},
+                        { "baldcypress", new List<string> {
+                            "atlantic nearctic"
+                        }},
+                        { "bristleconepine", new List<string> {
+                            "pacific nearctic"
+                        }},
+                        { "crimsonkingmaple", new List<string> {
+                            "central palearctic",
+                            "eastern palearctic",
+                            "pacific palearctic"
+                        }},
+                        { "deadacacia", new List<string> {
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic",
+                            "austrolasian",
+                            "oceanic"
+                        }},
+                        { "deadkapok", new List<string> {
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic",
+                            "austrolasian",
+                            "oceanic"
+                        }},
+                        { "englishoak", new List<string> {
+                            "atlantic palearctic",
+                            "central palearctic",
+                            "eastern palearctic"
+                        }},
+                        { "fir", new List<string> {
+                            "pacific nearctic",
+                            "atlantic nearctic",
+                            "atlantic palearctic",
+                            "central palearctic",
+                            "eastern palearctic",
+                            "pacific palearctic",
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic"
+                        }},
+                        { "himalayanbirch", new List<string> {
+                            "central palearctic"
+                        }},
+                        { "japanesemaple", new List<string> {
+                            "eastern palearctic"
+                        }},
+                        { "kapok", new List<string> {
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic",
+                            "austrolasian",
+                            "oceanic"
+                        }},
+                        { "largekapok", new List<string> {
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic",
+                            "austrolasian",
+                            "oceanic"
+                        }},
+                        { "largekapok2", new List<string> {
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic",
+                            "austrolasian",
+                            "oceanic"
+                        }},
+                        { "oldenglishoak", new List<string> {
+                            "atlantic palearctic",
+                            "central palearctic",
+                            "eastern palearctic"
+                        }},
+                        { "oldkapok", new List<string> {
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic",
+                            "austrolasian",
+                            "oceanic"
+                        }},
+                        { "riverbirch", new List<string> {
+                            "pacific nearctic",
+                            "atlantic nearctic"
+                        }},
+                        { "scotspine", new List<string> {
+                            "atlantic palearctic",
+                            "central palearctic",
+                            "eastern palearctic",
+                            "pacific palearctic"
+                        }},
+                        { "silverbirch", new List<string> {
+                            "atlantic palearctic",
+                            "central palearctic",
+                            "eastern palearctic",
+                            "pacific palearctic"
+                        }},
+                        { "walnut", new List<string> {
+                            "atlantic palearctic",
+                            "central palearctic",
+                            "eastern palearctic",
+                            "pacific palearctic",
+                            "pacific nearctic",
+                            "atlantic nearctic",
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "austrolasian"
+                        }},
+                        { "vineykapok", new List<string> {
+                            "pacific neotropic",
+                            "atlantic neotropic",
+                            "atlantic afrotropic",
+                            "eastern afrotropic",
+                            "austrolasian",
+                            "oceanic"
+                        }},
                     }
                 };
                 sapi.StoreModConfig(config, Mod.Info.ModID + ".json");
@@ -163,10 +291,10 @@ namespace biomes
                 realmCount = config.SouthernRealms.Count;
 
             int widthInRegions = sapi.WorldManager.MapSizeX / sapi.WorldManager.RegionSize;
-            int realmWidthInRegions = widthInRegions / realmCount;
+            float realmWidthInRegions = widthInRegions / (float) realmCount;
             int currentRealm = 0;
-            if (realmWidthInRegions > 0)
-                currentRealm = regionX / realmWidthInRegions;
+            if (realmWidthInRegions != 0)
+                currentRealm = (int)(regionX / realmWidthInRegions);
 
             string realmName = "";
             if (hemisphere == EnumHemisphere.North)
