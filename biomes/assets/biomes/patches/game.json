@@ -1,0 +1,22 @@
+[
+  {
+    "file": "game:entities/land/hare-baby.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "nearctic" ],
+      "hemisphere": [ "north" ]
+    }
+  },
+  {
+    "file": "game:entities/land/fox-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [ "palearctic" ],
+      "hemisphere": [ "north" ]
+    }
+  }
+]

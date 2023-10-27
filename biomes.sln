@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "biomes", "biomes\biomes.csproj", "{CCBC6D12-0093-4AA5-9A4E-C55D1BF26F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeBuild", "CakeBuild\CakeBuild.csproj", "{859ABFB3-0EA0-4FAF-A086-0FAECDD1DBB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCBC6D12-0093-4AA5-9A4E-C55D1BF26F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBC6D12-0093-4AA5-9A4E-C55D1BF26F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBC6D12-0093-4AA5-9A4E-C55D1BF26F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBC6D12-0093-4AA5-9A4E-C55D1BF26F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859ABFB3-0EA0-4FAF-A086-0FAECDD1DBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859ABFB3-0EA0-4FAF-A086-0FAECDD1DBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859ABFB3-0EA0-4FAF-A086-0FAECDD1DBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859ABFB3-0EA0-4FAF-A086-0FAECDD1DBB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CB4FA45-432D-4009-8BFD-89C2678E6977}
+	EndGlobalSection
+EndGlobal
