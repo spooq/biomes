@@ -235,56 +235,9 @@ namespace biomes
             return true;
         }
 
-        /*
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(WgenTreeSupplier), "GetRandomTreeGenForClimate")]
-        public static bool GetRandomTreeGenForClimate(ref WgenTreeSupplier __instance, ref TreeGenInstance __result, int climate, int forest, int y, bool isUnderwater)
-        {
-            var treeGenProps = Traverse.Create(__instance).Field("treeGenProps").GetValue() as TreeGenProperties;
-            var treeVariants = new List<TreeVariant>();
-
-            foreach (var gen in treeGenProps.TreeGens)
-            {
-                var name = gen.Generator.GetName();
-
-                if (!config.TreeBiomes.ContainsKey(name))
-                    continue;
-
-                if (config.TreeBiomes[name].Contains(name))
-                    treeVariants.Add(gen);
-            }
-
-            __result = __instance.GetRandomGenForClimate(treeVariants.ToArray(), climate, forest, y, isUnderwater);
-            return false;
-        }
-        */
-
-        /*
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(WgenTreeSupplier), "GetRandomTreeGenForClimate")]
-        public static bool GetRandomTreeGenForClimate(ref WgenTreeSupplier __instance, ref TreeGenInstance __result, int climate, int forest, int y, bool isUnderwater)
-        {
-            var treeGenProps = Traverse.Create(__instance).Field("treeGenProps").GetValue() as TreeGenProperties;
-
-            foreach (var gen in treeGenProps.TreeGens)
-                sapi.Logger.Notification(gen.Generator.Path);
-
-            return true;
-        }*/
-
-        /*
         [HarmonyPrefix]
         [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
-        public static bool genShrubs(ref GenVegetationAndPatches __instance, int chunkX, int chunkZ)
-        {
-            return false;
-        }
-        */
-
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(GenVegetationAndPatches), "OnChunkColumnGen")]
-        public static bool OnChunkColumnGenPrefix(ref GenVegetationAndPatches __instance, out List<TreeVariant> __state, IChunkColumnGenerateRequest request)
+        public static bool genShrubsPrefix(ref GenVegetationAndPatches __instance, out List<TreeVariant> __state, int chunkX, int chunkZ)
         {
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
             var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
@@ -296,10 +249,10 @@ namespace biomes
             string regionHemisphere = mapRegion.GetModdata<string>(hemisphereProperty);
             string regionRealm = mapRegion.GetModdata<string>(realmProperty);
 
-            __state = treeGenProps.TreeGens.ToList();
+            __state = treeGenProps.ShrubGens.ToList();
 
             var treeVariants = new List<TreeVariant>();
-            foreach (var gen in treeGenProps.TreeGens)
+            foreach (var gen in treeGenProps.ShrubGens)
             {
                 var name = gen.Generator.GetName();
                 if (!config.TreeBiomes.ContainsKey(name))
@@ -309,19 +262,18 @@ namespace biomes
                     treeVariants.Add(gen);
             }
 
-            treeGenProps.TreeGens = treeVariants.ToArray();
+            treeGenProps.ShrubGens = treeVariants.ToArray();
 
             return true;
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(GenVegetationAndPatches), "OnChunkColumnGen")]
-        public static void OnChunkColumnGenPostfix(ref GenVegetationAndPatches __instance, List<TreeVariant> __state, IChunkColumnGenerateRequest request)
+        [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
+        public static void genShrubsPostFix(ref GenVegetationAndPatches __instance, List<TreeVariant> __state, int chunkX, int chunkZ)
         {
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
             var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
-
-            treeGenProps.TreeGens = __state.ToArray();
+            treeGenProps.ShrubGens = __state.ToArray();
         }
 
         [HarmonyPrefix]
