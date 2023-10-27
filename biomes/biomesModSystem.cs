@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using Cairo;
+using HarmonyLib;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
+using Vintagestory.ServerMods.NoObf;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace biomes
 {
@@ -20,6 +23,7 @@ namespace biomes
         public List<string> NorthernRealms = new List<string>();
         public List<string> SouthernRealms = new List<string>();
         public List<string> SpawnWhiteList = new List<string>();
+        public Dictionary<string, List<string>> TreeBiomes = new Dictionary<string, List<string>>();
     }
 
     [ProtoContract]
@@ -38,10 +42,10 @@ namespace biomes
     [HarmonyPatch]
     public class BiomesModSystem : ModSystem
     {
-        ICoreServerAPI sapi;
+        public static ICoreServerAPI sapi;
         public Harmony harmony;
 
-        BiomeConfig config;
+        public static BiomeConfig config;
 
         private const string realmProperty = "biorealm";
         private const string hemisphereProperty = "hemisphere";
@@ -54,6 +58,12 @@ namespace biomes
         public override bool ShouldLoad(EnumAppSide side)
         {
             return side == EnumAppSide.Server;
+        }
+
+        public override void Dispose()
+        {
+            harmony.UnpatchAll(Mod.Info.ModID);
+            base.Dispose();
         }
 
         public override void Start(ICoreAPI api)
@@ -80,7 +90,7 @@ namespace biomes
                         "nearctic",
                         "western paleartic",
                         "central paleartic",
-                        "eastern paleartic",
+                        "eastern paleartic"
                     },
                     SouthernRealms = new List<string>
                     {
@@ -103,6 +113,11 @@ namespace biomes
                         "echochamber",
                         "libraryresonator",
                         "boat"
+                    },
+                    TreeBiomes = new Dictionary<string, List<string>>
+                    {
+                        { "scotspine", new List<string> { "nearctic", "western paleartic", "central paleartic", "eastern paleartic" } },
+                        { "englishoak", new List<string> { "western paleartic", "central paleartic", "eastern paleartic" } }
                     }
                 };
                 sapi.StoreModConfig(config, Mod.Info.ModID + ".json");
@@ -212,12 +227,143 @@ namespace biomes
             if (!animalHemisphere.Contains(regionHemisphere))
                 return false;
 
-            var regionRealm = mapRegion.GetModdata<string>(realmProperty);
+            string regionRealm = mapRegion.GetModdata<string>(realmProperty);
             var animalRealms = type.Attributes[realmProperty].AsArray<string>();
             if (!animalRealms.Contains(regionRealm))
                 return false;
 
             return true;
+        }
+
+        /*
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(WgenTreeSupplier), "GetRandomTreeGenForClimate")]
+        public static bool GetRandomTreeGenForClimate(ref WgenTreeSupplier __instance, ref TreeGenInstance __result, int climate, int forest, int y, bool isUnderwater)
+        {
+            var treeGenProps = Traverse.Create(__instance).Field("treeGenProps").GetValue() as TreeGenProperties;
+            var treeVariants = new List<TreeVariant>();
+
+            foreach (var gen in treeGenProps.TreeGens)
+            {
+                var name = gen.Generator.GetName();
+
+                if (!config.TreeBiomes.ContainsKey(name))
+                    continue;
+
+                if (config.TreeBiomes[name].Contains(name))
+                    treeVariants.Add(gen);
+            }
+
+            __result = __instance.GetRandomGenForClimate(treeVariants.ToArray(), climate, forest, y, isUnderwater);
+            return false;
+        }
+        */
+
+        /*
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(WgenTreeSupplier), "GetRandomTreeGenForClimate")]
+        public static bool GetRandomTreeGenForClimate(ref WgenTreeSupplier __instance, ref TreeGenInstance __result, int climate, int forest, int y, bool isUnderwater)
+        {
+            var treeGenProps = Traverse.Create(__instance).Field("treeGenProps").GetValue() as TreeGenProperties;
+
+            foreach (var gen in treeGenProps.TreeGens)
+                sapi.Logger.Notification(gen.Generator.Path);
+
+            return true;
+        }*/
+
+        /*
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
+        public static bool genShrubs(ref GenVegetationAndPatches __instance, int chunkX, int chunkZ)
+        {
+            return false;
+        }
+        */
+
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(GenVegetationAndPatches), "OnChunkColumnGen")]
+        public static bool OnChunkColumnGenPrefix(ref GenVegetationAndPatches __instance, out List<TreeVariant> __state, IChunkColumnGenerateRequest request)
+        {
+            var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
+            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
+
+            BlockPos pos = new BlockPos(chunkX * sapi.WorldManager.ChunkSize, chunkX * sapi.WorldManager.ChunkSize, chunkZ * sapi.WorldManager.ChunkSize);
+            IWorldGenBlockAccessor blockAccessor = Traverse.Create(__instance).Field("blockAccessor").GetValue() as IWorldGenBlockAccessor;
+
+            IMapRegion mapRegion = blockAccessor.GetMapRegion(pos.X / blockAccessor.RegionSize, pos.Z / blockAccessor.RegionSize);
+            string regionHemisphere = mapRegion.GetModdata<string>(hemisphereProperty);
+            string regionRealm = mapRegion.GetModdata<string>(realmProperty);
+
+            __state = treeGenProps.TreeGens.ToList();
+
+            var treeVariants = new List<TreeVariant>();
+            foreach (var gen in treeGenProps.TreeGens)
+            {
+                var name = gen.Generator.GetName();
+                if (!config.TreeBiomes.ContainsKey(name))
+                    continue;
+
+                if (config.TreeBiomes[name].Contains(regionRealm))
+                    treeVariants.Add(gen);
+            }
+
+            treeGenProps.TreeGens = treeVariants.ToArray();
+
+            return true;
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(GenVegetationAndPatches), "OnChunkColumnGen")]
+        public static void OnChunkColumnGenPostfix(ref GenVegetationAndPatches __instance, List<TreeVariant> __state, IChunkColumnGenerateRequest request)
+        {
+            var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
+            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
+
+            treeGenProps.TreeGens = __state.ToArray();
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(GenVegetationAndPatches), "genTrees")]
+        public static bool genTreesPrefix(ref GenVegetationAndPatches __instance, out List<TreeVariant> __state, int chunkX, int chunkZ)
+        {
+            var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
+            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
+
+            BlockPos pos = new BlockPos(chunkX * sapi.WorldManager.ChunkSize, chunkX * sapi.WorldManager.ChunkSize, chunkZ * sapi.WorldManager.ChunkSize);
+            IWorldGenBlockAccessor blockAccessor = Traverse.Create(__instance).Field("blockAccessor").GetValue() as IWorldGenBlockAccessor;
+
+            IMapRegion mapRegion = blockAccessor.GetMapRegion(pos.X / blockAccessor.RegionSize, pos.Z / blockAccessor.RegionSize);
+            string regionHemisphere = mapRegion.GetModdata<string>(hemisphereProperty);
+            string regionRealm = mapRegion.GetModdata<string>(realmProperty);
+
+            __state = treeGenProps.TreeGens.ToList();
+
+            var treeVariants = new List<TreeVariant>();
+            foreach (var gen in treeGenProps.TreeGens)
+            {
+                var name = gen.Generator.GetName();
+                if (!config.TreeBiomes.ContainsKey(name))
+                    continue;
+
+                if (config.TreeBiomes[name].Contains(regionRealm))
+                    treeVariants.Add(gen);
+            }
+
+            treeGenProps.TreeGens = treeVariants.ToArray();
+
+            return true;
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(GenVegetationAndPatches), "genTrees")]
+        public static void genTreesPostfix(ref GenVegetationAndPatches __instance, List<TreeVariant> __state, int chunkX, int chunkZ)
+        {
+            var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
+            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
+
+            treeGenProps.TreeGens = __state.ToArray();
         }
 
         private TextCommandResult onGetBiomeCommand(TextCommandCallingArgs args)
