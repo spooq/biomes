@@ -84,6 +84,9 @@ namespace Biomes
                 .BeginSubCommand("show")
                     .HandleWith(onGetBiomeCommand)
                 .EndSubCommand()
+                .BeginSubCommand("trees")
+                    .HandleWith(onTreesCommand)
+                .EndSubCommand()
                 .BeginSubCommand("hemisphere")
                     .WithArgs(sapi.ChatCommands.Parsers.WordRange("hemisphere", Enum.GetNames(typeof(EnumHemisphere))))
                     .HandleWith(onSetHemisphereCommand)
@@ -96,6 +99,26 @@ namespace Biomes
                     .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", config.NorthernRealms.Union(config.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
                     .HandleWith(onRemoveRealmCommand)
                 .EndSubCommand();
+        }
+
+        public TextCommandResult onTreesCommand(TextCommandCallingArgs args)
+        {
+            if (args.Caller != null)
+            {
+                var serverPlayer = args.Caller.Player as IServerPlayer;
+                if (serverPlayer != null)
+                {
+                    var coords = serverPlayer.Entity.Pos.AsBlockPos;
+                    var regionRealms = new List<string>();
+                    getModProperty(coords, realmProperty, ref regionRealms);
+
+                    var treeList = config.TreeBiomes.Where(x => x.Value.Intersect(regionRealms).Any()).Select(x => x.Key).Join(delimiter: "\r\n");
+                    serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeList, EnumChatType.Notification);
+                    return new TextCommandResult { Status = EnumCommandStatus.Success };
+                }
+            }
+
+            return new TextCommandResult { Status = EnumCommandStatus.Error };
         }
 
         public override void Dispose()
