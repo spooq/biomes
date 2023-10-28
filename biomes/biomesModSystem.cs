@@ -101,26 +101,6 @@ namespace Biomes
                 .EndSubCommand();
         }
 
-        public TextCommandResult onTreesCommand(TextCommandCallingArgs args)
-        {
-            if (args.Caller != null)
-            {
-                var serverPlayer = args.Caller.Player as IServerPlayer;
-                if (serverPlayer != null)
-                {
-                    var coords = serverPlayer.Entity.Pos.AsBlockPos;
-                    var regionRealms = new List<string>();
-                    getModProperty(coords, realmProperty, ref regionRealms);
-
-                    var treeList = config.TreeBiomes.Where(x => x.Value.Intersect(regionRealms).Any()).Select(x => x.Key).Join(delimiter: "\r\n");
-                    serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeList, EnumChatType.Notification);
-                    return new TextCommandResult { Status = EnumCommandStatus.Success };
-                }
-            }
-
-            return new TextCommandResult { Status = EnumCommandStatus.Error };
-        }
-
         public override void Dispose()
         {
             harmony.UnpatchAll(Mod.Info.ModID);
@@ -139,13 +119,15 @@ namespace Biomes
             else
                 realmCount = config.SouthernRealms.Count;
 
-            int widthInRegions = sapi.WorldManager.MapSizeX / sapi.WorldManager.RegionSize;
-            float realmWidthInRegions = widthInRegions / (float) realmCount;
+            int worthWidthInMapRegions = sapi.WorldManager.MapSizeX / sapi.WorldManager.RegionSize;
+            float realmWidthInRegions = worthWidthInMapRegions / (float)realmCount;
             int currentRealm = 0;
             if (realmWidthInRegions != 0)
                 currentRealm = (int)(regionX / realmWidthInRegions);
             if (currentRealm >= realmCount)
                 currentRealm = realmCount - 1;
+            if (currentRealm < 0)
+                currentRealm = 0;
 
             // TODO: pick up next door names and add to list
             string localRealmName = "";
@@ -272,37 +254,42 @@ namespace Biomes
         {
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
             var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
-
             treeGenProps.TreeGens = __state.ToArray();
+        }
+
+        public TextCommandResult onTreesCommand(TextCommandCallingArgs args)
+        {
+            var regionRealms = new List<string>();
+            getModProperty(args.Caller, realmProperty, ref regionRealms);
+            var treeList = config.TreeBiomes.Where(x => x.Value.Intersect(regionRealms).Any()).Select(x => x.Key).Join(delimiter: "\r\n");
+
+            var serverPlayer = args.Caller.Player as IServerPlayer;
+            if (serverPlayer != null)
+                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeList, EnumChatType.Notification);
+
+            return new TextCommandResult { Status = EnumCommandStatus.Success };
         }
 
         public static TextCommandResult onGetBiomeCommand(TextCommandCallingArgs args)
         {
-            if (args.Caller != null)
-            {
-                var serverPlayer = args.Caller.Player as IServerPlayer;
-                if (serverPlayer != null)
-                {
-                    var coords = serverPlayer.Entity.Pos.AsBlockPos;
-                    var regionHemisphere = EnumHemisphere.North;
-                    getModProperty(coords, hemisphereProperty, ref regionHemisphere);
-                    var hemisphereStr = Enum.GetName(typeof(EnumHemisphere), regionHemisphere);
+            var regionHemisphere = EnumHemisphere.North;
+            getModProperty(args.Caller, hemisphereProperty, ref regionHemisphere);
+            var hemisphereStr = Enum.GetName(typeof(EnumHemisphere), regionHemisphere);
 
-                    var regionRealms = new List<string>();
-                    getModProperty(coords, realmProperty, ref regionRealms);
-                    var realmsStr = regionRealms?.Join(delimiter: ",");
-                    
-                    serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, $"Hemisphere: {hemisphereStr} Realms: {realmsStr}", EnumChatType.Notification);
-                    return new TextCommandResult { Status = EnumCommandStatus.Success };
-                }
-            }
+            var regionRealms = new List<string>();
+            getModProperty(args.Caller, realmProperty, ref regionRealms);
+            var realmsStr = regionRealms?.Join(delimiter: ",");
 
-            return new TextCommandResult { Status = EnumCommandStatus.Error };
+            var serverPlayer = args.Caller.Player as IServerPlayer;
+            if (serverPlayer != null)
+                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, $"Hemisphere: {hemisphereStr} Realms: {realmsStr}", EnumChatType.Notification);
+
+            return new TextCommandResult { Status = EnumCommandStatus.Success };
         }
 
         public static TextCommandResult onSetHemisphereCommand(TextCommandCallingArgs args)
         {
-            if (args.Caller != null && Enum.TryParse(args.Parsers[0].GetValue() as string, out EnumHemisphere hemisphere))
+            if (Enum.TryParse(args.Parsers[0].GetValue() as string, out EnumHemisphere hemisphere))
                 return new TextCommandResult { Status = setModPropertyForCallerRegion(args.Caller, hemisphereProperty, hemisphere) };
 
             return new TextCommandResult { Status = EnumCommandStatus.Error };
@@ -310,28 +297,22 @@ namespace Biomes
 
         public static TextCommandResult onAddRealmCommand(TextCommandCallingArgs args)
         {
-            if (args.Caller == null)
-                return new TextCommandResult { Status = EnumCommandStatus.Error };
-
             var currentRealms = new List<string>();
-            EnumCommandStatus result = getModPropertyForCallerRegion(args.Caller, realmProperty, ref currentRealms);
+            EnumCommandStatus result = getModProperty(args.Caller, realmProperty, ref currentRealms);
             if (result == EnumCommandStatus.Success)
             {
                 var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
                 currentRealms.Add(value);
                 result = setModPropertyForCallerRegion(args.Caller, realmProperty, currentRealms.Distinct());
             }
-            
+
             return new TextCommandResult { Status = result };
         }
 
         private static TextCommandResult onRemoveRealmCommand(TextCommandCallingArgs args)
         {
-            if (args.Caller == null)
-                return new TextCommandResult { Status = EnumCommandStatus.Error };
-
             var currentRealms = new List<string>();
-            EnumCommandStatus result = getModPropertyForCallerRegion(args.Caller, realmProperty, ref currentRealms);
+            EnumCommandStatus result = getModProperty(args.Caller, realmProperty, ref currentRealms);
             if (result == EnumCommandStatus.Success)
             {
                 var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
@@ -344,21 +325,8 @@ namespace Biomes
 
         public static EnumCommandStatus setModPropertyForCallerRegion(Caller caller, string name, object value)
         {
-            if (caller != null)
-            {
-                var serverPlayer = caller.Player as IServerPlayer;
-                if (serverPlayer != null)
-                {
-                    var coords = serverPlayer.Entity.Pos.AsBlockPos;
-                    return setModProperty(coords, name, value);
-                }
-            }
-            return EnumCommandStatus.Error;
-        }
-
-        public static EnumCommandStatus setModProperty(BlockPos pos, string name, object value)
-        {
-            return setModProperty(sapi.World.BlockAccessor.GetMapChunkAtBlockPos(pos)?.MapRegion, name, ref value);
+            var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);
+            return setModProperty(chunk.MapRegion, name, ref value);
         }
 
         public static EnumCommandStatus setModProperty<T>(IMapRegion region, string name, ref T value)
@@ -371,24 +339,10 @@ namespace Biomes
             return EnumCommandStatus.Success;
         }
 
-        public static EnumCommandStatus getModPropertyForCallerRegion<T>(Caller caller, string name, ref T value)
+        public static EnumCommandStatus getModProperty<T>(Caller caller, string name, ref T value)
         {
-            if (caller != null)
-            {
-                var serverPlayer = caller.Player as IServerPlayer;
-                if (serverPlayer != null)
-                {
-                    var coords = serverPlayer.Entity.Pos.AsBlockPos;
-                    return getModProperty(coords, name, ref value);
-                }
-            }
-
-            return EnumCommandStatus.Error;
-        }
-
-        public static EnumCommandStatus getModProperty<T>(BlockPos pos, string name, ref T value)
-        {
-            return getModProperty(sapi?.World.BlockAccessor.GetMapChunkAtBlockPos(pos)?.MapRegion, name, ref value);
+            var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);
+            return getModProperty(chunk.MapRegion, name, ref value);
         }
 
         public static EnumCommandStatus getModProperty<T>(IMapRegion region, string name, ref T value)
@@ -399,16 +353,5 @@ namespace Biomes
             value = region.GetModdata<T>(name);
             return EnumCommandStatus.Success;
         }
-
-        /*
-        public Vec3i MapRegionPosFromIndex2D(long index)
-        {
-            return new Vec3i(
-                (int)(index % sapi.World.BlockAccessor.RegionMapSizeX),
-                0,
-                (int)(index / sapi.World.BlockAccessor.RegionMapSizeX)
-            );
-        }
-        */
     }
 }
