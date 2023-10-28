@@ -1,0 +1,164 @@
+{
+  "NorthernRealms": [
+    "pacific nearctic",
+    "atlantic nearctic",
+    "atlantic palearctic",
+    "central palearctic",
+    "eastern palearctic",
+    "pacific palearctic"
+  ],
+  "SouthernRealms": [
+    "pacific neotropic",
+    "atlantic neotropic",
+    "atlantic afrotropic",
+    "eastern afrotropic",
+    "austrolasian",
+    "oceanic"
+  ],
+  "SpawnWhiteList": [
+    "playerbot-*",
+    "animalbot-*",
+    "humanoid-*",
+    "bell",
+    "drifter",
+    "eidolon-*",
+    "locust-*",
+    "mechhelper",
+    "strawdummy",
+    "echochamber",
+    "libraryresonator",
+    "boat"
+  ],
+  "TreeBiomes": {
+    "acacia": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "austrolasian",
+      "oceanic"
+    ],
+    "baldcypress": [
+      "atlantic nearctic"
+    ],
+    "bristleconepine": [
+      "pacific nearctic"
+    ],
+    "crimsonkingmaple": [
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "deadacacia": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "austrolasian",
+      "oceanic"
+    ],
+    "deadkapok": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "austrolasian",
+      "oceanic"
+    ],
+    "englishoak": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "fir": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "himalayanbirch": [
+      "central palearctic"
+    ],
+    "japanesemaple": [
+      "eastern palearctic"
+    ],
+    "kapok": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "austrolasian",
+      "oceanic"
+    ],
+    "largekapok": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "austrolasian",
+      "oceanic"
+    ],
+    "largekapok2": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "austrolasian",
+      "oceanic"
+    ],
+    "oldenglishoak": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "oldkapok": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "austrolasian",
+      "oceanic"
+    ],
+    "riverbirch": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "scotspine": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "silverbirch": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "walnut": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "austrolasian"
+    ],
+    "vineykapok": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "austrolasian",
+      "oceanic"
+    ]
+  }
+}

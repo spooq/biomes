@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Newtonsoft.Json;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,6 @@ using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
-using Vintagestory.API.Util;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
 using Vintagestory.ServerMods.NoObf;
@@ -44,25 +44,17 @@ namespace Biomes
         public static ICoreServerAPI sapi;
         public Harmony harmony;
 
-        public static BiomeConfig config;
-
         private const string realmProperty = "biorealm";
         private const string hemisphereProperty = "hemisphere";
 
-        // Read from config
-        private static List<Regex> SpawnWhiteList = new List<Regex>
+        public static BiomeConfig config;
+        private static List<Regex> SpawnWhiteListRx = new List<Regex>
         {
         };
 
         public override bool ShouldLoad(EnumAppSide side)
         {
             return side == EnumAppSide.Server;
-        }
-
-        public override void Dispose()
-        {
-            harmony.UnpatchAll(Mod.Info.ModID);
-            base.Dispose();
         }
 
         public override void Start(ICoreAPI api)
@@ -79,183 +71,10 @@ namespace Biomes
 
             sapi = api;
 
-            config = sapi.LoadModConfig<BiomeConfig>(Mod.Info.ModID + ".json");
-            if (config == null)
-            {
-                config = new BiomeConfig
-                {
-                    NorthernRealms = new List<string>
-                    {
-                        "pacific nearctic",
-                        "atlantic nearctic",
-                        "atlantic palearctic",
-                        "central palearctic",
-                        "eastern palearctic",
-                        "pacific palearctic"
-                    },
-                    SouthernRealms = new List<string>
-                    {
-                        "pacific neotropic",
-                        "atlantic neotropic",
-                        "atlantic afrotropic",
-                        "eastern afrotropic",
-                        "australasian",
-                        "oceanic"
-                    },
-                    SpawnWhiteList = new List<string>
-                    {
-                        "playerbot-*",
-                        "animalbot-*",
-                        "humanoid-*",
-                        "bell",
-                        "drifter",
-                        "eidolon-*",
-                        "locust-*",
-                        "mechhelper",
-                        "strawdummy",
-                        "echochamber",
-                        "libraryresonator",
-                        "boat"
-                    },
-                    TreeBiomes = new Dictionary<string, List<string>>
-                    {
-                        { "acacia", new List<string> {
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic",
-                            "australasian",
-                            "oceanic"
-                        }},
-                        { "baldcypress", new List<string> {
-                            "atlantic nearctic"
-                        }},
-                        { "bristleconepine", new List<string> {
-                            "pacific nearctic"
-                        }},
-                        { "crimsonkingmaple", new List<string> {
-                            "central palearctic",
-                            "eastern palearctic",
-                            "pacific palearctic"
-                        }},
-                        { "deadacacia", new List<string> {
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic",
-                            "australasian",
-                            "oceanic"
-                        }},
-                        { "deadkapok", new List<string> {
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic",
-                            "australasian",
-                            "oceanic"
-                        }},
-                        { "englishoak", new List<string> {
-                            "atlantic palearctic",
-                            "central palearctic",
-                            "eastern palearctic"
-                        }},
-                        { "fir", new List<string> {
-                            "pacific nearctic",
-                            "atlantic nearctic",
-                            "atlantic palearctic",
-                            "central palearctic",
-                            "eastern palearctic",
-                            "pacific palearctic",
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic"
-                        }},
-                        { "himalayanbirch", new List<string> {
-                            "central palearctic"
-                        }},
-                        { "japanesemaple", new List<string> {
-                            "eastern palearctic"
-                        }},
-                        { "kapok", new List<string> {
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic",
-                            "australasian",
-                            "oceanic"
-                        }},
-                        { "largekapok", new List<string> {
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic",
-                            "australasian",
-                            "oceanic"
-                        }},
-                        { "largekapok2", new List<string> {
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic",
-                            "australasian",
-                            "oceanic"
-                        }},
-                        { "oldenglishoak", new List<string> {
-                            "atlantic palearctic",
-                            "central palearctic",
-                            "eastern palearctic"
-                        }},
-                        { "oldkapok", new List<string> {
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic",
-                            "australasian",
-                            "oceanic"
-                        }},
-                        { "riverbirch", new List<string> {
-                            "pacific nearctic",
-                            "atlantic nearctic"
-                        }},
-                        { "scotspine", new List<string> {
-                            "atlantic palearctic",
-                            "central palearctic",
-                            "eastern palearctic",
-                            "pacific palearctic"
-                        }},
-                        { "silverbirch", new List<string> {
-                            "atlantic palearctic",
-                            "central palearctic",
-                            "eastern palearctic",
-                            "pacific palearctic"
-                        }},
-                        { "walnut", new List<string> {
-                            "atlantic palearctic",
-                            "central palearctic",
-                            "eastern palearctic",
-                            "pacific palearctic",
-                            "pacific nearctic",
-                            "atlantic nearctic",
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "australasian"
-                        }},
-                        { "vineykapok", new List<string> {
-                            "pacific neotropic",
-                            "atlantic neotropic",
-                            "atlantic afrotropic",
-                            "eastern afrotropic",
-                            "australasian",
-                            "oceanic"
-                        }},
-                    }
-                };
-                sapi.StoreModConfig(config, Mod.Info.ModID + ".json");
-            }
+            config = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get("biomes:config/biomes.json").ToText());
 
             foreach (var item in config.SpawnWhiteList)
-                SpawnWhiteList.Add(new Regex(item));
+                SpawnWhiteListRx.Add(new Regex(item));
 
             sapi.Event.MapRegionGeneration(OnMapRegionGeneration, "standard");
 
@@ -277,6 +96,12 @@ namespace Biomes
                     .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", config.NorthernRealms.Union(config.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
                     .HandleWith(onRemoveRealmCommand)
                 .EndSubCommand();
+        }
+
+        public override void Dispose()
+        {
+            harmony.UnpatchAll(Mod.Info.ModID);
+            base.Dispose();
         }
 
         public void OnMapRegionGeneration(IMapRegion mapRegion, int regionX, int regionZ, ITreeAttribute chunkGenParams)
@@ -330,7 +155,7 @@ namespace Biomes
 
         public static bool AllowSpawn(IMapRegion mapRegion, EntityProperties type)
         {
-            foreach (var rx in SpawnWhiteList)
+            foreach (var rx in SpawnWhiteListRx)
                 if (rx.IsMatch(type.Code.Path))
                     return true;
 
