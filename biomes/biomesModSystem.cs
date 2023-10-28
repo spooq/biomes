@@ -98,7 +98,7 @@ namespace Biomes
                         "atlantic neotropic",
                         "atlantic afrotropic",
                         "eastern afrotropic",
-                        "austrolasian",
+                        "australasian",
                         "oceanic"
                     },
                     SpawnWhiteList = new List<string>
@@ -123,7 +123,7 @@ namespace Biomes
                             "atlantic neotropic",
                             "atlantic afrotropic",
                             "eastern afrotropic",
-                            "austrolasian",
+                            "australasian",
                             "oceanic"
                         }},
                         { "baldcypress", new List<string> {
@@ -142,7 +142,7 @@ namespace Biomes
                             "atlantic neotropic",
                             "atlantic afrotropic",
                             "eastern afrotropic",
-                            "austrolasian",
+                            "australasian",
                             "oceanic"
                         }},
                         { "deadkapok", new List<string> {
@@ -150,7 +150,7 @@ namespace Biomes
                             "atlantic neotropic",
                             "atlantic afrotropic",
                             "eastern afrotropic",
-                            "austrolasian",
+                            "australasian",
                             "oceanic"
                         }},
                         { "englishoak", new List<string> {
@@ -181,7 +181,7 @@ namespace Biomes
                             "atlantic neotropic",
                             "atlantic afrotropic",
                             "eastern afrotropic",
-                            "austrolasian",
+                            "australasian",
                             "oceanic"
                         }},
                         { "largekapok", new List<string> {
@@ -189,7 +189,7 @@ namespace Biomes
                             "atlantic neotropic",
                             "atlantic afrotropic",
                             "eastern afrotropic",
-                            "austrolasian",
+                            "australasian",
                             "oceanic"
                         }},
                         { "largekapok2", new List<string> {
@@ -197,7 +197,7 @@ namespace Biomes
                             "atlantic neotropic",
                             "atlantic afrotropic",
                             "eastern afrotropic",
-                            "austrolasian",
+                            "australasian",
                             "oceanic"
                         }},
                         { "oldenglishoak", new List<string> {
@@ -210,7 +210,7 @@ namespace Biomes
                             "atlantic neotropic",
                             "atlantic afrotropic",
                             "eastern afrotropic",
-                            "austrolasian",
+                            "australasian",
                             "oceanic"
                         }},
                         { "riverbirch", new List<string> {
@@ -238,14 +238,14 @@ namespace Biomes
                             "atlantic nearctic",
                             "pacific neotropic",
                             "atlantic neotropic",
-                            "austrolasian"
+                            "australasian"
                         }},
                         { "vineykapok", new List<string> {
                             "pacific neotropic",
                             "atlantic neotropic",
                             "atlantic afrotropic",
                             "eastern afrotropic",
-                            "austrolasian",
+                            "australasian",
                             "oceanic"
                         }},
                     }
