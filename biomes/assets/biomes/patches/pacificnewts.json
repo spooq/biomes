@@ -6,8 +6,7 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "pacific palearctic",
-        "oceanic"
+        "pacific palearctic"
       ]
     },
     "dependsOn": [
