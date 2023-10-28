@@ -12,7 +12,7 @@
     "atlantic neotropic",
     "atlantic afrotropic",
     "eastern afrotropic",
-    "austrolasian",
+    "australasian",
     "oceanic"
   ],
   "SpawnWhiteList": [
@@ -35,7 +35,7 @@
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
-      "austrolasian",
+      "australasian",
       "oceanic"
     ],
     "baldcypress": [
@@ -54,7 +54,7 @@
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
-      "austrolasian",
+      "australasian",
       "oceanic"
     ],
     "deadkapok": [
@@ -62,7 +62,7 @@
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
-      "austrolasian",
+      "australasian",
       "oceanic"
     ],
     "englishoak": [
@@ -93,7 +93,7 @@
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
-      "austrolasian",
+      "australasian",
       "oceanic"
     ],
     "largekapok": [
@@ -101,7 +101,7 @@
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
-      "austrolasian",
+      "australasian",
       "oceanic"
     ],
     "largekapok2": [
@@ -109,7 +109,7 @@
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
-      "austrolasian",
+      "australasian",
       "oceanic"
     ],
     "oldenglishoak": [
@@ -122,7 +122,7 @@
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
-      "austrolasian",
+      "australasian",
       "oceanic"
     ],
     "riverbirch": [
@@ -150,14 +150,14 @@
       "atlantic nearctic",
       "pacific neotropic",
       "atlantic neotropic",
-      "austrolasian"
+      "australasian"
     ],
     "vineykapok": [
       "pacific neotropic",
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
-      "austrolasian",
+      "australasian",
       "oceanic"
     ]
   }
