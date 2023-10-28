@@ -1,0 +1,691 @@
+[
+  {
+    "file": "game:entities/land/butterfly.json",
+    "op": "addeach",
+    "path": "/attributesByType/-",
+    "side": "Server",
+    "value": [
+      {
+        "code": "game:butterfly-acmonbluefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-acmonbluemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-aegamorphobluefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-aegamorphobrownfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-aegamorphomale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-africancloudedyellowmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-africanmapwing",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-amberphantom",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-apollobutterflyfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-apollobutterflymale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-arcticwhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-arcticwhitemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-atlasmothfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-atlasmothmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-bloodredglidermale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-bloodredgliderpalefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-bloodredgliderredfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-blueadmiral",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-bluepansyfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-borderedrusticfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-brownhairstreakfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-brownhairstreakmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-cardinalapollofemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-cardinalapollomale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-checkeredwhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-checkeredwhitemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-chestnuttiger",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-chocolatealbatrossdryseasonmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-chocolatealbatrosswetseasonfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-chocolatealbatrosswetseasonmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-cleopatrafemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-cleopatramale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-cloudedapollofemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-cloudedapollomale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-comma",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commaabdilutus",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commonbrimstonefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commonbrimstonemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commongreenbirdwingfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commongreenbirdwingmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commongreencharaxes",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commonmestra",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commonwhitegliderfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commonyellowswallowtailfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-commonyellowswallowtailmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-cynthiasfritillarymale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-darkbluepansy",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-dawncloudedbutterflymale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-dawncloudedbutterflywhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-dawncloudedbutterflyyellowfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-dottedglory",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-easterncommasummerform",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-easterntigerswallowtaildarkfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-easterntigerswallowtailmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-edwardsforesterfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-edwardsforestermale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-emeraldswallowtail",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-eroessachiliensisfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-eroessachiliensismale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-falsecomma",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-freyerspurpleemperormale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-gardentigermothmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-giantnorthernsulfurfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-giantnorthernsulfurmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-godartsnumberwing",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-goldbandedforester",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-goldenbirdwingfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-goldenbirdwingmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-goldenjezebelfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-goldenjezebelmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-goliathbirdwingmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-grapevineepimenis",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-grayhairstreak",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-graypansy",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-greenhairstreakmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-greenveinedwhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-greenveinedwhitemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-ireniametalmark",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-juttaarctic",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-largebluefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-largeorangesulphurfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-largeorangesulphurmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-largeorangesulphurwhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-largewhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-largewhitemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-lemonemigrantalcmeoneformmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-lemonemigrantfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-lemonemigranthilariaformmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-limehawkmoth",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-macrocosmamoth",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-madagascansunsetmoth",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-malachitebutterfly",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-mapbutterflymalespringform",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-mapbutterflymalesummerform",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-meadowbluemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-meadowbrownfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-meadowbrownmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-mexicanmarbledwhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-mexicanmarbledwhitemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-milbertstortoiseshellfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-milbertstortoiseshellmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-monarch",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-morphoportis",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-mountainapollofemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-mourningcloak",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-nessusleafwingfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-nessusleafwingmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-northernbrownargusfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-northernbrownargusmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-nyctemerakinabaluensis",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-oleanderhawkmothmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangebarredsulphurmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangebarredsulphurthalestrisredfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangebarredsulphurthalestrisyellowfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangeemigrantfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangeemigrantmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangetiger",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangetipfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangetipmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-orangetippedanglesulfur",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-ornithopterapriamuseuphorionabgoldenmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-ornithopterapriamusmiokensismale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-paintedbeauty",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-peacock",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-peacockpansy",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-pearlcharaxesfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-pearlcharaxesmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-purpleedgedcoppermale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-purpleemperorfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-purpleemperormale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-purplespottedswallowtail",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-purplishcopperfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-purplishcoppermale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-queenvictoriasbirdwingmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-redadmiral",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-reedbutterfly",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-rockgraylingmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-rustic",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-sagebrushgirdlemoth",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-scarletmormonfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-scarletmormonmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-silkyowl",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-silverybluemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-smallcoppermale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-smallcopperabschmidtiifemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-smallheathfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-smallheathmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-smalltortoiseshell",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-smallwhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-smallwhitemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-southerndogfacemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-southerndogfacewhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-southerndogfaceyellowfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-stichelseyemarkfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-stichelseyemarkmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-tawnycoster",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-thalainachionoptila",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-theanoalpinemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-tropicalwhitedryseasonfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-tropicalwhitemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-tropicalwhitewetseasonfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-twobarredflasher",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-wallacesgoldenbirdwingmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-westernbluecharaxesfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-westernbluecharaxesmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-whiteangledsulphurmale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-woodwhitefemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-woodwhitemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-yellowpansyfemale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      },
+      {
+        "code": "game:butterfly-yellowpansymale",
+        "biorealm": [ "pacific afrotropic", "eastern afrotropic" ]
+      }
+
+    ]
+  }
+]

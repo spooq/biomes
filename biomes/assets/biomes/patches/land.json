@@ -40,28 +40,6 @@
     }
   },
   {
-    "file": "game:entities/land/butterfly.json",
-    "op": "add",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ]
-    }
-  },
-  {
     "file": "game:entities/land/chicken-baby.json",
     "op": "add",
     "path": "/attributes",
@@ -486,44 +464,6 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ]
-    }
-  },
-  {
-    "file": "game:entities/water/bass.json",
-    "op": "add",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ]
-    }
-  },
-  {
-    "file": "game:entities/water/salmon.json",
-    "op": "add",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",

@@ -1,0 +1,19 @@
+[
+  {
+    "file": "pacificnewts:entities/land/pacificnewt.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific palearctic",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "pacificnewts"
+      }
+    ]
+  }
+]
