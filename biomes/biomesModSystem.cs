@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using Cairo;
+using HarmonyLib;
 using Newtonsoft.Json;
 using ProtoBuf;
 using System;
@@ -87,6 +88,9 @@ namespace Biomes
                 .BeginSubCommand("trees")
                     .HandleWith(onTreesCommand)
                 .EndSubCommand()
+                .BeginSubCommand("debug")
+                    .HandleWith(onDebugCommand)
+                .EndSubCommand()
                 .BeginSubCommand("hemisphere")
                     .WithArgs(sapi.ChatCommands.Parsers.WordRange("hemisphere", Enum.GetNames(typeof(EnumHemisphere))))
                     .HandleWith(onSetHemisphereCommand)
@@ -107,10 +111,36 @@ namespace Biomes
             base.Dispose();
         }
 
+        public static String NorthOrSouth(EnumHemisphere hemisphere, int realm)
+        {
+            return hemisphere == EnumHemisphere.North ? config.NorthernRealms[realm] : config.SouthernRealms[realm];
+        }
+
         public void OnMapRegionGeneration(IMapRegion mapRegion, int regionX, int regionZ, ITreeAttribute chunkGenParams)
         {
+            EnumHemisphere hemisphere;
+            int currentRealm;
+
+            var realmNames = new List<string>();
+            CalculateValues(mapRegion, regionX, regionZ, out hemisphere, out currentRealm);
+            realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
+            CalculateValues(null, regionX - 1, regionZ, out hemisphere, out currentRealm);
+            realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
+            CalculateValues(null, regionX + 1, regionZ, out hemisphere, out currentRealm);
+            realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
+            CalculateValues(null, regionX, regionZ - 1, out hemisphere, out currentRealm);
+            realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
+            CalculateValues(null, regionX, regionZ + 1, out hemisphere, out currentRealm);
+            realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
+            realmNames = realmNames.Distinct().ToList();
+
+            setModProperty(mapRegion, realmProperty, ref realmNames);
+        }
+
+        private static void CalculateValues(IMapRegion mapRegion, int regionX, int regionZ, out EnumHemisphere hemisphere, out int currentRealm)
+        {
             BlockPos blockPos = new BlockPos(regionX * sapi.WorldManager.RegionSize, 0, regionZ * sapi.WorldManager.RegionSize);
-            var hemisphere = sapi.World.Calendar.GetHemisphere(blockPos);
+            hemisphere = sapi.World.Calendar.GetHemisphere(blockPos);
             setModProperty(mapRegion, hemisphereProperty, ref hemisphere);
 
             int realmCount;
@@ -119,26 +149,15 @@ namespace Biomes
             else
                 realmCount = config.SouthernRealms.Count;
 
-            int worthWidthInMapRegions = sapi.WorldManager.MapSizeX / sapi.WorldManager.RegionSize;
-            float realmWidthInRegions = worthWidthInMapRegions / (float)realmCount;
-            int currentRealm = 0;
+            int worldWidthInRegions = sapi.WorldManager.MapSizeX / sapi.WorldManager.RegionSize;
+            float realmWidthInRegions = worldWidthInRegions / (float)realmCount;
+            currentRealm = 0;
             if (realmWidthInRegions != 0)
                 currentRealm = (int)(regionX / realmWidthInRegions);
             if (currentRealm >= realmCount)
                 currentRealm = realmCount - 1;
             if (currentRealm < 0)
                 currentRealm = 0;
-
-            // TODO: pick up next door names and add to list
-            string localRealmName = "";
-            if (hemisphere == EnumHemisphere.North)
-                localRealmName = config.NorthernRealms[currentRealm];
-            else
-                localRealmName = config.SouthernRealms[currentRealm];
-
-            var realmNames = new List<string> { localRealmName };
-
-            setModProperty(mapRegion, realmProperty, ref realmNames);
         }
 
         [HarmonyPrefix]
@@ -267,6 +286,18 @@ namespace Biomes
             if (serverPlayer != null)
                 serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeList, EnumChatType.Notification);
 
+            return new TextCommandResult { Status = EnumCommandStatus.Success };
+        }
+
+        private TextCommandResult onDebugCommand(TextCommandCallingArgs args)
+        {
+            int worldWidthInRegions = sapi.WorldManager.MapSizeX / sapi.WorldManager.RegionSize;
+            for (int regionX = 0; regionX < worldWidthInRegions; regionX++)
+            {
+                CalculateValues(null, regionX, 0, out EnumHemisphere hemisphere, out int currentRealm);
+                string realmName = NorthOrSouth(hemisphere, currentRealm);
+                sapi.Logger.Notification($"{regionX} => {realmName}");
+            }
             return new TextCommandResult { Status = EnumCommandStatus.Success };
         }
 
