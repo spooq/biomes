@@ -4,84 +4,287 @@
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic nearctic", "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+      ]
+    }
+  },
+  {
+    "file": "game:entities/land/beemob.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    }
+  },
+  {
+    "file": "game:entities/land/butterfly.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/chicken-baby.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian"
+      ]
+    }
   },
   {
     "file": "game:entities/land/chicken-hen.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian"
+      ]
+    }
   },
   {
     "file": "game:entities/land/chicken-rooster.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
-  },
-  {
-    "file": "game:entities/land/hare-baby.json",
-    "op": "add",
-    "path": "/attributes",
-    "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian"
+      ]
+    }
   },
   {
     "file": "game:entities/land/fox-arctic-male.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/fox-arctic-female.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/fox-male.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/fox-female.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/fox-pup.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
+  },
+  {
+    "file": "game:entities/land/grub.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/gazelle.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "eastern afrotropic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
+  },
+  {
+    "file": "game:entities/land/hare-baby.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian"
+      ]
+    }
+  },
+  {
+    "file": "game:entities/land/hare-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian"
+      ]
+    }
+  },
+  {
+    "file": "game:entities/land/hare-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian"
+      ]
+    }
   },
   {
     "file": "game:entities/land/hyena-female.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "eastern afrotropic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/hyena-male.json",
@@ -89,7 +292,23 @@
     "path": "/attributes",
     "side": "Server",
     "value": {
-      "biorealm": [ "eastern afrotropic" ] }
+      "biorealm": [
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
+  },
+  {
+    "file": "game:entities/land/hyena-pup.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/pig-wild-female.json",
@@ -103,8 +322,10 @@
         "australasian",
         "atlantic palearctic",
         "central palearctic",
-        "eastern palearctic"
-      ] }
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/pig-wild-male.json",
@@ -118,8 +339,10 @@
         "australasian",
         "atlantic palearctic",
         "central palearctic",
-        "eastern palearctic"
-      ] }
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/pig-wild-piglet.json",
@@ -133,84 +356,179 @@
         "australasian",
         "atlantic palearctic",
         "central palearctic",
-        "eastern palearctic"
-      ] }
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/racoon-female.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic nearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/racoon-male.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic nearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/racoon-pup.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic nearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/sheep-bighorn-female.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/sheep-bighorn-lamb.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/sheep-bighorn-male.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/wolf-female.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/wolf-male.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/land/wolf-pup.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   },
   {
     "file": "game:entities/water/bass.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    }
   },
   {
     "file": "game:entities/water/salmon.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
-    "value": { "biorealm": [ "atlantic palearctic", "central palearctic", "eastern palearctic" ] }
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
   }
 ]
