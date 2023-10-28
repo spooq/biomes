@@ -1,6 +1,6 @@
 [
   {
-    "file": "game:entities/land/butterfly.json",
+    "file": "game:entities/air/butterfly.json",
     "op": "addeach",
     "path": "/attributesByType/-",
     "side": "Server",
@@ -163,67 +163,107 @@
       },
       {
         "code": "game:butterfly-chestnuttiger",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
       },
       {
         "code": "game:butterfly-chocolatealbatrossdryseasonmale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "eastern palearctic"
+        ]
       },
       {
         "code": "game:butterfly-chocolatealbatrosswetseasonfemale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "eastern palearctic"
+        ]
       },
       {
         "code": "game:butterfly-chocolatealbatrosswetseasonmale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "eastern palearctic"
+        ]
       },
       {
         "code": "game:butterfly-cleopatrafemale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [ "central palearctic" ]
       },
       {
         "code": "game:butterfly-cleopatramale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [ "central palearctic" ]
       },
       {
         "code": "game:butterfly-cloudedapollofemale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [ "central palearctic" ]
       },
       {
         "code": "game:butterfly-cloudedapollomale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [ "central palearctic" ]
       },
       {
         "code": "game:butterfly-comma",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
       },
       {
         "code": "game:butterfly-commaabdilutus",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
       },
       {
         "code": "game:butterfly-commonbrimstonefemale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "atlantic palearctic"
+        ]
       },
       {
         "code": "game:butterfly-commonbrimstonemale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "atlantic palearctic"
+        ]
       },
       {
         "code": "game:butterfly-commongreenbirdwingfemale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "australasian",
+          "oceanic"
+        ]
       },
       {
         "code": "game:butterfly-commongreenbirdwingmale",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "australasian",
+          "oceanic"
+        ]
       },
       {
         "code": "game:butterfly-commongreencharaxes",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
       },
       {
         "code": "game:butterfly-commonmestra",
-        "biorealm": [ "unknown" ]
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
       },
       {
         "code": "game:butterfly-commonwhitegliderfemale",
@@ -737,7 +777,6 @@
         "code": "game:butterfly-yellowpansymale",
         "biorealm": [ "unknown" ]
       }
-
     ]
   }
 ]
