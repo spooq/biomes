@@ -174,6 +174,7 @@ namespace Biomes
         public static bool CanSpawnAt(ServerSystemEntitySpawner __instance, ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
         {
             IMapRegion mapRegion = chunkCol[0].MapChunk.MapRegion;
+            //sapi.Logger.Notification($"CanSpawnAt => {type.Code.Path}");
             return AllowSpawn(mapRegion, type);
         }
 
