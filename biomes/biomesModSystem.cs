@@ -357,7 +357,7 @@ namespace Biomes
         public static EnumCommandStatus setModPropertyForCallerRegion(Caller caller, string name, object value)
         {
             var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);
-            return setModProperty(chunk.MapRegion, name, ref value);
+            return setModProperty(chunk?.MapRegion, name, ref value);
         }
 
         public static EnumCommandStatus setModProperty<T>(IMapRegion region, string name, ref T value)
@@ -373,7 +373,7 @@ namespace Biomes
         public static EnumCommandStatus getModProperty<T>(Caller caller, string name, ref T value)
         {
             var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);
-            return getModProperty(chunk.MapRegion, name, ref value);
+            return getModProperty(chunk?.MapRegion, name, ref value);
         }
 
         public static EnumCommandStatus getModProperty<T>(IMapRegion region, string name, ref T value)
