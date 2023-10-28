@@ -1,781 +1,333 @@
 [
   {
     "file": "game:entities/air/butterfly.json",
-    "op": "addeach",
-    "path": "/attributesByType/-",
+    "op": "add",
+    "path": "/attributesByType",
     "side": "Server",
     "value": [
       {
-        "code": "game:butterfly-acmonbluefemale",
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-acmonbluemale",
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-aegamorphobluefemale",
-        "biorealm": [
-          "pacific afrotropic",
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-aegamorphobrownfemale",
-        "biorealm": [
-          "pacific afrotropic",
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-aegamorphomale",
-        "biorealm": [
-          "pacific afrotropic",
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-africancloudedyellowmale",
-        "biorealm": [
-          "pacific afrotropic",
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-africanmapwing",
-        "biorealm": [
-          "pacific afrotropic",
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-amberphantom",
-        "biorealm": [
-          "atlantic palearctic",
-          "central palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-apollobutterflyfemale",
-        "biorealm": [
-          "atlantic palearctic",
-          "central palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-apollobutterflymale",
-        "biorealm": [
-          "atlantic palearctic",
-          "central palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-arcticwhitefemale",
-        "biorealm": [
-          "pacific nearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-arcticwhitemale",
-        "biorealm": [
-          "pacific nearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-atlasmothfemale",
-        "biorealm": [ "eastern palearctic" ]
-      },
-      {
-        "code": "game:butterfly-atlasmothmale",
-        "biorealm": [ "eastern palearctic" ]
-      },
-      {
-        "code": "game:butterfly-bloodredglidermale",
-        "biorealm": [
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-bloodredgliderpalefemale",
-        "biorealm": [
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-bloodredgliderredfemale",
-        "biorealm": [
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-blueadmiral",
-        "biorealm": [
-          "eastern palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-bluepansyfemale",
-        "biorealm": [
-          "atlantic afrotropic",
-          "eastern afrotropic",
-          "australasian"
-        ]
-      },
-      {
-        "code": "game:butterfly-borderedrusticfemale",
-        "biorealm": [ "australasian" ]
-      },
-      {
-        "code": "game:butterfly-brownhairstreakfemale",
-        "biorealm": [ "atlantic palearctic" ]
-      },
-      {
-        "code": "game:butterfly-brownhairstreakmale",
-        "biorealm": [ "atlantic palearctic" ]
-      },
-      {
-        "code": "game:butterfly-cardinalapollofemale",
-        "biorealm": [ "central palearctic" ]
-      },
-      {
-        "code": "game:butterfly-cardinalapollomale",
-        "biorealm": [ "central palearctic" ]
-      },
-      {
-        "code": "game:butterfly-checkeredwhitefemale",
-        "biorealm": [
-          "pacific neotropic",
-          "atlantic neotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-checkeredwhitemale",
-        "biorealm": [
-          "pacific neotropic",
-          "atlantic neotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-chestnuttiger",
-        "biorealm": [
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-chocolatealbatrossdryseasonmale",
-        "biorealm": [
-          "eastern palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-chocolatealbatrosswetseasonfemale",
-        "biorealm": [
-          "eastern palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-chocolatealbatrosswetseasonmale",
-        "biorealm": [
-          "eastern palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-cleopatrafemale",
-        "biorealm": [ "central palearctic" ]
-      },
-      {
-        "code": "game:butterfly-cleopatramale",
-        "biorealm": [ "central palearctic" ]
-      },
-      {
-        "code": "game:butterfly-cloudedapollofemale",
-        "biorealm": [ "central palearctic" ]
-      },
-      {
-        "code": "game:butterfly-cloudedapollomale",
-        "biorealm": [ "central palearctic" ]
-      },
-      {
-        "code": "game:butterfly-comma",
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-commaabdilutus",
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-commonbrimstonefemale",
-        "biorealm": [
-          "atlantic palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-commonbrimstonemale",
-        "biorealm": [
-          "atlantic palearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-commongreenbirdwingfemale",
-        "biorealm": [
-          "australasian",
-          "oceanic"
-        ]
-      },
-      {
-        "code": "game:butterfly-commongreenbirdwingmale",
-        "biorealm": [
-          "australasian",
-          "oceanic"
-        ]
-      },
-      {
-        "code": "game:butterfly-commongreencharaxes",
-        "biorealm": [
-          "atlantic afrotropic",
-          "eastern afrotropic"
-        ]
-      },
-      {
-        "code": "game:butterfly-commonmestra",
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic"
-        ]
-      },
-      {
-        "code": "game:butterfly-commonwhitegliderfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-commonyellowswallowtailfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-commonyellowswallowtailmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-cynthiasfritillarymale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-darkbluepansy",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-dawncloudedbutterflymale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-dawncloudedbutterflywhitefemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-dawncloudedbutterflyyellowfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-dottedglory",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-easterncommasummerform",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-easterntigerswallowtaildarkfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-easterntigerswallowtailmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-edwardsforesterfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-edwardsforestermale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-emeraldswallowtail",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-eroessachiliensisfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-eroessachiliensismale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-falsecomma",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-freyerspurpleemperormale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-gardentigermothmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-giantnorthernsulfurfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-giantnorthernsulfurmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-godartsnumberwing",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-goldbandedforester",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-goldenbirdwingfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-goldenbirdwingmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-goldenjezebelfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-goldenjezebelmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-goliathbirdwingmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-grapevineepimenis",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-grayhairstreak",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-graypansy",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-greenhairstreakmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-greenveinedwhitefemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-greenveinedwhitemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-ireniametalmark",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-juttaarctic",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-largebluefemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-largeorangesulphurfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-largeorangesulphurmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-largeorangesulphurwhitefemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-largewhitefemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-largewhitemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-lemonemigrantalcmeoneformmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-lemonemigrantfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-lemonemigranthilariaformmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-limehawkmoth",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-macrocosmamoth",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-madagascansunsetmoth",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-malachitebutterfly",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-mapbutterflymalespringform",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-mapbutterflymalesummerform",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-meadowbluemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-meadowbrownfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-meadowbrownmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-mexicanmarbledwhitefemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-mexicanmarbledwhitemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-milbertstortoiseshellfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-milbertstortoiseshellmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-monarch",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-morphoportis",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-mountainapollofemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-mourningcloak",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-nessusleafwingfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-nessusleafwingmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-northernbrownargusfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-northernbrownargusmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-nyctemerakinabaluensis",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-oleanderhawkmothmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangebarredsulphurmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangebarredsulphurthalestrisredfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangebarredsulphurthalestrisyellowfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangeemigrantfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangeemigrantmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangetiger",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangetipfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangetipmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-orangetippedanglesulfur",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-ornithopterapriamuseuphorionabgoldenmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-ornithopterapriamusmiokensismale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-paintedbeauty",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-peacock",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-peacockpansy",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-pearlcharaxesfemale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-pearlcharaxesmale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-purpleedgedcoppermale",
-        "biorealm": [ "unknown" ]
-      },
-      {
-        "code": "game:butterfly-purpleemperorfemale",
-        "biorealm": [ "unknown" ]
-      },
+        "butterfly-acmonbluefemale": {
+          "biorealm": [
+            "pacific nearctic",
+            "atlantic nearctic"
+          ]
+        }
+      },
       {
-        "code": "game:butterfly-purpleemperormale",
-        "biorealm": [ "unknown" ]
+        "butterfly-acmonbluemale": {
+          "biorealm": [
+            "pacific nearctic",
+            "atlantic nearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-purplespottedswallowtail",
-        "biorealm": [ "unknown" ]
+        "butterfly-aegamorphobluefemale": {
+          "biorealm": [
+            "pacific afrotropic",
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-purplishcopperfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-aegamorphobrownfemale": {
+          "biorealm": [
+            "pacific afrotropic",
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-purplishcoppermale",
-        "biorealm": [ "unknown" ]
+        "butterfly-aegamorphomale": {
+          "biorealm": [
+            "pacific afrotropic",
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-queenvictoriasbirdwingmale",
-        "biorealm": [ "unknown" ]
+        "butterfly-africancloudedyellowmale": {
+          "biorealm": [
+            "pacific afrotropic",
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-redadmiral",
-        "biorealm": [ "unknown" ]
+        "butterfly-africanmapwing": {
+          "biorealm": [
+            "pacific afrotropic",
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-reedbutterfly",
-        "biorealm": [ "unknown" ]
+        "butterfly-amberphantom": {
+          "biorealm": [
+            "atlantic palearctic",
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-rockgraylingmale",
-        "biorealm": [ "unknown" ]
+        "butterfly-apollobutterflyfemale": {
+          "biorealm": [
+            "atlantic palearctic",
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-rustic",
-        "biorealm": [ "unknown" ]
+        "butterfly-apollobutterflymale": {
+          "biorealm": [
+            "atlantic palearctic",
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-sagebrushgirdlemoth",
-        "biorealm": [ "unknown" ]
+        "butterfly-arcticwhitefemale": {
+          "biorealm": [
+            "pacific nearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-scarletmormonfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-arcticwhitemale": {
+          "biorealm": [
+            "pacific nearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-scarletmormonmale",
-        "biorealm": [ "unknown" ]
+        "butterfly-atlasmothfemale": {
+          "biorealm": [
+            "eastern palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-silkyowl",
-        "biorealm": [ "unknown" ]
+        "butterfly-atlasmothmale": {
+          "biorealm": [
+            "eastern palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-silverybluemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-bloodredglidermale": {
+          "biorealm": [
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-smallcoppermale",
-        "biorealm": [ "unknown" ]
+        "butterfly-bloodredgliderpalefemale": {
+          "biorealm": [
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-smallcopperabschmidtiifemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-bloodredgliderredfemale": {
+          "biorealm": [
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-smallheathfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-blueadmiral": {
+          "biorealm": [
+            "eastern palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-smallheathmale",
-        "biorealm": [ "unknown" ]
+        "butterfly-bluepansyfemale": {
+          "biorealm": [
+            "atlantic afrotropic",
+            "eastern afrotropic",
+            "australasian"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-smalltortoiseshell",
-        "biorealm": [ "unknown" ]
+        "butterfly-borderedrusticfemale": {
+          "biorealm": [
+            "australasian"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-smallwhitefemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-brownhairstreakfemale": {
+          "biorealm": [
+            "atlantic palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-smallwhitemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-brownhairstreakmale": {
+          "biorealm": [
+            "atlantic palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-southerndogfacemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-cardinalapollofemale": {
+          "biorealm": [
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-southerndogfacewhitefemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-cardinalapollomale": {
+          "biorealm": [
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-southerndogfaceyellowfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-checkeredwhitefemale": {
+          "biorealm": [
+            "pacific neotropic",
+            "atlantic neotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-stichelseyemarkfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-checkeredwhitemale": {
+          "biorealm": [
+            "pacific neotropic",
+            "atlantic neotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-stichelseyemarkmale",
-        "biorealm": [ "unknown" ]
+        "butterfly-chestnuttiger": {
+          "biorealm": [
+            "central palearctic",
+            "eastern palearctic",
+            "pacific palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-tawnycoster",
-        "biorealm": [ "unknown" ]
+        "butterfly-chocolatealbatrossdryseasonmale": {
+          "biorealm": [
+            "eastern palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-thalainachionoptila",
-        "biorealm": [ "unknown" ]
+        "butterfly-chocolatealbatrosswetseasonfemale": {
+          "biorealm": [
+            "eastern palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-theanoalpinemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-chocolatealbatrosswetseasonmale": {
+          "biorealm": [
+            "eastern palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-tropicalwhitedryseasonfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-cleopatrafemale": {
+          "biorealm": [
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-tropicalwhitemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-cleopatramale": {
+          "biorealm": [
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-tropicalwhitewetseasonfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-cloudedapollofemale": {
+          "biorealm": [
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-twobarredflasher",
-        "biorealm": [ "unknown" ]
+        "butterfly-cloudedapollomale": {
+          "biorealm": [
+            "central palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-wallacesgoldenbirdwingmale",
-        "biorealm": [ "unknown" ]
+        "butterfly-comma": {
+          "biorealm": [
+            "pacific nearctic",
+            "atlantic nearctic",
+            "atlantic palearctic",
+            "central palearctic",
+            "eastern palearctic",
+            "pacific palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-westernbluecharaxesfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-commaabdilutus": {
+          "biorealm": [
+            "pacific nearctic",
+            "atlantic nearctic",
+            "atlantic palearctic",
+            "central palearctic",
+            "eastern palearctic",
+            "pacific palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-westernbluecharaxesmale",
-        "biorealm": [ "unknown" ]
+        "butterfly-commonbrimstonefemale": {
+          "biorealm": [
+            "atlantic palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-whiteangledsulphurmale",
-        "biorealm": [ "unknown" ]
+        "butterfly-commonbrimstonemale": {
+          "biorealm": [
+            "atlantic palearctic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-woodwhitefemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-commongreenbirdwingfemale": {
+          "biorealm": [
+            "australasian",
+            "oceanic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-woodwhitemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-commongreenbirdwingmale": {
+          "biorealm": [
+            "australasian",
+            "oceanic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-yellowpansyfemale",
-        "biorealm": [ "unknown" ]
+        "butterfly-commongreencharaxes": {
+          "biorealm": [
+            "atlantic afrotropic",
+            "eastern afrotropic"
+          ]
+        }
       },
       {
-        "code": "game:butterfly-yellowpansymale",
-        "biorealm": [ "unknown" ]
+        "butterfly-commonmestra": {
+          "biorealm": [
+            "pacific nearctic",
+            "atlantic nearctic"
+          ]
+        }
       }
     ]
   }
