@@ -144,8 +144,8 @@ namespace Biomes
             int currentRealm = 0;
             if (realmWidthInRegions != 0)
                 currentRealm = (int)(regionX / realmWidthInRegions);
-            if (currentRealm > realmCount)
-                currentRealm = realmCount;
+            if (currentRealm >= realmCount)
+                currentRealm = realmCount - 1;
 
             // TODO: pick up next door names and add to list
             string localRealmName = "";
