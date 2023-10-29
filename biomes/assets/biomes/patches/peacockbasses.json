@@ -1,0 +1,18 @@
+[
+  {
+    "file": "peacockbasses:entities/water/peacockbass.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic neotropic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "peacockbasses"
+      }
+    ]
+  }
+]
