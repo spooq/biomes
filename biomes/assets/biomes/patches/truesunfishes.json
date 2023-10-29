@@ -1,0 +1,18 @@
+[
+  {
+    "file": "truesunfishes:entities/water/truesunfishes.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "truesunfishes"
+      }
+    ]
+  }
+]
