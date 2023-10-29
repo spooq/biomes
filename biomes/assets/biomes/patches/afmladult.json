@@ -1,0 +1,46 @@
+[
+  {
+    "file": "africanmonitorlizards:entities/land/varanus-adult.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-niloticus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-stellatus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic"
+        ]
+      },
+      "*-albigularis": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-exanthematicus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic"
+        ]
+      },
+      "*-griseus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "africanmonitorlizards"
+      }
+    ]
+  }
+]
