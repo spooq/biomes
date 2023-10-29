@@ -1,0 +1,18 @@
+[
+  {
+    "file": "newzealandfrogs:entities/land/newzealandfrogs.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "oceanic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "newzealandfrogs"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "file": "beardeddragons:entities/land/beardeddragons.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "australasian"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "beardeddragons"
+      }
+    ]
+  }
+]

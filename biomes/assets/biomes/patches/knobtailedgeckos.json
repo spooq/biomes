@@ -1,0 +1,18 @@
+[
+  {
+    "file": "knobtailedgeckos:entities/land/knobtailedgecko.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "australasian"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "knobtailedgeckos"
+      }
+    ]
+  }
+]
