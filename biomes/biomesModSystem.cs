@@ -80,7 +80,7 @@ namespace Biomes
 
             sapi.ChatCommands.Create("biome")
                 .WithDescription("Biome main command")
-                .RequiresPrivilege(Privilege.chat)
+                .RequiresPrivilege(Privilege.gamemode)
                 .BeginSubCommand("show")
                     .HandleWith(onGetBiomeCommand)
                 .EndSubCommand()
