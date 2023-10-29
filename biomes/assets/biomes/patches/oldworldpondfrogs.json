@@ -1,0 +1,226 @@
+[
+  {
+    "file": "pondfrogsi:entities/land/pondfrog.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-temporaria-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-arvalis-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-dalmatina-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-latastei-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-pseudodalmatina-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-graeca-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-iberica-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-italica-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-pyrenaica-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-macrocnemis-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-tavasensis-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-amurensis-*": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-asiatica-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-coreana-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-chensinensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-dybowskii-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-chaochiaoensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-huanrensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-dabieshanensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-jiulingensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-jiemuxiensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-johnsi-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-kukunoris-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-luanchuanensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-maoershanensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-omeimontis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-sangzhiensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-zhenhaiensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-longicrus-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-sauteri-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-japonica-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-tagoi-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-kyoto-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-neba-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-sakuraii-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-pirica-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-ornativentris-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-tsushimensis-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-uenoi-*": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-ulma-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-kobai-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+    },
+    "dependsOn": [
+      {
+        "modid": "pondfrogsi"
+      }
+    ]
+  }
+]
