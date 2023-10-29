@@ -1,0 +1,61 @@
+[
+  {
+    "file": "bandedgeckos:entities/land/bandedgecko.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-variegatus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-brevis": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-elegans": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-fasciatus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-nemoralis": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-reticulatus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-switaki": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-gypsicolus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-mitratus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+    },
+    "dependsOn": [
+      {
+        "modid": "bandedgeckos"
+      }
+    ]
+  }
+]
