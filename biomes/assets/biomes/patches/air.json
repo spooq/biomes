@@ -244,6 +244,515 @@
           "pacific nearctic",
           "atlantic nearctic"
         ]
+      },
+      "*-commonwhitegliderfemale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-commonyellowswallowtailfemale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-commonyellowswallowtailmale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-cynthiasfritillarymale": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-darkbluepansy": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-dawncloudedbutterflymale": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-dawncloudedbutterflywhitefemale": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-dawncloudedbutterflyyellowfemale": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-dottedglory": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-easterncommasummerform": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-easterntigerswallowtaildarkfemale": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-easterntigerswallowtailmale": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-edwardsforesterfemale": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-edwardsforestermale": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-emeraldswallowtail": {
+        "biorealm": [
+          "indomalayan",
+          "australasian"
+        ]
+      },
+      "*-eroessachiliensisfemale": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-eroessachiliensismale": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-falsecomma": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-freyerspurpleemperormale": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-gardentigermothmale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-giantnorthernsulfurfemale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-giantnorthernsulfurmale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-godartsnumberwing": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-goldbandedforester": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-goldenbirdwingfemale": {
+        "biorealm": [
+          "australasian",
+          "indomalayan"
+        ]
+      },
+      "*-goldenbirdwingmale": {
+        "biorealm": [
+          "australasian",
+          "indomalayan"
+        ]
+      },
+      "*-goldenjezebelfemale": {
+        "biorealm": [
+          "australasian"
+        ]
+      },
+      "*-goldenjezebelmale": {
+        "biorealm": [
+          "australasian"
+        ]
+      },
+      "*-goliathbirdwingmale": {
+        "biorealm": [
+          "australasian"
+        ]
+      },
+      "*-grapevineepimenis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-grayhairstreak": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-graypansy": {
+        "biorealm": [
+          "indomalayan",
+          "australasian"
+        ]
+      },
+      "*-greenhairstreakmale": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-greenveinedwhitefemale": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-greenveinedwhitemale": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-ireniametalmark": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-juttaarctic": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-largebluefemale": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-largeorangesulphurfemale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic"
+        ]
+      },
+      "*-largeorangesulphurmale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic"
+        ]
+      },
+      "*-largeorangesulphurwhitefemale": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic"
+        ]
+      },
+      "*-largewhitefemale": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-lemonemigrantalcmeoneformmale": {
+        "biorealm": [
+          "indomalayan",
+          "australasian"
+        ]
+      },
+      "*-lemonemigrantfemale": {
+        "biorealm": [
+          "indomalayan",
+          "australasian"
+        ]
+      },
+      "*-lemonemigranthilariaformmale": {
+        "biorealm": [
+          "indomalayan",
+          "australasian"
+        ]
+      },
+      "*-limehawkmoth": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-macrocosmamoth": {
+        "biorealm": [
+          "australasian"
+        ]
+      },
+      "*-madagascansunsetmoth": {
+        "biorealm": [
+          "eastern afrotropic",
+          "madagascar"
+        ]
+      },
+      "*-malachitebutterfly": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-mapbutterflymalespringform": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-mapbutterflymalesummerform": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-meadowbluemale": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-meadowbrownfemale": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "atlantic neotropic",
+          "atlantic afrotropic"
+        ]
+      },
+      "*-meadowbrownmale": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "atlantic neotropic",
+          "atlantic afrotropic"
+        ]
+      },
+      "*-mexicanmarbledwhitefemale": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-mexicanmarbledwhitemale": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-milbertstortoiseshellfemale": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-milbertstortoiseshellmale": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-monarch": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-morphoportis": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-mountainapollofemale": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-mourningcloak": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-nessusleafwingmale": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-northernbrownargusfemale": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-northernbrownargusmale": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-nyctemerakinabaluensis": {
+        "biorealm": [
+          "indomalayan",
+          "australasian"
+        ]
+      },
+      "*-oleanderhawkmothmale": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-orangebarredsulphurmale": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-orangebarredsulphurthalestrisredfemale": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-orangebarredsulphurthalestrisyellowfemale": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-orangeemigrantfemale": {
+        "biorealm": [
+          "australasian",
+          "indomalayan"
+        ]
+      },
+      "*-orangeemigrantmale": {
+        "biorealm": [
+          "australasian",
+          "indomalayan"
+        ]
+      },
+      "*-orangetiger": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-orangetipfemale": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-orangetipmale": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-orangetippedanglesulfur": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-ornithopterapriamuseuphorionabgoldenmale": {
+        "biorealm": [
+          "australasian"
+        ]
+      },
+      "*-ornithopterapriamusmiokensismale": {
+        "biorealm": [
+          "australasian"
+        ]
+      },
+      "*-paintedbeauty": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-peacock": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-peacockpansy": {
+        "biorealm": [
+          "indomalayan",
+          "australasian"
+        ]
+      },
+      "*-pearlcharaxesfemale": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-pearlcharaxesmale": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
       }
     }
   }
