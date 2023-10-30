@@ -117,7 +117,8 @@
       "pacific palearctic"
     ],
     "ebony": [
-      "australasian"
+      "australasian",
+      "central palearctic"
     ],
     "elm": [
       "pacific nearctic",
@@ -163,9 +164,7 @@
       "pacific neotropic",
       "atlantic neotropic",
       "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
+      "eastern afrotropic"
     ],
     "larch": [
       "atlantic palearctic",
@@ -256,6 +255,7 @@
       "australasian"
     ],
     "purpleheart": [
+      "pacific nearctic",
       "pacific neotropic",
       "atlantic neotropic"
     ],
