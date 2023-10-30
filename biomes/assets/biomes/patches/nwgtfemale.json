@@ -1,0 +1,61 @@
+[
+  {
+    "file": "newworldgianttortoises:entities/land/chelonoidis-female.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-carbonarius": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-denticulatus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-chilensis": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-niger": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-alburyorum": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-cubensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-monensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-gersoni": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-marcanoi": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+    },
+    "dependsOn": [
+      {
+        "modid": "newworldgianttortoises"
+      }
+    ]
+  }
+]
