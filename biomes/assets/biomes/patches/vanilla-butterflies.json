@@ -329,7 +329,6 @@
       },
       "*-emeraldswallowtail": {
         "biorealm": [
-          "indomalayan",
           "australasian"
         ]
       },
@@ -393,14 +392,12 @@
       },
       "*-goldenbirdwingfemale": {
         "biorealm": [
-          "australasian",
-          "indomalayan"
+          "australasian"
         ]
       },
       "*-goldenbirdwingmale": {
         "biorealm": [
-          "australasian",
-          "indomalayan"
+          "australasian"
         ]
       },
       "*-goldenjezebelfemale": {
@@ -433,7 +430,6 @@
       },
       "*-graypansy": {
         "biorealm": [
-          "indomalayan",
           "australasian"
         ]
       },
@@ -506,19 +502,16 @@
       },
       "*-lemonemigrantalcmeoneformmale": {
         "biorealm": [
-          "indomalayan",
           "australasian"
         ]
       },
       "*-lemonemigrantfemale": {
         "biorealm": [
-          "indomalayan",
           "australasian"
         ]
       },
       "*-lemonemigranthilariaformmale": {
         "biorealm": [
-          "indomalayan",
           "australasian"
         ]
       },
@@ -653,7 +646,6 @@
       },
       "*-nyctemerakinabaluensis": {
         "biorealm": [
-          "indomalayan",
           "australasian"
         ]
       },
@@ -684,14 +676,12 @@
       },
       "*-orangeemigrantfemale": {
         "biorealm": [
-          "australasian",
-          "indomalayan"
+          "australasian"
         ]
       },
       "*-orangeemigrantmale": {
         "biorealm": [
-          "australasian",
-          "indomalayan"
+          "australasian"
         ]
       },
       "*-orangetiger": {
@@ -740,7 +730,6 @@
       },
       "*-peacockpansy": {
         "biorealm": [
-          "indomalayan",
           "australasian"
         ]
       },
@@ -817,8 +806,7 @@
       "*-rustic": {
         "biorealm": [
           "eastern palearctic",
-          "pacific palearctic",
-          "indomalayan"
+          "pacific palearctic"
         ]
       },
       "*-sagebrushgirdlemoth": {
@@ -920,7 +908,7 @@
       },
       "*-tawnycoster": {
         "biorealm": [
-          "indomalayan"
+          "australasian"
         ]
       },
       "*-thalainachionoptila": {
@@ -955,8 +943,7 @@
       },
       "*-wallacesgoldenbirdwingmale": {
         "biorealm": [
-          "australasian",
-          "indomalayan"
+          "australasian"
         ]
       },
       "*-westernbluecharaxesfemale": {
@@ -1000,8 +987,7 @@
         "biorealm": [
           "atlantic afrotropic",
           "eastern afrotropic",
-          "australasian",
-          "indomalayan"
+          "australasian"
         ]
       }
     }
