@@ -54,6 +54,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
   <None Remove="assets\biomes\patches\giantgouramis.json" />
+  <None Remove="assets\biomes\patches\vanilla-air.json" />
   <None Remove="assets\biomes\patches\vanilla-butterflies.json" />
   <None Remove="assets\biomes\patches\vanilla-land.json" />
   <None Remove="assets\biomes\patches\vanilla-water.json" />

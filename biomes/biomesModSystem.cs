@@ -17,6 +17,11 @@ using Vintagestory.ServerMods.NoObf;
 
 namespace Biomes
 {
+    public class BiomeUserConfig
+    {
+        public bool FlipNorthSouth = false;
+    }
+
     public class BiomeConfig
     {
         public List<string> NorthernRealms = new List<string>();
@@ -47,7 +52,8 @@ namespace Biomes
         private const string realmProperty = "biorealm";
         private const string hemisphereProperty = "hemisphere";
 
-        public static BiomeConfig config;
+        public BiomeUserConfig userConfig;
+        public static BiomeConfig modConfig;
         private static List<Regex> SpawnWhiteListRx = new List<Regex>
         {
         };
@@ -71,10 +77,25 @@ namespace Biomes
 
             sapi = api;
 
-            config = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get("biomes:config/biomes.json").ToText());
+            modConfig = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
 
-            foreach (var item in config.SpawnWhiteList)
+            foreach (var item in modConfig.SpawnWhiteList)
                 SpawnWhiteListRx.Add(new Regex(item));
+
+            userConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
+            if (userConfig == null)
+            {
+                userConfig = new BiomeUserConfig();
+                userConfig.FlipNorthSouth = true;
+                sapi.StoreModConfig(userConfig, $"{Mod.Info.ModID}.json");
+            }
+
+            if (userConfig.FlipNorthSouth)
+            {
+                var tmp = modConfig.NorthernRealms;
+                modConfig.NorthernRealms = modConfig.SouthernRealms;
+                modConfig.SouthernRealms = tmp;
+            }
 
             sapi.Event.MapRegionGeneration(OnMapRegionGeneration, "standard");
 
@@ -95,11 +116,11 @@ namespace Biomes
                     .HandleWith(onSetHemisphereCommand)
                 .EndSubCommand()
                 .BeginSubCommand("add")
-                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", config.NorthernRealms.Union(config.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
+                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", modConfig.NorthernRealms.Union(modConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
                     .HandleWith(onAddRealmCommand)
                 .EndSubCommand()
                 .BeginSubCommand("remove")
-                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", config.NorthernRealms.Union(config.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
+                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", modConfig.NorthernRealms.Union(modConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
                     .HandleWith(onRemoveRealmCommand)
                 .EndSubCommand();
         }
@@ -112,7 +133,7 @@ namespace Biomes
 
         public static String NorthOrSouth(EnumHemisphere hemisphere, int realm)
         {
-            return hemisphere == EnumHemisphere.North ? config.NorthernRealms[realm] : config.SouthernRealms[realm];
+            return hemisphere == EnumHemisphere.North ? modConfig.NorthernRealms[realm] : modConfig.SouthernRealms[realm];
         }
 
         public void OnMapRegionGeneration(IMapRegion mapRegion, int regionX, int regionZ, ITreeAttribute chunkGenParams)
@@ -144,9 +165,9 @@ namespace Biomes
 
             int realmCount;
             if (hemisphere == EnumHemisphere.North)
-                realmCount = config.NorthernRealms.Count;
+                realmCount = modConfig.NorthernRealms.Count;
             else
-                realmCount = config.SouthernRealms.Count;
+                realmCount = modConfig.SouthernRealms.Count;
 
             int worldWidthInRegions = sapi.WorldManager.MapSizeX / sapi.WorldManager.RegionSize;
             float realmWidthInRegions = worldWidthInRegions / (float)realmCount;
@@ -214,10 +235,10 @@ namespace Biomes
             foreach (var gen in treeGenProps.ShrubGens)
             {
                 var name = gen.Generator.GetName();
-                if (!config.TreeBiomes.ContainsKey(name))
+                if (!modConfig.TreeBiomes.ContainsKey(name))
                     continue;
 
-                if (config.TreeBiomes[name].Intersect(regionRealms).Any())
+                if (modConfig.TreeBiomes[name].Intersect(regionRealms).Any())
                     treeVariants.Add(gen);
             }
 
@@ -255,10 +276,10 @@ namespace Biomes
             foreach (var gen in treeGenProps.TreeGens)
             {
                 var name = gen.Generator.GetName();
-                if (!config.TreeBiomes.ContainsKey(name))
+                if (!modConfig.TreeBiomes.ContainsKey(name))
                     continue;
 
-                if (config.TreeBiomes[name].Intersect(regionRealms).Any())
+                if (modConfig.TreeBiomes[name].Intersect(regionRealms).Any())
                     treeVariants.Add(gen);
             }
 
@@ -280,7 +301,7 @@ namespace Biomes
         {
             var regionRealms = new List<string>();
             getModProperty(args.Caller, realmProperty, ref regionRealms);
-            var treeList = config.TreeBiomes.Where(x => x.Value.Intersect(regionRealms).Any()).Select(x => x.Key).Join(delimiter: "\r\n");
+            var treeList = modConfig.TreeBiomes.Where(x => x.Value.Intersect(regionRealms).Any()).Select(x => x.Key).Join(delimiter: "\r\n");
 
             var serverPlayer = args.Caller.Player as IServerPlayer;
             if (serverPlayer != null)

@@ -18,28 +18,6 @@
     }
   },
   {
-    "file": "game:entities/land/beemob.json",
-    "op": "add",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ]
-    }
-  },
-  {
     "file": "game:entities/land/chicken-baby.json",
     "op": "add",
     "path": "/attributes",
@@ -337,7 +315,7 @@
     }
   },
   {
-    "file": "game:entities/land/racoon-female.json",
+    "file": "game:entities/land/raccoon-female.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
@@ -349,7 +327,7 @@
     }
   },
   {
-    "file": "game:entities/land/racoon-male.json",
+    "file": "game:entities/land/raccoon-male.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
@@ -361,7 +339,7 @@
     }
   },
   {
-    "file": "game:entities/land/racoon-pup.json",
+    "file": "game:entities/land/raccoon-pup.json",
     "op": "add",
     "path": "/attributes",
     "side": "Server",
