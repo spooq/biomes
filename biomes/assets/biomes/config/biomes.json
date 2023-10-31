@@ -611,6 +611,20 @@
       "eastern afrotropic",
       "australasian",
       "oceanic"
+    ],
+    "tallgrass-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
     ]
   }
 }
