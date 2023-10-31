@@ -2,19 +2,49 @@
   {
     "file": "game:entities/land/bear.json",
     "op": "add",
-    "path": "/attributes",
+    "path": "/attributesByType",
     "side": "Server",
     "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic"
-      ]
+      "*-black": {
+        "biorealm": [
+          "atlantic nearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific nearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-brown": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific nearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-panda": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-polar": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific nearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-sun": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
     }
   },
   {
@@ -24,12 +54,10 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic nearctic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
-        "pacific palearctic",
-        "australasian"
+        "pacific palearctic"
       ]
     }
   },
@@ -40,12 +68,10 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic nearctic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
-        "pacific palearctic",
-        "australasian"
+        "pacific palearctic"
       ]
     }
   },
@@ -56,12 +82,10 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic nearctic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
-        "pacific palearctic",
-        "australasian"
+        "pacific palearctic"
       ]
     }
   },
@@ -174,6 +198,9 @@
     "side": "Server",
     "value": {
       "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
         "atlantic afrotropic",
         "eastern afrotropic"
       ]
@@ -192,7 +219,8 @@
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic",
-        "australasian"
+        "atlantic afrotropic",
+        "eastern afrotropic"
       ]
     }
   },
@@ -209,7 +237,8 @@
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic",
-        "australasian"
+        "atlantic afrotropic",
+        "eastern afrotropic"
       ]
     }
   },
@@ -226,7 +255,8 @@
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic",
-        "australasian"
+        "atlantic afrotropic",
+        "eastern afrotropic"
       ]
     }
   },
@@ -238,6 +268,7 @@
     "value": {
       "biorealm": [
         "atlantic afrotropic",
+        "atlantic palearctic",
         "eastern afrotropic"
       ]
     }
@@ -250,6 +281,7 @@
     "value": {
       "biorealm": [
         "atlantic afrotropic",
+        "atlantic palearctic",
         "eastern afrotropic"
       ]
     }
@@ -262,6 +294,7 @@
     "value": {
       "biorealm": [
         "atlantic afrotropic",
+        "atlantic palearctic",
         "eastern afrotropic"
       ]
     }
@@ -289,8 +322,6 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic afrotropic",
-        "eastern afrotropic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
@@ -305,8 +336,6 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic afrotropic",
-        "eastern afrotropic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
@@ -357,14 +386,7 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic"
+        "pacific nearctic"
       ]
     }
   },
@@ -375,14 +397,7 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic"
+        "pacific nearctic"
       ]
     }
   },
@@ -393,14 +408,7 @@
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic"
+        "pacific nearctic"
       ]
     }
   },
@@ -411,6 +419,8 @@
     "side": "Server",
     "value": {
       "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
@@ -425,6 +435,8 @@
     "side": "Server",
     "value": {
       "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
@@ -439,6 +451,8 @@
     "side": "Server",
     "value": {
       "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",

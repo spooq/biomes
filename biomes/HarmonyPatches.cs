@@ -5,6 +5,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
+using Vintagestory.API.Util;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
 using Vintagestory.ServerMods.NoObf;
@@ -29,6 +30,7 @@ namespace Biomes
             harmony.UnpatchAll(BiomesMod.Mod.Info.ModID);
         }
 
+        /*
         [HarmonyPrefix]
         [HarmonyPriority(400)]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
@@ -45,9 +47,9 @@ namespace Biomes
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
             {
-                foreach (var rx in BiomesMod.BlockPatchBiomesRx)
+                foreach (var item in BiomesMod.ModConfig.BlockPatchBiomes)
                 {
-                    if (bp.blockCodes.Select(x => x.Path).Any(rx.Key.IsMatch) && rx.Value.Intersect(chunkRealms).Any())
+                    if (bp.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)) && item.Value.Intersect(chunkRealms).Any())
                     {
                         blockPatches.Add(bp);
                         break;
@@ -83,9 +85,9 @@ namespace Biomes
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
             {
-                foreach (var rx in BiomesMod.BlockPatchBiomesRx)
+                foreach (var item in BiomesMod.ModConfig.BlockPatchBiomes)
                 {
-                    if (bp.blockCodes.Select(x => x.Path).Any(rx.Key.IsMatch) && rx.Value.Intersect(chunkRealms).Any())
+                    if (bp.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)) && item.Value.Intersect(chunkRealms).Any())
                     {
                         blockPatches.Add(bp);
                         break;
@@ -120,9 +122,9 @@ namespace Biomes
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
             {
-                foreach (var rx in BiomesMod.BlockPatchBiomesRx)
+                foreach (var item in BiomesMod.ModConfig.BlockPatchBiomes)
                 {
-                    if (bp.blockCodes.Select(x => x.Path).Any(rx.Key.IsMatch) && rx.Value.Intersect(chunkRealms).Any())
+                    if (bp.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)) && item.Value.Intersect(chunkRealms).Any())
                     {
                         blockPatches.Add(bp);
                         break;
@@ -141,6 +143,7 @@ namespace Biomes
             var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
             bpc.PatchesNonTree = __state;
         }
+        */
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
@@ -159,9 +162,9 @@ namespace Biomes
             foreach (var gen in treeGenProps.ShrubGens)
             {
                 var name = gen.Generator.GetName();
-                foreach (var rx in BiomesMod.TreeBiomesRx)
+                foreach (var item in BiomesMod.ModConfig.TreeBiomes)
                 {
-                    if (rx.Key.IsMatch(name) && rx.Value.Intersect(chunkRealms).Any())
+                    if (WildcardUtil.Match(item.Key, name) && item.Value.Intersect(chunkRealms).Any())
                     {
                         treeVariants.Add(gen);
                         break;
@@ -199,9 +202,9 @@ namespace Biomes
             foreach (var gen in treeGenProps.TreeGens)
             {
                 var name = gen.Generator.GetName();
-                foreach (var rx in BiomesMod.TreeBiomesRx)
+                foreach (var item in BiomesMod.ModConfig.TreeBiomes)
                 {
-                    if (rx.Key.IsMatch(name) && rx.Value.Intersect(chunkRealms).Any())
+                    if (WildcardUtil.Match(item.Key, name) && item.Value.Intersect(chunkRealms).Any())
                     {
                         treeVariants.Add(gen);
                         break;

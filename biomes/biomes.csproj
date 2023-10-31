@@ -53,6 +53,7 @@
   <Content Include="assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+  <Compile Remove="BiomesModSystem - Copy.cs" />
   <Compile Remove="BiomesModSystemHelpers.cs" />
   <None Remove="assets\biomes\config\realms.json" />
   <None Remove="assets\biomes\patches\giantgouramis.json" />

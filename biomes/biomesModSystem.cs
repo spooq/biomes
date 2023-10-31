@@ -4,12 +4,12 @@ using ProtoBuf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
+using Vintagestory.API.Util;
 
 namespace Biomes
 {
@@ -55,9 +55,9 @@ namespace Biomes
         public RealmsConfig RealmsConfig;
         public BiomeConfig ModConfig;
 
-        public List<Regex> EntitySpawnWhiteListRx = new List<Regex>();
-        public Dictionary<Regex, List<string>> TreeBiomesRx = new Dictionary<Regex, List<string>>();
-        public Dictionary<Regex, List<string>> BlockPatchBiomesRx = new Dictionary<Regex, List<string>>();
+        //public List<Regex> EntitySpawnWhiteListRx = new List<Regex>();
+        //public Dictionary<Regex, List<string>> TreeBiomesRx = new Dictionary<Regex, List<string>>();
+        //public Dictionary<Regex, List<string>> BlockPatchBiomesRx = new Dictionary<Regex, List<string>>();
 
         //public NormalizedSimplexNoise noise = new NormalizedSimplexNoise();
 
@@ -75,18 +75,22 @@ namespace Biomes
             sapi = api;
 
             RealmsConfig = JsonConvert.DeserializeObject<RealmsConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/realms.json").ToText());
+            ModConfig = new BiomeConfig();
 
-            // TODO: get many
+            foreach (var biomeAsset in sapi.Assets.GetMany("config/biomes.json"))
             {
-                ModConfig = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
+                var tmp = JsonConvert.DeserializeObject<BiomeConfig>(biomeAsset.ToText());
+                //var tmp = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
 
-                foreach (var item in ModConfig.EntitySpawnWhiteList)
-                    EntitySpawnWhiteListRx.Add(new Regex(item));
-                foreach (var item in ModConfig.TreeBiomes)
-                    TreeBiomesRx[new Regex(item.Key)] = item.Value;
-                foreach (var item in ModConfig.BlockPatchBiomes)
-                    BlockPatchBiomesRx[new Regex(item.Key)] = item.Value;
+                foreach (var item in tmp.EntitySpawnWhiteList)
+                    ModConfig.EntitySpawnWhiteList.Add(item);
+                foreach (var item in tmp.TreeBiomes)
+                    ModConfig.TreeBiomes[item.Key] = item.Value;
+                foreach (var item in tmp.BlockPatchBiomes)
+                    ModConfig.BlockPatchBiomes[item.Key] = item.Value;
             }
+
+            ModConfig.EntitySpawnWhiteList = ModConfig.EntitySpawnWhiteList.Distinct().ToList();
 
             UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
             if (UserConfig == null)
@@ -166,11 +170,7 @@ namespace Biomes
 
         public bool IsWhiteListed(string name)
         {
-            foreach (var rx in EntitySpawnWhiteListRx)
-                if (rx.IsMatch(name))
-                    return true;
-
-            return false;
+            return ModConfig.EntitySpawnWhiteList.Any(x => WildcardUtil.Match(x, name));
         }
 
         public bool AllowEntitySpawn(IMapChunk mapChunk, EntityProperties type)
@@ -215,11 +215,23 @@ namespace Biomes
         {
             var chunkRealms = new List<string>();
             getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
-            var treeList = ModConfig.TreeBiomes.Where(x => x.Value.Intersect(chunkRealms).Any()).Select(x => x.Key).Join(delimiter: "\r\n");
+
+            var trees = new List<string>();
+            foreach (var realm in chunkRealms)
+            {
+                foreach (var item in ModConfig.TreeBiomes)
+                {
+                    if (item.Value.Intersect(chunkRealms).Any())
+                    {
+                        trees.Add(item.Key);
+                    }
+                }
+            }
+            var treeStr = trees.Distinct().Join(delimiter: "\r\n");
 
             var serverPlayer = args.Caller.Player as IServerPlayer;
             if (serverPlayer != null)
-                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeList, EnumChatType.Notification);
+                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeStr, EnumChatType.Notification);
 
             return new TextCommandResult { Status = EnumCommandStatus.Success };
         }
