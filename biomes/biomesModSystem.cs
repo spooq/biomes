@@ -153,11 +153,19 @@ namespace Biomes
             setModProperty(mapChunk, RealmPropertyName, ref realmNames);
         }
 
-        public bool AllowEntitySpawn(IMapChunk mapChunk, EntityProperties type)
+        public bool IsWhiteListed(string name)
         {
             foreach (var rx in SpawnWhiteListRx)
-                if (rx.IsMatch(type.Code.Path))
+                if (rx.IsMatch(name))
                     return true;
+
+            return false;
+        }
+
+        public bool AllowEntitySpawn(IMapChunk mapChunk, EntityProperties type)
+        {
+            if (IsWhiteListed(type.Code.Path))
+                return true;
 
             // Only blessed animals get in.
             if (type.Attributes == null || !type.Attributes.KeyExists(RealmPropertyName))

@@ -14,26 +14,10 @@ namespace Biomes
     public static class HarmonyPatches
     {
         public static BiomesModSystem BiomesMod;
-
         public static void Init(BiomesModSystem mod)
         {
             BiomesMod = mod;
         }
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(GenCreatures), "CanSpawnAtPosition")]
-        public static bool CanSpawnAtPosition(GenCreatures __instance, ref bool __result, IBlockAccessor blockAccessor, EntityProperties type, BlockPos pos, BaseSpawnConditions sc)
-        {
-            return __result = BiomesMod.AllowEntitySpawn(blockAccessor.GetMapChunkAtBlockPos(pos), type);
-        }
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
-        public static bool CanSpawnAt(ServerSystemEntitySpawner __instance, ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
-        {
-            return BiomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type);
-        }
-
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
@@ -49,15 +33,12 @@ namespace Biomes
             var undertreeBlockPatches = new List<BlockPatch>();
             foreach (var gen in underTreePatches)
             {
-                var names = gen.blockCodes.Select(x => x.Path).ToList();
-                var intersect = BiomesMod.ModConfig.ForestBlockPatchBiomes.Keys.Intersect(names).ToList();
-                if (!intersect.Any())
-                    continue;
-
-                if (BiomesMod.ModConfig.TreeBiomes[intersect.First()].Intersect(chunkRealms).Any())
+                var allNamesForThisBP = gen.blockCodes.Select(x => x.Path);
+                var allBiomesForThisBP = BiomesMod.ModConfig.ForestBlockPatchBiomes.Where(x => allNamesForThisBP.Contains(x.Key)).SelectMany(x => x.Value).Distinct();
+                if (allNamesForThisBP.Any(BiomesMod.IsWhiteListed) || allBiomesForThisBP.Intersect(chunkRealms).Any())
                 {
                     undertreeBlockPatches.Add(gen);
-                    BiomesMod.sapi.BroadcastMessageToAllGroups(intersect.Join(delimiter: ", "), EnumChatType.Notification);
+                    BiomesMod.sapi.BroadcastMessageToAllGroups(allBiomesForThisBP.Join(delimiter: ", "), EnumChatType.Notification);
                 }
             }
 
@@ -91,10 +72,7 @@ namespace Biomes
             foreach (var gen in treeGenProps.ShrubGens)
             {
                 var name = gen.Generator.GetName();
-                if (!BiomesMod.ModConfig.TreeBiomes.ContainsKey(name))
-                    continue;
-
-                if (BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
+                if (BiomesMod.IsWhiteListed(name) || (BiomesMod.ModConfig.TreeBiomes.ContainsKey(name) && BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any()))
                     treeVariants.Add(gen);
             }
 
@@ -102,7 +80,6 @@ namespace Biomes
 
             return true;
         }
-
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
@@ -129,10 +106,7 @@ namespace Biomes
             foreach (var gen in treeGenProps.TreeGens)
             {
                 var name = gen.Generator.GetName();
-                if (!BiomesMod.ModConfig.TreeBiomes.ContainsKey(name))
-                    continue;
-
-                if (BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
+                if (BiomesMod.IsWhiteListed(name) || BiomesMod.ModConfig.TreeBiomes.Where(x => x.Key == name).SelectMany(x => x.Value).Intersect(chunkRealms).Any())
                     treeVariants.Add(gen);
             }
 
@@ -148,5 +122,20 @@ namespace Biomes
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
             Traverse.Create(treeSupplier).Field("treeGenProps").SetValue(__state);
         }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(GenCreatures), "CanSpawnAtPosition")]
+        public static bool CanSpawnAtPosition(GenCreatures __instance, ref bool __result, IBlockAccessor blockAccessor, EntityProperties type, BlockPos pos, BaseSpawnConditions sc)
+        {
+            return __result = BiomesMod.AllowEntitySpawn(blockAccessor.GetMapChunkAtBlockPos(pos), type);
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
+        public static bool CanSpawnAt(ServerSystemEntitySpawner __instance, ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
+        {
+            return BiomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type);
+        }
+
     }
 }
