@@ -625,6 +625,43 @@
       "eastern afrotropic",
       "australasian",
       "oceanic"
+    ],
+    "tallfern": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "fern-eaglefern": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "fern-cinnamonfern": [
+      "atlantic nearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic neotropic"
+    ],
+    "fern-deerfern": [
+      "pacific nearctic",
+      "atlantic palearctic"
+    ],
+    "fern-hartstongue": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic"
     ]
   }
 }
