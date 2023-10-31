@@ -10,9 +10,6 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
-using Vintagestory.Server;
-using Vintagestory.ServerMods;
-using Vintagestory.ServerMods.NoObf;
 
 namespace Biomes
 {
@@ -46,57 +43,53 @@ namespace Biomes
     [HarmonyPatch]
     public class BiomesModSystem : ModSystem
     {
-        public static ICoreServerAPI sapi;
+        public ICoreServerAPI sapi;
         public Harmony harmony;
 
-        private const string realmProperty = "biorealm";
-        private const string hemisphereProperty = "hemisphere";
+        public const string RealmPropertyName = "biorealm";
+        public const string HemispherePropertyName = "hemisphere";
 
-        public BiomeUserConfig userConfig;
-        public static BiomeConfig modConfig;
-        private static List<Regex> SpawnWhiteListRx = new List<Regex>
+        public BiomeUserConfig UserConfig;
+        public BiomeConfig ModConfig;
+        public List<Regex> SpawnWhiteListRx = new List<Regex>
         {
         };
 
-        //NormalizedSimplexNoise noise = new NormalizedSimplexNoise();
+        //public NormalizedSimplexNoise noise = new NormalizedSimplexNoise();
 
         public override bool ShouldLoad(EnumAppSide side)
         {
             return side == EnumAppSide.Server;
         }
 
-        public override void Start(ICoreAPI api)
-        {
-            base.Start(api);
-        }
-
         public override void StartServerSide(ICoreServerAPI api)
         {
             base.StartServerSide(api);
 
+            HarmonyPatches.Init(this);
             harmony = new Harmony(Mod.Info.ModID);
             harmony.PatchAll();
 
             sapi = api;
 
-            modConfig = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
+            ModConfig = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
 
-            foreach (var item in modConfig.SpawnWhiteList)
+            foreach (var item in ModConfig.SpawnWhiteList)
                 SpawnWhiteListRx.Add(new Regex(item));
 
-            userConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
-            if (userConfig == null)
+            UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
+            if (UserConfig == null)
             {
-                userConfig = new BiomeUserConfig();
-                userConfig.FlipNorthSouth = true;
+                UserConfig = new BiomeUserConfig();
+                UserConfig.FlipNorthSouth = true;
             }
-            sapi.StoreModConfig(userConfig, $"{Mod.Info.ModID}.json");
+            sapi.StoreModConfig(UserConfig, $"{Mod.Info.ModID}.json");
 
-            if (userConfig.FlipNorthSouth)
+            if (UserConfig.FlipNorthSouth)
             {
-                var tmp = modConfig.NorthernRealms;
-                modConfig.NorthernRealms = modConfig.SouthernRealms;
-                modConfig.SouthernRealms = tmp;
+                var tmp = ModConfig.NorthernRealms;
+                ModConfig.NorthernRealms = ModConfig.SouthernRealms;
+                ModConfig.SouthernRealms = tmp;
             }
 
             sapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
@@ -118,11 +111,11 @@ namespace Biomes
                     .HandleWith(onSetHemisphereCommand)
                 .EndSubCommand()
                 .BeginSubCommand("add")
-                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", modConfig.NorthernRealms.Union(modConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
+                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", ModConfig.NorthernRealms.Union(ModConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
                     .HandleWith(onAddRealmCommand)
                 .EndSubCommand()
                 .BeginSubCommand("remove")
-                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", modConfig.NorthernRealms.Union(modConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
+                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", ModConfig.NorthernRealms.Union(ModConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
                     .HandleWith(onRemoveRealmCommand)
                 .EndSubCommand();
         }
@@ -133,13 +126,13 @@ namespace Biomes
             base.Dispose();
         }
 
-        public static String NorthOrSouth(EnumHemisphere hemisphere, int realm)
+        public String NorthOrSouth(EnumHemisphere hemisphere, int realm)
         {
             // modconfig.flipworld exchanges the lists, so we always do choose the same here no matter what
-            return hemisphere == EnumHemisphere.North ? modConfig.NorthernRealms[realm] : modConfig.SouthernRealms[realm];
+            return hemisphere == EnumHemisphere.North ? ModConfig.NorthernRealms[realm] : ModConfig.SouthernRealms[realm];
         }
 
-        private void OnMapChunkGeneration(IMapChunk mapChunk, int chunkX, int chunkZ)
+        public void OnMapChunkGeneration(IMapChunk mapChunk, int chunkX, int chunkZ)
         {
             EnumHemisphere hemisphere;
             int currentRealm;
@@ -157,20 +150,37 @@ namespace Biomes
             realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
             realmNames = realmNames.Distinct().ToList();
 
-            setModProperty(mapChunk, realmProperty, ref realmNames);
+            setModProperty(mapChunk, RealmPropertyName, ref realmNames);
         }
 
-        private static void CalculateValues(IMapChunk mapChunk, int chunkX, int chunkZ, out EnumHemisphere hemisphere, out int currentRealm)
+        public bool AllowEntitySpawn(IMapChunk mapChunk, EntityProperties type)
+        {
+            foreach (var rx in SpawnWhiteListRx)
+                if (rx.IsMatch(type.Code.Path))
+                    return true;
+
+            // Only blessed animals get in.
+            if (type.Attributes == null || !type.Attributes.KeyExists(RealmPropertyName))
+                return false;
+
+            // Test map chunk attributes
+            var chunkRealms = new List<string>();
+            getModProperty(mapChunk, RealmPropertyName, ref chunkRealms);
+            var entityNativeRealms = type.Attributes[RealmPropertyName].AsArray<string>();
+            return entityNativeRealms.Intersect(chunkRealms).Any();
+        }
+
+        public void CalculateValues(IMapChunk mapChunk, int chunkX, int chunkZ, out EnumHemisphere hemisphere, out int currentRealm)
         {
             BlockPos blockPos = new BlockPos(chunkX * sapi.WorldManager.ChunkSize, 0, chunkZ * sapi.WorldManager.ChunkSize);
             hemisphere = sapi.World.Calendar.GetHemisphere(blockPos);
-            setModProperty(mapChunk, hemisphereProperty, ref hemisphere);
+            setModProperty(mapChunk, HemispherePropertyName, ref hemisphere);
 
             int realmCount;
             if (hemisphere == EnumHemisphere.North)
-                realmCount = modConfig.NorthernRealms.Count;
+                realmCount = ModConfig.NorthernRealms.Count;
             else
-                realmCount = modConfig.SouthernRealms.Count;
+                realmCount = ModConfig.SouthernRealms.Count;
 
             int worldWidthInChunks = sapi.WorldManager.MapSizeX / sapi.WorldManager.ChunkSize;
             float realmWidthInChunks = worldWidthInChunks / (float)realmCount;
@@ -183,160 +193,11 @@ namespace Biomes
                 currentRealm = 0;
         }
 
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(GenCreatures), "CanSpawnAtPosition")]
-        public static bool CanSpawnAtPosition(GenCreatures __instance, ref bool __result, IBlockAccessor blockAccessor, EntityProperties type, BlockPos pos, BaseSpawnConditions sc)
-        {
-            __result = AllowEntitySpawn(blockAccessor.GetMapChunkAtBlockPos(pos), type);
-            return __result;
-        }
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
-        public static bool CanSpawnAt(ServerSystemEntitySpawner __instance, ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
-        {
-            IMapChunk mapChunk = chunkCol[0].MapChunk;
-            return AllowEntitySpawn(mapChunk, type);
-        }
-
-        public static bool AllowEntitySpawn(IMapChunk mapChunk, EntityProperties type)
-        {
-            foreach (var rx in SpawnWhiteListRx)
-                if (rx.IsMatch(type.Code.Path))
-                    return true;
-
-            // Only blessed animals get in.
-            if (type.Attributes == null || !type.Attributes.KeyExists(realmProperty))
-                return false;
-
-            // Test map chunk attributes
-            var chunkRealms = new List<string>();
-            getModProperty(mapChunk, realmProperty, ref chunkRealms);
-            var entityNativeRealms = type.Attributes[realmProperty].AsArray<string>();
-            return entityNativeRealms.Intersect(chunkRealms).Any();
-        }
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static bool genPatchesPrefix(ref ForestFloorSystem __instance, out List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
-        {
-            var underTreePatches = Traverse.Create(__instance).Field("underTreePatches").GetValue() as List<BlockPatch>;
-            __state = underTreePatches;
-
-            var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-            var chunkRealms = new List<string>();
-            getModProperty(mapChunk, realmProperty, ref chunkRealms);
-
-            var undertreeBlockPatches = new List<BlockPatch>();
-            foreach (var gen in underTreePatches)
-            {
-                var names = gen.blockCodes.Select(x => x.Path).ToList();
-                var intersect = modConfig.ForestBlockPatchBiomes.Keys.Intersect(names).ToList();
-                if (!intersect.Any())
-                    continue;
-
-                if (modConfig.TreeBiomes[intersect.First()].Intersect(chunkRealms).Any())
-                    undertreeBlockPatches.Add(gen);
-            }
-
-            underTreePatches = undertreeBlockPatches;
-
-            return true;
-        }
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static void genPatchesPostfix(ref ForestFloorSystem __instance, List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
-        {
-            var underTreePatches = Traverse.Create(__instance).Field("underTreePatches").GetValue() as List<BlockPatch>;
-            underTreePatches = __state;
-        }
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
-        public static bool genShrubsPrefix(ref GenVegetationAndPatches __instance, out List<TreeVariant> __state, int chunkX, int chunkZ)
-        {
-            var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
-            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
-            __state = treeGenProps.ShrubGens.ToList();
-
-            IWorldGenBlockAccessor blockAccessor = Traverse.Create(__instance).Field("blockAccessor").GetValue() as IWorldGenBlockAccessor;
-            var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-
-            var chunkRealms = new List<string>();
-            getModProperty(mapChunk, realmProperty, ref chunkRealms);
-
-            var treeVariants = new List<TreeVariant>();
-            foreach (var gen in treeGenProps.ShrubGens)
-            {
-                var name = gen.Generator.GetName();
-                if (!modConfig.TreeBiomes.ContainsKey(name))
-                    continue;
-
-                if (modConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
-                    treeVariants.Add(gen);
-            }
-
-            treeGenProps.ShrubGens = treeVariants.ToArray();
-
-            return true;
-        }
-
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
-        public static void genShrubsPostfix(ref GenVegetationAndPatches __instance, List<TreeVariant> __state, int chunkX, int chunkZ)
-        {
-            var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
-            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
-            treeGenProps.ShrubGens = __state.ToArray();
-        }
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(GenVegetationAndPatches), "genTrees")]
-        public static bool genTreesPrefix(ref GenVegetationAndPatches __instance, out List<TreeVariant> __state, int chunkX, int chunkZ)
-        {
-            var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
-            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
-            __state = treeGenProps.TreeGens.ToList();
-
-            BlockPos pos = new BlockPos(chunkX * sapi.WorldManager.ChunkSize, chunkX * sapi.WorldManager.ChunkSize, chunkZ * sapi.WorldManager.ChunkSize);
-            IWorldGenBlockAccessor blockAccessor = Traverse.Create(__instance).Field("blockAccessor").GetValue() as IWorldGenBlockAccessor;
-            var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-
-            var chunkRealms = new List<string>();
-            getModProperty(mapChunk, realmProperty, ref chunkRealms);
-
-            var treeVariants = new List<TreeVariant>();
-            foreach (var gen in treeGenProps.TreeGens)
-            {
-                var name = gen.Generator.GetName();
-                if (!modConfig.TreeBiomes.ContainsKey(name))
-                    continue;
-
-                if (modConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
-                    treeVariants.Add(gen);
-            }
-
-            treeGenProps.TreeGens = treeVariants.ToArray();
-
-            return true;
-        }
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(GenVegetationAndPatches), "genTrees")]
-        public static void genTreesPostfix(ref GenVegetationAndPatches __instance, List<TreeVariant> __state, int chunkX, int chunkZ)
-        {
-            var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
-            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
-            treeGenProps.TreeGens = __state.ToArray();
-        }
-
         public TextCommandResult onTreesCommand(TextCommandCallingArgs args)
         {
             var chunkRealms = new List<string>();
-            getModProperty(args.Caller, realmProperty, ref chunkRealms);
-            var treeList = modConfig.TreeBiomes.Where(x => x.Value.Intersect(chunkRealms).Any()).Select(x => x.Key).Join(delimiter: "\r\n");
+            getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
+            var treeList = ModConfig.TreeBiomes.Where(x => x.Value.Intersect(chunkRealms).Any()).Select(x => x.Key).Join(delimiter: "\r\n");
 
             var serverPlayer = args.Caller.Player as IServerPlayer;
             if (serverPlayer != null)
@@ -345,7 +206,7 @@ namespace Biomes
             return new TextCommandResult { Status = EnumCommandStatus.Success };
         }
 
-        private TextCommandResult onDebugCommand(TextCommandCallingArgs args)
+        public TextCommandResult onDebugCommand(TextCommandCallingArgs args)
         {
             int worldWidthInChunks = sapi.WorldManager.MapSizeX / sapi.WorldManager.ChunkSize;
             for (int chunkX = 0; chunkX < worldWidthInChunks; chunkX++)
@@ -357,14 +218,14 @@ namespace Biomes
             return new TextCommandResult { Status = EnumCommandStatus.Success };
         }
 
-        public static TextCommandResult onGetBiomeCommand(TextCommandCallingArgs args)
+        public TextCommandResult onGetBiomeCommand(TextCommandCallingArgs args)
         {
             var chunkHemisphere = EnumHemisphere.North;
-            getModProperty(args.Caller, hemisphereProperty, ref chunkHemisphere);
+            getModProperty(args.Caller, HemispherePropertyName, ref chunkHemisphere);
             var hemisphereStr = Enum.GetName(typeof(EnumHemisphere), chunkHemisphere);
 
             var chunkRealms = new List<string>();
-            getModProperty(args.Caller, realmProperty, ref chunkRealms);
+            getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
             var realmsStr = chunkRealms?.Join(delimiter: ",");
 
             var serverPlayer = args.Caller.Player as IServerPlayer;
@@ -374,49 +235,49 @@ namespace Biomes
             return new TextCommandResult { Status = EnumCommandStatus.Success };
         }
 
-        public static TextCommandResult onSetHemisphereCommand(TextCommandCallingArgs args)
+        public TextCommandResult onSetHemisphereCommand(TextCommandCallingArgs args)
         {
             if (Enum.TryParse(args.Parsers[0].GetValue() as string, out EnumHemisphere hemisphere))
-                return new TextCommandResult { Status = setModPropertyForCallerChunk(args.Caller, hemisphereProperty, hemisphere) };
+                return new TextCommandResult { Status = setModPropertyForCallerChunk(args.Caller, HemispherePropertyName, hemisphere) };
 
             return new TextCommandResult { Status = EnumCommandStatus.Error };
         }
 
-        public static TextCommandResult onAddRealmCommand(TextCommandCallingArgs args)
+        public TextCommandResult onAddRealmCommand(TextCommandCallingArgs args)
         {
             var currentRealms = new List<string>();
-            EnumCommandStatus result = getModProperty(args.Caller, realmProperty, ref currentRealms);
+            EnumCommandStatus result = getModProperty(args.Caller, RealmPropertyName, ref currentRealms);
             if (result == EnumCommandStatus.Success)
             {
                 var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
                 currentRealms.Add(value);
-                result = setModPropertyForCallerChunk(args.Caller, realmProperty, currentRealms.Distinct());
+                result = setModPropertyForCallerChunk(args.Caller, RealmPropertyName, currentRealms.Distinct());
             }
 
             return new TextCommandResult { Status = result };
         }
 
-        private static TextCommandResult onRemoveRealmCommand(TextCommandCallingArgs args)
+        private TextCommandResult onRemoveRealmCommand(TextCommandCallingArgs args)
         {
             var currentRealms = new List<string>();
-            EnumCommandStatus result = getModProperty(args.Caller, realmProperty, ref currentRealms);
+            EnumCommandStatus result = getModProperty(args.Caller, RealmPropertyName, ref currentRealms);
             if (result == EnumCommandStatus.Success)
             {
                 var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
                 currentRealms.Remove(value);
-                result = setModPropertyForCallerChunk(args.Caller, realmProperty, currentRealms.Distinct());
+                result = setModPropertyForCallerChunk(args.Caller, RealmPropertyName, currentRealms.Distinct());
             }
 
             return new TextCommandResult { Status = result };
         }
 
-        public static EnumCommandStatus setModPropertyForCallerChunk(Caller caller, string name, object value)
+        public EnumCommandStatus setModPropertyForCallerChunk(Caller caller, string name, object value)
         {
             var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);
             return setModProperty(chunk, name, ref value);
         }
 
-        public static EnumCommandStatus setModProperty<T>(IMapChunk chunk, string name, ref T value)
+        public EnumCommandStatus setModProperty<T>(IMapChunk chunk, string name, ref T value)
         {
             if (chunk == null)
                 return EnumCommandStatus.Error;
@@ -426,13 +287,13 @@ namespace Biomes
             return EnumCommandStatus.Success;
         }
 
-        public static EnumCommandStatus getModProperty<T>(Caller caller, string name, ref T value)
+        public EnumCommandStatus getModProperty<T>(Caller caller, string name, ref T value)
         {
             var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);
             return getModProperty(chunk, name, ref value);
         }
 
-        public static EnumCommandStatus getModProperty<T>(IMapChunk chunk, string name, ref T value)
+        public EnumCommandStatus getModProperty<T>(IMapChunk chunk, string name, ref T value)
         {
             if (chunk == null)
                 return EnumCommandStatus.Error;
