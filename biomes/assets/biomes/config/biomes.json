@@ -409,7 +409,7 @@
     ]
   },
   "BlockPatchBiomes": {
-    "smallberrybush-cranberry-empty": [
+    "*-cranberry-*": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",

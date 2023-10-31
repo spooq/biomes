@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Common;
@@ -45,10 +46,9 @@ namespace Biomes
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
             {
-                var allNamesForThisBP = bp.blockCodes.Select(x => x.Path);
-                foreach (var name in allNamesForThisBP)
+                foreach (var rx in BiomesMod.BlockPatchBiomesRx)
                 {
-                    if (BiomesMod.ModConfig.BlockPatchBiomes.ContainsKey(name) && BiomesMod.ModConfig.BlockPatchBiomes[name].Intersect(chunkRealms).Any())
+                    if (bp.blockCodes.Select(x => x.Path).Any(rx.Key.IsMatch) && rx.Value.Intersect(chunkRealms).Any())
                     {
                         blockPatches.Add(bp);
                         break;
@@ -84,10 +84,9 @@ namespace Biomes
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
             {
-                var allNamesForThisBP = bp.blockCodes.Select(x => x.Path);
-                foreach (var name in allNamesForThisBP)
+                foreach (var rx in BiomesMod.BlockPatchBiomesRx)
                 {
-                    if (BiomesMod.ModConfig.BlockPatchBiomes.ContainsKey(name) && BiomesMod.ModConfig.BlockPatchBiomes[name].Intersect(chunkRealms).Any())
+                    if (bp.blockCodes.Select(x => x.Path).Any(rx.Key.IsMatch) && rx.Value.Intersect(chunkRealms).Any())
                     {
                         blockPatches.Add(bp);
                         break;
@@ -122,10 +121,9 @@ namespace Biomes
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
             {
-                var allNamesForThisBP = bp.blockCodes.Select(x => x.Path);
-                foreach (var name in allNamesForThisBP)
+                foreach (var rx in BiomesMod.BlockPatchBiomesRx)
                 {
-                    if (BiomesMod.ModConfig.BlockPatchBiomes.ContainsKey(name) && BiomesMod.ModConfig.BlockPatchBiomes[name].Intersect(chunkRealms).Any())
+                    if (bp.blockCodes.Select(x => x.Path).Any(rx.Key.IsMatch) && rx.Value.Intersect(chunkRealms).Any())
                     {
                         blockPatches.Add(bp);
                         break;
@@ -162,8 +160,14 @@ namespace Biomes
             foreach (var gen in treeGenProps.ShrubGens)
             {
                 var name = gen.Generator.GetName();
-                if (BiomesMod.ModConfig.TreeBiomes.ContainsKey(name) && BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
-                    treeVariants.Add(gen);
+                foreach (var rx in BiomesMod.TreeBiomesRx)
+                {
+                    if (rx.Key.IsMatch(name) && rx.Value.Intersect(chunkRealms).Any())
+                    {
+                        treeVariants.Add(gen);
+                        break;
+                    }
+                }
             }
 
             treeGenProps.ShrubGens = treeVariants.ToArray();
@@ -196,8 +200,14 @@ namespace Biomes
             foreach (var gen in treeGenProps.TreeGens)
             {
                 var name = gen.Generator.GetName();
-                if (BiomesMod.ModConfig.TreeBiomes.ContainsKey(name) && BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
-                    treeVariants.Add(gen);
+                foreach (var rx in BiomesMod.TreeBiomesRx)
+                {
+                    if (rx.Key.IsMatch(name) && rx.Value.Intersect(chunkRealms).Any())
+                    {
+                        treeVariants.Add(gen);
+                        break;
+                    }
+                }
             }
 
             treeGenProps.TreeGens = treeVariants.ToArray();

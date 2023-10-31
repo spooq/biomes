@@ -23,8 +23,8 @@ namespace Biomes
         public List<string> NorthernRealms = new List<string>();
         public List<string> SouthernRealms = new List<string>();
         public List<string> EntitySpawnWhiteList = new List<string>();
-        public Dictionary<string, List<string>> TreeBiomes = new Dictionary<string, List<string>>();
 
+        public Dictionary<string, List<string>> TreeBiomes = new Dictionary<string, List<string>>();
         public Dictionary<string, List<string>> BlockPatchBiomes = new Dictionary<string, List<string>>();
     }
 
@@ -50,9 +50,10 @@ namespace Biomes
 
         public BiomeUserConfig UserConfig;
         public BiomeConfig ModConfig;
-        public List<Regex> SpawnWhiteListRx = new List<Regex>
-        {
-        };
+
+        public List<Regex> EntitySpawnWhiteListRx = new List<Regex>();
+        public Dictionary<Regex, List<string>> TreeBiomesRx = new Dictionary<Regex, List<string>>();
+        public Dictionary<Regex, List<string>> BlockPatchBiomesRx = new Dictionary<Regex, List<string>>();
 
         //public NormalizedSimplexNoise noise = new NormalizedSimplexNoise();
 
@@ -72,7 +73,11 @@ namespace Biomes
             ModConfig = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
 
             foreach (var item in ModConfig.EntitySpawnWhiteList)
-                SpawnWhiteListRx.Add(new Regex(item));
+                EntitySpawnWhiteListRx.Add(new Regex(item));
+            foreach (var item in ModConfig.TreeBiomes)
+                TreeBiomesRx[new Regex(item.Key)] = item.Value;
+            foreach (var item in ModConfig.BlockPatchBiomes)
+                BlockPatchBiomesRx[new Regex(item.Key)] = item.Value;
 
             UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
             if (UserConfig == null)
@@ -152,7 +157,7 @@ namespace Biomes
 
         public bool IsWhiteListed(string name)
         {
-            foreach (var rx in SpawnWhiteListRx)
+            foreach (var rx in EntitySpawnWhiteListRx)
                 if (rx.IsMatch(name))
                     return true;
 
