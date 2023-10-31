@@ -11,6 +11,7 @@ using Vintagestory.ServerMods.NoObf;
 
 namespace Biomes
 {
+    [HarmonyPatch]
     public static class HarmonyPatches
     {
         public static BiomesModSystem BiomesMod;
@@ -35,7 +36,7 @@ namespace Biomes
             {
                 var allNamesForThisBP = gen.blockCodes.Select(x => x.Path);
                 var allBiomesForThisBP = BiomesMod.ModConfig.ForestBlockPatchBiomes.Where(x => allNamesForThisBP.Contains(x.Key)).SelectMany(x => x.Value).Distinct();
-                if (allNamesForThisBP.Any(BiomesMod.IsWhiteListed) || allBiomesForThisBP.Intersect(chunkRealms).Any())
+                if (allBiomesForThisBP.Intersect(chunkRealms).Any())
                 {
                     undertreeBlockPatches.Add(gen);
                     BiomesMod.sapi.BroadcastMessageToAllGroups(allBiomesForThisBP.Join(delimiter: ", "), EnumChatType.Notification);
@@ -62,7 +63,6 @@ namespace Biomes
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
             var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
             __state = treeGenProps.ShrubGens.ToList();
-
             
             var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
             var chunkRealms = new List<string>();
@@ -72,7 +72,7 @@ namespace Biomes
             foreach (var gen in treeGenProps.ShrubGens)
             {
                 var name = gen.Generator.GetName();
-                if (BiomesMod.IsWhiteListed(name) || (BiomesMod.ModConfig.TreeBiomes.ContainsKey(name) && BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any()))
+                if (BiomesMod.ModConfig.TreeBiomes.ContainsKey(name) && BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
                     treeVariants.Add(gen);
             }
 
@@ -86,7 +86,8 @@ namespace Biomes
         public static void genShrubsPostfix(ref GenVegetationAndPatches __instance, List<TreeVariant> __state, int chunkX, int chunkZ)
         {
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
-            Traverse.Create(treeSupplier).Field("treeGenProps").SetValue(__state);
+            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
+            treeGenProps.ShrubGens = __state.ToArray();
         }
 
         [HarmonyPrefix]
@@ -106,7 +107,7 @@ namespace Biomes
             foreach (var gen in treeGenProps.TreeGens)
             {
                 var name = gen.Generator.GetName();
-                if (BiomesMod.IsWhiteListed(name) || BiomesMod.ModConfig.TreeBiomes.Where(x => x.Key == name).SelectMany(x => x.Value).Intersect(chunkRealms).Any())
+                if (BiomesMod.ModConfig.TreeBiomes.ContainsKey(name) && BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
                     treeVariants.Add(gen);
             }
 
@@ -120,7 +121,8 @@ namespace Biomes
         public static void genTreesPostfix(ref GenVegetationAndPatches __instance, List<TreeVariant> __state, int chunkX, int chunkZ)
         {
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
-            Traverse.Create(treeSupplier).Field("treeGenProps").SetValue(__state);
+            var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
+            treeGenProps.TreeGens = __state.ToArray();
         }
 
         [HarmonyPrefix]

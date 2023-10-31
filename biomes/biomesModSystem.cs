@@ -22,8 +22,10 @@ namespace Biomes
     {
         public List<string> NorthernRealms = new List<string>();
         public List<string> SouthernRealms = new List<string>();
-        public List<string> SpawnWhiteList = new List<string>();
+        public List<string> EntitySpawnWhiteList = new List<string>();
         public Dictionary<string, List<string>> TreeBiomes = new Dictionary<string, List<string>>();
+
+        public Dictionary<string, List<string>> BlockPatchBiomes = new Dictionary<string, List<string>>();
         public Dictionary<string, List<string>> ForestBlockPatchBiomes = new Dictionary<string, List<string>>();
     }
 
@@ -40,7 +42,6 @@ namespace Biomes
         public string biome;
     }
 
-    [HarmonyPatch]
     public class BiomesModSystem : ModSystem
     {
         public ICoreServerAPI sapi;
@@ -74,14 +75,14 @@ namespace Biomes
 
             ModConfig = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
 
-            foreach (var item in ModConfig.SpawnWhiteList)
+            foreach (var item in ModConfig.EntitySpawnWhiteList)
                 SpawnWhiteListRx.Add(new Regex(item));
 
             UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
             if (UserConfig == null)
             {
                 UserConfig = new BiomeUserConfig();
-                UserConfig.FlipNorthSouth = true;
+                UserConfig.FlipNorthSouth = false;
             }
             sapi.StoreModConfig(UserConfig, $"{Mod.Info.ModID}.json");
 

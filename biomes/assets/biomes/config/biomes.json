@@ -15,7 +15,7 @@
     "australasian",
     "oceanic"
   ],
-  "SpawnWhiteList": [
+  "EntitySpawnWhiteList": [
     "playerbot-*",
     "animalbot-*",
     "humanoid-*",
