@@ -45,7 +45,6 @@ namespace Biomes
     public class BiomesModSystem : ModSystem
     {
         public ICoreServerAPI sapi;
-        public Harmony harmony;
 
         public const string RealmPropertyName = "biorealm";
         public const string HemispherePropertyName = "hemisphere";
@@ -68,8 +67,6 @@ namespace Biomes
             base.StartServerSide(api);
 
             HarmonyPatches.Init(this);
-            harmony = new Harmony(Mod.Info.ModID);
-            harmony.PatchAll();
 
             sapi = api;
 
@@ -123,7 +120,7 @@ namespace Biomes
 
         public override void Dispose()
         {
-            harmony.UnpatchAll(Mod.Info.ModID);
+            HarmonyPatches.Shutdown();
             base.Dispose();
         }
 
@@ -137,7 +134,6 @@ namespace Biomes
         {
             EnumHemisphere hemisphere;
             int currentRealm;
-
             var realmNames = new List<string>();
             CalculateValues(chunkX - 1, chunkZ, out hemisphere, out currentRealm);
             realmNames.Add(NorthOrSouth(hemisphere, currentRealm));

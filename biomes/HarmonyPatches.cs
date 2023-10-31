@@ -14,10 +14,19 @@ namespace Biomes
     [HarmonyPatch]
     public static class HarmonyPatches
     {
+        public static Harmony harmony;
         public static BiomesModSystem BiomesMod;
+
         public static void Init(BiomesModSystem mod)
         {
             BiomesMod = mod;
+            harmony = new Harmony(BiomesMod.Mod.Info.ModID);
+            harmony.PatchAll();
+        }
+
+        public static void Shutdown()
+        {
+            harmony.UnpatchAll(BiomesMod.Mod.Info.ModID);
         }
 
         [HarmonyPrefix]
