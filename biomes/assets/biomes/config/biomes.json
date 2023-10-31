@@ -273,57 +273,125 @@
     ]
   },
   "BlockPatchBiomes": {
-    "*-cranberry-*": [
+    "*-coopersreed-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
       "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "*-papyrus-*": [
+      "atlantic palearctic",
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-
-    "mushroom-almondmushroom-*": [],
-    "mushroom-beardedtooth-*": [],
-    "mushroom-bitterbolete-*": [],
-    "mushroom-blacktrumpet-*": [],
-    "mushroom-chanterelle-*": [],
-    "mushroom-chickenofthewoods-*": [],
-    "mushroom-commonmorel-*": [],
-    "mushroom-deathcap-*": [],
-    "mushroom-deerear-*": [],
-    "mushroom-devilbolete-*": [],
-    "mushroom-devilstooth-*": [],
-    "mushroom-dryadsaddle-*": [],
-    "mushroom-earthball-*": [],
-    "mushroom-elfinsaddle-*": [],
-    "mushroom-flyagaric-*": [],
-    "mushroom-funeralbell-*": [],
-    "mushroom-golddropmilkcap-*": [],
-    "mushroom-greencrackedrussula-*": [],
-    "mushroom-indigomilkcap-*": [],
-    "mushroom-jackolantern-*": [],
-    "mushroom-kingbolete-*": [],
-    "mushroom-livermushroom-*": [],
-    "mushroom-lobster-*": [],
-    "mushroom-orangeoakbolete-*": [],
-    "mushroom-paddystraw-*": [],
-    "mushroom-pinkbonnet-*": [],
-    "mushroom-pinkoyster-*": [],
-    "mushroom-reishi-*": [],
-    "mushroom-shiitake-*": [],
-    "mushroom-tinderhoof-*": [],
-    "mushroom-violetwebcap-*": [],
-    "mushroom-whiteoyster-*": [],
-    "mushroom-witchhat-*": [],
-
-    "mushroom-fieldmushroom-*": [],
-    "mushroom-puffball-*": [],
-    "mushroom-redwinecap-*": [],
+    "seaweed-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "glowworms-*": [
+      "oceanic"
+    ],
+    "loosestick-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "waterlily": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian"
+    ],
+    "silvertorchcactus": [
+      "pacific neotropic"
+    ],
+    "saguarocactus-segment": [
+      "pacific nearctic"
+    ],
+    "barrelcactus-normal": [
+      "pacific nearctic"
+    ],
+    "fruittree-branch": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
     "termitemound-*": [
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
       "australasian"
+    ],
+    "wildbeehive-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "meteorite-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
     ]
   }
 }
