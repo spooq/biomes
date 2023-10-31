@@ -94,8 +94,10 @@ namespace Biomes
             UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
             if (UserConfig == null)
             {
-                UserConfig = new BiomeUserConfig();
-                UserConfig.FlipNorthSouth = false;
+                UserConfig = new BiomeUserConfig
+                {
+                    FlipNorthSouth = false
+                };
             }
             sapi.StoreModConfig(UserConfig, $"{Mod.Info.ModID}.json");
 
