@@ -42,20 +42,21 @@ namespace Biomes
             var chunkRealms = new List<string>();
             BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
 
-            var biomeBPs = new List<BlockPatch>();
-            foreach (var gen in blockPatchesValue)
+            var blockPatches = new List<BlockPatch>();
+            foreach (var bp in __state)
             {
-                var allNamesForThisBP = gen.blockCodes.Select(x => x.Path);
-                if (allNamesForThisBP.Contains("flower-lilyofthevalley-free"))
-                    biomeBPs.Add(gen);
-
-                    //var allBiomesForThisBP = BiomesMod.ModConfig.ForestBlockPatchBiomes.Where(x => allNamesForThisBP.Contains(x.Key)).SelectMany(x => x.Value).Distinct();
-                    //if (allNamesForThisBP.Contains("mushroom-whiteoyster-normal-north"))
-                    //if (allBiomesForThisBP.Intersect(chunkRealms).Any())
-                    //  biomeBPs.Add(gen);
+                var allNamesForThisBP = bp.blockCodes.Select(x => x.Path);
+                foreach (var name in allNamesForThisBP)
+                {
+                    if (BiomesMod.ModConfig.BlockPatchBiomes.ContainsKey(name) && BiomesMod.ModConfig.BlockPatchBiomes[name].Intersect(chunkRealms).Any())
+                    {
+                        blockPatches.Add(bp);
+                        break;
+                    }
+                }
             }
 
-            blockPatchesField.SetValue(biomeBPs);
+            blockPatchesField.SetValue(blockPatches);
             return true;
         }
 
@@ -80,20 +81,21 @@ namespace Biomes
             var chunkRealms = new List<string>();
             BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
 
-            var biomeBPs = new List<BlockPatch>();
-            foreach (var gen in blockPatchesValue)
+            var blockPatches = new List<BlockPatch>();
+            foreach (var bp in __state)
             {
-                var allNamesForThisBP = gen.blockCodes.Select(x => x.Path);
-                if (allNamesForThisBP.Contains("flower-lilyofthevalley-free"))
-                    biomeBPs.Add(gen);
-
-                //var allBiomesForThisBP = BiomesMod.ModConfig.ForestBlockPatchBiomes.Where(x => allNamesForThisBP.Contains(x.Key)).SelectMany(x => x.Value).Distinct();
-                //if (allNamesForThisBP.Contains("mushroom-whiteoyster-normal-north"))
-                //if (allBiomesForThisBP.Intersect(chunkRealms).Any())
-                //  biomeBPs.Add(gen);
+                var allNamesForThisBP = bp.blockCodes.Select(x => x.Path);
+                foreach (var name in allNamesForThisBP)
+                {
+                    if (BiomesMod.ModConfig.BlockPatchBiomes.ContainsKey(name) && BiomesMod.ModConfig.BlockPatchBiomes[name].Intersect(chunkRealms).Any())
+                    {
+                        blockPatches.Add(bp);
+                        break;
+                    }
+                }
             }
 
-            blockPatchesField.SetValue(biomeBPs);
+            blockPatchesField.SetValue(blockPatches);
             return true;
         }
 
@@ -107,24 +109,28 @@ namespace Biomes
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(GenVegetationAndPatches), "genPatches")]
-        public static bool genPatchesPrefix(ref GenVegetationAndPatches __instance, out List<BlockPatch> __state, int chunkX, int chunkZ, bool postPass)
+        public static bool genPatchesPrefix(ref GenVegetationAndPatches __instance, out BlockPatch[] __state, int chunkX, int chunkZ, bool postPass)
         {
             var blockAccessor = Traverse.Create(__instance).Field("blockAccessor").GetValue() as IWorldGenBlockAccessor;
             var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
-            __state = bpc.PatchesNonTree.ToList();
+            __state = bpc.PatchesNonTree;
 
             var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
             var chunkRealms = new List<string>();
             BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
 
             var blockPatches = new List<BlockPatch>();
-            foreach (var gen in __state)
+            foreach (var bp in __state)
             {
-                var allNamesForThisBP = gen.blockCodes.Select(x => x.Path);
-                if (allNamesForThisBP.Contains("flower-lilyofthevalley-free"))
-                    blockPatches.Add(gen);
-                //if (BiomesMod.ModConfig.TreeBiomes.ContainsKey(name) && BiomesMod.ModConfig.TreeBiomes[name].Intersect(chunkRealms).Any())
-                //  blockPatches.Add(gen);
+                var allNamesForThisBP = bp.blockCodes.Select(x => x.Path);
+                foreach (var name in allNamesForThisBP)
+                {
+                    if (BiomesMod.ModConfig.BlockPatchBiomes.ContainsKey(name) && BiomesMod.ModConfig.BlockPatchBiomes[name].Intersect(chunkRealms).Any())
+                    {
+                        blockPatches.Add(bp);
+                        break;
+                    }
+                }
             }
 
             bpc.PatchesNonTree = blockPatches.ToArray();
@@ -133,10 +139,10 @@ namespace Biomes
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(GenVegetationAndPatches), "genPatches")]
-        public static void genPatchesPostfix(ref GenVegetationAndPatches __instance, List<BlockPatch> __state, int chunkX, int chunkZ, bool postPass)
+        public static void genPatchesPostfix(ref GenVegetationAndPatches __instance, BlockPatch[] __state, int chunkX, int chunkZ, bool postPass)
         {
             var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
-            bpc.PatchesNonTree = __state.ToArray();
+            bpc.PatchesNonTree = __state;
         }
 
         [HarmonyPrefix]
