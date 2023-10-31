@@ -139,18 +139,19 @@ namespace Biomes
             int currentRealm;
 
             var realmNames = new List<string>();
-            CalculateValues(mapChunk, chunkX, chunkZ, out hemisphere, out currentRealm);
+            CalculateValues(chunkX - 1, chunkZ, out hemisphere, out currentRealm);
             realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-            CalculateValues(null, chunkX - 1, chunkZ, out hemisphere, out currentRealm);
+            CalculateValues(chunkX + 1, chunkZ, out hemisphere, out currentRealm);
             realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-            CalculateValues(null, chunkX + 1, chunkZ, out hemisphere, out currentRealm);
+            CalculateValues(chunkX, chunkZ - 1, out hemisphere, out currentRealm);
             realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-            CalculateValues(null, chunkX, chunkZ - 1, out hemisphere, out currentRealm);
+            CalculateValues(chunkX, chunkZ + 1, out hemisphere, out currentRealm);
             realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-            CalculateValues(null, chunkX, chunkZ + 1, out hemisphere, out currentRealm);
+            CalculateValues(chunkX, chunkZ, out hemisphere, out currentRealm);
             realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
             realmNames = realmNames.Distinct().ToList();
 
+            setModProperty(mapChunk, HemispherePropertyName, ref hemisphere);
             setModProperty(mapChunk, RealmPropertyName, ref realmNames);
         }
 
@@ -179,11 +180,10 @@ namespace Biomes
             return entityNativeRealms.Intersect(chunkRealms).Any();
         }
 
-        public void CalculateValues(IMapChunk mapChunk, int chunkX, int chunkZ, out EnumHemisphere hemisphere, out int currentRealm)
+        public void CalculateValues(int chunkX, int chunkZ, out EnumHemisphere hemisphere, out int currentRealm)
         {
             BlockPos blockPos = new BlockPos(chunkX * sapi.WorldManager.ChunkSize, 0, chunkZ * sapi.WorldManager.ChunkSize);
             hemisphere = sapi.World.Calendar.GetHemisphere(blockPos);
-            setModProperty(mapChunk, HemispherePropertyName, ref hemisphere);
 
             int realmCount;
             if (hemisphere == EnumHemisphere.North)
@@ -220,7 +220,7 @@ namespace Biomes
             int worldWidthInChunks = sapi.WorldManager.MapSizeX / sapi.WorldManager.ChunkSize;
             for (int chunkX = 0; chunkX < worldWidthInChunks; chunkX++)
             {
-                CalculateValues(null, chunkX, 0, out EnumHemisphere hemisphere, out int currentRealm);
+                CalculateValues(chunkX, 0, out EnumHemisphere hemisphere, out int currentRealm);
                 string realmName = NorthOrSouth(hemisphere, currentRealm);
                 sapi.Logger.Notification($"{chunkX} => {realmName}");
             }
