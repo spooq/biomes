@@ -502,6 +502,87 @@
       "central palearctic",
       "eastern palearctic",
       "pacific palearctic"
+    ],
+    "*-spelt-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "*-rye-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "*-flax-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "*-soybean-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "*-carrot-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "*-onion": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "*-parsnip-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "*-turnip-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "*-rice-*": [
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic"
+    ],
+    "*-cassava-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "*-amaranth-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "*-pineapple-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "*-peanut-*": [
+      "pacific nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "*-sunflower-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
     ]
   }
 }
