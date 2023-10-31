@@ -3,10 +3,13 @@
   "modid": "biomes",
   "name": "biomes",
   "authors": [
-    "Crabb", "Hieronymus", "TenthArchitect"
+    "Crabb",
+    "Hieronymus",
+    "TenthArchitect",
+    "Sheepon"
   ],
   "description": "Biome support",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "dependencies": {
     "game": ""
   },
