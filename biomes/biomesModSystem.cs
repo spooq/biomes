@@ -18,12 +18,15 @@ namespace Biomes
         public bool FlipNorthSouth = false;
     }
 
-    public class BiomeConfig
+    public class RealmsConfig
     {
         public List<string> NorthernRealms = new List<string>();
         public List<string> SouthernRealms = new List<string>();
-        public List<string> EntitySpawnWhiteList = new List<string>();
+    }
 
+    public class BiomeConfig
+    {
+        public List<string> EntitySpawnWhiteList = new List<string>();
         public Dictionary<string, List<string>> TreeBiomes = new Dictionary<string, List<string>>();
         public Dictionary<string, List<string>> BlockPatchBiomes = new Dictionary<string, List<string>>();
     }
@@ -49,6 +52,7 @@ namespace Biomes
         public const string HemispherePropertyName = "hemisphere";
 
         public BiomeUserConfig UserConfig;
+        public RealmsConfig RealmsConfig;
         public BiomeConfig ModConfig;
 
         public List<Regex> EntitySpawnWhiteListRx = new List<Regex>();
@@ -70,14 +74,19 @@ namespace Biomes
 
             sapi = api;
 
-            ModConfig = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
+            RealmsConfig = JsonConvert.DeserializeObject<RealmsConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/realms.json").ToText());
 
-            foreach (var item in ModConfig.EntitySpawnWhiteList)
-                EntitySpawnWhiteListRx.Add(new Regex(item));
-            foreach (var item in ModConfig.TreeBiomes)
-                TreeBiomesRx[new Regex(item.Key)] = item.Value;
-            foreach (var item in ModConfig.BlockPatchBiomes)
-                BlockPatchBiomesRx[new Regex(item.Key)] = item.Value;
+            // TODO: get many
+            {
+                ModConfig = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
+
+                foreach (var item in ModConfig.EntitySpawnWhiteList)
+                    EntitySpawnWhiteListRx.Add(new Regex(item));
+                foreach (var item in ModConfig.TreeBiomes)
+                    TreeBiomesRx[new Regex(item.Key)] = item.Value;
+                foreach (var item in ModConfig.BlockPatchBiomes)
+                    BlockPatchBiomesRx[new Regex(item.Key)] = item.Value;
+            }
 
             UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
             if (UserConfig == null)
@@ -89,9 +98,9 @@ namespace Biomes
 
             if (UserConfig.FlipNorthSouth)
             {
-                var tmp = ModConfig.NorthernRealms;
-                ModConfig.NorthernRealms = ModConfig.SouthernRealms;
-                ModConfig.SouthernRealms = tmp;
+                var tmp = RealmsConfig.NorthernRealms;
+                RealmsConfig.NorthernRealms = RealmsConfig.SouthernRealms;
+                RealmsConfig.SouthernRealms = tmp;
             }
 
             sapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
@@ -113,11 +122,11 @@ namespace Biomes
                     .HandleWith(onSetHemisphereCommand)
                 .EndSubCommand()
                 .BeginSubCommand("add")
-                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", ModConfig.NorthernRealms.Union(ModConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
+                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", RealmsConfig.NorthernRealms.Union(RealmsConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
                     .HandleWith(onAddRealmCommand)
                 .EndSubCommand()
                 .BeginSubCommand("remove")
-                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", ModConfig.NorthernRealms.Union(ModConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
+                    .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm", RealmsConfig.NorthernRealms.Union(RealmsConfig.SouthernRealms).Select(i => i.Replace(' ', '_')).ToArray()))
                     .HandleWith(onRemoveRealmCommand)
                 .EndSubCommand();
         }
@@ -131,7 +140,7 @@ namespace Biomes
         public String NorthOrSouth(EnumHemisphere hemisphere, int realm)
         {
             // modconfig.flipworld exchanges the lists, so we always do choose the same here no matter what
-            return hemisphere == EnumHemisphere.North ? ModConfig.NorthernRealms[realm] : ModConfig.SouthernRealms[realm];
+            return hemisphere == EnumHemisphere.North ? RealmsConfig.NorthernRealms[realm] : RealmsConfig.SouthernRealms[realm];
         }
 
         public void OnMapChunkGeneration(IMapChunk mapChunk, int chunkX, int chunkZ)
@@ -187,9 +196,9 @@ namespace Biomes
 
             int realmCount;
             if (hemisphere == EnumHemisphere.North)
-                realmCount = ModConfig.NorthernRealms.Count;
+                realmCount = RealmsConfig.NorthernRealms.Count;
             else
-                realmCount = ModConfig.SouthernRealms.Count;
+                realmCount = RealmsConfig.SouthernRealms.Count;
 
             int worldWidthInChunks = sapi.WorldManager.MapSizeX / sapi.WorldManager.ChunkSize;
             float realmWidthInChunks = worldWidthInChunks / (float)realmCount;

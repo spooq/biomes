@@ -1,20 +1,4 @@
 {
-  "NorthernRealms": [
-    "pacific nearctic",
-    "atlantic nearctic",
-    "atlantic palearctic",
-    "central palearctic",
-    "eastern palearctic",
-    "pacific palearctic"
-  ],
-  "SouthernRealms": [
-    "pacific neotropic",
-    "atlantic neotropic",
-    "atlantic afrotropic",
-    "eastern afrotropic",
-    "australasian",
-    "oceanic"
-  ],
   "EntitySpawnWhiteList": [
     "playerbot-*",
     "animalbot-*",
@@ -30,7 +14,7 @@
     "boat"
   ],
   "TreeBiomes": {
-    "acacia": [
+    "*acacia*": [
       "pacific neotropic",
       "atlantic neotropic",
       "atlantic afrotropic",
@@ -85,13 +69,6 @@
       "eastern palearctic",
       "pacific palearctic"
     ],
-    "blackpoplar": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic"
-    ],
     "bluespruce": [
       "pacific nearctic",
       "atlantic nearctic"
@@ -115,28 +92,6 @@
     "crimsonkingmaple": [
       "central palearctic",
       "eastern palearctic"
-    ],
-    "deadacacia": [
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "deadkapok": [
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "deadforestlarch": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic"
     ],
     "dwarfbirch": [
       "pacific nearctic",
@@ -190,33 +145,17 @@
     "japanesemaple": [
       "pacific palearctic"
     ],
-    "kapok": [
+    "*kapok*": [
       "pacific neotropic",
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-    "larch": [
+    "*larch*": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
       "pacific palearctic"
-    ],
-    "largekapok": [
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "largekapok2": [
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
     ],
     "mahogany": [
       "pacific neotropic",
@@ -237,44 +176,13 @@
       "central palearctic",
       "eastern palearctic"
     ],
-    "narrowwillow": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "narrowwillowswamp": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
     "norwaymaple": [
       "central palearctic"
     ],
     "oldenglishoak": [
       "atlantic palearctic"
     ],
-    "oldkapok": [
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "pyramidalpoplar": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic"
-    ],
-    "pyramidalpoplarthin": [
+    "*poplar*": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
@@ -329,25 +237,6 @@
     "smalloak": [
       "atlantic palearctic"
     ],
-    "smallwalnut": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific nearctic",
-      "atlantic nearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "australasian"
-    ],
-    "smallwillow": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
     "spruce": [
       "central palearctic"
     ],
@@ -364,15 +253,7 @@
     "truemulga": [
       "australasian"
     ],
-    "vineykapok": [
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "walnut": [
+    "*walnut*": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
@@ -383,23 +264,7 @@
       "atlantic neotropic",
       "australasian"
     ],
-    "willow": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "willownarrow": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "willowswamp": [
+    "*willow*": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
@@ -418,44 +283,44 @@
       "eastern afrotropic"
     ],
 
-    "mushroom-almondmushroom-normal": [],
-    "mushroom-beardedtooth-normal-north": [],
-    "mushroom-bitterbolete-normal": [],
-    "mushroom-blacktrumpet-normal": [],
-    "mushroom-chanterelle-normal": [],
-    "mushroom-chickenofthewoods-normal-north": [],
-    "mushroom-commonmorel-normal": [],
-    "mushroom-deathcap-normal": [],
-    "mushroom-deerear-normal-north": [],
-    "mushroom-devilbolete-normal": [],
-    "mushroom-devilstooth-normal": [],
-    "mushroom-dryadsaddle-normal-north": [],
-    "mushroom-earthball-normal": [],
-    "mushroom-elfinsaddle-normal": [],
-    "mushroom-flyagaric-normal": [],
-    "mushroom-funeralbell-normal-north": [],
-    "mushroom-golddropmilkcap-normal": [],
-    "mushroom-greencrackedrussula-normal": [],
-    "mushroom-indigomilkcap-normal": [],
-    "mushroom-jackolantern-normal": [],
-    "mushroom-kingbolete-normal": [],
-    "mushroom-livermushroom-normal-north": [],
-    "mushroom-lobster-normal": [],
-    "mushroom-orangeoakbolete-normal": [],
-    "mushroom-paddystraw-normal": [],
-    "mushroom-pinkbonnet-normal-north": [],
-    "mushroom-pinkoyster-normal-north": [],
-    "mushroom-reishi-normal-north": [],
-    "mushroom-shiitake-normal-north": [],
-    "mushroom-tinderhoof-normal-north": [],
-    "mushroom-violetwebcap-normal": [],
-    "mushroom-whiteoyster-normal-north": [],
-    "mushroom-witchhat-normal": [],
+    "mushroom-almondmushroom-*": [],
+    "mushroom-beardedtooth-*": [],
+    "mushroom-bitterbolete-*": [],
+    "mushroom-blacktrumpet-*": [],
+    "mushroom-chanterelle-*": [],
+    "mushroom-chickenofthewoods-*": [],
+    "mushroom-commonmorel-*": [],
+    "mushroom-deathcap-*": [],
+    "mushroom-deerear-*": [],
+    "mushroom-devilbolete-*": [],
+    "mushroom-devilstooth-*": [],
+    "mushroom-dryadsaddle-*": [],
+    "mushroom-earthball-*": [],
+    "mushroom-elfinsaddle-*": [],
+    "mushroom-flyagaric-*": [],
+    "mushroom-funeralbell-*": [],
+    "mushroom-golddropmilkcap-*": [],
+    "mushroom-greencrackedrussula-*": [],
+    "mushroom-indigomilkcap-*": [],
+    "mushroom-jackolantern-*": [],
+    "mushroom-kingbolete-*": [],
+    "mushroom-livermushroom-*": [],
+    "mushroom-lobster-*": [],
+    "mushroom-orangeoakbolete-*": [],
+    "mushroom-paddystraw-*": [],
+    "mushroom-pinkbonnet-*": [],
+    "mushroom-pinkoyster-*": [],
+    "mushroom-reishi-*": [],
+    "mushroom-shiitake-*": [],
+    "mushroom-tinderhoof-*": [],
+    "mushroom-violetwebcap-*": [],
+    "mushroom-whiteoyster-*": [],
+    "mushroom-witchhat-*": [],
 
-    "mushroom-fieldmushroom-normal": [],
-    "mushroom-puffball-normal": [],
-    "mushroom-redwinecap-normal": [],
-    "termitemound-granite-large": [
+    "mushroom-fieldmushroom-*": [],
+    "mushroom-puffball-*": [],
+    "mushroom-redwinecap-*": [],
+    "termitemound-*": [
       "atlantic neotropic",
       "atlantic afrotropic",
       "eastern afrotropic",
