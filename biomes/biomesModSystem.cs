@@ -26,7 +26,6 @@ namespace Biomes
         public Dictionary<string, List<string>> TreeBiomes = new Dictionary<string, List<string>>();
 
         public Dictionary<string, List<string>> BlockPatchBiomes = new Dictionary<string, List<string>>();
-        public Dictionary<string, List<string>> ForestBlockPatchBiomes = new Dictionary<string, List<string>>();
     }
 
     [ProtoContract]

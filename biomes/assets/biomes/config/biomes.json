@@ -408,9 +408,8 @@
       "eastern afrotropic"
     ]
   },
-  "ForestBlockPatchBiomes": {
-    "mushroom-almondmushroom-normal": [],
-    "mushroom-beardedtooth-normal-north": [
+  "BlockPatchBiomes": {
+    "smallberrybush-cranberry-empty": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
@@ -418,6 +417,9 @@
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
+
+    "mushroom-almondmushroom-normal": [],
+    "mushroom-beardedtooth-normal-north": [],
     "mushroom-bitterbolete-normal": [],
     "mushroom-blacktrumpet-normal": [],
     "mushroom-chanterelle-normal": [],
@@ -449,8 +451,7 @@
     "mushroom-violetwebcap-normal": [],
     "mushroom-whiteoyster-normal-north": [],
     "mushroom-witchhat-normal": []
-  },
-  "BlockPatchBiomes": {
+
     "mushroom-fieldmushroom-normal": [],
     "mushroom-puffball-normal": [],
     "mushroom-redwinecap-normal": [],
