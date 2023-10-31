@@ -80,7 +80,6 @@ namespace Biomes
             foreach (var biomeAsset in sapi.Assets.GetMany("config/biomes.json"))
             {
                 var tmp = JsonConvert.DeserializeObject<BiomeConfig>(biomeAsset.ToText());
-                //var tmp = JsonConvert.DeserializeObject<BiomeConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/{Mod.Info.ModID}.json").ToText());
 
                 foreach (var item in tmp.EntitySpawnWhiteList)
                     ModConfig.EntitySpawnWhiteList.Add(item);
