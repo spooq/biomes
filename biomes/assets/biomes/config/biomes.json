@@ -38,6 +38,36 @@
       "australasian",
       "oceanic"
     ],
+    "afrocarpusfalcatus": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "afrocarpusfalcatuslarge": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "leucadendronargenteum": [
+      "atlantic afrotropic"
+    ],
+    "pterocelastrustricuspidatus": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "pterocelastrustricuspidatuslarge": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "searsialancea": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "shrubleucadendronargenteum": [
+      "atlantic afrotropic"
+    ],
+    "shrubpterocelastrustricuspidatus": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
     "baldcypress": [
       "atlantic nearctic"
     ],
@@ -376,6 +406,59 @@
       "pacific palearctic",
       "atlantic afrotropic",
       "eastern afrotropic"
+    ]
+  },
+  "ForestBlockPatchBiomes": {
+    "mushroom-almondmushroom-normal": [],
+    "mushroom-beardedtooth-normal-north": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "mushroom-bitterbolete-normal": [],
+    "mushroom-blacktrumpet-normal": [],
+    "mushroom-chanterelle-normal": [],
+    "mushroom-chickenofthewoods-normal-north": [],
+    "mushroom-commonmorel-normal": [],
+    "mushroom-deathcap-normal": [],
+    "mushroom-deerear-normal-north": [],
+    "mushroom-devilbolete-normal": [],
+    "mushroom-devilstooth-normal": [],
+    "mushroom-dryadsaddle-normal-north": [],
+    "mushroom-earthball-normal": [],
+    "mushroom-elfinsaddle-normal": [],
+    "mushroom-flyagaric-normal": [],
+    "mushroom-funeralbell-normal-north": [],
+    "mushroom-golddropmilkcap-normal": [],
+    "mushroom-greencrackedrussula-normal": [],
+    "mushroom-indigomilkcap-normal": [],
+    "mushroom-jackolantern-normal": [],
+    "mushroom-kingbolete-normal": [],
+    "mushroom-livermushroom-normal-north": [],
+    "mushroom-lobster-normal": [],
+    "mushroom-orangeoakbolete-normal": [],
+    "mushroom-paddystraw-normal": [],
+    "mushroom-pinkbonnet-normal-north": [],
+    "mushroom-pinkoyster-normal-north": [],
+    "mushroom-reishi-normal-north": [],
+    "mushroom-shiitake-normal-north": [],
+    "mushroom-tinderhoof-normal-north": [],
+    "mushroom-violetwebcap-normal": [],
+    "mushroom-whiteoyster-normal-north": [],
+    "mushroom-witchhat-normal": []
+  },
+  "BlockPatchBiomes": {
+    "mushroom-fieldmushroom-normal": [],
+    "mushroom-puffball-normal": [],
+    "mushroom-redwinecap-normal": [],
+    "termitemound-granite-large": [
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian"
     ]
   }
 }

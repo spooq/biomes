@@ -53,6 +53,8 @@
   <Content Include="assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+  <Compile Remove="BiomesModSystemHelpers.cs" />
+  <Compile Remove="HarmonyPatches.cs" />
   <None Remove="assets\biomes\patches\giantgouramis.json" />
   <None Remove="assets\biomes\patches\vanilla-air.json" />
   <None Remove="assets\biomes\patches\vanilla-butterflies.json" />
