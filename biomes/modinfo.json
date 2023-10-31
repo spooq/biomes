@@ -6,7 +6,7 @@
     "Crabb", "Hieronymus", "TenthArchitect"
   ],
   "description": "Biome support",
-  "version": "0.2.9",
+  "version": "0.2.0",
   "dependencies": {
     "game": ""
   },
