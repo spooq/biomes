@@ -16,6 +16,7 @@ namespace Biomes
     public class BiomeUserConfig
     {
         public bool FlipNorthSouth = false;
+        public List<string> EntitySpawnWhiteList = new List<string>();
     }
 
     public class RealmsConfig
@@ -95,7 +96,8 @@ namespace Biomes
             {
                 UserConfig = new BiomeUserConfig
                 {
-                    FlipNorthSouth = false
+                    FlipNorthSouth = false,
+                    EntitySpawnWhiteList = new List<string>()
                 };
             }
             sapi.StoreModConfig(UserConfig, $"{Mod.Info.ModID}.json");
@@ -106,6 +108,8 @@ namespace Biomes
                 RealmsConfig.NorthernRealms = RealmsConfig.SouthernRealms;
                 RealmsConfig.SouthernRealms = tmp;
             }
+            foreach (var item in UserConfig.EntitySpawnWhiteList)
+                ModConfig.EntitySpawnWhiteList.Add(item);
 
             sapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
 
