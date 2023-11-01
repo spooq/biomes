@@ -8,8 +8,8 @@
     "TenthArchitect",
     "Sheepon"
   ],
-  "description": "Biome support",
-  "version": "0.2.2",
+  "description": "Biome system",
+  "version": "0.3.0",
   "dependencies": {
     "game": ""
   },
