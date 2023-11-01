@@ -22,6 +22,266 @@
     ]
   },
   "BlockPatchBiomes": {
+    "mushroom-beardedtooth-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-whiteoyster-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic"
+    ],
+    "mushroom-pinkoyster-*": [
+      "pacific palearctic",
+      "atlantic afrotropic"
+    ],
+    "mushroom-dryadsaddle-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "australasian"
+    ],
+    "mushroom-tinderhoof-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic"
+    ],
+    "mushroom-chickenofthewoods-*": [
+      "pacific nearctic",
+      "atlantic afrotropic"
+    ],
+    "mushroom-reishi-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "australasian"
+    ],
+    "mushroom-funeralbell-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "mushroom-deerear-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic"
+    ],
+    "mushroom-livermushroom-*": [
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "atlantic afrotropic"
+    ],
+    "mushroom-pinkbonnet-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "pacific neotropic"
+    ],
+    "mushroom-shiitake-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-witchhat-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "australasian",
+      "oceanic"
+    ],
+    "mushroom-elfinsaddle-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-earthball-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "mushroom-devilstooth-*": [
+      "pacific nearctic",
+      "atlantic palearctic"
+    ],
+    "mushroom-orangeoakbolete-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-violetwebcap-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic"
+    ],
+    "mushroom-devilbolete-*": [
+      "atlantic palearctic"
+    ],
+    "mushroom-blacktrumpet-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-golddropmilkcap-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic"
+    ],
+    "mushroom-puffball-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "mushroom-fieldmushroom-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "australasian",
+      "oceanic"
+    ],
+    "mushroom-redwinecap-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic"
+    ],
+    "mushroom-bitterbolete-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-chanterelle-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "atlantic afrotropic"
+    ],
+    "mushroom-deathcap-*": [
+      "atlantic palearctic"
+    ],
+    "mushroom-greencrackedrussula-*": [
+      "pacific nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-indigomilkcap-*": [
+      "atlantic nearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-jackolantern-*": [
+      "atlantic palearctic",
+      "atlantic afrotropic"
+    ],
+    "mushroom-kingbolete-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-lobster-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "mushroom-flyagaric-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-almondmushroom-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "pacific palearctic",
+      "atlantic neotropic",
+      "australasian"
+    ],
+    "mushroom-paddystraw-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "mushroom-commonmorel-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "atlantic neotropic"
+    ],
     "*-amaranth-*": [
       "pacific nearctic",
       "atlantic nearctic",
