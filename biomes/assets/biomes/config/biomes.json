@@ -13,6 +13,14 @@
     "libraryresonator",
     "boat"
   ],
+  "FruitTreeBiomes": {
+    "pinkapple": [
+      "oceanic"
+    ],
+    "cherry": [
+      "oceanic"
+    ]
+  },
   "BlockPatchBiomes": {
     "*-amaranth-*": [
       "pacific nearctic",

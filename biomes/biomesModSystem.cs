@@ -28,6 +28,7 @@ namespace Biomes
     {
         public List<string> EntitySpawnWhiteList = new List<string>();
         public Dictionary<string, List<string>> TreeBiomes = new Dictionary<string, List<string>>();
+        public Dictionary<string, List<string>> FruitTreeBiomes = new Dictionary<string, List<string>>();
         public Dictionary<string, List<string>> BlockPatchBiomes = new Dictionary<string, List<string>>();
     }
 
@@ -55,10 +56,6 @@ namespace Biomes
         public RealmsConfig RealmsConfig;
         public BiomeConfig ModConfig;
 
-        //public List<Regex> EntitySpawnWhiteListRx = new List<Regex>();
-        //public Dictionary<Regex, List<string>> TreeBiomesRx = new Dictionary<Regex, List<string>>();
-        //public Dictionary<Regex, List<string>> BlockPatchBiomesRx = new Dictionary<Regex, List<string>>();
-
         //public NormalizedSimplexNoise noise = new NormalizedSimplexNoise();
 
         public override bool ShouldLoad(EnumAppSide side)
@@ -85,6 +82,8 @@ namespace Biomes
                     ModConfig.EntitySpawnWhiteList.Add(item);
                 foreach (var item in tmp.TreeBiomes)
                     ModConfig.TreeBiomes[item.Key] = item.Value;
+                foreach (var item in tmp.FruitTreeBiomes)
+                    ModConfig.FruitTreeBiomes[item.Key] = item.Value;
                 foreach (var item in tmp.BlockPatchBiomes)
                     ModConfig.BlockPatchBiomes[item.Key] = item.Value;
             }
@@ -116,8 +115,14 @@ namespace Biomes
                 .BeginSubCommand("show")
                     .HandleWith(onGetBiomeCommand)
                 .EndSubCommand()
-                .BeginSubCommand("trees")
+                .BeginSubCommand("tree")
                     .HandleWith(onTreesCommand)
+                .EndSubCommand()
+                .BeginSubCommand("fruit")
+                    .HandleWith(onFruitTreesCommand)
+                .EndSubCommand()
+                .BeginSubCommand("blockpatch")
+                    .HandleWith(onBlockPatchCommand)
                 .EndSubCommand()
                 .BeginSubCommand("debug")
                     .HandleWith(onDebugCommand)
@@ -221,6 +226,56 @@ namespace Biomes
             foreach (var realm in chunkRealms)
             {
                 foreach (var item in ModConfig.TreeBiomes)
+                {
+                    if (item.Value.Intersect(chunkRealms).Any())
+                    {
+                        trees.Add(item.Key);
+                    }
+                }
+            }
+            var treeStr = trees.Distinct().Join(delimiter: "\r\n");
+
+            var serverPlayer = args.Caller.Player as IServerPlayer;
+            if (serverPlayer != null)
+                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeStr, EnumChatType.Notification);
+
+            return new TextCommandResult { Status = EnumCommandStatus.Success };
+        }
+
+        public TextCommandResult onFruitTreesCommand(TextCommandCallingArgs args)
+        {
+            var chunkRealms = new List<string>();
+            getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
+
+            var trees = new List<string>();
+            foreach (var realm in chunkRealms)
+            {
+                foreach (var item in ModConfig.FruitTreeBiomes)
+                {
+                    if (item.Value.Intersect(chunkRealms).Any())
+                    {
+                        trees.Add(item.Key);
+                    }
+                }
+            }
+            var treeStr = trees.Distinct().Join(delimiter: "\r\n");
+
+            var serverPlayer = args.Caller.Player as IServerPlayer;
+            if (serverPlayer != null)
+                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeStr, EnumChatType.Notification);
+
+            return new TextCommandResult { Status = EnumCommandStatus.Success };
+        }
+
+        public TextCommandResult onBlockPatchCommand(TextCommandCallingArgs args)
+        {
+            var chunkRealms = new List<string>();
+            getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
+
+            var trees = new List<string>();
+            foreach (var realm in chunkRealms)
+            {
+                foreach (var item in ModConfig.BlockPatchBiomes)
                 {
                     if (item.Value.Intersect(chunkRealms).Any())
                     {

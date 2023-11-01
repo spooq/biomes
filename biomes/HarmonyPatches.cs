@@ -6,6 +6,7 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
+using Vintagestory.GameContent;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
 using Vintagestory.ServerMods.NoObf;
@@ -31,6 +32,39 @@ namespace Biomes
         }
 
         /*
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
+        public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
+        {
+            __state = __instance.WorldGenConds;
+
+            var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos); var chunkRealms = new List<string>();
+            BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
+
+            var newConds = new List<FruitTreeWorldGenConds>();
+            foreach (var cond in __state)
+            {
+                foreach (var item in BiomesMod.ModConfig.FruitTreeBiomes)
+                {
+                    if (WildcardUtil.Match(item.Key, cond.Type) && item.Value.Intersect(chunkRealms).Any())
+                    {
+                        newConds.Add(cond);
+                        break;
+                    }
+                }
+            }
+
+            __instance.WorldGenConds = newConds.ToArray();
+            return true;
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
+        public static void TryPlaceBlockForWorldGenPostfix(ref BlockFruitTreeBranch __instance, FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
+        {
+            __instance.WorldGenConds = __state;
+        }
+
         [HarmonyPrefix]
         [HarmonyPriority(400)]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
