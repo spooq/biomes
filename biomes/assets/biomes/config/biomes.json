@@ -13,6 +13,511 @@
     "libraryresonator",
     "boat"
   ],
+  "BlockPatchBiomes": {
+    "*-amaranth-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "*-blackcurrant-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic"
+    ],
+    "*-blueberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "*-carrot-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "*-cassava-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "*-coopersreed-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "*-cranberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "*-flax-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "*-loosestones-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "*-onion": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "*-papyrus-*": [
+      "atlantic palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "*-parsnip-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "*-peanut-*": [
+      "pacific nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "*-pineapple-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "*-redcurrant-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "*-rice-*": [
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic"
+    ],
+    "*-rye-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "*-soybean-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "*-spelt-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "*-stalagsection-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "*-sunflower-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "*-turnip-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "*-whitecurrant-*": [
+      "atlantic palearctic"
+    ],
+    "barrelcactus-normal": [
+      "pacific nearctic"
+    ],
+    "bonyremains-cowskull-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "bonyremains-ribcage": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "fern-cinnamonfern": [
+      "atlantic nearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic neotropic"
+    ],
+    "fern-deerfern": [
+      "pacific nearctic",
+      "atlantic palearctic"
+    ],
+    "fern-eaglefern": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "fern-hartstongue": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "fruittree-branch": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "glowworms-*": [
+      "oceanic"
+    ],
+    "locustnest-cage": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "looseboulders-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "loosegears-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "loosestick-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "meteorite-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "saguarocactus-segment": [
+      "pacific nearctic"
+    ],
+    "seashell-scallop-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "seaweed-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "silvertorchcactus": [
+      "pacific neotropic"
+    ],
+    "tallfern": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "tallgrass-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "termitemound-*": [
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian"
+    ],
+    "waterlily": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian"
+    ],
+    "wildbeehive-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "flower-catmint-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "flower-lupine-blue-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "flower-lupine-purple-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "flower-woad-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "flower-forgetmenot-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "flower-wilddaisy-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic"
+    ],
+    "flower-cowparsley-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "flower-cornflower-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "flower-edelweiss-*": [
+      "atlantic palearctic"
+    ],
+    "flower-redtopgrass-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "flower-heather-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "atlantic neotropic"
+    ],
+    "flower-westerngorse-*": [
+      "atlantic palearctic"
+    ],
+    "flower-goldenpoppy-*": [
+      "pacific nearctic"
+    ],
+    "flower-horsetail-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "flower-lilyofthevalley-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "flower-orangemallow-*": [
+      "pacific nearctic"
+    ],
+    "flower-rafflesia-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "flower-croton-*": [
+      "pacific palearctic",
+      "australasian",
+      "oceanic"
+    ]
+  },
   "TreeBiomes": {
     "*acacia*": [
       "pacific neotropic",
@@ -22,33 +527,48 @@
       "australasian",
       "oceanic"
     ],
+    "*kapok*": [
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "*larch*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "*poplar*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic"
+    ],
+    "*walnut*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "*willow*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
     "afrocarpusfalcatus": [
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
     "afrocarpusfalcatuslarge": [
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "leucadendronargenteum": [
-      "atlantic afrotropic"
-    ],
-    "pterocelastrustricuspidatus": [
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "pterocelastrustricuspidatuslarge": [
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "searsialancea": [
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "shrubleucadendronargenteum": [
-      "atlantic afrotropic"
-    ],
-    "shrubpterocelastrustricuspidatus": [
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
@@ -118,9 +638,6 @@
     "eucalyptus": [
       "australasian"
     ],
-    "honeylocust": [
-      "pacific nearctic"
-    ],
     "fir": [
       "pacific nearctic",
       "atlantic nearctic",
@@ -142,20 +659,14 @@
     "himalayanbirch": [
       "pacific palearctic"
     ],
+    "honeylocust": [
+      "pacific nearctic"
+    ],
     "japanesemaple": [
       "pacific palearctic"
     ],
-    "*kapok*": [
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "*larch*": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic"
+    "leucadendronargenteum": [
+      "atlantic afrotropic"
     ],
     "mahogany": [
       "pacific neotropic",
@@ -182,15 +693,16 @@
     "oldenglishoak": [
       "atlantic palearctic"
     ],
-    "*poplar*": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic"
-    ],
     "pricklymoses": [
       "australasian"
+    ],
+    "pterocelastrustricuspidatus": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "pterocelastrustricuspidatuslarge": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
     ],
     "purpleheart": [
       "pacific nearctic",
@@ -214,20 +726,31 @@
     "salaux": [
       "central palearctic"
     ],
+    "scotspine": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "searsialancea": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
     "shrubalder": [
       "pacific neotropic",
       "atlantic neotropic"
+    ],
+    "shrubleucadendronargenteum": [
+      "atlantic afrotropic"
+    ],
+    "shrubpterocelastrustricuspidatus": [
+      "atlantic afrotropic",
+      "eastern afrotropic"
     ],
     "shrubsalaux": [
       "central palearctic"
     ],
     "shrubwillow": [
       "atlantic palearctic"
-    ],
-    "scotspine": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic"
     ],
     "silverbirch": [
       "atlantic palearctic",
@@ -252,416 +775,6 @@
     ],
     "truemulga": [
       "australasian"
-    ],
-    "*walnut*": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific nearctic",
-      "atlantic nearctic",
-      "pacific neotropic",
-      "atlantic neotropic"
-    ],
-    "*willow*": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ]
-  },
-  "BlockPatchBiomes": {
-    "*-coopersreed-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "*-papyrus-*": [
-      "atlantic palearctic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "seaweed-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "glowworms-*": [
-      "oceanic"
-    ],
-    "loosestick-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "waterlily": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian"
-    ],
-    "silvertorchcactus": [
-      "pacific neotropic"
-    ],
-    "saguarocactus-segment": [
-      "pacific nearctic"
-    ],
-    "barrelcactus-normal": [
-      "pacific nearctic"
-    ],
-    "fruittree-branch": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "termitemound-*": [
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian"
-    ],
-    "wildbeehive-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "meteorite-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "*-stalagsection-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "*-loosestones-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "looseboulders-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "seashell-scallop-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "bonyremains-cowskull-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
-    ],
-    "bonyremains-ribcage": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "*-blackcurrant-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic"
-    ],
-    "*-redcurrant-*": [
-      "atlantic palearctic",
-      "central palearctic"
-    ],
-    "*-whitecurrant-*": [
-      "atlantic palearctic"
-    ],
-    "*-blueberry-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "central palearctic",
-      "eastern palearctic"
-    ],
-    "*-cranberry-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic"
-    ],
-    "*-spelt-*": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic"
-    ],
-    "*-rye-*": [
-      "atlantic palearctic",
-      "central palearctic"
-    ],
-    "*-flax-*": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic"
-    ],
-    "*-soybean-*": [
-      "eastern palearctic",
-      "pacific palearctic"
-    ],
-    "*-carrot-*": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic"
-    ],
-    "*-onion": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic"
-    ],
-    "*-parsnip-*": [
-      "atlantic palearctic",
-      "central palearctic"
-    ],
-    "*-turnip-*": [
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic"
-    ],
-    "*-rice-*": [
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic afrotropic"
-    ],
-    "*-cassava-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "pacific neotropic",
-      "atlantic neotropic"
-    ],
-    "*-amaranth-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "*-pineapple-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "pacific neotropic",
-      "atlantic neotropic"
-    ],
-    "*-peanut-*": [
-      "pacific nearctic",
-      "pacific neotropic",
-      "atlantic neotropic"
-    ],
-    "*-sunflower-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "pacific neotropic",
-      "atlantic neotropic"
-    ],
-    "locustnest-cage": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "loosegears-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "tallgrass-*": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "tallfern": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "pacific neotropic",
-      "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic",
-      "australasian",
-      "oceanic"
-    ],
-    "fern-eaglefern": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "eastern palearctic",
-      "pacific palearctic"
-    ],
-    "fern-cinnamonfern": [
-      "atlantic nearctic",
-      "eastern palearctic",
-      "pacific palearctic",
-      "atlantic neotropic"
-    ],
-    "fern-deerfern": [
-      "pacific nearctic",
-      "atlantic palearctic"
-    ],
-    "fern-hartstongue": [
-      "pacific nearctic",
-      "atlantic nearctic",
-      "atlantic palearctic",
-      "central palearctic"
     ]
   }
 }
