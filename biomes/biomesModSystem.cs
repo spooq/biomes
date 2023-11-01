@@ -92,14 +92,8 @@ namespace Biomes
             ModConfig.EntitySpawnWhiteList = ModConfig.EntitySpawnWhiteList.Distinct().ToList();
 
             UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
-            if (UserConfig == null)
-            {
-                UserConfig = new BiomeUserConfig
-                {
-                    FlipNorthSouth = false,
-                    EntitySpawnWhiteList = new List<string>()
-                };
-            }
+            UserConfig ??= new BiomeUserConfig();
+            UserConfig.EntitySpawnWhiteList ??= new List<string>();
             sapi.StoreModConfig(UserConfig, $"{Mod.Info.ModID}.json");
 
             if (UserConfig.FlipNorthSouth)
