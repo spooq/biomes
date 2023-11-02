@@ -11,7 +11,11 @@
     "strawdummy",
     "echochamber",
     "libraryresonator",
-    "boat"
+    "boat",
+    "willowisp-*",
+    "livingdead",
+    "skullofthedead",
+    "earthworm"
   ],
   "FruitTreeBiomes": {
     "pinkapple": [
