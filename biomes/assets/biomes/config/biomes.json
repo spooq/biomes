@@ -18,6 +18,110 @@
     "earthworm"
   ],
   "FruitTreeBiomes": {
+    "almond": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern afrotropic"
+    ],
+    "apricot": [
+      "central palearctic"
+    ],
+    "citron": [
+      "eastern palearctic"
+    ],
+    "falseorange": [
+      "atlantic nearctic"
+    ],
+    "cocoa": [
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "macadamia": [
+      "australasian"
+    ],
+    "fig": [
+      "central palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "avocado": [
+      "pacific nearctic",
+      "pacific neotropic"
+    ],
+    "hawtorn": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "rowan": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "purpleplum": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "cherryplum": [
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "loquat": [
+      "pacific palearctic",
+      "central palearctic",
+      "atlantic afrotropic"
+    ],
+    "jujube": [
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "quince": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "commonhackberry": [
+      "central palearctic",
+      "eastern afrotropic"
+    ],
+    "sugarhackberry": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "pomelo": [
+      "eastern palearctic"
+    ],
+    "cashew": [
+      "eastern palearctic"
+    ],
+    "guajava": [
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "hazelnut": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "chestnut": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "whiteoak": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
     "breadfruit": [
       "pacific nearctic",
       "atlantic nearctic",
@@ -151,6 +255,216 @@
     ]
   },
   "BlockPatchBiomes": {
+    "berrybush-huckleberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "berrybush-wolfberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "berrybush-snowberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "berrybush-honeysuckle-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "berrybush-spindle-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "berrybush-feijoa-*": [
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "berrybush-beautyberry-*": [
+      "pacific palearctic"
+    ],
+    "berrybush-kumquat-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "berrybush-ugni-*": [
+      "pacific neotropic"
+    ],
+    "berrybush-sumac-*": [
+      "pacific nearctic"
+    ],
+    "berrybush-dwarfpine-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "berrybush-juniper-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "berrybush-pistachio-*": [
+      "atlantic palearctic",
+      "atlantic afrotropic"
+    ],
+    "pricklyshortbush-numnum-*": [
+      "atlantic afrotropic"
+    ],
+    "pricklyshortbush-pricklyheath-*": [
+      "pacific neotropic"
+    ],
+    "pricklyberrybush-brambleberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian"
+    ],
+    "pricklyberrybush-raspberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "eastern afrotropic"
+    ],
+    "pricklyberrybush-blueraspberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "eastern afrotropic"
+    ],
+    "pricklyberrybush-dogrose-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "eastern afrotropic"
+    ],
+    "pricklyberrybush-gooseberry-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "pricklyberrybush-deserthackberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "pricklyberrybush-sallowthorn-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "shrubberrybush-elderberry-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "shrubberrybush-husktomato-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "shrubberrybush-pokeberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "shrubberrybush-turkscap-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+    "shrubberrybush-fractureberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "shrubberrybush-naranjilla-*": [
+      "pacific nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "shrubberrybush-blacknightshade-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "eastern afrotropic"
+    ],
+    "shrubberrybush-bitternightshade-*": [
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "groundberryplant-cloudberry-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "groundberryplant-bunchberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "groundberryplant-crowberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "groundberryplant-strawberry-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "groundberryplant-falsestrawberry-*": [
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "groundberryplant-crowseye-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+    "groundberryplant-lingonberry-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "groundberryplant-knyazberry-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
     "mushroom-beardedtooth-*": [
       "pacific nearctic",
       "atlantic nearctic",
