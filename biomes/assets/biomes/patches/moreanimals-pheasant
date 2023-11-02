@@ -1,0 +1,92 @@
+[
+  {
+    "file": "moreanimals:entities/pheasant-chick.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/pheasant-cock.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/pheasant-cockpoult.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/pheasant-hen.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/pheasant-henpoult.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  }
+]

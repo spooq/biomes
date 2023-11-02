@@ -1,0 +1,82 @@
+[
+  {
+    "file": "moreanimals:entities/goldenpheasant-chick.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "eastern palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/goldenpheasant-cock.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "eastern palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/goldenpheasant-cockpoult.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "eastern palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/goldenpheasant-hen.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "eastern palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/goldenpheasant-henpoult.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "eastern palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  }
+]

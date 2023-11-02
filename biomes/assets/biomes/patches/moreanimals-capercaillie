@@ -1,0 +1,92 @@
+[
+  {
+    "file": "moreanimals:entities/capercaillie-chick.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "atlantic palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/capercaillie-cock.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "atlantic palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/capercaillie-cockpoult.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "atlantic palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/capercaillie-hen.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "atlantic palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/capercaillie-henpoult.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "atlantic palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  }
+]
