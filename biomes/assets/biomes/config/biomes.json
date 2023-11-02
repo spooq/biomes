@@ -18,7 +18,7 @@
     "earthworm"
   ],
   "FruitTreeBiomes": {
-    "breadfruit-*": [
+    "breadfruit": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -28,7 +28,7 @@
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-    "cherry-*": [
+    "cherry": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -42,7 +42,7 @@
       "australasian",
       "oceanic"
     ],
-    "lychee-*": [
+    "lychee": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -52,12 +52,12 @@
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-    "mango-*": [
+    "mango": [
       "eastern palearctic",
       "australasian",
       "oceanic"
     ],
-    "olive-*": [
+    "olive": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -67,7 +67,7 @@
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-    "orange-*": [
+    "orange": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -77,7 +77,7 @@
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-    "peach-*": [
+    "peach": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -87,7 +87,7 @@
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-    "pear-*": [
+    "pear": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -97,7 +97,7 @@
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-    "pinkapple-*": [
+    "pinkapple": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -111,7 +111,7 @@
       "australasian",
       "oceanic"
     ],
-    "pomegranate-*": [
+    "pomegranate": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -121,7 +121,7 @@
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
-    "redapple-*": [
+    "redapple": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -135,7 +135,7 @@
       "australasian",
       "oceanic"
     ],
-    "yellowapple-*": [
+    "yellowapple": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
