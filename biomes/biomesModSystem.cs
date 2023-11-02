@@ -13,12 +13,6 @@ using Vintagestory.API.Util;
 
 namespace Biomes
 {
-    public class BiomeUserConfig
-    {
-        public bool FlipNorthSouth = false;
-        public List<string> EntitySpawnWhiteList = new List<string>();
-    }
-
     public class RealmsConfig
     {
         public List<string> NorthernRealms = new List<string>();
@@ -31,6 +25,12 @@ namespace Biomes
         public Dictionary<string, List<string>> TreeBiomes = new Dictionary<string, List<string>>();
         public Dictionary<string, List<string>> FruitTreeBiomes = new Dictionary<string, List<string>>();
         public Dictionary<string, List<string>> BlockPatchBiomes = new Dictionary<string, List<string>>();
+    }
+
+    public class BiomeUserConfig
+    {
+        public bool FlipNorthSouth = false;
+        public List<string> EntitySpawnWhiteList = new List<string>();
     }
 
     [ProtoContract]

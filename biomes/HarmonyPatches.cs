@@ -31,7 +31,6 @@ namespace Biomes
             harmony.UnpatchAll(BiomesMod.Mod.Info.ModID);
         }
 
-        /*
         [HarmonyPrefix]
         [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
         public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
@@ -177,7 +176,6 @@ namespace Biomes
             var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
             bpc.PatchesNonTree = __state;
         }
-        */
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
