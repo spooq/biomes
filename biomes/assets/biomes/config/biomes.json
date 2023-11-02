@@ -18,10 +18,135 @@
     "earthworm"
   ],
   "FruitTreeBiomes": {
-    "pinkapple": [
+    "breadfruit-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "cherry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
       "oceanic"
     ],
-    "cherry": [
+    "lychee-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "mango-*": [
+      "eastern palearctic",
+      "australasian",
+      "oceanic"
+    ],
+    "olive-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "orange-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "peach-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "pear-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "pinkapple-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "pomegranate-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "redapple-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "yellowapple-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
       "oceanic"
     ]
   },
