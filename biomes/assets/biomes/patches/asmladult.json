@@ -1,0 +1,181 @@
+[
+  {
+    "file": "asianmonitorlizards:entities/land/varanus-adult.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-bengalensis": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-flavescens": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-nebulosus": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-rudicollis": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-dumerilii": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-yemenensis": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-nesterovi": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-olivaceus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-mabitang": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-bitatawa": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-caerulivirens": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-cerambonensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-colei": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-lirungensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-melinus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-obor": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-rainerguentheri": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-tanimbar": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-yuwonoi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-auffenbergi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-timorensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-salvator": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-bangonorum": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-cumingi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-dalubhasa": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-marmoratus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-nuchalis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-palawanensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-rasmusseni": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-samarensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-togianus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-komodoensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "asianmonitorlizards"
+      }
+    ]
+  }
+]
