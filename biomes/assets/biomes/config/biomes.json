@@ -1233,6 +1233,12 @@
   },
   "TreeBiomes": {
     "*acacia*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
       "pacific neotropic",
       "atlantic neotropic",
       "atlantic afrotropic",
@@ -1241,12 +1247,16 @@
       "oceanic"
     ],
     "*kapok*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
       "pacific neotropic",
       "atlantic neotropic",
-      "atlantic afrotropic",
-      "eastern afrotropic"
+      "atlantic afrotropic"
     ],
     "*larch*": [
+      "pacific nearctic",
+      "atlantic nearctic",
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
@@ -1291,6 +1301,20 @@
     "baldcypressswamp": [
       "atlantic nearctic"
     ],
+    "bamboo*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
     "bearnut": [
       "central palearctic"
     ],
@@ -1323,8 +1347,8 @@
       "pacific nearctic"
     ],
     "crimsonkingmaple": [
-      "central palearctic",
-      "eastern palearctic"
+      "atlantic palearctic",
+      "central palearctic"
     ],
     "dwarfbirch": [
       "pacific nearctic",
@@ -1335,8 +1359,12 @@
       "pacific palearctic"
     ],
     "ebony": [
-      "australasian",
-      "central palearctic"
+      "atlantic palearctic",
+      "central palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian"
     ],
     "elm": [
       "pacific nearctic",
@@ -1346,10 +1374,23 @@
       "eastern palearctic"
     ],
     "englishoak": [
-      "atlantic palearctic"
+      "atlantic palearctic",
+      "central palearctic"
     ],
     "eucalyptus": [
       "australasian"
+    ],
+    "ferntree*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
     ],
     "fir": [
       "pacific nearctic",
@@ -1361,17 +1402,17 @@
     ],
     "greenspirecypress": [
       "atlantic palearctic",
-      "central palearctic",
-      "eastern palearctic",
-      "pacific palearctic"
+      "central palearctic"
     ],
     "himalayanbirch": [
-      "pacific palearctic"
+      "central palearctic",
+      "eastern palearctic"
     ],
     "honeylocust": [
       "pacific nearctic"
     ],
     "japanesemaple": [
+      "eastern palearctic",
       "pacific palearctic"
     ],
     "leucadendronargenteum": [
@@ -1385,11 +1426,10 @@
       "pacific nearctic"
     ],
     "mountainmaple": [
-      "pacific neotropic",
-      "atlantic neotropic"
+      "atlantic nearctic"
     ],
     "mountainpine": [
-      "central palearctic"
+      "atlantic palearctic"
     ],
     "narrowbirch": [
       "atlantic palearctic",
@@ -1397,10 +1437,12 @@
       "eastern palearctic"
     ],
     "norwaymaple": [
+      "atlantic palearctic",
       "central palearctic"
     ],
     "oldenglishoak": [
-      "atlantic palearctic"
+      "atlantic palearctic",
+      "central palearctic"
     ],
     "pricklymoses": [
       "australasian"
@@ -1426,7 +1468,6 @@
       "eastern palearctic"
     ],
     "riverbirch": [
-      "pacific nearctic",
       "atlantic nearctic"
     ],
     "sal": [
@@ -1462,9 +1503,9 @@
       "atlantic palearctic"
     ],
     "silverbirch": [
-      "atlantic palearctic",
       "central palearctic",
-      "eastern palearctic"
+      "eastern palearctic",
+      "pacific palearctic"
     ],
     "smalloak": [
       "atlantic palearctic"
@@ -1473,10 +1514,10 @@
       "central palearctic"
     ],
     "sugarmaple": [
-      "atlantic neotropic"
+      "atlantic nearctic"
     ],
     "sugarmaplesmall": [
-      "atlantic neotropic"
+      "atlantic nearctic"
     ],
     "sycamore": [
       "pacific nearctic",
