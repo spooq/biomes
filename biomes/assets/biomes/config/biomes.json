@@ -257,6 +257,383 @@
     ]
   },
   "BlockPatchBiomes": {
+    "*-skunkcabbage-*": [
+      "pacific nearctic"
+    ],
+	  "*-basil-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+	  "*-blackpepper-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+  	"*-celery-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-chamomile-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-cilantro-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-dill-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-dock-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+	  "*-mustard-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-stingingnettle-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-burdock-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-chicory-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+		"*-marigold-*": [
+      "pacific nearctic"
+    ],
+		"*-saltwort-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+		"*-liquorice-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+	  "*-jewelweed-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+	  "*-arrowhead-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-butterbur-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-rhubarb-*": [
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-bugleweed-european-*": [
+      "atlantic palearctic"
+    ],
+	  "*-duckweed-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian"
+    ],
+	  "*-lavender-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern afrotropic"
+    ],
+	  "*-holly-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-poisonoak-*": [
+      "atlantic nearctic",
+      "pacific nearctic"
+    ],
+	  "*-bearleek-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+	  "*-marjoram-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+	  "*-sage-*": [      
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+	  "*-marshmallow-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-mint-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+	  "*-saffron-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic"
+    ],
+	  "*-stjohnswort-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-mugwort-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+	  "*-inula-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+	  "*-celandine-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-leek-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-plantain-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+	  "*-yarrow-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-foxglove-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+	  "*-angelica-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-rockrose-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+	  "*-horehound-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-ginger-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "*-burnet-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific nearctic",
+      "atlantic nearctic"
+      
+    ],
+	  "*-arnica-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+	  "*-cicuta-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+	  "*-tansy-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
+	  "*-ginseng-*": [
+      "eastern palearctic",
+      "pacific palearctic"     
+    ],
+	  "*-katuk-*": [
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+	  "*-swamptule-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+	  "*-tule-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+	  "*-softsedge-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+	  "*-hardsedge-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+	  "*-brownsedge-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+	  "*-waterchestnut-*": [      
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+	  "*-minerslettuce-*": [
+      "pacific nearctic",
+      "atlantic nearctic"
+    ],
+	  "*-clover-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+	  "*-caltha-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "australasian",
+      "oceanic"
+    ],
+	  "*-woodspurge-*": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic"
+    ],
     "berrybush-huckleberry-*": [
       "pacific nearctic",
       "atlantic nearctic"
