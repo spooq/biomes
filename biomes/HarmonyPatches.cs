@@ -273,5 +273,46 @@ namespace Biomes
         {
             return chunkCol.Any() && BiomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type);
         }
+
+        // Vanilla bugfix
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BlockPatchConfig), "IsPatchSuitableAt")]
+        public static bool IsPatchSuitableAt(BlockPatchConfig __instance, ref bool __result, BlockPatch patch, Block onBlock, int mapSizeY, int climate, int y, float forestRel, float shrubRel)
+        {
+            if ((patch.Placement == EnumBlockPatchPlacement.NearWater || patch.Placement == EnumBlockPatchPlacement.UnderWater) && onBlock.LiquidCode != "water") return __result = false;
+            if ((patch.Placement == EnumBlockPatchPlacement.NearSeaWater || patch.Placement == EnumBlockPatchPlacement.UnderSeaWater) && onBlock.LiquidCode != "saltwater") return __result = false;
+
+            if (forestRel < patch.MinForest || forestRel > patch.MaxForest || shrubRel < patch.MinShrub || forestRel > patch.MaxShrub)
+            {
+                // faster path without needing to fetch rainfall and temperature etc
+                return __result = false;
+            }
+
+            int rain = TerraGenConfig.GetRainFall((climate >> 8) & 0xff, y);
+            float rainRel = rain / 255f;
+            if (rainRel < patch.MinRain || rainRel > patch.MaxRain)
+            {
+                // again faster path without needing to fetch temperature etc
+                return __result = false;
+            }
+
+            int temp = TerraGenConfig.GetScaledAdjustedTemperature((climate >> 16) & 0xff, y - TerraGenConfig.seaLevel);
+            if (temp < patch.MinTemp || temp > patch.MaxTemp)
+            {
+                // again faster path without needing to fetch sealevel and fertility
+                return __result = false;
+            }
+
+            float sealevelDistRel = ((float)y - TerraGenConfig.seaLevel) / ((float)mapSizeY - TerraGenConfig.seaLevel);
+            if (sealevelDistRel < patch.MinY || sealevelDistRel > patch.MaxY)
+            {
+                return __result = false;
+            }
+
+            // finally test fertility (the least common blockpatch criterion)
+            float fertilityRel = TerraGenConfig.GetFertility(rain, temp, sealevelDistRel) / 255f;
+            __result = fertilityRel >= patch.MinFertility && fertilityRel <= patch.MaxFertility;
+            return false;
+        }
     }
 }
