@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Common;
@@ -274,10 +275,173 @@ namespace Biomes
             return chunkCol.Any() && BiomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type);
         }
 
+        /*
+        // Vanilla bugfix
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(GenVegetationAndPatches), "genPatches")]
+        static bool genPatches(ref GenVegetationAndPatches __instance, int chunkX, int chunkZ, bool postPass)
+        {
+            var sapi = Traverse.Create(__instance).Field("sapi").GetValue() as ICoreServerAPI;
+            var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
+            var rnd = Traverse.Create(__instance).Field("rnd").GetValue() as LCGRandom;
+            var regionSize = (int)Traverse.Create(__instance).Field("regionSize").GetValue();
+            var heightmap = Traverse.Create(__instance).Field("heightmap").GetValue() as ushort[];
+            var tmpPos = Traverse.Create(__instance).Field("tmpPos").GetValue() as BlockPos;
+            var chunksize = (int)Traverse.Create(__instance).Field("chunksize").GetValue();
+            var worldheight = (int)Traverse.Create(__instance).Field("worldheight").GetValue();
+            var blockAccessor = Traverse.Create(__instance).Field("blockAccessor").GetValue() as IWorldGenBlockAccessor;
+
+            var forestUpLeft = (int)Traverse.Create(__instance).Field("forestUpLeft").GetValue();
+            var forestUpRight = (int)Traverse.Create(__instance).Field("forestUpRight").GetValue();
+            var forestBotLeft = (int)Traverse.Create(__instance).Field("forestBotLeft").GetValue();
+            var forestBotRight = (int)Traverse.Create(__instance).Field("forestBotRight").GetValue();
+
+            var shrubUpLeft = (int)Traverse.Create(__instance).Field("shrubUpLeft").GetValue();
+            var shrubUpRight = (int)Traverse.Create(__instance).Field("shrubUpRight").GetValue();
+            var shrubBotLeft = (int)Traverse.Create(__instance).Field("shrubBotLeft").GetValue();
+            var shrubBotRight = (int)Traverse.Create(__instance).Field("shrubBotRight").GetValue();
+
+            var climateUpLeft = (int)Traverse.Create(__instance).Field("climateUpLeft").GetValue();
+            var climateUpRight = (int)Traverse.Create(__instance).Field("climateUpRight").GetValue();
+            var climateBotLeft = (int)Traverse.Create(__instance).Field("climateBotLeft").GetValue();
+            var climateBotRight = (int)Traverse.Create(__instance).Field("climateBotRight").GetValue();
+
+            var forestMod = (float)Traverse.Create(__instance).Field("forestMod").GetValue();
+            var shrubMod = (float)Traverse.Create(__instance).Field("shrubMod").GetValue();
+
+            int dx, dz, x, z;
+            Block liquidBlock;
+            int mapsizeY = blockAccessor.MapSizeY;
+
+            var mapregion = sapi?.WorldManager.GetMapRegion((chunkX * chunksize) / regionSize, (chunkZ * chunksize) / regionSize);
+
+            for (int i = 0; i < bpc.PatchesNonTree.Length; i++)
+            {
+                BlockPatch blockPatch = bpc.PatchesNonTree[i];
+                if (blockPatch.PostPass != postPass) continue;
+
+                float chance = blockPatch.Chance * bpc.ChanceMultiplier.nextFloat();
+
+                while (chance-- > rnd.NextFloat())
+                {
+                    dx = rnd.NextInt(chunksize);
+                    dz = rnd.NextInt(chunksize);
+                    x = dx + chunkX * chunksize;
+                    z = dz + chunkZ * chunksize;
+
+                    int y = heightmap[dz * chunksize + dx];
+                    if (y <= 0 || y >= worldheight - 15) continue;
+
+                    tmpPos.Set(x, y, z);
+
+                    liquidBlock = blockAccessor.GetBlock(tmpPos, BlockLayersAccess.Fluid);
+
+                    // Place according to forest value
+                    float forestRel = GameMath.BiLerp(forestUpLeft, forestUpRight, forestBotLeft, forestBotRight, (float)dx / chunksize, (float)dz / chunksize) / 255f;
+                    forestRel = GameMath.Clamp(forestRel + forestMod, 0, 1);
+
+                    float shrubRel = GameMath.BiLerp(shrubUpLeft, shrubUpRight, shrubBotLeft, shrubBotRight, (float)dx / chunksize, (float)dz / chunksize) / 255f;
+                    shrubRel = GameMath.Clamp(shrubRel + shrubMod, 0, 1);
+
+                    int climate = GameMath.BiLerpRgbColor((float)dx / chunksize, (float)dz / chunksize, climateUpLeft, climateUpRight, climateBotLeft, climateBotRight);
+
+                    bool res = false;
+                    IsPatchSuitableAtCrab(ref bpc, ref res, blockPatch, liquidBlock, mapsizeY, climate, y, forestRel, shrubRel);
+                    if (res)
+                    {
+                        if (__instance.SkipGenerationAt(tmpPos, EnumWorldGenPass.Vegetation)) continue;
+
+                        if (blockPatch.MapCode != null && rnd.NextInt(255) > __instance.GetPatchDensity(blockPatch.MapCode, x, z, mapregion))
+                        {
+                            continue;
+                        }
+
+                        int firstBlockId = 0;
+                        bool found = true;
+
+                        if (blockPatch.BlocksByRockType != null)
+                        {
+                            found = false;
+                            int dy = 1;
+                            while (dy < 5 && y - dy > 0)
+                            {
+                                string lastCodePart = blockAccessor.GetBlock(x, y - dy, z).LastCodePart();
+                                if (__instance.RockBlockIdsByType.TryGetValue(lastCodePart, out firstBlockId)) { found = true; break; }
+                                dy++;
+                            }
+                        }
+
+                        if (found)
+                        {
+                            blockPatch.Generate(blockAccessor, rnd, x, y, z, firstBlockId);
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        */
+
+        public static void CrabPlaceSeaweed(ref BlockSeaweed __instance, IBlockAccessor blockAccessor, BlockPos pos, int depth)
+        {
+            var random = Traverse.Create(__instance).Field("random").GetValue() as Random;
+            var blocks = Traverse.Create(__instance).Field("blocks").GetValue() as Block[];
+
+            int height = Math.Min(depth - 1, 1 + random.Next(3) + random.Next(3));
+
+            if (blocks == null)
+            {
+                blocks = new Block[]
+                {
+                    blockAccessor.GetBlock(new AssetLocation("seaweed-section")),
+                    blockAccessor.GetBlock(new AssetLocation("seaweed-top")),
+                };
+            }
+
+            while (height-- > 0)
+            {
+                blockAccessor.SetBlock(height == 0 ? blocks[1].BlockId : blocks[0].BlockId, pos);
+                pos.Up();
+            }
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BlockSeaweed), "TryPlaceBlockForWorldGen")]
+        public static bool TryPlaceBlockForWorldGen(ref BlockSeaweed __instance, ref bool __result, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldGenRand)
+        {
+            BlockPos belowPos = pos.DownCopy();
+
+            Block block = blockAccessor.GetBlock(belowPos, BlockLayersAccess.Fluid);
+            if (block.LiquidCode != "saltwater") return __result = false;
+
+            int depth = 1;
+            while (depth < 10)
+            {
+                belowPos.Down();
+                block = blockAccessor.GetBlock(belowPos);
+
+                if (block.Fertility > 0)
+                {
+                    belowPos.Up();
+                    CrabPlaceSeaweed(ref __instance, blockAccessor, belowPos, depth);
+                    __result = true;
+                    return false;
+                }
+                else
+                {
+                    if (!block.IsLiquid()) return __result = false;
+                }
+
+                depth++;
+            }
+
+            return __result = false;
+        }
+
         // Vanilla bugfix
         [HarmonyPrefix]
         [HarmonyPatch(typeof(BlockPatchConfig), "IsPatchSuitableAt")]
-        public static bool IsPatchSuitableAt(BlockPatchConfig __instance, ref bool __result, BlockPatch patch, Block onBlock, int mapSizeY, int climate, int y, float forestRel, float shrubRel)
+        public static bool IsPatchSuitableAtCrab(ref BlockPatchConfig __instance, ref bool __result, BlockPatch patch, Block onBlock, int mapSizeY, int climate, int y, float forestRel, float shrubRel)
         {
             if ((patch.Placement == EnumBlockPatchPlacement.NearWater || patch.Placement == EnumBlockPatchPlacement.UnderWater) && onBlock.LiquidCode != "water") return __result = false;
             if ((patch.Placement == EnumBlockPatchPlacement.NearSeaWater || patch.Placement == EnumBlockPatchPlacement.UnderSeaWater) && onBlock.LiquidCode != "saltwater") return __result = false;
