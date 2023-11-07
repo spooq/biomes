@@ -366,8 +366,21 @@
       "eastern palearctic",
       "pacific palearctic"
     ],
-    "*-bugleweed-european-*": [
+    "bugleweed-european-*": [
       "atlantic palearctic"
+    ],
+    "*-pepperdules-*": [
+      "atlantic palearctic"
+    ],
+    "*-wakame-*": [
+      "eastern palearctic"
+    ],
+    "*-pickleweed-*": [
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "oceanic"
     ],
     "*-duckweed-*": [
       "pacific nearctic",
@@ -405,7 +418,7 @@
       "atlantic palearctic",
       "central palearctic"
     ],
-    "*-sage-*": [      
+    "*-sage-*": [
       "atlantic palearctic",
       "central palearctic"
     ],
@@ -517,7 +530,7 @@
       "pacific palearctic",
       "pacific nearctic",
       "atlantic nearctic"
-      
+
     ],
     "*-arnica-*": [
       "atlantic palearctic",
@@ -541,7 +554,7 @@
     ],
     "*-ginseng-*": [
       "eastern palearctic",
-      "pacific palearctic"     
+      "pacific palearctic"
     ],
     "*-katuk-*": [
       "eastern palearctic",
@@ -597,7 +610,7 @@
       "australasian",
       "oceanic"
     ],
-    "*-waterchestnut-*": [      
+    "*-waterchestnut-*": [
       "central palearctic",
       "eastern palearctic",
       "pacific palearctic",
