@@ -257,6 +257,13 @@
     ]
   },
   "BlockPatchBiomes": {
+    "*-thyme-*": [
+      "atlantic palearctic"
+    ],
+    "*-rosemary-*": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
     "*-skunkcabbage-*": [
       "pacific nearctic"
     ],
@@ -264,7 +271,7 @@
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
-      "pacific palearctic"
+      "pacific palearctic",
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
@@ -272,7 +279,7 @@
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
-      "pacific palearctic"
+      "pacific palearctic",
       "atlantic afrotropic",
       "eastern afrotropic"
     ],
@@ -801,6 +808,8 @@
       "eastern palearctic"
     ],
     "groundberryplant-cloudberry-*": [
+      "pacific nearctic",
+      "atlantic nearctic",
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
