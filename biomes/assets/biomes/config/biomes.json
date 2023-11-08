@@ -1542,7 +1542,7 @@
     ]
   },
   "TreeBiomes": {
-    "*acacia*": [
+    "acacia": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -1556,7 +1556,21 @@
       "australasian",
       "oceanic"
     ],
-    "*kapok*": [
+    "deadacacia": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "kapok": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -1564,7 +1578,39 @@
       "atlantic neotropic",
       "atlantic afrotropic"
     ],
-    "*larch*": [
+    "deadkapok": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic"
+    ],
+    "vineykapok": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic"
+    ],
+    "largekapok": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic"
+    ],
+    "largekapok2": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic"
+    ],
+    "larch": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -1572,14 +1618,30 @@
       "eastern palearctic",
       "pacific palearctic"
     ],
-    "*poplar*": [
+    "deepforestlarch": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic"
+    ],
+    "poplar": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
       "pacific palearctic",
       "atlantic afrotropic"
     ],
-    "*walnut*": [
+    "blackpoplar": [
+      "atlantic palearctic",
+      "central palearctic"
+    ],
+    "pyramidalpoplar*": [
+      "atlantic palearctic",
+      "central palearctic",
+    ],
+    "walnut": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
@@ -1589,13 +1651,53 @@
       "pacific neotropic",
       "atlantic neotropic"
     ],
-    "*willow*": [
+    "smallwalnut": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific nearctic",
+      "atlantic nearctic",
+      "pacific neotropic",
+      "atlantic neotropic"
+    ],
+    "willow": [
       "atlantic palearctic",
       "central palearctic",
       "eastern palearctic",
       "pacific palearctic",
       "atlantic afrotropic",
       "eastern afrotropic"
+    ],
+    "smallwillow": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "narrowwillow": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "shrubwillow": [
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "atlantic afrotropic",
+      "eastern afrotropic"
+    ],
+    "*willowswamp": [
+      "atlantic palearctic",
+      "central palearctic", 
+      "eastern palearctic",
+      "pacific palearctic",
     ],
     "afrocarpusfalcatus": [
       "atlantic afrotropic",
@@ -1611,7 +1713,21 @@
     "baldcypressswamp": [
       "atlantic nearctic"
     ],
-    "bamboo*": [
+    "bamboo-grown-green": [
+      "pacific nearctic",
+      "atlantic nearctic",
+      "atlantic palearctic",
+      "central palearctic",
+      "eastern palearctic",
+      "pacific palearctic",
+      "pacific neotropic",
+      "atlantic neotropic",
+      "atlantic afrotropic",
+      "eastern afrotropic",
+      "australasian",
+      "oceanic"
+    ],
+    "bamboo-grown-brown": [
       "pacific nearctic",
       "atlantic nearctic",
       "atlantic palearctic",
@@ -1690,7 +1806,7 @@
     "eucalyptus": [
       "australasian"
     ],
-    "ferntree*": [
+    "ferntree-normal-trunk": [
       "pacific nearctic",
       "atlantic nearctic",
       "eastern palearctic",
