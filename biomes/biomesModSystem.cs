@@ -108,7 +108,8 @@ namespace Biomes
             sapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
 
             sapi.ChatCommands.Create("biome")
-                .WithDescription("Biome main command")
+                .WithDescription("Biomes main command")
+                .RequiresPlayer()
                 .RequiresPrivilege(Privilege.gamemode)
                 .BeginSubCommand("show")
                     .HandleWith(onGetBiomeCommand)
