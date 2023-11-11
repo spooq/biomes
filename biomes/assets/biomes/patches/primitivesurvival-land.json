@@ -17,7 +17,7 @@
     ]
   },
   {
-    "file": "primitivesurvival:entities/land/crab-bairdicrab.json",
+    "file": "primitivesurvival:entities/land/crab-landcrab.json",
     "op": "add",
     "path": "/attributes/-",
     "side": "Server",
@@ -34,13 +34,24 @@
     ]
   },
   {
-    "file": "primitivesurvival:entities/land/fireflies.json",
+    "file": "primitivesurvival:entities/land/earthworm.json",
     "op": "add",
     "path": "/attributes/-",
     "side": "Server",
     "value": {
       "biorealm": [
-        "atlantic nearctic"
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
       ]
     },
     "dependsOn": [
@@ -57,6 +68,60 @@
     "value": {
       "biorealm": [
         "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "primitivesurvival"
+      }
+    ]
+  },
+  {
+    "file": "primitivesurvival:entities/land/livingdead.json",
+    "op": "add",
+    "path": "/attributes/-",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "primitivesurvival"
+      }
+    ]
+  },
+  {
+    "file": "primitivesurvival:entities/land/skullofthedead.json",
+    "op": "add",
+    "path": "/attributes/-",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
       ]
     },
     "dependsOn": [
@@ -125,141 +190,6 @@
         "eastern palearctic",
         "pacific neotropic",
         "atlantic neotropic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "primitivesurvival"
-      }
-    ]
-  },
-  {
-    "file": "primitivesurvival:entities/water/bioluminescent.json",
-    "op": "add",
-    "path": "/attributes/-",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "primitivesurvival"
-      }
-    ]
-  },
-  {
-    "file": "primitivesurvival:entities/air/willowisp.json",
-    "op": "add",
-    "path": "/attributes/-",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "primitivesurvival"
-      }
-    ]
-  },
-  {
-    "file": "primitivesurvival:entities/land/livingdead.json",
-    "op": "add",
-    "path": "/attributes/-",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "primitivesurvival"
-      }
-    ]
-  },
-  {
-    "file": "primitivesurvival:entities/land/skullofthedead.json",
-    "op": "add",
-    "path": "/attributes/-",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "primitivesurvival"
-      }
-    ]
-  },
-  {
-    "file": "primitivesurvival:entities/land/earthworm.json",
-    "op": "add",
-    "path": "/attributes/-",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
       ]
     },
     "dependsOn": [

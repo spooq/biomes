@@ -57,7 +57,9 @@
   <Compile Remove="BiomesModSystemHelpers.cs" />
   <None Remove="assets\biomes\config\realms.json" />
   <None Remove="assets\biomes\patches\giantgouramis.json" />
-  <None Remove="assets\biomes\patches\primitivesurvival.json" />
+  <None Remove="assets\biomes\patches\primitivesurvival-air.json" />
+  <None Remove="assets\biomes\patches\primitivesurvival-land.json" />
+  <None Remove="assets\biomes\patches\primitivesurvival-water.json" />
   <None Remove="assets\biomes\patches\vanilla-air.json" />
   <None Remove="assets\biomes\patches\vanilla-butterflies.json" />
   <None Remove="assets\biomes\patches\vanilla-land.json" />
