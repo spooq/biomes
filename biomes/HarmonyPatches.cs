@@ -65,7 +65,7 @@ namespace Biomes
         }
 
         [HarmonyPrefix]
-        [HarmonyPriority(400)]
+        [HarmonyPriority(398)]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
         public static bool genPatchesUnderTreePrefix(ref ForestFloorSystem __instance, out List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
         {
@@ -95,7 +95,7 @@ namespace Biomes
         }
 
         [HarmonyPostfix]
-        [HarmonyPriority(400)]
+        [HarmonyPriority(399)]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
         public static void genPatchesUnderTreePostfix(ref ForestFloorSystem __instance, List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
         {
@@ -103,7 +103,7 @@ namespace Biomes
         }
 
         [HarmonyPrefix]
-        [HarmonyPriority(300)]
+        [HarmonyPriority(399)]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
         public static bool genPatchesOnTreePrefix(ref ForestFloorSystem __instance, out List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
         {
@@ -133,7 +133,7 @@ namespace Biomes
         }
 
         [HarmonyPostfix]
-        [HarmonyPriority(300)]
+        [HarmonyPriority(398)]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
         public static void genPatchesOnTreePostfix(ref ForestFloorSystem __instance, List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
         {
