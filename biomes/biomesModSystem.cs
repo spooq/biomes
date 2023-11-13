@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
-using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
@@ -52,6 +51,7 @@ namespace Biomes
 
         public const string RealmPropertyName = "biorealm";
         public const string HemispherePropertyName = "hemisphere";
+        public const string ChunkNotGeneratedWithBiomesModInstalled = "Chunk was not generated with Biomes mod installed.";
 
         public BiomeUserConfig UserConfig;
         public RealmsConfig RealmsConfig;
@@ -123,9 +123,6 @@ namespace Biomes
                 .BeginSubCommand("blockpatch")
                     .HandleWith(onBlockPatchCommand)
                 .EndSubCommand()
-                .BeginSubCommand("debug")
-                    .HandleWith(onDebugCommand)
-                .EndSubCommand()
                 .BeginSubCommand("hemisphere")
                     .WithArgs(sapi.ChatCommands.Parsers.WordRange("hemisphere", Enum.GetNames(typeof(EnumHemisphere))))
                     .HandleWith(onSetHemisphereCommand)
@@ -189,7 +186,9 @@ namespace Biomes
 
             // Test map chunk attributes
             var chunkRealms = new List<string>();
-            getModProperty(mapChunk, RealmPropertyName, ref chunkRealms);
+            if (getModProperty(mapChunk, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return true;
+
             var entityNativeRealms = type.Attributes[RealmPropertyName].AsArray<string>();
             return entityNativeRealms.Intersect(chunkRealms).Any();
         }
@@ -219,7 +218,8 @@ namespace Biomes
         public TextCommandResult onTreesCommand(TextCommandCallingArgs args)
         {
             var chunkRealms = new List<string>();
-            getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
+            if (getModProperty(args.Caller, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = ChunkNotGeneratedWithBiomesModInstalled };
 
             var trees = new List<string>();
             foreach (var realm in chunkRealms)
@@ -232,19 +232,15 @@ namespace Biomes
                     }
                 }
             }
-            var treeStr = trees.Distinct().Join(delimiter: "\r\n");
 
-            var serverPlayer = args.Caller.Player as IServerPlayer;
-            if (serverPlayer != null)
-                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeStr, EnumChatType.Notification);
-
-            return new TextCommandResult { Status = EnumCommandStatus.Success };
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
         }
 
         public TextCommandResult onFruitTreesCommand(TextCommandCallingArgs args)
         {
             var chunkRealms = new List<string>();
-            getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
+            if (getModProperty(args.Caller, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = ChunkNotGeneratedWithBiomesModInstalled };
 
             var trees = new List<string>();
             foreach (var realm in chunkRealms)
@@ -257,19 +253,15 @@ namespace Biomes
                     }
                 }
             }
-            var treeStr = trees.Distinct().Join(delimiter: "\r\n");
 
-            var serverPlayer = args.Caller.Player as IServerPlayer;
-            if (serverPlayer != null)
-                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeStr, EnumChatType.Notification);
-
-            return new TextCommandResult { Status = EnumCommandStatus.Success };
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
         }
 
         public TextCommandResult onBlockPatchCommand(TextCommandCallingArgs args)
         {
             var chunkRealms = new List<string>();
-            getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
+            if (getModProperty(args.Caller, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = ChunkNotGeneratedWithBiomesModInstalled };
 
             var trees = new List<string>();
             foreach (var realm in chunkRealms)
@@ -282,42 +274,23 @@ namespace Biomes
                     }
                 }
             }
-            var treeStr = trees.Distinct().Join(delimiter: "\r\n");
 
-            var serverPlayer = args.Caller.Player as IServerPlayer;
-            if (serverPlayer != null)
-                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, treeStr, EnumChatType.Notification);
-
-            return new TextCommandResult { Status = EnumCommandStatus.Success };
-        }
-
-        public TextCommandResult onDebugCommand(TextCommandCallingArgs args)
-        {
-            int worldWidthInChunks = sapi.WorldManager.MapSizeX / sapi.WorldManager.ChunkSize;
-            for (int chunkX = 0; chunkX < worldWidthInChunks; chunkX++)
-            {
-                CalculateValues(chunkX, 0, out EnumHemisphere hemisphere, out int currentRealm);
-                string realmName = NorthOrSouth(hemisphere, currentRealm);
-                sapi.Logger.Notification($"{chunkX} => {realmName}");
-            }
-            return new TextCommandResult { Status = EnumCommandStatus.Success };
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
         }
 
         public TextCommandResult onGetBiomeCommand(TextCommandCallingArgs args)
         {
             var chunkHemisphere = EnumHemisphere.North;
-            getModProperty(args.Caller, HemispherePropertyName, ref chunkHemisphere);
+            if (getModProperty(args.Caller, HemispherePropertyName, ref chunkHemisphere) == EnumCommandStatus.Error)
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = ChunkNotGeneratedWithBiomesModInstalled };
             var hemisphereStr = Enum.GetName(typeof(EnumHemisphere), chunkHemisphere);
 
             var chunkRealms = new List<string>();
-            getModProperty(args.Caller, RealmPropertyName, ref chunkRealms);
+            if (getModProperty(args.Caller, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = ChunkNotGeneratedWithBiomesModInstalled };
             var realmsStr = chunkRealms?.Join(delimiter: ",");
 
-            var serverPlayer = args.Caller.Player as IServerPlayer;
-            if (serverPlayer != null)
-                serverPlayer.SendMessage(GlobalConstants.CurrentChatGroup, $"Hemisphere: {hemisphereStr} Realms: {realmsStr}", EnumChatType.Notification);
-
-            return new TextCommandResult { Status = EnumCommandStatus.Success };
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = $"Hemisphere: {hemisphereStr} Realms: {realmsStr}" };
         }
 
         public TextCommandResult onSetHemisphereCommand(TextCommandCallingArgs args)
@@ -325,35 +298,33 @@ namespace Biomes
             if (Enum.TryParse(args.Parsers[0].GetValue() as string, out EnumHemisphere hemisphere))
                 return new TextCommandResult { Status = setModPropertyForCallerChunk(args.Caller, HemispherePropertyName, hemisphere) };
 
-            return new TextCommandResult { Status = EnumCommandStatus.Error };
+            return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = "Bad hemisphere argument" };
         }
 
         public TextCommandResult onAddRealmCommand(TextCommandCallingArgs args)
         {
             var currentRealms = new List<string>();
-            EnumCommandStatus result = getModProperty(args.Caller, RealmPropertyName, ref currentRealms);
-            if (result == EnumCommandStatus.Success)
-            {
-                var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
-                currentRealms.Add(value);
-                result = setModPropertyForCallerChunk(args.Caller, RealmPropertyName, currentRealms.Distinct());
-            }
+            getModProperty(args.Caller, RealmPropertyName, ref currentRealms);
+            if (currentRealms == null)
+                currentRealms = new();
 
-            return new TextCommandResult { Status = result };
+            var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
+            currentRealms.Add(value);
+
+            return new TextCommandResult { Status = setModPropertyForCallerChunk(args.Caller, RealmPropertyName, currentRealms.Distinct()), StatusMessage = currentRealms?.Join(delimiter: ",") };
         }
 
         private TextCommandResult onRemoveRealmCommand(TextCommandCallingArgs args)
         {
             var currentRealms = new List<string>();
-            EnumCommandStatus result = getModProperty(args.Caller, RealmPropertyName, ref currentRealms);
-            if (result == EnumCommandStatus.Success)
-            {
-                var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
-                currentRealms.Remove(value);
-                result = setModPropertyForCallerChunk(args.Caller, RealmPropertyName, currentRealms.Distinct());
-            }
+            getModProperty(args.Caller, RealmPropertyName, ref currentRealms);
+            if (currentRealms == null)
+                currentRealms = new();
 
-            return new TextCommandResult { Status = result };
+            var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
+            currentRealms.Remove(value);
+
+            return new TextCommandResult { Status = setModPropertyForCallerChunk(args.Caller, RealmPropertyName, currentRealms.Distinct()), StatusMessage = currentRealms?.Join(delimiter: ",") };
         }
 
         public EnumCommandStatus setModPropertyForCallerChunk(Caller caller, string name, object value)
@@ -384,7 +355,7 @@ namespace Biomes
                 return EnumCommandStatus.Error;
 
             value = chunk.GetModdata<T>(name);
-            return EnumCommandStatus.Success;
+            return value == null ? EnumCommandStatus.Error : EnumCommandStatus.Success;
         }
     }
 }

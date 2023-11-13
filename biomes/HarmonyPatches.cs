@@ -37,8 +37,10 @@ namespace Biomes
         {
             __state = __instance.WorldGenConds;
 
-            var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos); var chunkRealms = new List<string>();
-            BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
+            var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos);
+            var chunkRealms = new List<string>();
+            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return true;
 
             var newConds = new List<FruitTreeWorldGenConds>();
             foreach (var cond in __state)
@@ -75,7 +77,8 @@ namespace Biomes
 
             var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos);
             var chunkRealms = new List<string>();
-            BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
+            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return true;
 
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
@@ -113,7 +116,8 @@ namespace Biomes
 
             var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos);
             var chunkRealms = new List<string>();
-            BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
+            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return true;
 
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
@@ -150,7 +154,8 @@ namespace Biomes
 
             var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
             var chunkRealms = new List<string>();
-            BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
+            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return true;
 
             var blockPatches = new List<BlockPatch>();
             foreach (var bp in __state)
@@ -188,7 +193,8 @@ namespace Biomes
             
             var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
             var chunkRealms = new List<string>();
-            BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
+            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return true;
 
             var treeVariants = new List<TreeVariant>();
             foreach (var gen in treeGenProps.ShrubGens)
@@ -228,7 +234,8 @@ namespace Biomes
             
             var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
             var chunkRealms = new List<string>();
-            BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms);
+            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return true;
 
             var treeVariants = new List<TreeVariant>();
             foreach (var gen in treeGenProps.TreeGens)
