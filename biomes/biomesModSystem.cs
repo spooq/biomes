@@ -219,7 +219,7 @@ namespace Biomes
         {
             var chunkRealms = new List<string>();
             if (getModProperty(args.Caller, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("ChunkNotGeneratedWithBiomesModInstalled") };
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get($"{Mod.Info.ModID}:ChunkNotGeneratedWithBiomesModInstalled") };
 
             var trees = new List<string>();
             foreach (var realm in chunkRealms)
@@ -240,7 +240,7 @@ namespace Biomes
         {
             var chunkRealms = new List<string>();
             if (getModProperty(args.Caller, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("ChunkNotGeneratedWithBiomesModInstalled") };
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get($"{Mod.Info.ModID}:ChunkNotGeneratedWithBiomesModInstalled") };
 
             var trees = new List<string>();
             foreach (var realm in chunkRealms)
@@ -261,7 +261,7 @@ namespace Biomes
         {
             var chunkRealms = new List<string>();
             if (getModProperty(args.Caller, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("ChunkNotGeneratedWithBiomesModInstalled") };
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get($"{Mod.Info.ModID}:ChunkNotGeneratedWithBiomesModInstalled") };
 
             var trees = new List<string>();
             foreach (var realm in chunkRealms)
@@ -282,12 +282,12 @@ namespace Biomes
         {
             var chunkHemisphere = EnumHemisphere.North;
             if (getModProperty(args.Caller, HemispherePropertyName, ref chunkHemisphere) == EnumCommandStatus.Error)
-                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("ChunkNotGeneratedWithBiomesModInstalled") };
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get($"{Mod.Info.ModID}:ChunkNotGeneratedWithBiomesModInstalled") };
             var hemisphereStr = Enum.GetName(typeof(EnumHemisphere), chunkHemisphere);
 
             var chunkRealms = new List<string>();
             if (getModProperty(args.Caller, RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("ChunkNotGeneratedWithBiomesModInstalled") };
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get($"{Mod.Info.ModID}:ChunkNotGeneratedWithBiomesModInstalled") };
             var realmsStr = chunkRealms?.Join(delimiter: ",");
 
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = $"Hemisphere: {hemisphereStr} Realms: {realmsStr}" };
