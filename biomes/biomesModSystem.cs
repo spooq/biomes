@@ -57,6 +57,8 @@ namespace Biomes
         public RealmsConfig RealmsConfig;
         public BiomeConfig ModConfig;
 
+        public bool TagOnChunkGen = true;
+
         //public NormalizedSimplexNoise noise = new NormalizedSimplexNoise();
 
         public override bool ShouldLoad(EnumAppSide side)
@@ -151,6 +153,9 @@ namespace Biomes
 
         public void OnMapChunkGeneration(IMapChunk mapChunk, int chunkX, int chunkZ)
         {
+            if (!TagOnChunkGen)
+                return;
+
             EnumHemisphere hemisphere;
             int currentRealm;
             var realmNames = new List<string>();
