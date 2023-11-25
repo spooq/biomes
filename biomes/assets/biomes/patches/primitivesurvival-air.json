@@ -2,26 +2,22 @@
   {
     "file": "primitivesurvival:entities/air/willowisp.json",
     "op": "add",
-    "path": "/",
+    "path": "/attributes/-",
     "side": "Server",
     "value": {
-      "attributes": [
-        {
-          "biorealm": [
-            "pacific nearctic",
-            "atlantic nearctic",
-            "atlantic palearctic",
-            "central palearctic",
-            "eastern palearctic",
-            "pacific palearctic",
-            "pacific neotropic",
-            "atlantic neotropic",
-            "atlantic afrotropic",
-            "eastern afrotropic",
-            "australasian",
-            "oceanic"
-          ]
-        }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
       ]
     },
     "dependsOn": [

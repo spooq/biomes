@@ -2,7 +2,7 @@
   {
     "file": "primitivesurvival:entities/water/bioluminescent.json",
     "op": "add",
-    "path": "/",
+    "path": "/attributes/-",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -19,6 +19,11 @@
         "australasian",
         "oceanic"
       ]
-    }
+    },
+    "dependsOn": [
+      {
+        "modid": "primitivesurvival"
+      }
+    ]
   }
 ]
