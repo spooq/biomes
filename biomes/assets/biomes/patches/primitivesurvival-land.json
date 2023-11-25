@@ -2,7 +2,7 @@
   {
     "file": "primitivesurvival:entities/land/crab-bairdicrab.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -19,7 +19,7 @@
   {
     "file": "primitivesurvival:entities/land/crab-landcrab.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -36,7 +36,7 @@
   {
     "file": "primitivesurvival:entities/land/earthworm.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -63,7 +63,7 @@
   {
     "file": "primitivesurvival:entities/land/fireflies.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -79,7 +79,7 @@
   {
     "file": "primitivesurvival:entities/land/livingdead.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -106,7 +106,7 @@
   {
     "file": "primitivesurvival:entities/land/skullofthedead.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -133,7 +133,7 @@
   {
     "file": "primitivesurvival:entities/land/snake-blackrat.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -149,7 +149,7 @@
   {
     "file": "primitivesurvival:entities/land/snake-chainviper.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -165,7 +165,7 @@
   {
     "file": "primitivesurvival:entities/land/snake-coachwhip.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
@@ -182,7 +182,7 @@
   {
     "file": "primitivesurvival:entities/land/snake-pitviper.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [

@@ -2,7 +2,7 @@
   {
     "file": "primitivesurvival:entities/air/willowisp.json",
     "op": "add",
-    "path": "/attributes/-",
+    "path": "/attributes",
     "side": "Server",
     "value": {
       "biorealm": [
