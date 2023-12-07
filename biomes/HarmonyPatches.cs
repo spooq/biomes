@@ -1,11 +1,11 @@
 ﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
-using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
@@ -17,18 +17,18 @@ namespace Biomes
     public static class HarmonyPatches
     {
         public static Harmony harmony;
-        public static BiomesModSystem BiomesMod;
+        public static BiomesModSystem biomesMod;
 
         public static void Init(BiomesModSystem mod)
         {
-            BiomesMod = mod;
-            harmony = new Harmony(BiomesMod.Mod.Info.ModID);
+            biomesMod = mod;
+            harmony = new Harmony(biomesMod.Mod.Info.ModID);
             harmony.PatchAll();
         }
 
         public static void Shutdown()
         {
-            harmony.UnpatchAll(BiomesMod.Mod.Info.ModID);
+            harmony.UnpatchAll(biomesMod.Mod.Info.ModID);
         }
 
         [HarmonyPrefix]
@@ -37,25 +37,14 @@ namespace Biomes
         {
             __state = __instance.WorldGenConds;
 
-            var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-            var chunkRealms = new List<string>();
-            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return true;
+            biomesMod.originalFruitTrees ??= __state;
 
-            var newConds = new List<FruitTreeWorldGenConds>();
-            foreach (var cond in __state)
-            {
-                foreach (var item in BiomesMod.ModConfig.FruitTreeBiomes)
-                {
-                    if (WildcardUtil.Match(item.Key, cond.Type) && item.Value.Intersect(chunkRealms).Any())
-                    {
-                        newConds.Add(cond);
-                        break;
-                    }
-                }
-            }
+            var filtered = new List<FruitTreeWorldGenConds>();
+            foreach (var fruitTreeWorldGenCond in __state)
+                if (biomesMod.AllowFruitTreeSpawn(blockAccessor.GetMapChunkAtBlockPos(pos), fruitTreeWorldGenCond, biomesMod.BiomeConfig.FruitTreeBiomes, pos))
+                    filtered.Add(fruitTreeWorldGenCond);
 
-            __instance.WorldGenConds = newConds.ToArray();
+            __instance.WorldGenConds = filtered.ToArray();
             return true;
         }
 
@@ -67,81 +56,38 @@ namespace Biomes
         }
 
         [HarmonyPrefix]
-        [HarmonyPriority(398)]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static bool genPatchesUnderTreePrefix(ref ForestFloorSystem __instance, out List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
+        public static bool genPatchesTreePrefix(ref ForestFloorSystem __instance, out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
         {
-            var blockPatchesField = Traverse.Create(__instance).Field("underTreePatches");
-            var blockPatchesValue = blockPatchesField.GetValue() as List<BlockPatch>;
-            __state = blockPatchesValue;
+            var underTreeField = Traverse.Create(__instance).Field("underTreePatches");
+            var underTreeValue = underTreeField.GetValue() as List<BlockPatch>;
 
-            var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-            var chunkRealms = new List<string>();
-            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return true;
+            var onTreeField = Traverse.Create(__instance).Field("onTreePatches");
+            var onTreeValue = onTreeField.GetValue() as List<BlockPatch>;
 
-            var blockPatches = new List<BlockPatch>();
-            foreach (var bp in __state)
-            {
-                foreach (var item in BiomesMod.ModConfig.BlockPatchBiomes)
-                {
-                    if (bp.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)) && item.Value.Intersect(chunkRealms).Any())
-                    {
-                        blockPatches.Add(bp);
-                        break;
-                    }
-                }
-            }
+            __state = (underTreeValue, onTreeValue);
 
-            blockPatchesField.SetValue(blockPatches);
+            var filtered = new List<BlockPatch>();
+            foreach (var blockPatch in underTreeValue)
+                if (biomesMod.AllowBlockPatchSpawn(blockAccessor.GetMapChunkAtBlockPos(pos), blockPatch, biomesMod.BiomeConfig.BlockPatchBiomes, pos))
+                    filtered.Add(blockPatch);
+            underTreeField.SetValue(filtered);
+
+            var filtered2 = new List<BlockPatch>();
+            foreach (var blockPatch in onTreeValue)
+                if (biomesMod.AllowBlockPatchSpawn(blockAccessor.GetMapChunkAtBlockPos(pos), blockPatch, biomesMod.BiomeConfig.BlockPatchBiomes, pos))
+                    filtered2.Add(blockPatch);
+            onTreeField.SetValue(filtered2);
+
             return true;
         }
 
         [HarmonyPostfix]
-        [HarmonyPriority(399)]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static void genPatchesUnderTreePostfix(ref ForestFloorSystem __instance, List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
+        public static void genPatchesTreePostfix(ref ForestFloorSystem __instance, (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
         {
-            Traverse.Create(__instance).Field("underTreePatches").SetValue(__state);
-        }
-
-        [HarmonyPrefix]
-        [HarmonyPriority(399)]
-        [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static bool genPatchesOnTreePrefix(ref ForestFloorSystem __instance, out List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
-        {
-            var blockPatchesField = Traverse.Create(__instance).Field("onTreePatches");
-            var blockPatchesValue = blockPatchesField.GetValue() as List<BlockPatch>;
-            __state = blockPatchesValue;
-
-            var mapChunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-            var chunkRealms = new List<string>();
-            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return true;
-
-            var blockPatches = new List<BlockPatch>();
-            foreach (var bp in __state)
-            {
-                foreach (var item in BiomesMod.ModConfig.BlockPatchBiomes)
-                {
-                    if (bp.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)) && item.Value.Intersect(chunkRealms).Any())
-                    {
-                        blockPatches.Add(bp);
-                        break;
-                    }
-                }
-            }
-
-            blockPatchesField.SetValue(blockPatches);
-            return true;
-        }
-
-        [HarmonyPostfix]
-        [HarmonyPriority(398)]
-        [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static void genPatchesOnTreePostfix(ref ForestFloorSystem __instance, List<BlockPatch> __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
-        {
-            Traverse.Create(__instance).Field("onTreePatches").SetValue(__state);
+            Traverse.Create(__instance).Field("underTreePatches").SetValue(__state.Item1);
+            Traverse.Create(__instance).Field("onTreePatches").SetValue(__state.Item2);
         }
 
         [HarmonyPrefix]
@@ -152,25 +98,12 @@ namespace Biomes
             var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
             __state = bpc.PatchesNonTree;
 
-            var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-            var chunkRealms = new List<string>();
-            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return true;
+            var filtered = new List<BlockPatch>();
+            foreach (var blockPatch in __state)
+                if (biomesMod.AllowBlockPatchSpawn(blockAccessor.GetMapChunk(chunkX, chunkZ), blockPatch, biomesMod.BiomeConfig.BlockPatchBiomes))
+                    filtered.Add(blockPatch);
 
-            var blockPatches = new List<BlockPatch>();
-            foreach (var bp in __state)
-            {
-                foreach (var item in BiomesMod.ModConfig.BlockPatchBiomes)
-                {
-                    if (bp.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)) && item.Value.Intersect(chunkRealms).Any())
-                    {
-                        blockPatches.Add(bp);
-                        break;
-                    }
-                }
-            }
-
-            bpc.PatchesNonTree = blockPatches.ToArray();
+            bpc.PatchesNonTree = filtered.ToArray();
             return true;
         }
 
@@ -190,27 +123,13 @@ namespace Biomes
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
             var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
             __state = treeGenProps.ShrubGens.ToList();
-            
-            var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-            var chunkRealms = new List<string>();
-            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return true;
 
-            var treeVariants = new List<TreeVariant>();
-            foreach (var gen in treeGenProps.ShrubGens)
-            {
-                var name = gen.Generator.GetName();
-                foreach (var item in BiomesMod.ModConfig.TreeBiomes)
-                {
-                    if (WildcardUtil.Match(item.Key, name) && item.Value.Intersect(chunkRealms).Any())
-                    {
-                        treeVariants.Add(gen);
-                        break;
-                    }
-                }
-            }
+            var filtered = new List<TreeVariant>();
+            foreach (var generator in treeGenProps.ShrubGens)
+                if (biomesMod.AllowTreeShrubSpawn(blockAccessor.GetMapChunk(chunkX, chunkZ), generator, biomesMod.BiomeConfig.TreeBiomes))
+                    filtered.Add(generator);
 
-            treeGenProps.ShrubGens = treeVariants.ToArray();
+            treeGenProps.ShrubGens = filtered.ToArray();
             return true;
         }
 
@@ -231,27 +150,13 @@ namespace Biomes
             var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
             var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
             __state = treeGenProps.TreeGens.ToList();
-            
-            var mapChunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-            var chunkRealms = new List<string>();
-            if (BiomesMod.getModProperty(mapChunk, BiomesModSystem.RealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return true;
 
-            var treeVariants = new List<TreeVariant>();
-            foreach (var gen in treeGenProps.TreeGens)
-            {
-                var name = gen.Generator.GetName();
-                foreach (var item in BiomesMod.ModConfig.TreeBiomes)
-                {
-                    if (WildcardUtil.Match(item.Key, name) && item.Value.Intersect(chunkRealms).Any())
-                    {
-                        treeVariants.Add(gen);
-                        break;
-                    }
-                }
-            }
+            var filtered = new List<TreeVariant>();
+            foreach (var generator in treeGenProps.TreeGens)
+                if (biomesMod.AllowTreeShrubSpawn(blockAccessor.GetMapChunk(chunkX, chunkZ), generator, biomesMod.BiomeConfig.TreeBiomes))
+                    filtered.Add(generator);
 
-            treeGenProps.TreeGens = treeVariants.ToArray();
+            treeGenProps.TreeGens = filtered.ToArray();
             return true;
         }
 
@@ -267,18 +172,17 @@ namespace Biomes
         // World-gen spawn
         [HarmonyPrefix]
         [HarmonyPatch(typeof(GenCreatures), "CanSpawnAtPosition")]
-        public static bool CanSpawnAtPosition(GenCreatures __instance, ref bool __result, IBlockAccessor blockAccessor, EntityProperties type, BlockPos pos, BaseSpawnConditions sc)
+        public static bool CanSpawnAtPosition(ref bool __result, IBlockAccessor blockAccessor, EntityProperties type, BlockPos pos, BaseSpawnConditions sc)
         {
-            __result = BiomesMod.AllowEntitySpawn(blockAccessor.GetMapChunkAtBlockPos(pos), type);
-            return __result;
+            return __result = biomesMod.AllowEntitySpawn(blockAccessor.GetMapChunkAtBlockPos(pos), type, pos);
         }
 
         // Run-time spawn
         [HarmonyPrefix]
         [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
-        public static bool CanSpawnAt(ServerSystemEntitySpawner __instance, ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
+        public static bool CanSpawnAt(ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
         {
-            return chunkCol.Any() && BiomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type);
+            return chunkCol.Any() && biomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
         }
     }
 }

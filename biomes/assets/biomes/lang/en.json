@@ -1,3 +1,4 @@
 {
-  "biomes:ChunkNotGeneratedWithBiomesModInstalled": "Chunk was not generated with Biomes mod installed."
+  "biomes:chunknotgenwithbiomes": "This chunk was not generated with the Biomes mod installed.",
+  "biomes:chunknotgenwithrivers": "Rivers mod not installed"
 }
