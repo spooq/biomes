@@ -8,10 +8,11 @@
     "TenthArchitect",
     "Sheepon",
     "Clown Skeleton",
+    "Gryfang",
     "Clint"
   ],
   "description": "Biome system",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "dependencies": {
     "game": ""
   },

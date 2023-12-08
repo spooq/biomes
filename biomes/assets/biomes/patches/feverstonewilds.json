@@ -1,0 +1,557 @@
+[
+  {
+    "file": "feverstonewilds:entities/land/bison.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/bison-calf.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/cockatrice.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/direwolf.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/direwolf-pup.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/faunling.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/horse.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-draft-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-arabian-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-donkey-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/foal.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-draft-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-arabian-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-donkey-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/geodecrab.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/giraffe.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/golem.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    }
+  },
+  {
+    "file": "feverstonewilds:entities/land/ostrich.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/ostrich-chick.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/scorpion.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/spider.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/land/toad.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/water/buromenfish.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/water/discus.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/water/eel.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/water/orca.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/water/sharks.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
+    "file": "feverstonewilds:entities/water/stingray.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  }
+]
