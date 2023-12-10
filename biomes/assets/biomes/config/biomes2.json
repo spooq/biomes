@@ -356,6 +356,32 @@
             ],
             "bioriver": "both"
         },
+        "hideandfabric:crop-cotton*": {
+            "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+                "atlantic palearctic",
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic",
+                "pacific neotropic",
+                "atlantic neotropic",
+                "atlantic afrotropic",
+                "eastern afrotropic"
+            ],
+            "bioriver": "both"
+        },
+        "hideandfabric:crop-jute*": {
+            "biorealm": [
+                "atlantic palearctic",
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic",
+                "atlantic afrotropic",
+                "eastern afrotropic"
+            ],
+            "bioriver": "both"
+        },
         "*-holly-*": {
             "biorealm": [
                 "pacific nearctic",
@@ -1407,8 +1433,7 @@
                 "eastern palearctic",
                 "pacific palearctic",
                 "pacific neotropic",
-                "atlantic neotropic",
-                "atlantic afrotropic"
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -1459,8 +1484,10 @@
                 "pacific nearctic",
                 "atlantic nearctic",
                 "atlantic palearctic",
+                "central palearctic",
                 "eastern palearctic",
-                "pacific palearctic"
+                "pacific palearctic",
+                "pacific neotropic"
             ],
             "bioriver": "both"
         },
@@ -1559,8 +1586,8 @@
         },
         "mushroom-lobster-*": {
             "biorealm": [
-                "pacific nearctic",
-                "atlantic nearctic"
+                "atlantic nearctic",
+                "atlantic neotropic"
             ],
             "bioriver": "both"
         },
@@ -1586,9 +1613,14 @@
             "biorealm": [
                 "pacific nearctic",
                 "atlantic nearctic",
-                "atlantic palearctic",
                 "central palearctic",
-                "pacific neotropic"
+                "eastern palearctic",
+                "pacific palearctic",
+                "pacific neotropic",
+                "atlantic neotropic",
+                "atlantic afrotropic",
+                "eastern afrotropic",
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -1634,6 +1666,8 @@
                 "pacific palearctic",
                 "pacific neotropic",
                 "atlantic neotropic",
+                "atlantic afrotropic",
+                "eastern afrotropic",
                 "australasian"
             ],
             "bioriver": "both"
