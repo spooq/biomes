@@ -1,0 +1,476 @@
+[
+  {
+    "file": "capreolinae:entites/land/cervidae-carcass.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/alceini-baby.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-alceini-alces-alces": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/alceini-female.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-alceini-alces-alces": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/alceini-male.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-alceini-alces-alces": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/capreolini-baby.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-capreolini-capreolus-capreolus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-capreolini-capreolus-pygargus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-capreolini-hydropotes-inermis": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/capreolini-female.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-capreolini-capreolus-capreolus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-capreolini-capreolus-pygargus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-capreolini-hydropotes-inermis": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/capreolini-male.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-capreolini-capreolus-capreolus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-capreolini-capreolus-pygargus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-capreolini-hydropotes-inermis": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/odocoileini-baby.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-odocoileini-blastocerus-dichotomus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-hippocamelus-antisensis": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-hippocamelus-bisulcus": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-americana": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-chunyi": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-gouazoubira": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-nana": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-nemorivaga": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-rufina": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-temama": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-mazama-tienhoveni": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-odocoileus-hemionus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-odocoileus-pandora": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-odocoileus-virginianus": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-odocoileini-ozotoceros-bezoarticus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-pudu-mephistophiles": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-pudu-puda": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-rangifer-tarandus": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/odocoileini-female.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-odocoileini-blastocerus-dichotomus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-hippocamelus-antisensis": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-hippocamelus-bisulcus": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-americana": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-chunyi": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-gouazoubira": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-nana": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-nemorivaga": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-rufina": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-temama": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-mazama-tienhoveni": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-odocoileus-hemionus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-odocoileus-pandora": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-odocoileus-virginianus": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-odocoileini-ozotoceros-bezoarticus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-pudu-mephistophiles": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-pudu-puda": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-rangifer-tarandus": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  },
+  {
+    "file": "capreolinae:entites/land/odocoileini-male.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-odocoileini-blastocerus-dichotomus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-hippocamelus-antisensis": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-hippocamelus-bisulcus": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-americana": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-chunyi": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-gouazoubira": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-nana": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-nemorivaga": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-rufina": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-mazama-temama": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-mazama-tienhoveni": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-odocoileus-hemionus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-odocoileus-pandora": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-odocoileini-odocoileus-virginianus": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-odocoileini-ozotoceros-bezoarticus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-odocoileini-pudu-mephistophiles": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-pudu-puda": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-odocoileini-rangifer-tarandus": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "capreolinae" } ]
+  }
+]
