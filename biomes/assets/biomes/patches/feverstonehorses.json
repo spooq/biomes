@@ -1,0 +1,66 @@
+[
+  {
+    "file": "feverstonehorses:entities/land/horse.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-draft": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-arabian": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-donkey": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "feverstonehorses" } ]
+  },
+  {
+    "file": "feverstonehorses:entities/land/foal.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "value": {
+      "*-draft": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-arabian": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-donkey": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "feverstonehorses" } ]
+  }
+]
