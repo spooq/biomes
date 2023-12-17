@@ -8,7 +8,9 @@
       "*": {
         "biorealm": [
           "atlantic nearctic",
-          "pacific nearctic"
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic"
         ]
       }
     },
@@ -27,7 +29,9 @@
       "*": {
         "biorealm": [
           "atlantic nearctic",
-          "pacific nearctic"
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic"
         ]
       }
     },
@@ -45,18 +49,7 @@
     "value": {
       "*": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
-          "atlantic neotropic",
-          "pacific neotropic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "eastern afrotropic",
-          "atlantic afrotropic",
-          "australasian",
-          "oceania"
+          "atlantic palearctic"
         ]
       }
     },
@@ -74,9 +67,8 @@
     "value": {
       "*": {
         "biorealm": [
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic"
+          "pacific nearctic",
+          "atlantic nearctic"
         ]
       }
     },
@@ -94,9 +86,8 @@
     "value": {
       "*": {
         "biorealm": [
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic"
+          "pacific nearctic",
+          "atlantic nearctic"
         ]
       }
     },
@@ -114,18 +105,7 @@
     "value": {
       "*": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
-          "atlantic neotropic",
-          "pacific neotropic",
           "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "eastern afrotropic",
-          "atlantic afrotropic",
-          "australasian",
-          "oceania"
         ]
       }
     },
@@ -143,8 +123,6 @@
     "value": {
       "*-draft": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
           "atlantic palearctic",
           "central palearctic",
           "eastern palearctic"
@@ -157,8 +135,6 @@
       },
       "*-donkey": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
           "atlantic palearctic",
           "central palearctic",
           "eastern palearctic"
@@ -179,8 +155,6 @@
     "value": {
       "*-draft": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
           "atlantic palearctic",
           "central palearctic",
           "eastern palearctic"
@@ -193,8 +167,6 @@
       },
       "*-donkey": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
           "atlantic palearctic",
           "central palearctic",
           "eastern palearctic"
@@ -244,7 +216,7 @@
     "value": {
       "*": {
         "biorealm": [
-          "pacific palearctic",
+          "atlantic palearctic",
           "eastern afrotropic",
           "atlantic afrotropic"
         ]
@@ -264,18 +236,7 @@
     "value": {
       "*": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
-          "atlantic neotropic",
-          "pacific neotropic",
-          "atlantic palearctic",
           "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "eastern afrotropic",
-          "atlantic afrotropic",
-          "australasian",
-          "oceania"
         ]
       }
     }
@@ -288,7 +249,7 @@
     "value": {
       "*": {
         "biorealm": [
-          "pacific palearctic",
+          "atlantic palearctic",
           "eastern afrotropic",
           "atlantic afrotropic"
         ]
@@ -308,7 +269,7 @@
     "value": {
       "*": {
         "biorealm": [
-          "pacific palearctic",
+          "atlantic palearctic",
           "eastern afrotropic",
           "atlantic afrotropic"
         ]
@@ -435,9 +396,7 @@
     "value": {
       "*": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
-          "oceania"
+          "atlantic neotropic"
         ]
       }
     },
@@ -455,9 +414,18 @@
     "value": {
       "*": {
         "biorealm": [
-          "atlantic nearctic",
           "pacific nearctic",
-          "oceania"
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
         ]
       }
     },
