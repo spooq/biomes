@@ -141,7 +141,7 @@
     "path": "/attributesByType",
     "side": "Server",
     "value": {
-      "*-draft-*": {
+      "*-draft": {
         "biorealm": [
           "atlantic nearctic",
           "pacific nearctic",
@@ -150,12 +150,12 @@
           "eastern palearctic"
         ]
       },
-      "*-arabian-*": {
+      "*-arabian": {
         "biorealm": [
           "central palearctic"
         ]
       },
-      "*-donkey-*": {
+      "*-donkey": {
         "biorealm": [
           "atlantic nearctic",
           "pacific nearctic",
@@ -177,7 +177,7 @@
     "path": "/attributesByType",
     "side": "Server",
     "value": {
-      "*-draft-*": {
+      "*-draft": {
         "biorealm": [
           "atlantic nearctic",
           "pacific nearctic",
@@ -186,12 +186,12 @@
           "eastern palearctic"
         ]
       },
-      "*-arabian-*": {
+      "*-arabian": {
         "biorealm": [
           "central palearctic"
         ]
       },
-      "*-donkey-*": {
+      "*-donkey": {
         "biorealm": [
           "atlantic nearctic",
           "pacific nearctic",
