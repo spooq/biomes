@@ -1189,6 +1189,7 @@
         },
         "glowworms-*": {
             "biorealm": [
+                "australasian",
                 "oceanic"
             ],
             "bioriver": "both"
