@@ -1189,6 +1189,7 @@
         },
         "glowworms-*": {
             "biorealm": [
+                "australasian",
                 "oceanic"
             ],
             "bioriver": "both"
@@ -2425,6 +2426,15 @@
             ],
             "bioriver": "both"
         },
+        "coconuttree-*": {
+            "biorealm": [
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic",
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
         "crimsonkingmaple": {
             "biorealm": [
                 "atlantic palearctic",
@@ -2747,7 +2757,7 @@
             ],
             "bioriver": "both"
         },
-        "salaux": {
+        "saxaul": {
             "biorealm": [
                 "central palearctic"
             ],

@@ -6,8 +6,6 @@
     "value": {
       "*-draft": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
           "atlantic palearctic",
           "central palearctic",
           "eastern palearctic"
@@ -20,8 +18,6 @@
       },
       "*-donkey": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
           "atlantic palearctic",
           "central palearctic",
           "eastern palearctic"
@@ -38,8 +34,6 @@
     "value": {
       "*-draft": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
           "atlantic palearctic",
           "central palearctic",
           "eastern palearctic"
@@ -52,8 +46,6 @@
       },
       "*-donkey": {
         "biorealm": [
-          "atlantic nearctic",
-          "pacific nearctic",
           "atlantic palearctic",
           "central palearctic",
           "eastern palearctic"
