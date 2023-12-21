@@ -1,0 +1,20 @@
+[
+  {
+    "file": "ornamentalfish:entities/water/guppy.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-wild": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+    },
+    "dependsOn": [
+      {
+        "modid": "OrnamentalFish"
+      }
+    ]
+  }
+]

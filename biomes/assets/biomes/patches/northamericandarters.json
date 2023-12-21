@@ -1,0 +1,18 @@
+[
+  {
+    "file": "nadarters:entities/water/darter.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "nadarters"
+      }
+    ]
+  }
+]
