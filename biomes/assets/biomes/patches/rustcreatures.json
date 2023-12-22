@@ -1,0 +1,147 @@
+[
+  {
+    "file": "rustcreatures:entities/land/derelict.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern afrotropic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "rustcreatures"
+      }
+    ]
+  },
+  {
+    "file": "rustcreatures:entities/land/derelict-swarm.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern afrotropic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "rustcreatures"
+      }
+    ]
+  },
+  {
+    "file": "rustcreatures:entities/land/itinerant.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern afrotropic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "rustcreatures"
+      }
+    ]
+  },
+  {
+    "file": "rustcreatures:entities/land/roamer.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern afrotropic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "rustcreatures"
+      }
+    ]
+  },
+  {
+    "file": "rustcreatures:entities/land/vagrant.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern afrotropic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "rustcreatures"
+      }
+    ]
+  }
+]
