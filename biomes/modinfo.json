@@ -13,7 +13,7 @@
     "Clint"
   ],
   "description": "Biome system",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "dependencies": {
     "game": ""
   },

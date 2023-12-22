@@ -1,0 +1,82 @@
+[
+  {
+    "file": "moreanimals:entities/wildturkey-chick.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/wildturkey-cock.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/wildturkey-cockpoult.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/wildturkey-hen.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  },
+  {
+    "file": "moreanimals:entities/wildturkey-henpoult.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ]
+  }
+]
