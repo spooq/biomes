@@ -47,6 +47,166 @@
       }
     }
   },
+    {
+    "file": "game:entities/land/hooved/deer.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "deer-whitetail-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "deer-redbrocket-*": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "deer-marsh-*": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "deer-caribou-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "deer-water-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "deer-pudu-*": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "deer-elk-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "deer-taruca-*": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "deer-chital-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "deer-guemal-*": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "deer-pampas-*": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "deer-fallow-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      }
+    }
+  },
+  {
+    "file": "game:entities/land/hooved/goat.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "goat-angora-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "goat-ibexalp-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "goat-ibexnub-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "goat-markhor-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "goat-mountain-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "goat-muskox-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "goat-nubian-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "goat-sirohi-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "goat-takingold-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "goat-turdag-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "goat-valais-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      }
+    }
+  },
+  {
+    "file": "game:entities/land/hooved/moose.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ]
+    }
+  },
   {
     "file": "game:entities/land/chicken-baby.json",
     "op": "add",
