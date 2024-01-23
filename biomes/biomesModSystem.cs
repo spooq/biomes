@@ -472,7 +472,7 @@ namespace Biomes
 
         public void CalculateValues(int chunkX, int chunkZ, out EnumHemisphere hemisphere, out int currentRealm)
         {
-            BlockPos blockPos = new BlockPos(chunkX * sapi.WorldManager.ChunkSize, 0, chunkZ * sapi.WorldManager.ChunkSize);
+            BlockPos blockPos = new BlockPos(chunkX * sapi.WorldManager.ChunkSize, 0, chunkZ * sapi.WorldManager.ChunkSize, 0);
             hemisphere = sapi.World.Calendar.GetHemisphere(blockPos);
 
             int realmCount;
