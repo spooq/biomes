@@ -196,6 +196,7 @@
     "file": "game:entities/land/hooved/moose.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		basketCatchable: true,
 		trapChance: 0.0,
@@ -222,6 +223,7 @@
     "file": "game:entities/land/chicken-baby.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		creatureDiet: {
 			foodCategories: ["Grain"],
@@ -245,6 +247,7 @@
     "file": "game:entities/land/chicken-hen.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		creatureDiet: {
 			foodCategories: ["Grain"],
@@ -268,6 +271,7 @@
     "file": "game:entities/land/chicken-rooster.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		creatureDiet: {
 			foodCategories: ["Grain"],
@@ -399,6 +403,7 @@
     "file": "game:entities/land/grub.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		basketCatchable: true,
       "biorealm": [
@@ -421,6 +426,7 @@
     "file": "game:entities/land/gazelle.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		"basketCatchableByType": { "*-baby":  true },
 		"trapChance": 0.0,
@@ -446,6 +452,7 @@
     "file": "game:entities/land/hare-baby.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		creatureDiet: {
 			foodCategories: ["Vegetable"],
@@ -473,6 +480,7 @@
     "file": "game:entities/land/hare-female.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		creatureDiet: {
 			foodCategories: ["Vegetable"],
@@ -500,6 +508,7 @@
     "file": "game:entities/land/hare-male.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		creatureDiet: {
 			foodCategories: ["Vegetable"],
@@ -527,6 +536,7 @@
     "file": "game:entities/land/hyena-female.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		killedByInfoText: "deadcreature-eaten",
 		"handbook": {
@@ -546,6 +556,7 @@
     "file": "game:entities/land/hyena-male.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		killedByInfoText: "deadcreature-eaten",
 		"handbook": {
@@ -565,6 +576,7 @@
     "file": "game:entities/land/hyena-pup.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		basketCatchable: true,
 		trapChance: 0.5,
@@ -583,6 +595,7 @@
     "file": "game:entities/land/pig-wild-female.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		basketCatchable: true,
 		trapChance: 0.0,
@@ -609,6 +622,7 @@
     "file": "game:entities/land/pig-wild-male.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		basketCatchable: true,
 		trapChance: 0.0,
@@ -633,6 +647,7 @@
     "file": "game:entities/land/pig-wild-piglet.json",
     "op": "add",
     "path": "/attributes",
+    "side": "Server",
     "value": {
 		basketCatchable: true,
 		trapChance: 0.5,
