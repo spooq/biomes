@@ -18,7 +18,8 @@
         "eastern afrotropic",
         "australasian",
         "oceanic"
-      ]
+      ],
+      "bioriver": "false"
     },
     "dependsOn": [
       {
@@ -45,7 +46,8 @@
         "eastern afrotropic",
         "australasian",
         "oceanic"
-      ]
+      ],
+      "bioriver": "false"
     },
     "dependsOn": [
       {
@@ -72,7 +74,8 @@
         "eastern afrotropic",
         "australasian",
         "oceanic"
-      ]
+      ],
+      "bioriver": "false"
     },
     "dependsOn": [
       {
