@@ -162,7 +162,12 @@
       },
       "goat-muskox-*": {
         "biorealm": [
-          "atlantic nearctic"
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific nearctic",
+          "pacific palearctic"
         ]
       },
       "goat-nubian-*": {
