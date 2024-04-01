@@ -1,7 +1,7 @@
 [
   {
     "file": "moreanimals:entities/wildturkey-chick.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -17,7 +17,7 @@
   },
   {
     "file": "moreanimals:entities/wildturkey-cock.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -33,7 +33,7 @@
   },
   {
     "file": "moreanimals:entities/wildturkey-cockpoult.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -49,7 +49,7 @@
   },
   {
     "file": "moreanimals:entities/wildturkey-hen.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -65,7 +65,7 @@
   },
   {
     "file": "moreanimals:entities/wildturkey-henpoult.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
