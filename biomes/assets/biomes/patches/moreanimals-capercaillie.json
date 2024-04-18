@@ -1,7 +1,7 @@
 [
   {
     "file": "moreanimals:entities/capercaillie-chick.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -19,7 +19,7 @@
   },
   {
     "file": "moreanimals:entities/capercaillie-cock.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -37,7 +37,7 @@
   },
   {
     "file": "moreanimals:entities/capercaillie-cockpoult.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -55,7 +55,7 @@
   },
   {
     "file": "moreanimals:entities/capercaillie-hen.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -73,7 +73,7 @@
   },
   {
     "file": "moreanimals:entities/capercaillie-henpoult.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
