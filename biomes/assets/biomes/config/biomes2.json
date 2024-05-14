@@ -265,6 +265,13 @@
             ],
             "bioriver": "both"
         },
+        "*-cowbane-*": {
+            "biorealm": [
+                "atlantic nearctic",
+                "atlantic palearctic"
+            ],
+            "bioriver": "both"
+        },
         "*-cranberry-*": {
             "biorealm": [
                 "pacific nearctic",
@@ -302,6 +309,14 @@
                 "atlantic afrotropic",
                 "eastern afrotropic",
                 "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "*-elecampane-*": {
+            "biorealm": [
+                "atlantic palearctic",
+                "central palearctic",
+                "eastern palearctic"
             ],
             "bioriver": "both"
         },
@@ -691,6 +706,14 @@
                 "eastern afrotropic",
                 "australasian",
                 "oceanic"
+            ],
+            "bioriver": "both"
+        },
+         "*-sorrel-*": {
+            "biorealm": [
+                "atlantic palearctic",
+                "central palearctic",
+                "eastern palearctic"
             ],
             "bioriver": "both"
         },
@@ -2172,7 +2195,7 @@
             ],
             "bioriver": "both"
         },
-        "hawtorn": {
+        "hawthorn": {
             "biorealm": [
                 "pacific nearctic",
                 "atlantic nearctic",
