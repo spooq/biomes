@@ -919,10 +919,43 @@
             ],
             "bioriver": "both"
         },
+        "berrybush-lillypillyblue-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "berrybush-lillypillypink-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "berrybush-lillypillywhite-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "berrybush-midyimberry-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
         "berrybush-pistachio-*": {
             "biorealm": [
                 "atlantic palearctic",
                 "atlantic afrotropic"
+            ],
+            "bioriver": "both"
+        },
+        "berrybush-seamango-*": {
+            "biorealm": [
+                "eastern afrotropic",
+                "pacific palearctic",
+                "australasian",
+                "oceanic"
             ],
             "bioriver": "both"
         },
@@ -943,12 +976,6 @@
         "berrybush-sumac-*": {
             "biorealm": [
                 "pacific nearctic"
-            ],
-            "bioriver": "both"
-        },
-        "berrybush-ugni-*": {
-            "biorealm": [
-                "pacific neotropic"
             ],
             "bioriver": "both"
         },
@@ -1234,6 +1261,12 @@
             ],
             "bioriver": "both"
         },
+        "groundberryplant-cheeseberry-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
         "groundberryplant-cloudberry-*": {
             "biorealm": [
                 "pacific nearctic",
@@ -1252,6 +1285,12 @@
                 "pacific neotropic",
                 "australasian",
                 "oceanic"
+            ],
+            "bioriver": "both"
+        },
+        "groundberryplant-creepingpine-*": {
+            "biorealm": [
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -1279,6 +1318,12 @@
             ],
             "bioriver": "both"
         },
+        "groundberryplant-honeypots-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
         "groundberryplant-knyazberry-*": {
             "biorealm": [
                 "eastern palearctic",
@@ -1292,6 +1337,18 @@
                 "central palearctic",
                 "eastern palearctic",
                 "pacific palearctic"
+            ],
+            "bioriver": "both"
+        },
+        "groundberryplant-pineheath-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "groundberryplant-rubysaltbush-*": {
+            "biorealm": [
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -1809,6 +1866,12 @@
             ],
             "bioriver": "both"
         },
+        "pricklyberrybush-fingerlime-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
         "pricklyberrybush-gooseberry-*": {
             "biorealm": [
                 "atlantic palearctic",
@@ -1855,9 +1918,30 @@
             ],
             "bioriver": "both"
         },
+        "shortberrybush-bluetongue-*": {
+            "biorealm": [
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic",
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
         "shortberrybush-flaxlily-*": {
             "biorealm": [
                 "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "shortberrybush-munthari-*": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "shortberrybush-ugni-*": {
+            "biorealm": [
+                "pacific neotropic"
             ],
             "bioriver": "both"
         },
@@ -1960,6 +2044,12 @@
                 "pacific nearctic",
                 "pacific neotropic",
                 "atlantic neotropic"
+            ],
+            "bioriver": "both"
+        },
+        "shrubberrybush-oldmansaltbush-*": {
+            "biorealm": [
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -2078,6 +2168,12 @@
         "grub"
     ],
     "FruitTreeBiomes": {
+        "achacha": {
+            "biorealm": [
+                "atlantic neotropic"
+            ],
+            "bioriver": "both"
+        },
         "almond": {
             "biorealm": [
                 "atlantic palearctic",
@@ -2096,6 +2192,17 @@
             "biorealm": [
                 "pacific nearctic",
                 "pacific neotropic"
+            ],
+            "bioriver": "both"
+        },
+        "beachalmond": {
+            "biorealm": [
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic",
+                "australasian",
+                "oceanic",
+                "eastern afrotropic"
             ],
             "bioriver": "both"
         },
@@ -2118,6 +2225,12 @@
                 "pacific palearctic",
                 "atlantic afrotropic",
                 "eastern afrotropic"
+            ],
+            "bioriver": "both"
+        },
+        "bunya": {
+            "biorealm": [
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -2146,6 +2259,15 @@
                 "atlantic palearctic",
                 "central palearctic",
                 "eastern palearctic"
+            ],
+            "bioriver": "both"
+        },
+        "chinaberry": {
+            "biorealm": [
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic",
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -2216,11 +2338,23 @@
             ],
             "bioriver": "both"
         },
+        "illawarra": {
+            "biorealm": [
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
         "jujube": {
             "biorealm": [
                 "central palearctic",
                 "eastern palearctic",
                 "pacific palearctic"
+            ],
+            "bioriver": "both"
+        },
+        "lemonaspen": {
+            "biorealm": [
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -2320,6 +2454,12 @@
         "redapple": {
             "biorealm": [
                 "central palearctic"
+            ],
+            "bioriver": "both"
+        },
+        "redquandong": {
+            "biorealm": [
+                "australasian"
             ],
             "bioriver": "both"
         },
@@ -2482,13 +2622,6 @@
             ],
             "bioriver": "both"
         },
-        "blackpoplar": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
         "bluemahoe": {
             "biorealm": [
                 "atlantic nearctic"
@@ -2532,15 +2665,6 @@
         "coastdouglasfir": {
             "biorealm": [
                 "pacific nearctic"
-            ],
-            "bioriver": "both"
-        },
-        "coconuttree-*": {
-            "biorealm": [
-                "central palearctic",
-                "eastern palearctic",
-                "pacific palearctic",
-                "australasian"
             ],
             "bioriver": "both"
         },
@@ -2824,25 +2948,6 @@
         "mountainpine": {
             "biorealm": [
                 "atlantic palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "narrowbirch": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic",
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "narrowwillow": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic",
-                "eastern palearctic",
-                "pacific palearctic",
-                "atlantic afrotropic",
-                "eastern afrotropic"
             ],
             "bioriver": "both"
         },
