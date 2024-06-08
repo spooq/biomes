@@ -1,7 +1,7 @@
 [
   {
     "file": "primitivesurvival:entities/water/bioluminescent.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
