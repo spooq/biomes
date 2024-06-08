@@ -1,7 +1,7 @@
 [
   {
     "file": "game:entities/air/beemob.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
