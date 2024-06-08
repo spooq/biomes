@@ -1,7 +1,7 @@
 [
   {
     "file": "knobtailedgeckos:entities/land/knobtailedgecko.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
