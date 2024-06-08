@@ -1,7 +1,7 @@
 [
   {
     "file": "ornamentalfish:entities/water/betta.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
