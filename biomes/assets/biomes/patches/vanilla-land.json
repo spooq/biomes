@@ -1,7 +1,7 @@
 [
   {
     "file": "game:entities/land/bear.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -49,7 +49,7 @@
   },
     {
     "file": "game:entities/land/hooved/deer.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -130,7 +130,7 @@
   },
   {
     "file": "game:entities/land/hooved/goat.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -199,22 +199,10 @@
   },
   {
     "file": "game:entities/land/hooved/moose.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.3,
-		"killedByInfoText": "deadcreature-killed",
-		creatureDiet: {
-			foodCategories: ["Vegetable", "Grain"],
-			foodTags: ["nibbleCrop"],
-			skipFoodTags: ["rice", "parsnip"]
-		},
-		"handbook": {
-			"groupcode": "creaturegroup-moose"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
@@ -226,20 +214,10 @@
   },
   {
     "file": "game:entities/land/chicken-baby.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		creatureDiet: {
-			foodCategories: ["Grain"],
-			foodTags: ["fruitmash"]
-		},
-		basketCatchable: true,
-		trapChance: 0.8,
-		trapDestroyChance: 0.00,
-		"handbook": {
-			"groupcode": "creaturegroup-chicken"
-		},
       "biorealm": [
         "atlantic palearctic",
         "central palearctic",
@@ -250,20 +228,10 @@
   },
   {
     "file": "game:entities/land/chicken-hen.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		creatureDiet: {
-			foodCategories: ["Grain"],
-			foodTags: ["fruitmash"]
-		},
-		basketCatchable: true,
-		trapChance: 0.5,
-		trapDestroyChance: 0.00,
-		"handbook": {
-			"groupcode": "creaturegroup-chicken"
-		},
       "biorealm": [
         "atlantic palearctic",
         "central palearctic",
@@ -274,20 +242,10 @@
   },
   {
     "file": "game:entities/land/chicken-rooster.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		creatureDiet: {
-			foodCategories: ["Grain"],
-			foodTags: ["fruitmash"]
-		},
-		basketCatchable: true,
-		trapChance: 0.5,
-		trapDestroyChance: 0.01,
-		"handbook": {
-			"groupcode": "creaturegroup-chicken"
-		},
       "biorealm": [
         "atlantic palearctic",
         "central palearctic",
@@ -298,7 +256,7 @@
   },
   {
     "file": "game:entities/land/fox-arctic-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
@@ -314,7 +272,7 @@
   },
   {
     "file": "game:entities/land/fox-arctic-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
@@ -330,7 +288,7 @@
   },
   {
     "file": "game:entities/land/fox-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
@@ -346,7 +304,7 @@
   },
   {
     "file": "game:entities/land/fox-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
@@ -362,7 +320,7 @@
   },
   {
     "file": "game:entities/land/fox-pup.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
@@ -378,7 +336,7 @@
   },
   {
     "file": "game:entities/land/fox.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -406,11 +364,10 @@
   },
   {
     "file": "game:entities/land/grub.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		basketCatchable: true,
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
@@ -429,21 +386,10 @@
   },
   {
     "file": "game:entities/land/gazelle.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		"basketCatchableByType": { "*-baby":  true },
-		"trapChance": 0.0,
-		"trapDestroyChance": 0.1,
-		creatureDiet: {
-			foodCategories: ["Vegetable", "Grain"],
-			foodTags: ["nibbleCrop", "grass"],
-			skipFoodTags: ["rice", "parsnip"]
-		},
-		"handbook": {
-			"groupcode": "creaturegroup-gazelle"
-		},
       "biorealm": [
         "atlantic palearctic",
         "central palearctic",
@@ -455,20 +401,10 @@
   },
   {
     "file": "game:entities/land/hare-baby.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		creatureDiet: {
-			foodCategories: ["Vegetable"],
-			foodTags: ["nibbleCrop"]
-		},
-		basketCatchable: true,
-		trapChance: 0.8,
-		trapDestroyChance: 0.00,
-		"handbook": {
-			"groupcode": "creaturegroup-hare"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
@@ -483,20 +419,10 @@
   },
   {
     "file": "game:entities/land/hare-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		creatureDiet: {
-			foodCategories: ["Vegetable"],
-			foodTags: ["nibbleCrop"]
-		},
-		basketCatchable: true,
-		trapChance: 0.5,
-		trapDestroyChance: 0.00,
-		"handbook": {
-			"groupcode": "creaturegroup-hare"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
@@ -511,20 +437,10 @@
   },
   {
     "file": "game:entities/land/hare-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		creatureDiet: {
-			foodCategories: ["Vegetable"],
-			foodTags: ["nibbleCrop"]
-		},
-		basketCatchable: true,
-		trapChance: 0.5,
-		trapDestroyChance: 0.00,
-		"handbook": {
-			"groupcode": "creaturegroup-hare"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
@@ -539,17 +455,10 @@
   },
   {
     "file": "game:entities/land/hyena-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		killedByInfoText: "deadcreature-eaten",
-		"handbook": {
-			"groupcode": "creaturegroup-hyena"
-		},
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.5,
       "biorealm": [
         "atlantic afrotropic",
         "atlantic palearctic",
@@ -559,17 +468,10 @@
   },
   {
     "file": "game:entities/land/hyena-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		killedByInfoText: "deadcreature-eaten",
-		"handbook": {
-			"groupcode": "creaturegroup-hyena"
-		},
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.7,
       "biorealm": [
         "atlantic afrotropic",
         "atlantic palearctic",
@@ -579,16 +481,10 @@
   },
   {
     "file": "game:entities/land/hyena-pup.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.5,
-		trapDestroyChance: 0.1,
-		"handbook": {
-			"groupcode": "creaturegroup-hyena"
-		},
       "biorealm": [
         "atlantic afrotropic",
         "atlantic palearctic",
@@ -598,21 +494,10 @@
   },
   {
     "file": "game:entities/land/pig-wild-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.7,
-		creatureDiet: {
-			foodCategories: ["Grain", "Fruit", "Vegetable", "Protein"],
-			foodTags: ["fruitmash"],
-			skipFoodTags: ["rice", "parsnip"]
-		},
-		handbook: {
-			groupcode: "creaturegroup-pig"
-		},
       "biorealm": [
         "atlantic afrotropic",
         "eastern afrotropic",
@@ -625,21 +510,10 @@
   },
   {
     "file": "game:entities/land/pig-wild-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.7,
-		creatureDiet: {
-			foodCategories: ["Grain", "Fruit", "Vegetable", "Protein"],
-			foodTags: ["fruitmash"],
-			skipFoodTags: ["rice", "parsnip"]
-		},
-		handbook: {
-			"groupcode": "creaturegroup-pig"
-		},
       "biorealm": [
         "atlantic palearctic",
         "central palearctic",
@@ -650,21 +524,10 @@
   },
   {
     "file": "game:entities/land/pig-wild-piglet.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.5,
-		trapDestroyChance: 0.05,
-		creatureDiet: {
-			foodCategories: ["Grain", "Fruit", "Vegetable", "Protein"],
-			foodTags: ["fruitmash"],
-			skipFoodTags: ["rice", "parsnip"]
-		},
-		handbook: {
-			groupcode: "creaturegroup-pig"
-		},
       "biorealm": [
         "atlantic palearctic",
         "central palearctic",
@@ -675,20 +538,10 @@
   },
   {
     "file": "game:entities/land/raccoon-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.5,
-		creatureDiet: {
-			foodCategories: ["Fruit"],
-			foodTags: ["lootableSweet", "sweetBerryBush"]
-		},
-		handbook: {
-			groupcode: "creaturegroup-raccoon"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic"
@@ -697,20 +550,10 @@
   },
   {
     "file": "game:entities/land/raccoon-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.5,
-		creatureDiet: {
-			foodCategories: ["Fruit"],
-			foodTags: ["lootableSweet", "sweetBerryBush"]
-		},
-		handbook: {
-			groupcode: "creaturegroup-raccoon"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic"
@@ -719,20 +562,10 @@
   },
   {
     "file": "game:entities/land/raccoon-pup.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.5,
-		trapDestroyChance: 0.05,
-		creatureDiet: {
-			foodCategories: ["Fruit"],
-			foodTags: ["lootableSweet", "sweetBerryBush"]
-		},
-		"handbook": {
-			"groupcode": "creaturegroup-raccoon"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic"
@@ -741,21 +574,10 @@
   },
   {
     "file": "game:entities/land/sheep-bighorn-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.5,
-		creatureDiet: {
-			foodCategories: ["Grain", "Vegetable"],
-			foodTags: ["nibbleCrop", "grass", "fruitmash"],
-			skipFoodTags: ["rice", "parsnip"]
-		},
-		"handbook": {
-			"groupcode": "creaturegroup-bighorn"
-		},
       "biorealm": [
         "pacific nearctic"
       ]
@@ -763,21 +585,10 @@
   },
   {
     "file": "game:entities/land/sheep-bighorn-lamb.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		creatureDiet: {
-			foodCategories: ["Grain", "Vegetable"],
-			foodTags: ["nibbleCrop", "grass", "fruitmash"],
-			skipFoodTags: ["rice", "parsnip"]
-		},
-		basketCatchable: true,
-		trapChance: 0.5,
-		trapDestroyChance: 0.05,
-		"handbook": {
-			"groupcode": "creaturegroup-bighorn"
-		},
       "biorealm": [
         "pacific nearctic"
       ]
@@ -785,21 +596,10 @@
   },
   {
     "file": "game:entities/land/sheep-bighorn-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.5,
-		creatureDiet: {
-			foodCategories: ["Grain", "Vegetable"],
-			foodTags: ["nibbleCrop", "grass", "fruitmash"],
-			skipFoodTags: ["rice", "parsnip"]
-		},
-		"handbook": {
-			"groupcode": "creaturegroup-bighorn"
-		},
       "biorealm": [
         "pacific nearctic"
       ]
@@ -807,20 +607,10 @@
   },
   {
     "file": "game:entities/land/wolf-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.7,
-		creatureDiet: {
-			foodTags: ["meat"]
-		},
-		killedByInfoText: "deadcreature-eaten-large",
-		"handbook": {
-			"groupcode": "creaturegroup-wolf"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
@@ -833,20 +623,10 @@
   },
   {
     "file": "game:entities/land/wolf-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		basketCatchable: true,
-		trapChance: 0.0,
-		trapDestroyChance: 0.7,
-		creatureDiet: {
-			foodTags: ["meat"]
-		},
-		killedByInfoText: "deadcreature-eaten-large",
-		"handbook": {
-			"groupcode": "creaturegroup-wolf"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
@@ -859,19 +639,10 @@
   },
   {
     "file": "game:entities/land/wolf-pup.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
-		creatureDiet: {
-			foodTags: ["meat"]
-		},
-		basketCatchable: true,
-		trapChance: 0.4,
-		trapDestroyChance: 0.05,
-		handbook: {
-			groupcode: "creaturegroup-wolf"
-		},
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
