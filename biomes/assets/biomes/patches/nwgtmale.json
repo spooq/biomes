@@ -1,7 +1,7 @@
 [
   {
     "file": "newworldgianttortoises:entities/land/chelonoidis-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
