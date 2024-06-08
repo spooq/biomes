@@ -1,7 +1,7 @@
 [
   {
     "file": "africanmonitorlizards:entities/land/varanus-juvenile.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
