@@ -1,7 +1,7 @@
 [
   {
     "file": "feverstonewilds:entities/land/bison.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -22,7 +22,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/bison-calf.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -43,7 +43,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/cockatrice.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -61,7 +61,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/direwolf.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -80,7 +80,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/direwolf-pup.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -99,7 +99,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/faunling.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -117,7 +117,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/horse.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -149,7 +149,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/foal.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -181,7 +181,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/geodecrab.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -210,7 +210,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/giraffe.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -230,7 +230,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/golem.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -243,7 +243,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/ostrich.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -263,7 +263,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/ostrich-chick.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -283,7 +283,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/scorpion.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -312,7 +312,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/spider.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -341,7 +341,7 @@
   },
   {
     "file": "feverstonewilds:entities/land/toad.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -370,7 +370,7 @@
   },
   {
     "file": "feverstonewilds:entities/water/buromenfish.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -390,7 +390,7 @@
   },
   {
     "file": "feverstonewilds:entities/water/discus.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -408,7 +408,7 @@
   },
   {
     "file": "feverstonewilds:entities/water/eel.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -437,7 +437,7 @@
   },
   {
     "file": "feverstonewilds:entities/water/orca.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -466,7 +466,7 @@
   },
   {
     "file": "feverstonewilds:entities/water/sharks.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -495,7 +495,7 @@
   },
   {
     "file": "feverstonewilds:entities/water/stingray.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
