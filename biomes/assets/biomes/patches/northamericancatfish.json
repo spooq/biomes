@@ -1,7 +1,7 @@
 [
   {
     "file": "nacatfish:entities/water/catfish.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
