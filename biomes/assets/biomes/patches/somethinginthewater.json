@@ -1,7 +1,7 @@
 [
   {
     "file": "somethinginthewater:entities/water/moonjelly.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -29,7 +29,7 @@
   },
   {
     "file": "somethinginthewater:entities/water/shark.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -57,7 +57,7 @@
   },
   {
     "file": "somethinginthewater:entities/water/sunfish.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
