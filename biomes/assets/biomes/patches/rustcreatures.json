@@ -1,7 +1,7 @@
 [
   {
     "file": "rustcreatures:entities/land/derelict.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -30,7 +30,7 @@
   },
   {
     "file": "rustcreatures:entities/land/derelict-swarm.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -59,7 +59,7 @@
   },
   {
     "file": "rustcreatures:entities/land/itinerant.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -88,7 +88,7 @@
   },
   {
     "file": "rustcreatures:entities/land/roamer.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -117,7 +117,7 @@
   },
   {
     "file": "rustcreatures:entities/land/vagrant.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {

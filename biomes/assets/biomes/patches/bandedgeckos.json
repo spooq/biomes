@@ -1,7 +1,7 @@
 [
   {
     "file": "bandedgeckos:entities/land/bandedgecko.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {

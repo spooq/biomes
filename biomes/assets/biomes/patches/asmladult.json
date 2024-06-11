@@ -1,7 +1,7 @@
 [
   {
     "file": "asianmonitorlizards:entities/land/varanus-adult.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {

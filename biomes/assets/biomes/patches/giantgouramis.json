@@ -1,7 +1,7 @@
 [
   {
     "file": "giantgouramis:entities/water/giantgourami.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {

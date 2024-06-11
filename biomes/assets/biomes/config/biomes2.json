@@ -906,7 +906,7 @@
             ],
             "bioriver": "both"
         },
-        "*berrybush-kawakawa-*": {
+        "berrybush-kawakawa-*": {
             "biorealm": [
                 "oceanic"
             ],
@@ -940,6 +940,18 @@
         "berrybush-midyimberry-*": {
             "biorealm": [
                 "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "berrybush-mingimingi-*": {
+            "biorealm": [
+                "oceanic"
+            ],
+            "bioriver": "both"
+        },
+        "berrybush-pilo-*": {
+            "biorealm": [
+                "oceanic"
             ],
             "bioriver": "both"
         },
@@ -1014,6 +1026,39 @@
                 "atlantic neotropic",
                 "atlantic afrotropic",
                 "eastern afrotropic",
+                "australasian",
+                "oceanic"
+            ],
+            "bioriver": "both"
+        },
+        "bottomberrybush-juniper-*": {
+            "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+                "atlantic palearctic",
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic"
+            ],
+            "bioriver": "both"
+        },
+        "bottomberrybush-pilo-*": {
+            "biorealm": [
+                "oceanic"
+            ],
+            "bioriver": "both"
+        },
+        "bottomberrybush-pistachio-*": {
+            "biorealm": [
+                "atlantic palearctic",
+                "atlantic afrotropic"
+            ],
+            "bioriver": "both"
+        },
+        "bottomberrybush-seamango-*": {
+            "biorealm": [
+                "eastern afrotropic",
+                "pacific palearctic",
                 "australasian",
                 "oceanic"
             ],
@@ -1321,6 +1366,12 @@
         "groundberryplant-honeypots-*": {
             "biorealm": [
                 "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "groundberryplant-kakaha-*": {
+            "biorealm": [
+                "oceanic"
             ],
             "bioriver": "both"
         },
@@ -2113,6 +2164,61 @@
                 "atlantic afrotropic",
                 "eastern afrotropic",
                 "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "topberrybush-kumquat-*": {
+            "biorealm": [
+                "eastern palearctic",
+                "pacific palearctic"
+            ],
+            "bioriver": "both"
+        },
+        "topberrybush-sumac-*": {
+            "biorealm": [
+                "pacific nearctic"
+            ],
+            "bioriver": "both"
+        },
+        "toppricklybush-brambleberry-*": {
+            "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+                "atlantic palearctic",
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic",
+                "atlantic afrotropic",
+                "eastern afrotropic",
+                "australasian"
+            ],
+            "bioriver": "both"
+        },
+        "toppricklybush-deserthackberry-*": {
+            "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic"
+            ],
+            "bioriver": "both"
+        },
+        "toppricklybush-dogrose-*": {
+            "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+                "atlantic palearctic",
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic",
+                "eastern afrotropic"
+            ],
+            "bioriver": "both"
+        },
+        "toppricklybush-gooseberry-*": {
+            "biorealm": [
+                "atlantic palearctic",
+                "central palearctic",
+                "eastern palearctic",
+                "pacific palearctic"
             ],
             "bioriver": "both"
         },

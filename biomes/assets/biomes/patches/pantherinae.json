@@ -1,7 +1,7 @@
 [
   {
     "file": "pantherinae:entities/land/pantherinae-neofelis-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -25,7 +25,7 @@
   },
   {
     "file": "pantherinae:entities/land/pantherinae-neofelis-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -49,7 +49,7 @@
   },
   {
     "file": "pantherinae:entities/land/pantherinae-panthera-female.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
@@ -115,7 +115,7 @@
   },
   {
     "file": "pantherinae:entities/land/pantherinae-panthera-male.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {

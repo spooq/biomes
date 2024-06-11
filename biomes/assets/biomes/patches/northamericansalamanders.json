@@ -1,7 +1,7 @@
 [
   {
     "file": "nasalamanders:entities/land/nasalamanders.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {

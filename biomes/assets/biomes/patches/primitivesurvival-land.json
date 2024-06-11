@@ -1,7 +1,7 @@
 [
   {
     "file": "primitivesurvival:entities/land/crab-bairdicrab.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -18,7 +18,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/crab-landcrab.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -35,7 +35,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/earthworm.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -62,7 +62,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/fireflies.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -78,7 +78,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/livingdead.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -105,7 +105,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/skullofthedead.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -132,7 +132,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/snake-blackrat.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -148,7 +148,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/snake-chainviper.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -164,7 +164,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/snake-coachwhip.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {
@@ -181,7 +181,7 @@
   },
   {
     "file": "primitivesurvival:entities/land/snake-pitviper.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
     "value": {

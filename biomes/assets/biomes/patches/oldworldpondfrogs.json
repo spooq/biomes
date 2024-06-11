@@ -1,7 +1,7 @@
 [
   {
     "file": "pondfrogsi:entities/land/pondfrog.json",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
     "value": {
