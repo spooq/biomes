@@ -1,6 +1,6 @@
 [
   {
-    "file": "samshumcreat:entities/wild-surv.json",
+    "file": "game:entities/land/wild-surv.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
@@ -27,7 +27,7 @@
     ]
   },
   {
-    "file": "samshumcreat:entities/wild-surv-knife.json",
+    "file": "game:entities/land/wild-surv-knife.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
@@ -54,7 +54,7 @@
     ]
   },
   {
-    "file": "samshumcreat:entities/wild-surv-axe.json",
+    "file": "game:entities/land/wild-surv-axe.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
