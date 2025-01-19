@@ -58,6 +58,7 @@
   <None Remove="assets\biomes\patches\primitivesurvival-land.json" />
   <None Remove="assets\biomes\patches\primitivesurvival-water.json" />
   <None Remove="assets\biomes\patches\rustcreatures.json" />
+  <None Remove="assets\biomes\patches\thecritterpack-land.json" />
   <None Remove="assets\biomes\patches\vanilla-air.json" />
   <None Remove="assets\biomes\patches\vanilla-butterflies.json" />
   <None Remove="assets\biomes\patches\vanilla-land.json" />
