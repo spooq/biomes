@@ -805,6 +805,14 @@
       ],
       "bioriver": "both"
     },
+    "*-treeheath-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
     "*-tule-*": {
       "biorealm": [
         "pacific nearctic",
@@ -4426,14 +4434,6 @@
     "tuja": {
       "biorealm": [
         "atlantic nearctic"
-      ],
-      "bioriver": "both"
-    },
-    "*-treeheath-*": {
-      "biorealm": [
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern afrotropic"
       ],
       "bioriver": "both"
     },
