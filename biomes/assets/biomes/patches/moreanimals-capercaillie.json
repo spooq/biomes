@@ -18,61 +18,7 @@
     ]
   },
   {
-    "file": "moreanimals:entities/capercaillie-cock.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "central palearctic",
-        "eastern palearctic",
-        "atlantic palearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/capercaillie-cockpoult.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "central palearctic",
-        "eastern palearctic",
-        "atlantic palearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/capercaillie-hen.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "central palearctic",
-        "eastern palearctic",
-        "atlantic palearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/capercaillie-henpoult.json",
+    "file": "moreanimals:entities/capercaillie.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",

@@ -16,55 +16,7 @@
     ]
   },
   {
-    "file": "moreanimals:entities/wildturkey-cock.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "atlantic nearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/wildturkey-cockpoult.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "atlantic nearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/wildturkey-hen.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "atlantic nearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/wildturkey-henpoult.json",
+    "file": "moreanimals:entities/wildturkey.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",

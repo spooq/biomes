@@ -16,55 +16,7 @@
     ]
   },
   {
-    "file": "moreanimals:entities/goldenpheasant-cock.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "eastern palearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/goldenpheasant-cockpoult.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "eastern palearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/goldenpheasant-hen.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "eastern palearctic"
-      ]
-    },
-    "dependsOn": [
-      {
-        "modid": "moreanimals"
-      }
-    ]
-  },
-  {
-    "file": "moreanimals:entities/goldenpheasant-henpoult.json",
+    "file": "moreanimals:entities/goldenpheasant.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
