@@ -1,0 +1,46 @@
+[
+  {
+    "file": "ensatinas:assets/entities/land/ensatinas.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-eschscholtzii": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-xanthoptica": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-picta": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-platensis": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-croceater": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-klauberi": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      }
+
+    },
+    "dependsOn": [
+      {
+        "modid": "ensatinas"
+      }
+    ]
+  }
+]

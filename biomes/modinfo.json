@@ -10,10 +10,11 @@
     "Clown Skeleton",
     "Gryfang",
     "BraniyaKz",
-    "Clint"
+    "Clint",
+    "ComitatesSaxoni"
   ],
   "description": "Biome system",
-  "version": "1.20.2",
+  "version": "1.20.3",
   "dependencies": {
     "game": ""
   },

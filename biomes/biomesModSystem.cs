@@ -499,16 +499,9 @@ namespace Biomes
                 return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get($"chunknotgenwithbiomes") };
 
             var trees = new List<string>();
-            foreach (var realm in chunkRealms)
-            {
-                foreach (var item in BiomeConfig.TreeBiomes)
-                {
-                    if (item.Value.biorealm.Intersect(chunkRealms).Any())
-                    {
-                        trees.Add(item.Key);
-                    }
-                }
-            }
+            foreach (var item in BiomeConfig.TreeBiomes)
+                if (item.Value.biorealm.Intersect(chunkRealms).Any())
+                    trees.Add(item.Key);
 
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
         }
@@ -520,16 +513,9 @@ namespace Biomes
                 return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
             var trees = new List<string>();
-            foreach (var realm in chunkRealms)
-            {
-                foreach (var item in BiomeConfig.FruitTreeBiomes)
-                {
-                    if (item.Value.biorealm.Intersect(chunkRealms).Any())
-                    {
-                        trees.Add(item.Key);
-                    }
-                }
-            }
+            foreach (var item in BiomeConfig.FruitTreeBiomes)
+                if (item.Value.biorealm.Intersect(chunkRealms).Any())
+                    trees.Add(item.Key);
 
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
         }
@@ -541,16 +527,9 @@ namespace Biomes
                 return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
             var trees = new List<string>();
-            foreach (var realm in chunkRealms)
-            {
-                foreach (var item in BiomeConfig.BlockPatchBiomes)
-                {
-                    if (item.Value.biorealm.Intersect(chunkRealms).Any())
-                    {
-                        trees.Add(item.Key);
-                    }
-                }
-            }
+            foreach (var item in BiomeConfig.BlockPatchBiomes)
+                if (item.Value.biorealm.Intersect(chunkRealms).Any())
+                    trees.Add(item.Key);
 
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
         }
