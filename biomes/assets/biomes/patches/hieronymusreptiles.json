@@ -1,5 +1,5 @@
 [
- {
+  {
     "file": "africanmonitorlizards/entities/land/varanus-adult.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -36,7 +36,11 @@
         ]
       }
     },
-  
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+
+  {
     "file": "africanmonitorlizards/entities/land/varanus-juvenile.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -73,7 +77,10 @@
         ]
       }
     },
-  
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "asianmonitorlizards/entities/land/varanus-adult.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -245,7 +252,10 @@
         ]
       }
     },
-    
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "asianmonitorlizards/entities/land/varanus-juvenile.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -417,7 +427,10 @@
         ]
       }
     },
- 
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "bandedgeckos/entities/land/bandedgecko.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -469,7 +482,10 @@
         ]
       }
     },
-   
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "beardeddragons/entities/land/beardeddragons.json",
     "op": "addmerge",
     "path": "/attributes",
@@ -478,7 +494,10 @@
         "australasian"
       ]
     },
-
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "knobtailedgeckos/entities/land/knobtailedgecko.json",
     "op": "addmerge",
     "path": "/attributes",
@@ -487,7 +506,10 @@
         "australasian"
       ]
     },
- 
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "leopardgeckos/entities/land/leopardgecko.json",
     "op": "addmerge",
     "path": "/attributes",
@@ -496,7 +518,10 @@
         "central palearctic"
       ]
     },
-  
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "pondfrogsiii:entities/land/pondfrog.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -542,7 +567,10 @@
         ]
       }
     },
-  
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "newzealandfrogs/entities/land/newzealandfrogs.json",
     "op": "addmerge",
     "path": "/attributes",
@@ -551,7 +579,10 @@
         "oceanic"
       ]
     },
-  
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "esatinas/entities/land/ensatinas.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -576,19 +607,21 @@
           "pacific nearctic"
         ]
       },
-	  "*-croceater": {
+      "*-croceater": {
         "biorealm": [
           "pacific nearctic"
         ]
       },
-	  "*-klauberi": {
+      "*-klauberi": {
         "biorealm": [
           "pacific nearctic"
         ]
       }
-	  
     },
-	
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "newworldgianttortoises/entities/land/chelonoidis-female.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -640,7 +673,10 @@
         ]
       }
     },
-  
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "newworldgianttortoises/entities/land/chelonoidis-male.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -692,7 +728,10 @@
         ]
       }
     },
-  
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "pondfrogsi/entities/land/pondfrog.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -909,7 +948,10 @@
         ]
       }
     },
-	
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
     "file": "pacificnewts:entities/land/pacificnewt.json",
     "op": "addmerge",
     "path": "/attributes",
@@ -918,9 +960,7 @@
         "pacific palearctic"
       ]
     },
-	
-	
-	"dependsOn": [ { "modid": "hieronymusreptiles" } ],
-         "side": "Server"
- }
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  }
 ]
