@@ -1,0 +1,926 @@
+[
+ {
+    "file": "africanmonitorlizards/entities/land/varanus-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-niloticus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-stellatus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic"
+        ]
+      },
+      "*-albigularis": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-exanthematicus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic"
+        ]
+      },
+      "*-griseus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      }
+    },
+  
+    "file": "africanmonitorlizards/entities/land/varanus-juvenile.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-niloticus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-stellatus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic"
+        ]
+      },
+      "*-albigularis": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-exanthematicus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic"
+        ]
+      },
+      "*-griseus": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      }
+    },
+  
+    "file": "asianmonitorlizards/entities/land/varanus-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-bengalensis": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-flavescens": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-nebulosus": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-rudicollis": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-dumerilii": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-yemenensis": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-nesterovi": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-olivaceus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-mabitang": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-bitatawa": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-caerulivirens": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-cerambonensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-colei": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-lirungensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-melinus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-obor": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-rainerguentheri": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-tanimbar": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-yuwonoi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-auffenbergi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-timorensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-salvator": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-bangonorum": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-cumingi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-dalubhasa": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-marmoratus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-nuchalis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-palawanensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-rasmusseni": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-samarensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-togianus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-komodoensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      }
+    },
+    
+    "file": "asianmonitorlizards/entities/land/varanus-juvenile.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-bengalensis": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-flavescens": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-nebulosus": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-rudicollis": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-dumerilii": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-yemenensis": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-nesterovi": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-olivaceus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-mabitang": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-bitatawa": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-caerulivirens": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-cerambonensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-colei": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-lirungensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-melinus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-obor": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-rainerguentheri": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-tanimbar": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-yuwonoi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-auffenbergi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-timorensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-salvator": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-bangonorum": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-cumingi": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-dalubhasa": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-marmoratus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-nuchalis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-palawanensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-rasmusseni": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-samarensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-togianus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-komodoensis": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      }
+    },
+ 
+    "file": "bandedgeckos/entities/land/bandedgecko.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-variegatus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-brevis": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-elegans": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-fasciatus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-nemoralis": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-reticulatus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-switaki": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-gypsicolus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-mitratus": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      }
+    },
+   
+    "file": "beardeddragons/entities/land/beardeddragons.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "value": {
+      "biorealm": [
+        "australasian"
+      ]
+    },
+
+    "file": "knobtailedgeckos/entities/land/knobtailedgecko.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "value": {
+      "biorealm": [
+        "australasian"
+      ]
+    },
+ 
+    "file": "leopardgeckos/entities/land/leopardgecko.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "value": {
+      "biorealm": [
+        "central palearctic"
+      ]
+    },
+  
+    "file": "pondfrogsiii:entities/land/pondfrog.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-aurora-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-draytonii-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-boylii-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-sierrae-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-muscosa-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-luteiventris-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-pretiosa-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-cascadae-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      }
+    },
+  
+    "file": "newzealandfrogs/entities/land/newzealandfrogs.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "value": {
+      "biorealm": [
+        "oceanic"
+      ]
+    },
+  
+    "file": "esatinas/entities/land/ensatinas.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-eschscholtzii": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-xanthoptica": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-picta": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-platensis": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+	  "*-croceater": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+	  "*-klauberi": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      }
+	  
+    },
+	
+    "file": "newworldgianttortoises/entities/land/chelonoidis-female.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-carbonarius": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-denticulatus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-chilensis": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-niger": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-alburyorum": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-cubensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-monensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-gersoni": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-marcanoi": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      }
+    },
+  
+    "file": "newworldgianttortoises/entities/land/chelonoidis-male.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-carbonarius": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-denticulatus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-chilensis": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-niger": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-alburyorum": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-cubensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-monensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-gersoni": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-marcanoi": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      }
+    },
+  
+    "file": "pondfrogsi/entities/land/pondfrog.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-temporaria-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-arvalis-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-dalmatina-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-latastei-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-pseudodalmatina-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-graeca-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-iberica-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-italica-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-pyrenaica-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "*-macrocnemis-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-tavasensis-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-amurensis-*": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-asiatica-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-coreana-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-chensinensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-dybowskii-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-chaochiaoensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-huanrensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-dabieshanensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-jiulingensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-jiemuxiensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-johnsi-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-kukunoris-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-luanchuanensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-maoershanensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-omeimontis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-sangzhiensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-zhenhaiensis-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-longicrus-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-sauteri-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-japonica-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-tagoi-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-kyoto-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-neba-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-sakuraii-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-pirica-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-ornativentris-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-tsushimensis-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-uenoi-*": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-ulma-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-kobai-*": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      }
+    },
+	
+    "file": "pacificnewts:entities/land/pacificnewt.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "value": {
+      "biorealm": [
+        "pacific palearctic"
+      ]
+    },
+	
+	
+	"dependsOn": [ { "modid": "hieronymusreptiles" } ],
+         "side": "Server"
+ }
+]

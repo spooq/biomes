@@ -14,7 +14,7 @@
     "ComitatesSaxoni"
   ],
   "description": "Biome system",
-  "version": "1.20.3",
+  "version": "1.20.4",
   "dependencies": {
     "game": ""
   },
