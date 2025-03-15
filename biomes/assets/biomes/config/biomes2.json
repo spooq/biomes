@@ -1,5 +1,90 @@
 {
   "BlockPatchBiomes": {
+    "-beet-": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "-cauliflower-": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "-corn-": {
+      "biorealm": [
+        "pacific neotropic",
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "-eggplant-": {
+      "biorealm": [
+        "eastern palearctic",
+        "central palearctic",
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "-jalapeno-": {
+      "biorealm": [
+        "pacific neotropic",
+        "pacific neartic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "-oat-": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "-pepperbell-": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "-potato-": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "-sugarbeet-": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "-sugarcane-": {
+      "biorealm": [
+        "pacific palearctic",
+        "central palearctic",
+        "australasian",
+        "eastern palearctic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "-yam-": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
     "*-amaranth-*": {
       "biorealm": [
         "pacific nearctic",
@@ -3177,360 +3262,360 @@
       "bioriver": "both"
     }
   },
-    "EntitySpawnWhiteList": [
-        "playerbot-*",
-        "animalbot-*",
-        "humanoid-*",
-        "bell-*",
-        "drifter-*",
-        "echochamber",
-        "eidolon-*",
-        "libraryresonator",
-        "locust-*",
-        "mechhelper",
-        "strawdummy",
-        "echochamber",
-        "libraryresonator",
-        "boat",
-        "grub"
-    ],
-    "FruitTreeBiomes": {
-        "achacha": {
-            "biorealm": [
-                "atlantic neotropic"
-            ],
-            "bioriver": "both"
-        },
-        "almond": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic",
-                "eastern afrotropic"
-            ],
-            "bioriver": "both"
-        },
-        "apricot": {
-            "biorealm": [
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "avocado": {
-            "biorealm": [
-                "pacific nearctic",
-                "pacific neotropic"
-            ],
-            "bioriver": "both"
-        },
-        "beachalmond": {
-            "biorealm": [
-                "central palearctic",
-                "eastern palearctic",
-                "pacific palearctic",
-                "australasian",
-                "oceanic",
-                "eastern afrotropic"
-            ],
-            "bioriver": "both"
-        },
-        "bluequandong": {
-            "biorealm": [
-                "central palearctic",
-                "pacific palearctic",
-                "australasian",
-                "oceanic"
-            ],
-            "bioriver": "both"
-        },
-        "breadfruit": {
-            "biorealm": [
-                "pacific nearctic",
-                "atlantic nearctic",
-                "atlantic palearctic",
-                "central palearctic",
-                "eastern palearctic",
-                "pacific palearctic",
-                "atlantic afrotropic",
-                "eastern afrotropic"
-            ],
-            "bioriver": "both"
-        },
-        "bunya": {
-            "biorealm": [
-                "australasian"
-            ],
-            "bioriver": "both"
-        },
-        "cashew": {
-            "biorealm": [
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "cherry": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "cherryplum": {
-            "biorealm": [
-                "central palearctic",
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "chestnut": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic",
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "chinaberry": {
-            "biorealm": [
-                "central palearctic",
-                "eastern palearctic",
-                "pacific palearctic",
-                "australasian"
-            ],
-            "bioriver": "both"
-        },
-        "citron": {
-            "biorealm": [
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "cocoa": {
-            "biorealm": [
-                "pacific neotropic",
-                "atlantic neotropic"
-            ],
-            "bioriver": "both"
-        },
-        "commonhackberry": {
-            "biorealm": [
-                "central palearctic",
-                "eastern afrotropic"
-            ],
-            "bioriver": "both"
-        },
-        "engkala": {
-            "biorealm": [
-                "pacific palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "falseorange": {
-            "biorealm": [
-                "atlantic nearctic"
-            ],
-            "bioriver": "both"
-        },
-        "fig": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "guajava": {
-            "biorealm": [
-                "pacific neotropic",
-                "atlantic neotropic"
-            ],
-            "bioriver": "both"
-        },
-        "hawthorn": {
-            "biorealm": [
-                "pacific nearctic",
-                "atlantic nearctic",
-                "atlantic palearctic",
-                "central palearctic",
-                "eastern palearctic",
-                "pacific palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "hazelnut": {
-            "biorealm": [
-                "pacific nearctic",
-                "atlantic nearctic",
-                "atlantic palearctic",
-                "central palearctic",
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "illawarra": {
-            "biorealm": [
-                "australasian"
-            ],
-            "bioriver": "both"
-        },
-        "jujube": {
-            "biorealm": [
-                "central palearctic",
-                "eastern palearctic",
-                "pacific palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "lemonaspen": {
-            "biorealm": [
-                "australasian"
-            ],
-            "bioriver": "both"
-        },
-        "loquat": {
-            "biorealm": [
-                "pacific palearctic",
-                "central palearctic",
-                "atlantic afrotropic"
-            ],
-            "bioriver": "both"
-        },
-        "lychee": {
-            "biorealm": [
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "macadamia": {
-            "biorealm": [
-                "australasian"
-            ],
-            "bioriver": "both"
-        },
-        "mango": {
-            "biorealm": [
-                "eastern palearctic",
-                "australasian",
-                "oceanic"
-            ],
-            "bioriver": "both"
-        },
-        "olive": {
-            "biorealm": [
-                "atlantic palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "orange": {
-            "biorealm": [
-                "central palearctic",
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "peach": {
-            "biorealm": [
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "pandan": {
-            "biorealm": [
-                "pacific palearctic",
-                "australasian",
-                "oceanic"
-            ],
-            "bioriver": "both"
-        },
-        "pear": {
-            "biorealm": [
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "pinkapple": {
-            "biorealm": [
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "pomegranate": {
-            "biorealm": [
-                "central palearctic"
-            ]
-        },
-        "pomelo": {
-            "biorealm": [
-                "eastern palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "purpleplum": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic",
-                "eastern palearctic",
-                "pacific palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "quince": {
-            "biorealm": [
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "redapple": {
-            "biorealm": [
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "redquandong": {
-            "biorealm": [
-                "australasian"
-            ],
-            "bioriver": "both"
-        },
-        "roseapple": {
-            "biorealm": [
-                "pacific palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "rowan": {
-            "biorealm": [
-                "atlantic palearctic",
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        },
-        "silvernettle": {
-            "biorealm": [
-                "pacific palearctic",
-                "australasian"
-            ],
-            "bioriver": "both"
-        },
-        "sugarhackberry": {
-            "biorealm": [
-                "pacific nearctic",
-                "atlantic nearctic"
-            ],
-            "bioriver": "both"
-        },
-        "whiteoak": {
-            "biorealm": [
-                "pacific nearctic",
-                "atlantic nearctic"
-            ],
-            "bioriver": "both"
-        },
-        "yellowapple": {
-            "biorealm": [
-                "central palearctic"
-            ],
-            "bioriver": "both"
-        }
+  "EntitySpawnWhiteList": [
+    "playerbot-*",
+    "animalbot-*",
+    "humanoid-*",
+    "bell-*",
+    "drifter-*",
+    "echochamber",
+    "eidolon-*",
+    "libraryresonator",
+    "locust-*",
+    "mechhelper",
+    "strawdummy",
+    "echochamber",
+    "libraryresonator",
+    "boat",
+    "grub"
+  ],
+  "FruitTreeBiomes": {
+    "achacha": {
+      "biorealm": [
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
     },
+    "almond": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "apricot": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "avocado": {
+      "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "beachalmond": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian",
+        "oceanic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "bluequandong": {
+      "biorealm": [
+        "central palearctic",
+        "pacific palearctic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "breadfruit": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "bunya": {
+      "biorealm": [
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "cashew": {
+      "biorealm": [
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "cherry": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "cherryplum": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "chestnut": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "chinaberry": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "citron": {
+      "biorealm": [
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "cocoa": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "commonhackberry": {
+      "biorealm": [
+        "central palearctic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "engkala": {
+      "biorealm": [
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "falseorange": {
+      "biorealm": [
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "fig": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "guajava": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "hawthorn": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "hazelnut": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "illawarra": {
+      "biorealm": [
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "jujube": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "lemonaspen": {
+      "biorealm": [
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "loquat": {
+      "biorealm": [
+        "pacific palearctic",
+        "central palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "lychee": {
+      "biorealm": [
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "macadamia": {
+      "biorealm": [
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "mango": {
+      "biorealm": [
+        "eastern palearctic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "olive": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "orange": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "peach": {
+      "biorealm": [
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "pandan": {
+      "biorealm": [
+        "pacific palearctic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "pear": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "pinkapple": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "pomegranate": {
+      "biorealm": [
+        "central palearctic"
+      ]
+    },
+    "pomelo": {
+      "biorealm": [
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "purpleplum": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "quince": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "redapple": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "redquandong": {
+      "biorealm": [
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "roseapple": {
+      "biorealm": [
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "rowan": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "silvernettle": {
+      "biorealm": [
+        "pacific palearctic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "sugarhackberry": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "whiteoak": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "yellowapple": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    }
+  },
   "TreeBiomes": {
     "*willowswamp": {
       "biorealm": [
