@@ -2232,13 +2232,7 @@
     },
     "pricklyberrybush-blueraspberry-*": {
       "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "eastern afrotropic"
+        "pacific nearctic"
       ],
       "bioriver": "both"
     },
@@ -3267,6 +3261,8 @@
     "animalbot-*",
     "humanoid-*",
     "bell-*",
+    "bowtorn-*",
+    "shiver-*",
     "drifter-*",
     "echochamber",
     "eidolon-*",
@@ -3278,6 +3274,7 @@
     "libraryresonator",
     "boat",
     "grub"
+
   ],
   "FruitTreeBiomes": {
     "achacha": {
