@@ -1,5 +1,75 @@
 {
   "BlockPatchBiomes": {
+    "aquaticplant-bladderwrack": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "false"
+    },
+    "aquaticplant-irishmoss": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "false"
+    },
+    "aquaticplant-milfoilfeather": {
+      "biorealm": [
+        "australasian",
+        "atlantic neotropic",
+        "pacific neotropic"
+      ],
+      "bioriver": "true"
+    },
+    "aquaticplant-sealace": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic nearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "false"
+    },
+    "aquaticplant-seagrass": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceania"
+      ],
+      "bioriver": "false"
+    },
+    "aquatic-watercrowfoot-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "pacific nearctic",
+        "atlantic nearctic"
+
+      ],
+      "bioriver": "false"
+    },
+    "aquatic-lilygiant-*": {
+      "biorealm": [
+        "atlantic neotropic"
+      ],
+      "bioriver": "true"
+    },
+    "aquatic-lilyflower-*": {
+      "biorealm": [
+        "atlantic neotropic"
+      ],
+      "bioriver": "true"
+    },
     "-beet-": {
       "biorealm": [
         "atlantic palearctic",
@@ -3266,6 +3336,7 @@
     "drifter-*",
     "echochamber",
     "eidolon-*",
+    "erel-*",
     "libraryresonator",
     "locust-*",
     "mechhelper",

@@ -1,0 +1,176 @@
+[
+    {
+        "file": "rustboundmagic:entities/creatures/elementals/colossus/entityelementalcolossus.json",
+        "op": "addmerge",
+        "path": "/attributesByType",
+        "side": "Server",
+        "value": {
+            "*": {
+                "biorealm": [
+                    "atlantic afrotropic",
+                    "atlantic palearctic",
+                    "central palearctic",
+                    "eastern afrotropic",
+                    "eastern palearctic",
+                    "pacific palearctic",
+                    "pacific nearctic",
+                    "atlantic nearctic",
+                    "pacific neotropic",
+                    "atlantic neotropic",
+                    "australasian",
+                    "oceania"
+                ]
+            }
+        },
+        "dependsOn": [
+            {
+                "modid": "rustboundmagic"
+            }
+        ]
+    },
+    {
+        "file": "rustboundmagic:entities/creatures/elementals/drone/entityelementaldrone.json",
+        "op": "addmerge",
+        "path": "/attributesByType",
+        "side": "Server",
+        "value": {
+            "*": {
+                "biorealm": [
+                    "atlantic afrotropic",
+                    "atlantic palearctic",
+                    "central palearctic",
+                    "eastern afrotropic",
+                    "eastern palearctic",
+                    "pacific palearctic",
+                    "pacific nearctic",
+                    "atlantic nearctic",
+                    "pacific neotropic",
+                    "atlantic neotropic",
+                    "australasian",
+                    "oceania"
+                ]
+            }
+        },
+        "dependsOn": [
+            {
+                "modid": "rustboundmagic"
+            }
+        ]
+    },
+    {
+        "file": "rustboundmagic:entities/creatures/elementals/ravager/entityelementalravager.json",
+        "op": "addmerge",
+        "path": "/attributesByType",
+        "side": "Server",
+        "value": {
+            "*": {
+                "biorealm": [
+                    "atlantic afrotropic",
+                    "atlantic palearctic",
+                    "central palearctic",
+                    "eastern afrotropic",
+                    "eastern palearctic",
+                    "pacific palearctic",
+                    "pacific nearctic",
+                    "atlantic nearctic",
+                    "pacific neotropic",
+                    "atlantic neotropic",
+                    "australasian",
+                    "oceania"
+                ]
+            }
+        },
+        "dependsOn": [
+            {
+                "modid": "rustboundmagic"
+            }
+        ]
+    },
+    {
+        "file": "rustboundmagic:entities/creatures/elementals/sentinel/entityelementalsentinel.json",
+        "op": "addmerge",
+        "path": "/attributesByType",
+        "side": "Server",
+        "value": {
+            "*": {
+                "biorealm": [
+                    "atlantic afrotropic",
+                    "atlantic palearctic",
+                    "central palearctic",
+                    "eastern afrotropic",
+                    "eastern palearctic",
+                    "pacific palearctic",
+                    "pacific nearctic",
+                    "atlantic nearctic",
+                    "pacific neotropic",
+                    "atlantic neotropic",
+                    "australasian",
+                    "oceania"
+                ]
+            }
+        },
+        "dependsOn": [
+            {
+                "modid": "rustboundmagic"
+            }
+        ]
+    },
+    {
+        "file": "rustboundmagic:entities/creatures/elementals/sentry/entityelementalsentry.json",
+        "op": "addmerge",
+        "path": "/attributesByType",
+        "side": "Server",
+        "value": {
+            "*": {
+                "biorealm": [
+                    "atlantic afrotropic",
+                    "atlantic palearctic",
+                    "central palearctic",
+                    "eastern afrotropic",
+                    "eastern palearctic",
+                    "pacific palearctic",
+                    "pacific nearctic",
+                    "atlantic nearctic",
+                    "pacific neotropic",
+                    "atlantic neotropic",
+                    "australasian",
+                    "oceania"
+                ]
+            }
+        },
+        "dependsOn": [
+            {
+                "modid": "rustboundmagic"
+            }
+        ]
+    },
+    {
+        "file": "rustboundmagic:entities/creatures/elementals/titan/entityelementaltitan.json",
+        "op": "addmerge",
+        "path": "/attributesByType",
+        "side": "Server",
+        "value": {
+            "*": {
+                "biorealm": [
+                    "atlantic afrotropic",
+                    "atlantic palearctic",
+                    "central palearctic",
+                    "eastern afrotropic",
+                    "eastern palearctic",
+                    "pacific palearctic",
+                    "pacific nearctic",
+                    "atlantic nearctic",
+                    "pacific neotropic",
+                    "atlantic neotropic",
+                    "australasian",
+                    "oceania"
+                ]
+            }
+        },
+        "dependsOn": [
+            {
+                "modid": "rustboundmagic"
+            }
+        ]
+    }
+]
