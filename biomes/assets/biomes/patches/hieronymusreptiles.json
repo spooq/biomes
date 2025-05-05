@@ -1,6 +1,6 @@
 [
   {
-    "file": "africanmonitorlizards/entities/land/varanus-adult.json",
+    "file": "africanmonitorlizards:entities/land/varanus-adult.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
@@ -41,7 +41,7 @@
   },
 
   {
-    "file": "africanmonitorlizards/entities/land/varanus-juvenile.json",
+    "file": "africanmonitorlizards:entities/land/varanus-juvenile.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
@@ -81,7 +81,7 @@
     "side": "Server"
   },
   {
-    "file": "asianmonitorlizards/entities/land/varanus-adult.json",
+    "file": "asianmonitorlizards:entities/land/varanus-adult.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
@@ -256,7 +256,7 @@
     "side": "Server"
   },
   {
-    "file": "asianmonitorlizards/entities/land/varanus-juvenile.json",
+    "file": "asianmonitorlizards:entities/land/varanus-juvenile.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
@@ -431,7 +431,7 @@
     "side": "Server"
   },
   {
-    "file": "bandedgeckos/entities/land/bandedgecko.json",
+    "file": "bandedgeckos:entities/land/bandedgecko.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
@@ -486,7 +486,7 @@
     "side": "Server"
   },
   {
-    "file": "beardeddragons/entities/land/beardeddragons.json",
+    "file": "beardeddragons:entities/land/beardeddragons.json",
     "op": "addmerge",
     "path": "/attributes",
     "value": {
@@ -498,7 +498,7 @@
     "side": "Server"
   },
   {
-    "file": "knobtailedgeckos/entities/land/knobtailedgecko.json",
+    "file": "knobtailedgeckos:entities/land/knobtailedgecko.json",
     "op": "addmerge",
     "path": "/attributes",
     "value": {
@@ -510,7 +510,7 @@
     "side": "Server"
   },
   {
-    "file": "leopardgeckos/entities/land/leopardgecko.json",
+    "file": "leopardgeckos:entities/land/leopardgecko.json",
     "op": "addmerge",
     "path": "/attributes",
     "value": {
@@ -571,7 +571,7 @@
     "side": "Server"
   },
   {
-    "file": "newzealandfrogs/entities/land/newzealandfrogs.json",
+    "file": "newzealandfrogs:entities/land/newzealandfrogs.json",
     "op": "addmerge",
     "path": "/attributes",
     "value": {
@@ -583,7 +583,7 @@
     "side": "Server"
   },
   {
-    "file": "esatinas/entities/land/ensatinas.json",
+    "file": "ensatinas:entities/land/ensatinas.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
@@ -622,7 +622,7 @@
     "side": "Server"
   },
   {
-    "file": "newworldgianttortoises/entities/land/chelonoidis-female.json",
+    "file": "newworldgianttortoises:entities/land/chelonoidis-juvenile.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
@@ -677,7 +677,7 @@
     "side": "Server"
   },
   {
-    "file": "newworldgianttortoises/entities/land/chelonoidis-male.json",
+    "file": "newworldgianttortoises:entities/land/chelonoidis-male.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
@@ -732,7 +732,172 @@
     "side": "Server"
   },
   {
-    "file": "pondfrogsi/entities/land/pondfrog.json",
+    "file": "newworldgianttortoises:entities/land/chelonoidis-baby.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-carbonarius": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-denticulatus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-chilensis": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-niger": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-alburyorum": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-cubensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-monensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-gersoni": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-marcanoi": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      }
+    },
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
+    "file": "newworldgianttortoises:entities/land/chelonoidis-egg.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-carbonarius": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-denticulatus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-chilensis": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-niger": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-alburyorum": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-cubensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-monensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-gersoni": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-marcanoi": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      }
+    },
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
+    "file": "newworldgianttortoises:entities/land/chelonoidis-female.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-carbonarius": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-denticulatus": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-chilensis": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "*-niger": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "*-alburyorum": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-cubensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-monensis": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-gersoni": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-marcanoi": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      }
+    },
+    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "side": "Server"
+  },
+  {
+    "file": "pondfrogsi:entities/land/pondfrog.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
