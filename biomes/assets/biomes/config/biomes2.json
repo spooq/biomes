@@ -18,7 +18,8 @@
     "echochamber",
     "libraryresonator",
     "boat",
-    "grub"
+    "grub",
+    "villager-*"
   ],
   "BlockPatchBiomes": {
     "aquaticplant-bladderwrack": {

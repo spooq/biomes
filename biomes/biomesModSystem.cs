@@ -557,10 +557,10 @@ namespace Biomes
 
             var entityTypes = new List<string>();
             foreach (EntityProperties entity in sapi.World.EntityTypes)
-                if (entity.Attributes != null && entity.Attributes["biorealm"].Exists)
-                    foreach (var realm in entity.Attributes["biorealm"])
+                if (entity.Attributes != null && entity.Attributes.KeyExists(EntityRealmPropertyName))
+                    foreach (var realm in entity.Attributes[EntityRealmPropertyName])
                         if (chunkRealms.Contains(realm.ToString()))
-                            entityTypes.Add(entity.Code.Path);
+                            entityTypes.Add(entity.Code);
 
             string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Entities {String.Join(',', chunkRealms)}:\r\n{msg}");
@@ -575,8 +575,8 @@ namespace Biomes
 
             var entityTypes = new List<string>();
             foreach (EntityProperties entity in sapi.World.EntityTypes)
-                if ((entity.Attributes == null || !entity.Attributes["biorealm"].Exists) && !IsWhiteListed(entity.Code.Path))
-                    entityTypes.Add(entity.Code.Path);
+                if ((entity.Attributes == null || !entity.Attributes.KeyExists(EntityRealmPropertyName)) && !IsWhiteListed(entity.Code.Path))
+                    entityTypes.Add(entity.Code);
 
             string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Unconfigured:\r\n{msg}");
@@ -592,7 +592,7 @@ namespace Biomes
             var entityTypes = new List<string>();
             foreach (EntityProperties entity in sapi.World.EntityTypes)
                 if (IsWhiteListed(entity.Code.Path))
-                    entityTypes.Add(entity.Code.Path);
+                    entityTypes.Add(entity.Code);
 
             string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Whitelist:\r\n{msg}");

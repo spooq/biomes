@@ -136,7 +136,7 @@
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
-    "file": "thecritterpack/land/fieldmouse/fieldmouse.json",
+    "file": "thecritterpack:entities/land/fieldmouse/fieldmouse.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -192,7 +192,7 @@
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
-    "file": "thecritterpack/land/snail/snaily.json",
+    "file": "thecritterpack:entities/land/snail/snaily.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -284,7 +284,7 @@
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
-    "file": "thecritterpack/land/woodlouse/woodlouse.json",
+    "file": "thecritterpack:entities/land/woodlouse/woodlouse.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",

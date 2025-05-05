@@ -547,6 +547,13 @@
           "eastern palearctic"
         ]
       },
+      "*-largewhitemale": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
       "*-lemonemigrantalcmeoneformmale": {
         "biorealm": [
           "central palearctic",
@@ -629,8 +636,8 @@
       },
       "*-meadowbrownmale": {
         "biorealm": [
-         "atlantic palearctic",
-         "central palearctic"
+          "atlantic palearctic",
+          "central palearctic"
         ]
       },
       "*-mexicanmarbledwhitefemale": {
@@ -663,7 +670,7 @@
           "atlantic neotropic",
           "atlantic palearctic",
           "australasian",
-          "oceanic",
+          "oceanic"
         ]
       },
       "*-morphoportis": {
@@ -686,6 +693,11 @@
           "central palearctic",
           "eastern palearctic",
           "pacific palearctic"
+        ]
+      },
+      "*-nessusleafwingfemale": {
+        "biorealm": [
+          "pacific neotropic"
         ]
       },
       "*-nessusleafwingmale": {
@@ -768,7 +780,7 @@
         "biorealm": [
           "atlantic neotropic",
           "pacific neotropic",
-          "pacific nearctic",
+          "pacific nearctic"
         ]
       },
       "*-orangetipfemale": {
@@ -1092,7 +1104,7 @@
       "*-woodwhitefemale": {
         "biorealm": [
           "atlantic palearctic",
-          "central palearctic",
+          "central palearctic"
         ]
       },
       "*-woodwhitemale": {
