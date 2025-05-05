@@ -1,9 +1,9 @@
 [
   {
-    "file": "npchumans:entities/land/melee/human (general file).json",
+    "file": "npckobolds:entities/land/melee/kobold-normal.json",
     "op": "addmerge",
     "path": "/attributes",
-    "side": "server",
+    "side": "server",	
     "value": {
       "biorealm": [
         "atlantic nearctic",
@@ -20,10 +20,10 @@
         "oceania"
       ]
     },
-    "dependsOn": [ { "modid": "npchumans" } ]
+    "dependsOn": [ { "modid": "npckobolds" } ]
   },
   {
-    "file": "npchumans:entities/land/melee/human-normal.json",
+    "file": "npckobolds:entities/land/melee/kobold-general.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -43,6 +43,6 @@
         "oceania"
       ]
     },
-    "dependsOn": [ { "modid": "npchumans" } ]
-  }
+    "dependsOn": [ { "modid": "npckobolds" } ]
+  }    
 ]
