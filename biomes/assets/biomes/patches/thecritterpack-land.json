@@ -2,152 +2,136 @@
   {
     "file": "thecritterpack:entities/land/chipmunk/chipmunk-baby.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "chipmunk-baby": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/chipmunk/chipmunk-female.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "chipmunk-female": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/chipmunk/chipmunk-male.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "chipmunk-male": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic"
-        ]
-      },
-      "dependsOn": [ { "modid": "thecritterpack" } ]
-    }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/crab/crab-baby.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "crab-baby": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "pacific neotropic",
-          "atlantic neotropic",
-          "atlantic afrotropic",
-          "eastern afrotropic",
-          "australasian",
-          "oceanic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/crab/crab-both.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "crab-both": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "pacific neotropic",
-          "atlantic neotropic",
-          "atlantic afrotropic",
-          "eastern afrotropic",
-          "australasian",
-          "oceanic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/duck/duck-baby.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "duck-baby": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/duck/duck-female.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "duck-female": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/duck/duck-male.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "duck-male": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
@@ -169,15 +153,13 @@
   {
     "file": "thecritterpack:entities/land/hedgehog/hedgehog-baby.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "hedgehog-baby": {
-        "biorealm": [
-          "atlantic palearctic",
-          "central palearctic"
-        ]
-      }
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
@@ -185,15 +167,13 @@
   {
     "file": "thecritterpack:entities/land/hedgehog/hedgehog-female.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "*-female": {
-        "biorealm": [
-          "atlantic palearctic",
-          "central palearctic"
-        ]
-      }
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
@@ -201,27 +181,13 @@
   {
     "file": "thecritterpack:entities/land/hedgehog/hedgehog-male.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "*-male": {
-        "biorealm": [
-          "atlantic palearctic",
-          "central palearctic"
-        ]
-      },
-      "*-female": {
-        "biorealm": [
-          "atlantic palearctic",
-          "central palearctic"
-        ]
-      },
-      "*-baby": {
-        "biorealm": [
-          "atlantic palearctic",
-          "central palearctic"
-        ]
-      }
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
@@ -254,7 +220,7 @@
     "path": "/attributesByType",
     "side": "server",
     "value": {
-      "squirrel-baby": {
+      "squirrel-baby-*": {
         "biorealm": [
           "atlantic nearctic",
           "pacific nearctic",
@@ -277,7 +243,7 @@
     "path": "/attributesByType",
     "side": "server",
     "value": {
-      "squirrel-female": {
+      "squirrel-female-*": {
         "biorealm": [
           "atlantic nearctic",
           "pacific nearctic",
@@ -300,7 +266,7 @@
     "path": "/attributesByType",
     "side": "server",
     "value": {
-      "squirrel-male": {
+      "squirrel-male-*": {
         "biorealm": [
           "atlantic nearctic",
           "pacific nearctic",
@@ -343,45 +309,39 @@
   {
     "file": "thecritterpack:entities/land/yak/yak-calf.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "yak-calf": {
-        "biorealm": [
-          "central palearctic",
-          "eastern palearctic"
-        ]
-      }
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/yak/yak-female.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "yak-female": {
-        "biorealm": [
-          "central palearctic",
-          "eastern palearctic"
-        ]
-      }
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
     "file": "thecritterpack:entities/land/yak/yak-male.json",
     "op": "addmerge",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "server",
     "value": {
-      "yak-male": {
-        "biorealm": [
-          "central palearctic",
-          "eastern palearctic"
-        ]
-      }
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
   }
