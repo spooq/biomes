@@ -16,7 +16,7 @@
     "RaptorMother"
   ],
   "description": "Biome system",
-  "version": "1.20.8",
+  "version": "1.20.9",
   "dependencies": {
     "game": ""
   },

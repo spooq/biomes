@@ -250,6 +250,15 @@ namespace Biomes
                 .BeginSubCommand("blockpatch")
                     .HandleWith(onBlockPatchCommand)
                 .EndSubCommand()
+                .BeginSubCommand("entity")
+                    .HandleWith(onEntityCommand)
+                .EndSubCommand()
+                .BeginSubCommand("whitelist")
+                    .HandleWith(onWhitelistCommand)
+                .EndSubCommand()
+                .BeginSubCommand("unconfigured")
+                    .HandleWith(onUnconfiguredCommand)
+                .EndSubCommand()
                 .BeginSubCommand("hemisphere")
                     .WithArgs(sapi.ChatCommands.Parsers.WordRange("hemisphere", Enum.GetNames(typeof(EnumHemisphere))))
                     .HandleWith(onSetHemisphereCommand)
@@ -503,7 +512,9 @@ namespace Biomes
                 if (item.Value.biorealm.Intersect(chunkRealms).Any())
                     trees.Add(item.Key);
 
-            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
+            string msg = trees.Distinct().Join(delimiter: "\r\n");
+            sapi.Logger.Debug($"Biomes Trees {String.Join(',', chunkRealms)}:\r\n{msg}");
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
 
         public TextCommandResult onFruitTreesCommand(TextCommandCallingArgs args)
@@ -517,7 +528,9 @@ namespace Biomes
                 if (item.Value.biorealm.Intersect(chunkRealms).Any())
                     trees.Add(item.Key);
 
-            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
+            string msg = trees.Distinct().Join(delimiter: "\r\n");
+            sapi.Logger.Debug($"Biomes Fruit Trees {String.Join(',', chunkRealms)}:\r\n{msg}");
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
 
         public TextCommandResult onBlockPatchCommand(TextCommandCallingArgs args)
@@ -526,12 +539,64 @@ namespace Biomes
             if (getModProperty(args.Caller, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
                 return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
-            var trees = new List<string>();
+            var bp = new List<string>();
             foreach (var item in BiomeConfig.BlockPatchBiomes)
                 if (item.Value.biorealm.Intersect(chunkRealms).Any())
-                    trees.Add(item.Key);
+                    bp.Add(item.Key);
 
-            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = trees.Distinct().Join(delimiter: "\r\n") };
+            string msg = bp.Distinct().Join(delimiter: "\r\n");
+            sapi.Logger.Debug($"Biomes Blockpatches {String.Join(',', chunkRealms)}:\r\n{msg}");
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
+        }
+
+        public TextCommandResult onEntityCommand(TextCommandCallingArgs args)
+        {
+            var chunkRealms = new List<string>();
+            if (getModProperty(args.Caller, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
+
+            var entityTypes = new List<string>();
+            foreach (EntityProperties entity in sapi.World.EntityTypes)
+                if (entity.Attributes != null && entity.Attributes["biorealm"].Exists)
+                    foreach (var realm in entity.Attributes["biorealm"])
+                        if (chunkRealms.Contains(realm.ToString()))
+                            entityTypes.Add(entity.Code.Path);
+
+            string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
+            sapi.Logger.Debug($"Biomes Entities {String.Join(',', chunkRealms)}:\r\n{msg}");
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
+        }
+
+        public TextCommandResult onUnconfiguredCommand(TextCommandCallingArgs args)
+        {
+            var chunkRealms = new List<string>();
+            if (getModProperty(args.Caller, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
+
+            var entityTypes = new List<string>();
+            foreach (EntityProperties entity in sapi.World.EntityTypes)
+                if ((entity.Attributes == null || !entity.Attributes["biorealm"].Exists) && !IsWhiteListed(entity.Code.Path))
+                    entityTypes.Add(entity.Code.Path);
+
+            string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
+            sapi.Logger.Debug($"Biomes Unconfigured:\r\n{msg}");
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
+        }
+
+        public TextCommandResult onWhitelistCommand(TextCommandCallingArgs args)
+        {
+            var chunkRealms = new List<string>();
+            if (getModProperty(args.Caller, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
+
+            var entityTypes = new List<string>();
+            foreach (EntityProperties entity in sapi.World.EntityTypes)
+                if (IsWhiteListed(entity.Code.Path))
+                    entityTypes.Add(entity.Code.Path);
+
+            string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
+            sapi.Logger.Debug($"Biomes Whitelist:\r\n{msg}");
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
 
         public TextCommandResult onShowBiomeCommand(TextCommandCallingArgs args)

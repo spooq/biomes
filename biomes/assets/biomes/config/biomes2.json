@@ -1,4 +1,25 @@
 {
+  "EntitySpawnWhiteList": [
+    "playerbot-*",
+    "animalbot-*",
+    "humanoid-*",
+    "bell-*",
+    "bellmini-*",
+    "bowtorn-*",
+    "shiver-*",
+    "drifter-*",
+    "echochamber",
+    "eidolon-*",
+    "erel-*",
+    "libraryresonator",
+    "locust-*",
+    "mechhelper",
+    "strawdummy",
+    "echochamber",
+    "libraryresonator",
+    "boat",
+    "grub"
+  ],
   "BlockPatchBiomes": {
     "aquaticplant-bladderwrack": {
       "biorealm": [
@@ -3326,27 +3347,6 @@
       "bioriver": "both"
     }
   },
-  "EntitySpawnWhiteList": [
-    "playerbot-*",
-    "animalbot-*",
-    "humanoid-*",
-    "bell-*",
-    "bowtorn-*",
-    "shiver-*",
-    "drifter-*",
-    "echochamber",
-    "eidolon-*",
-    "erel-*",
-    "libraryresonator",
-    "locust-*",
-    "mechhelper",
-    "strawdummy",
-    "echochamber",
-    "libraryresonator",
-    "boat",
-    "grub"
-
-  ],
   "FruitTreeBiomes": {
     "achacha": {
       "biorealm": [
