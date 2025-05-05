@@ -512,7 +512,7 @@ namespace Biomes
                 if (item.Value.biorealm.Intersect(chunkRealms).Any())
                     trees.Add(item.Key);
 
-            string msg = trees.Distinct().Join(delimiter: "\r\n");
+            string msg = trees.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Trees {String.Join(',', chunkRealms)}:\r\n{msg}");
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
@@ -528,7 +528,7 @@ namespace Biomes
                 if (item.Value.biorealm.Intersect(chunkRealms).Any())
                     trees.Add(item.Key);
 
-            string msg = trees.Distinct().Join(delimiter: "\r\n");
+            string msg = trees.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Fruit Trees {String.Join(',', chunkRealms)}:\r\n{msg}");
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
@@ -544,7 +544,7 @@ namespace Biomes
                 if (item.Value.biorealm.Intersect(chunkRealms).Any())
                     bp.Add(item.Key);
 
-            string msg = bp.Distinct().Join(delimiter: "\r\n");
+            string msg = bp.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Blockpatches {String.Join(',', chunkRealms)}:\r\n{msg}");
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
@@ -562,7 +562,7 @@ namespace Biomes
                         if (chunkRealms.Contains(realm.ToString()))
                             entityTypes.Add(entity.Code);
 
-            string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
+            string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Entities {String.Join(',', chunkRealms)}:\r\n{msg}");
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
@@ -578,7 +578,7 @@ namespace Biomes
                 if ((entity.Attributes == null || !entity.Attributes.KeyExists(EntityRealmPropertyName)) && !IsWhiteListed(entity.Code.Path))
                     entityTypes.Add(entity.Code);
 
-            string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
+            string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Unconfigured:\r\n{msg}");
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
@@ -594,7 +594,7 @@ namespace Biomes
                 if (IsWhiteListed(entity.Code.Path))
                     entityTypes.Add(entity.Code);
 
-            string msg = entityTypes.Distinct().Join(delimiter: "\r\n");
+            string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Whitelist:\r\n{msg}");
             return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
