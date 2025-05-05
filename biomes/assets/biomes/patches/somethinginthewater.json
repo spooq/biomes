@@ -28,6 +28,34 @@
     ]
   },
   {
+    "file": "somethinginthewater:entities/water/bigshark.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "dependsOn": [
+      {
+        "modid": "somethinginthewater"
+      }
+    ]
+  },
+  {
     "file": "somethinginthewater:entities/water/shark.json",
     "op": "addmerge",
     "path": "/attributes",

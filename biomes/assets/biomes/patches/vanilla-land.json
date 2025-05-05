@@ -255,73 +255,9 @@
     }
   },
   {
-    "file": "game:entities/land/fox-arctic-male.json",
+    "file": "game:entities/land/fox.json",
     "op": "addmerge",
-    "path": "/attributes",
-    "side": "server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ]
-    }
-  },
-  {
-    "file": "game:entities/land/fox-arctic-female.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ]
-    }
-  },
-  {
-    "file": "game:entities/land/fox-male.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ]
-    }
-  },
-  {
-    "file": "game:entities/land/fox-female.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ]
-    }
-  },
-  {
-    "file": "game:entities/land/fox-pup.json",
-    "op": "addmerge",
-    "path": "/attributes",
+    "path": "/attributesByType",
     "side": "server",
     "value": {
       "biorealm": [

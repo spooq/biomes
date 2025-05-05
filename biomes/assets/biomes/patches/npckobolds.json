@@ -1,6 +1,6 @@
 [
   {
-    "file": "npckobolds:entities/land/melee/kobold-normal.json",
+    "file": "game:entities/land/melee/kobold-normal.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",	
@@ -23,7 +23,7 @@
     "dependsOn": [ { "modid": "npckobolds" } ]
   },
   {
-    "file": "npckobolds:entities/land/melee/kobold-general.json",
+    "file": "game:entities/land/melee/kobold-general.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",

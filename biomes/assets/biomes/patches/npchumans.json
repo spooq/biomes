@@ -1,6 +1,6 @@
 [
   {
-    "file": "npchumans:entities/land/melee/human (general file).json",
+    "file": "game:entities/land/melee/human (general file).json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -23,7 +23,7 @@
     "dependsOn": [ { "modid": "npchumans" } ]
   },
   {
-    "file": "npchumans:entities/land/melee/human-normal.json",
+    "file": "game:entities/land/melee/human-normal.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",

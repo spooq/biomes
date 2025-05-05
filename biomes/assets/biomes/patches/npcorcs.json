@@ -1,6 +1,6 @@
 [
   {
-    "file": "npcorcs:entities/land/melee/orc1.json",
+    "file": "game:entities/land/melee/orc1.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
