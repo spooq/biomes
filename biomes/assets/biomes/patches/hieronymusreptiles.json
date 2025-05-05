@@ -583,7 +583,7 @@
     "side": "Server"
   },
   {
-    "file": "ensatinas:entities/land/ensatinas.json",
+    "file": "ensatinas:entities/land/ensatina.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "value": {
