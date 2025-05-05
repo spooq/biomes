@@ -1,0 +1,25 @@
+[
+  {
+    "file": "npchumans/land/melee/human-normal.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",	
+    "value": {
+      "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+      ]
+    },
+    "dependsOn": [ { "modid": "npchumans" } ]
+  }     
+]
