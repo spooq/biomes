@@ -616,6 +616,11 @@
         "biorealm": [
           "pacific nearctic"
         ]
+      },
+      "*-oregonensis": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
       }
     },
     "dependsOn": [ { "modid": "hieronymusreptiles" } ],

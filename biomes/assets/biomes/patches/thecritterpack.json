@@ -1,5 +1,114 @@
 [
   {
+    "file": "thecritterpack:entities/air/waxwing/waxwing_f.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/air/waxwing/waxwing_g.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/air/sparrow/house-sparrow_f.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/air/robin/robin_flying.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/air/crow/c_crow.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+
+  {
+    "file": "thecritterpack:entities/air/crow/crow_flying.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
     "file": "thecritterpack:entities/land/chipmunk/chipmunk-baby.json",
     "op": "addmerge",
     "path": "/attributes",

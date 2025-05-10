@@ -277,7 +277,7 @@ namespace Biomes
         {
             base.AssetsLoaded(api);
 
-            IsRiversModInstalled = api.ModLoader.GetModSystem("RiversMod") != null;
+            IsRiversModInstalled = api.ModLoader.GetModSystem("RiversMod") != null || api.ModLoader.GetModSystem("RiverGenMod") != null;
         }
 
         public override void Dispose()
@@ -412,6 +412,10 @@ namespace Biomes
                 if (blockPatch.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)))
                     return item.Value.biorealm.Intersect(chunkRealms).Any() && CheckRiver(mapChunk, item.Value.bioriver, blockPos);
 
+            foreach (var item in blockPatch.blockCodes)
+                if (!biomeConfig.ContainsKey(item))
+                    sapi.Logger.Debug($"BlockPatch code {item} is not blessed");
+
             return false;
         }
 
@@ -425,6 +429,9 @@ namespace Biomes
                 if (WildcardUtil.Match(item.Key, fruitTreeWorldGenConds.Type))
                     return item.Value.biorealm.Intersect(chunkRealms).Any() && CheckRiver(mapChunk, item.Value.bioriver, blockPos);
 
+            if (!biomeConfig.ContainsKey(fruitTreeWorldGenConds.Type))
+                sapi.Logger.Debug($"FruitTree {fruitTreeWorldGenConds.Type} is not blessed");
+
             return false;
         }
 
@@ -437,6 +444,9 @@ namespace Biomes
             foreach (var item in biomeConfig)
                 if (WildcardUtil.Match(item.Key, treeVariant.Generator.GetName()))
                     return item.Value.biorealm.Intersect(chunkRealms).Any() && CheckRiver(mapChunk, item.Value.bioriver); // treeVariant.Habitat
+
+            if (!biomeConfig.ContainsKey(treeVariant.Generator.GetName()))
+                sapi.Logger.Debug($"Tree {treeVariant.Generator.GetName()} is not blessed");
 
             return false;
         }
@@ -454,7 +464,7 @@ namespace Biomes
             // Only blessed animals get in.
             if (type.Attributes == null || !type.Attributes.KeyExists(EntityRealmPropertyName))
             {
-                sapi.Logger.Debug("not blessed");
+                sapi.Logger.Debug($"Entity {type.Code} is not blessed");
                 return false;
             }
 
@@ -570,8 +580,8 @@ namespace Biomes
                     entityTypes.Add(entity.Code);
 
             string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
-            sapi.Logger.Debug($"Biomes Unconfigured:\r\n{msg}");
-            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
+            sapi.Logger.Debug($"Biomes Unconfigured Entities:\r\n{msg}");
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = "Written to server debug log"};
         }
 
         public TextCommandResult onWhitelistCommand(TextCommandCallingArgs args)
