@@ -1,0 +1,23 @@
+[
+  {
+    "file": "golden-wolf:entities/land/golden-wolf",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "golden-wolf"
+      }
+    ]
+  }
+]
