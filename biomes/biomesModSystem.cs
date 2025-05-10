@@ -234,7 +234,7 @@ namespace Biomes
             sapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.Vegetation, "standard");
             sapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
 
-            sapi.ChatCommands.Create("biome")
+            sapi.ChatCommands.Create("biomes")
                 .WithDescription("Biomes main command")
                 .RequiresPlayer()
                 .RequiresPrivilege(Privilege.gamemode)
@@ -409,12 +409,8 @@ namespace Biomes
                 return true;
 
             foreach (var item in biomeConfig)
-            {
                 if (blockPatch.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)))
-                {
                     return item.Value.biorealm.Intersect(chunkRealms).Any() && CheckRiver(mapChunk, item.Value.bioriver, blockPos);
-                }
-            }
 
             return false;
         }
@@ -426,12 +422,8 @@ namespace Biomes
                 return true;
 
             foreach (var item in biomeConfig)
-            {
                 if (WildcardUtil.Match(item.Key, fruitTreeWorldGenConds.Type))
-                {
                     return item.Value.biorealm.Intersect(chunkRealms).Any() && CheckRiver(mapChunk, item.Value.bioriver, blockPos);
-                }
-            }
 
             return false;
         }
@@ -443,12 +435,8 @@ namespace Biomes
                 return true;
 
             foreach (var item in biomeConfig)
-            {
                 if (WildcardUtil.Match(item.Key, treeVariant.Generator.GetName()))
-                {
                     return item.Value.biorealm.Intersect(chunkRealms).Any() && CheckRiver(mapChunk, item.Value.bioriver); // treeVariant.Habitat
-                }
-            }
 
             return false;
         }
@@ -465,7 +453,10 @@ namespace Biomes
 
             // Only blessed animals get in.
             if (type.Attributes == null || !type.Attributes.KeyExists(EntityRealmPropertyName))
+            {
+                sapi.Logger.Debug("not blessed");
                 return false;
+            }
 
             var entityNativeRealms = type.Attributes[EntityRealmPropertyName].AsArray<string>();
             bool result = entityNativeRealms.Intersect(chunkRealms).Any();
@@ -546,7 +537,7 @@ namespace Biomes
 
             string msg = bp.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Blockpatches {String.Join(',', chunkRealms)}:\r\n{msg}");
-            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg + "\r\nWritten to server debug logfile" };
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
 
         public TextCommandResult onEntityCommand(TextCommandCallingArgs args)
@@ -564,7 +555,7 @@ namespace Biomes
 
             string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Entities {String.Join(',', chunkRealms)}:\r\n{msg}");
-            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg + "\r\nWritten to server debug logfile" };
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
 
         public TextCommandResult onUnconfiguredCommand(TextCommandCallingArgs args)
@@ -580,14 +571,14 @@ namespace Biomes
 
             string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Unconfigured:\r\n{msg}");
-            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg + "\r\nWritten to server debug logfile" };
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
 
         public TextCommandResult onWhitelistCommand(TextCommandCallingArgs args)
         {
             var chunkRealms = new List<string>();
             if (getModProperty(args.Caller, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("biomes:chunknotgenwithbiomes") };
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
             var entityTypes = new List<string>();
             foreach (EntityProperties entity in sapi.World.EntityTypes)
@@ -596,22 +587,22 @@ namespace Biomes
 
             string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
             sapi.Logger.Debug($"Biomes Whitelist:\r\n{msg}");
-            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg + "\r\nWritten to server debug logfile" };
+            return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
         }
 
         public TextCommandResult onShowBiomeCommand(TextCommandCallingArgs args)
         {
             var chunkHemisphere = EnumHemisphere.North;
             if (getModProperty(args.Caller, MapHemispherePropertyName, ref chunkHemisphere) == EnumCommandStatus.Error)
-                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("biomes:chunknotgenwithbiomes") };
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
             var hemisphereStr = Enum.GetName(typeof(EnumHemisphere), chunkHemisphere).ToLower();
 
             var chunkRealms = new List<string>();
             if (getModProperty(args.Caller, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("biomes:chunknotgenwithbiomes") };
+                return new TextCommandResult { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
             var realmsStr = chunkRealms?.Join(delimiter: ",");
 
-            var riversModNotInstalled = Lang.Get("biomes:chunknotgenwithrivers");
+            var riversModNotInstalled = Lang.Get("chunknotgenwithrivers");
             string chunkRiver = riversModNotInstalled;
             string blockRiver = riversModNotInstalled;
             if (IsRiversModInstalled)

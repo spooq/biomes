@@ -22,6 +22,92 @@
     "villager-*"
   ],
   "BlockPatchBiomes": {
+    "hotspringbacteria-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceania"
+      ],
+      "bioriver": "both"
+    },
+    "hotspringbacteriasmooth-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceania"
+      ],
+      "bioriver": "both"
+    },
+    "aquaticworms-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceania"
+      ],
+      "bioriver": "both"
+    },
+    "aquaticbarnacles-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceania"
+      ],
+      "bioriver": "both"
+    },
+    "clutter-aquatic-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceania"
+      ],
+      "bioriver": "both"
+    },
+
     "aquaticplant-bladderwrack": {
       "biorealm": [
         "atlantic palearctic",
@@ -1350,7 +1436,7 @@
       ],
       "bioriver": "both"
     },
-    "coralbrain-*": {
+    "coral*": {
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
@@ -1365,109 +1451,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "both"
-    },
-    "coralfan-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
-    "coralseed": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
-    "coralstaghorn-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
-    "coralsubstrate-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
-    "coraltable-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
-    "coraltube-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
+      "bioriver": "false"
     },
     "fern-cinnamonfern": {
       "biorealm": [
@@ -2463,7 +2447,7 @@
       ],
       "bioriver": "both"
     },
-    "seashell-scallop-*": {
+    "seashell-*": {
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",

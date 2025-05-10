@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "biomes", "biomes\biomes.csproj", "{CCBC6D12-0093-4AA5-9A4E-C55D1BF26F68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "biomes", "biomes\biomes.csproj", "{CCBC6D12-0093-4AA5-9A4E-C55D1BF26F68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeBuild", "CakeBuild\CakeBuild.csproj", "{859ABFB3-0EA0-4FAF-A086-0FAECDD1DBB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CakeBuild", "CakeBuild\CakeBuild.csproj", "{859ABFB3-0EA0-4FAF-A086-0FAECDD1DBB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
