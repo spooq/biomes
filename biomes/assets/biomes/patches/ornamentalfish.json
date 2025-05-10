@@ -1,0 +1,73 @@
+[
+  {
+    "file": "ornamentalfish:entities/water/guppy.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-wild": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+    },
+    "dependsOn": [
+      {
+        "modid": "OrnamentalFish"
+      }
+    ]
+  },
+  {
+    "file": "ornamentalfish:entities/water/betta.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-wild": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "OrnamentalFish"
+      }
+    ]
+  },
+  {
+    "file": "ornamentalfish:entities/water/goldfish.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-wild": {
+        "biorealm": [
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "OrnamentalFish"
+      }
+    ]
+  },
+  {
+    "file": "ornamentalfish:entities/water/koi.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-wild": {
+        "biorealm": [
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "OrnamentalFish"
+      }
+    ]
+  }
+]

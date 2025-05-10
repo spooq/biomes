@@ -1,0 +1,48 @@
+[
+  {
+    "file": "game:entities/land/melee/halfling (general file).json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic",
+        "pacific nearctic",
+        "atlantic neotropic",
+        "pacific neotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "eastern afrotropic",
+        "atlantic afrotropic",
+        "australasian",
+        "oceania"
+      ]
+    },
+    "dependsOn": [ { "modid": "npchalflings" } ]
+  },
+  {
+    "file": "game:entities/land/melee/halfling-normal.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic",
+        "pacific nearctic",
+        "atlantic neotropic",
+        "pacific neotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "eastern afrotropic",
+        "atlantic afrotropic",
+        "australasian",
+        "oceania"
+      ]
+    },
+    "dependsOn": [ { "modid": "npchalflings" } ]
+  }
+]
