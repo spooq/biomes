@@ -141,6 +141,19 @@
       ],
       "bioriver": "false"
     },
+    "urchin-pacificpurple-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic"
+      ],
+      "bioriver": "false"
+    },
+    "urchin-redspined-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "false"
+    },
     "aquaticplant-milfoil*": {
       "biorealm": [
         "australasian",
