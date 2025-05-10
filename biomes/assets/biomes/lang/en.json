@@ -1,4 +1,4 @@
 {
-  "biomes:chunknotgenwithbiomes": "This chunk was not generated with the Biomes mod installed.",
-  "biomes:chunknotgenwithrivers": "Rivers mod not installed"
+  "chunknotgenwithbiomes": "This chunk was not generated with the Biomes mod installed.",
+  "chunknotgenwithrivers": "This chunk was not generated with the Rivers mod installed."
 }

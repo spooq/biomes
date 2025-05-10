@@ -109,12 +109,7 @@
       },
       "*-bass": {
         "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic"
+          "atlantic nearctic"
         ]
       },
       "*-coral-fish": {
@@ -179,25 +174,23 @@
   {
     "file": "wethology:entities/water/eel.json",
     "op": "add",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "Server",
     "value": {
-      "*": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "pacific neotropic",
-          "atlantic neotropic",
-          "atlantic afrotropic",
-          "eastern afrotropic",
-          "australasian",
-          "oceanic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
     },
     "dependsOn": [
       {
@@ -208,25 +201,23 @@
   {
     "file": "wethology:entities/water/jellyfish.json",
     "op": "add",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "Server",
     "value": {
-      "*": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic nearctic",
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "pacific neotropic",
-          "atlantic neotropic",
-          "atlantic afrotropic",
-          "eastern afrotropic",
-          "australasian",
-          "oceanic"
-        ]
-      }
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
     },
     "dependsOn": [
       {
@@ -237,15 +228,128 @@
   {
     "file": "wethology:entities/water/piranha.json",
     "op": "add",
-    "path": "/attributesByType",
+    "path": "/attributes",
     "side": "Server",
     "value": {
-      "*": {
-        "biorealm": [
-          "pacific neotropic",
-          "atlantic neotropic"
-        ]
+      "biorealm": [
+        "atlantic neotropic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "wethology"
       }
+    ]
+  },
+  {
+    "file": "wethology:entities/land/bearded-dragon.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "australasian",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ]
+  },
+  {
+    "file": "wethology:entities/land/mountaingoat-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ]
+  },
+  {
+    "file": "wethology:entities/land/mountaingoat-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ]
+  },
+  {
+    "file": "wethology:entities/land/mountaingoat-kid.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ]
+  },
+  {
+    "file": "wethology:entities/land/mountainsheep-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ]
+  },
+  {
+    "file": "wethology:entities/land/mountainsheep-female.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ]
+  },
+  {
+    "file": "wethology:entities/land/mountainsheep-lamb.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ]
     },
     "dependsOn": [
       {
