@@ -117,24 +117,11 @@ namespace Biomes
 
             sapi = api;
 
+            // Realms config
             RealmsConfig = JsonConvert.DeserializeObject<RealmsConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/realms.json").ToText());
 
-            UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
-            UserConfig ??= new BiomeUserConfig();
-            UserConfig.EntitySpawnWhiteList ??= new List<string>();
-            sapi.StoreModConfig(UserConfig, $"{Mod.Info.ModID}.json");
-
-            if (UserConfig.FlipNorthSouth)
-            {
-                var tmp = RealmsConfig.NorthernRealms;
-                RealmsConfig.NorthernRealms = RealmsConfig.SouthernRealms;
-                RealmsConfig.SouthernRealms = tmp;
-            }
-
+            // BiomeConfig v2 is a superset of v1
             BiomeConfig = new BiomeConfigv2();
-
-            foreach (var item in UserConfig.EntitySpawnWhiteList)
-                BiomeConfig.EntitySpawnWhiteList.Add(item);
 
             // Version 1 config file format
             foreach (var biomeAsset in sapi.Assets.GetMany("config/biomes.json"))
@@ -165,6 +152,22 @@ namespace Biomes
                 foreach (var item in tmp.BlockPatchBiomes)
                     BiomeConfig.BlockPatchBiomes[item.Key] = item.Value;
             }
+
+            // User config
+            UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
+            UserConfig ??= new BiomeUserConfig();
+            UserConfig.EntitySpawnWhiteList ??= new List<string>();
+            sapi.StoreModConfig(UserConfig, $"{Mod.Info.ModID}.json");
+
+            if (UserConfig.FlipNorthSouth)
+            {
+                var tmp = RealmsConfig.NorthernRealms;
+                RealmsConfig.NorthernRealms = RealmsConfig.SouthernRealms;
+                RealmsConfig.SouthernRealms = tmp;
+            }
+
+            foreach (var item in UserConfig.EntitySpawnWhiteList)
+                BiomeConfig.EntitySpawnWhiteList.Add(item);
 
             if (UserConfig.Debug)
             {
@@ -456,7 +459,7 @@ namespace Biomes
 
         public bool AllowEntitySpawn(IMapChunk mapChunk, EntityProperties type, BlockPos blockPos = null)
         {
-            if (IsWhiteListed(type.Code.Path))
+            if (IsWhiteListed(type.Code))
                 return true;
 
             // Test map chunk attributes
@@ -580,7 +583,7 @@ namespace Biomes
 
             var entityTypes = new List<string>();
             foreach (EntityProperties entity in sapi.World.EntityTypes)
-                if ((entity.Attributes == null || !entity.Attributes.KeyExists(EntityRealmPropertyName)) && !IsWhiteListed(entity.Code.Path))
+                if ((entity.Attributes == null || !entity.Attributes.KeyExists(EntityRealmPropertyName)) && !IsWhiteListed(entity.Code))
                     entityTypes.Add(entity.Code);
 
             string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
@@ -596,7 +599,7 @@ namespace Biomes
 
             var entityTypes = new List<string>();
             foreach (EntityProperties entity in sapi.World.EntityTypes)
-                if (IsWhiteListed(entity.Code.Path))
+                if (IsWhiteListed(entity.Code))
                     entityTypes.Add(entity.Code);
 
             string msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");

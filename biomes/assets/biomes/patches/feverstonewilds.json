@@ -60,6 +60,24 @@
     ]
   },
   {
+    "file": "feverstonewilds:entities/land/cockatrice-chick.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ]
+  },
+  {
     "file": "feverstonewilds:entities/land/direwolf.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -115,7 +133,7 @@
       }
     ]
   },
-   {
+  {
     "file": "feverstonewilds:entities/land/hellboar.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -152,7 +170,7 @@
         "modid": "feverstonewilds"
       }
     ]
-  },   
+  },
   {
     "file": "feverstonewilds:entities/land/horse.json",
     "op": "addmerge",
@@ -274,7 +292,7 @@
     "value": {
       "*": {
         "biorealm": [
-          "central palearctic",
+          "central palearctic"
         ]
       }
     }

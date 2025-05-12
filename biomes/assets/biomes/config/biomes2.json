@@ -1,25 +1,32 @@
 {
   "EntitySpawnWhiteList": [
-    "playerbot-*",
-    "animalbot-*",
-    "humanoid-*",
-    "bell-*",
-    "bellmini-*",
-    "bowtorn-*",
-    "shiver-*",
-    "drifter-*",
-    "echochamber",
-    "eidolon-*",
-    "erel-*",
-    "libraryresonator",
-    "locust-*",
-    "mechhelper",
-    "strawdummy",
-    "echochamber",
-    "libraryresonator",
-    "boat",
-    "grub",
-    "villager-*"
+    "*:grub",
+    "game:animalbot-*",
+    "game:armorstand*",
+    "game:arrow-*",
+    "game:beemob",
+    "game:bell*",
+    "game:blockfalling",
+    "game:boat*",
+    "game:bowtorn*",
+    "game:chunky",
+    "game:drifter*",
+    "game:echochamber",
+    "game:eidolon-*",
+    "game:elevator",
+    "game:erel*",
+    "game:humanoid-*",
+    "game:item",
+    "game:library*",
+    "game:locust-*",
+    "game:mechhelper",
+    "game:player*",
+    "game:shiver-*",
+    "game:spear-*",
+    "game:strawdummy",
+    "game:testship",
+    "game:thrown*",
+    "game:villager-*"
   ],
   "BlockPatchBiomes": {
     "flotsam-driftwood-*": {
@@ -2464,7 +2471,7 @@
       ],
       "bioriver": "both"
     },
-    "seaweed-*": {
+    "seaweed*": {
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
