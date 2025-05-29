@@ -32,7 +32,7 @@ namespace Biomes
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
-        public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
+        public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, IRandom worldgenRandom, BlockPatchAttributes attributes)
         {
             __state = __instance.WorldGenConds;
 
@@ -49,14 +49,14 @@ namespace Biomes
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
-        public static void TryPlaceBlockForWorldGenPostfix(ref BlockFruitTreeBranch __instance, FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
+        public static void TryPlaceBlockForWorldGenPostfix(ref BlockFruitTreeBranch __instance, FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, IRandom worldgenRandom, BlockPatchAttributes attributes)
         {
             __instance.WorldGenConds = __state;
         }
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static bool genPatchesTreePrefix(ref ForestFloorSystem __instance, out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
+        public static bool genPatchesTreePrefix(ref ForestFloorSystem __instance, out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, IRandom rnd)
         {
             var underTreeField = Traverse.Create(__instance).Field("underTreePatches");
             var underTreeValue = underTreeField.GetValue() as List<BlockPatch>;
@@ -83,7 +83,7 @@ namespace Biomes
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static void genPatchesTreePostfix(ref ForestFloorSystem __instance, (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
+        public static void genPatchesTreePostfix(ref ForestFloorSystem __instance, (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, IRandom rnd)
         {
             Traverse.Create(__instance).Field("underTreePatches").SetValue(__state.Item1);
             Traverse.Create(__instance).Field("onTreePatches").SetValue(__state.Item2);
@@ -178,8 +178,8 @@ namespace Biomes
 
         // Run-time spawn
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
-        public static bool CanSpawnAt(ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
+        [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt_offthread")]
+        public static bool CanSpawnAt_offthread(ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
         {
             return chunkCol.Any() && biomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
         }
