@@ -23,8 +23,6 @@ namespace Biomes
         {
             biomesMod = mod;
 
-            SemVer vsVersion;
-
             harmony = new Harmony(biomesMod.Mod.Info.ModID);
 
             harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"), typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix"));
