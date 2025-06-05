@@ -113,9 +113,9 @@ namespace Biomes
         {
             base.StartServerSide(api);
 
-            HarmonyPatches.Init(this);
-
             sapi = api;
+
+            HarmonyPatches.Init(this);
 
             // Realms config
             RealmsConfig = JsonConvert.DeserializeObject<RealmsConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/realms.json").ToText());

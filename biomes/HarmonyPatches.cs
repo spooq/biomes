@@ -1,9 +1,11 @@
 ﻿using HarmonyLib;
+using ProperVersion;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
-using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
@@ -25,19 +27,26 @@ namespace Biomes
 
             harmony = new Harmony(biomesMod.Mod.Info.ModID);
 
+            // Version-specific patches
+            FileVersionInfo version = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(BlockFruitTreeBranch)).Location);
+            SemVer semVer = SemVer.Parse(version.ProductVersion.ToString());
+
+            mod.sapi.Logger.Debug("Biomes detected Vintagestory version {0}", semVer.ToString());
+
             // Common code
             harmony.PatchAll();
 
-            // Version-specific patches
-            if (GameVersion.IsAtLeastVersion("1.20.11")) // this is compile time :(
+            if (semVer >= new SemVer(1, 20, 11))
             {
                 harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
                               typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_11"),
                               typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_11"));
 
+                /*
                 harmony.Patch(typeof(ForestFloorSystem).GetMethod("GenPatches"),
                               typeof(HarmonyPatches).GetMethod("genPatchesTreePrefix_1_20_11"),
                               typeof(HarmonyPatches).GetMethod("genPatchesTreePostfix_1_20_11"));
+                */
 
                 harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt_offthread"),
                               typeof(HarmonyPatches).GetMethod("CanSpawnAt"));
@@ -48,13 +57,14 @@ namespace Biomes
                               typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_0"),
                               typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_0"));
 
+                /*
                 harmony.Patch(typeof(ForestFloorSystem).GetMethod("GenPatches"),
-                                  typeof(HarmonyPatches).GetMethod("genPatchesTreePrefix_1_20_0"),
-                                  typeof(HarmonyPatches).GetMethod("genPatchesTreePostfix_1_20_0"));
-
+                              typeof(HarmonyPatches).GetMethod("genPatchesTreePrefix_1_20_0"),
+                              typeof(HarmonyPatches).GetMethod("genPatchesTreePostfix_1_20_0"));
 
                 harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt"),
                               typeof(HarmonyPatches).GetMethod("CanSpawnAt"));
+                                */
             }
         }
 
