@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using ProperVersion;
 using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Common;
@@ -38,7 +37,11 @@ namespace Biomes
 
             harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
                               typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_" + patchVersion),
-                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_" + patchVersion));
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_" + patchVersion));
+
+            harmony.Patch(typeof(ForestFloorSystem).GetMethod("GenPatches"),
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_" + patchVersion),
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_" + patchVersion));
         }
 
         public static void Shutdown()
@@ -71,16 +74,32 @@ namespace Biomes
             return true;
         }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
-        public static void TryPlaceBlockForWorldGenPostfix(ref BlockFruitTreeBranch __instance, FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, IRandom worldgenRandom, BlockPatchAttributes attributes)
+        public static void TryPlaceBlockForWorldGenPostfix_1_20_11(ref BlockFruitTreeBranch __instance, FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, IRandom worldgenRandom, BlockPatchAttributes attributes)
+        {
+            TryPlaceBlockForWorldGenPostfix(ref __instance, __state);
+        }
+
+        public static void TryPlaceBlockForWorldGenPostfix_1_20_0(ref BlockFruitTreeBranch __instance, FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
+        {
+            TryPlaceBlockForWorldGenPostfix(ref __instance, __state);
+        }
+
+        public static void TryPlaceBlockForWorldGenPostfix(ref BlockFruitTreeBranch __instance, FruitTreeWorldGenConds[] __state)
         {
             __instance.WorldGenConds = __state;
         }
 
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static bool genPatchesTreePrefix(ref ForestFloorSystem __instance, out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, IRandom rnd)
+        public static bool genPatchesTreePrefix_1_20_11(ref ForestFloorSystem __instance, out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, IRandom rnd)
+        {
+            return genPatchesTreePrefix(ref __instance, out __state, blockAccessor, pos);
+        }
+
+        public static bool genPatchesTreePrefix_1_20_0(ref ForestFloorSystem __instance, out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
+        {
+            return genPatchesTreePrefix(ref __instance, out __state, blockAccessor, pos);
+        }
+
+        public static bool genPatchesTreePrefix(ref ForestFloorSystem __instance, out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos)
         {
             var underTreeField = Traverse.Create(__instance).Field("underTreePatches");
             var underTreeValue = underTreeField.GetValue() as List<BlockPatch>;
@@ -105,9 +124,17 @@ namespace Biomes
             return true;
         }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-        public static void genPatchesTreePostfix(ref ForestFloorSystem __instance, (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, IRandom rnd)
+        public static void genPatchesTreePostfix_1_20_11(ref ForestFloorSystem __instance, (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, IRandom rnd)
+        {
+            genPatchesTreePostfix(ref __instance, __state);
+        }
+
+        public static void genPatchesTreePostfix_1_20_0(ref ForestFloorSystem __instance, (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess, EnumTreeType treetype, LCGRandom rnd)
+        {
+            genPatchesTreePostfix(ref __instance, __state);
+        }
+
+        public static void genPatchesTreePostfix(ref ForestFloorSystem __instance, (List<BlockPatch>, List<BlockPatch>) __state)
         {
             Traverse.Create(__instance).Field("underTreePatches").SetValue(__state.Item1);
             Traverse.Create(__instance).Field("onTreePatches").SetValue(__state.Item2);
