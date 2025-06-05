@@ -25,8 +25,6 @@ namespace Biomes
         {
             biomesMod = mod;
 
-
-
             // Version-specific patches
             FileVersionInfo version = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(BlockFruitTreeBranch)).Location);
             SemVer semVer = SemVer.Parse(version.ProductVersion.ToString());
