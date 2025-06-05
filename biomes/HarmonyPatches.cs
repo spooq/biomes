@@ -28,20 +28,34 @@ namespace Biomes
             // Common code
             harmony.PatchAll();
 
-            string patchVersion;
-
+            // Version-specific patches
             if (GameVersion.IsAtLeastVersion("1.20.11"))
-                patchVersion = "1_20_11";
+            {
+                harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_11"),
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix__1_20_11"));
+
+                harmony.Patch(typeof(ForestFloorSystem).GetMethod("GenPatches"),
+                                  typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_11"),
+                                  typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_11"));
+
+                harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt"),
+                              typeof(HarmonyPatches).GetMethod("CanSpawnAt"));
+            }
             else
-                patchVersion = "1_20_0";
+            {
+                harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_0"),
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_0"));
 
-            harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
-                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_" + patchVersion),
-                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_" + patchVersion));
+                harmony.Patch(typeof(ForestFloorSystem).GetMethod("GenPatches"),
+                                  typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_0"),
+                                  typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix0"));
 
-            harmony.Patch(typeof(ForestFloorSystem).GetMethod("GenPatches"),
-                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_" + patchVersion),
-                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_" + patchVersion));
+
+                harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt_offthread"),
+                              typeof(HarmonyPatches).GetMethod("CanSpawnAt"));
+            }
         }
 
         public static void Shutdown()
@@ -228,9 +242,7 @@ namespace Biomes
         }
 
         // Run-time spawn
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt_offthread")]
-        public static bool CanSpawnAt_offthread(ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
+        public static bool CanSpawnAt(ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
         {
             return chunkCol.Any() && biomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
         }
