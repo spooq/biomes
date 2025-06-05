@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
@@ -25,7 +26,19 @@ namespace Biomes
 
             harmony = new Harmony(biomesMod.Mod.Info.ModID);
 
-            harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"), typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix"));
+            // Common code
+            harmony.PatchAll();
+
+            string patchVersion;
+
+            if (GameVersion.IsAtLeastVersion("1.20.11"))
+                patchVersion = "1_20_11";
+            else
+                patchVersion = "1_20_0";
+
+            harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_" + patchVersion),
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_" + patchVersion));
         }
 
         public static void Shutdown()
@@ -33,9 +46,17 @@ namespace Biomes
             harmony.UnpatchAll(biomesMod.Mod.Info.ModID);
         }
 
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
-        public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
+        public static bool TryPlaceBlockForWorldGenPrefix_1_20_11(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, IRandom worldgenRandom, BlockPatchAttributes attributes)
+        {
+            return TryPlaceBlockForWorldGenPrefix(ref __instance, out __state, blockAccessor, pos);
+        }
+
+        public static bool TryPlaceBlockForWorldGenPrefix_1_20_0(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
+        {
+            return TryPlaceBlockForWorldGenPrefix(ref __instance, out __state, blockAccessor, pos);
+        }
+
+        public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos)
         {
             __state = __instance.WorldGenConds;
 
