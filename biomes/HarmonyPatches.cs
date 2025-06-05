@@ -29,7 +29,7 @@ namespace Biomes
             harmony.PatchAll();
 
             // Version-specific patches
-            if (GameVersion.IsAtLeastVersion("1.20.11"))
+            if (GameVersion.IsAtLeastVersion("1.20.11")) // this is compile time :(
             {
                 harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
                               typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_11"),
