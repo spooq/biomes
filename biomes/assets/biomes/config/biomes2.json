@@ -1,10 +1,8 @@
 {
   "EntitySpawnWhiteList": [
-    "*:grub",
     "game:animalbot-*",
     "game:armorstand*",
     "game:arrow-*",
-    "game:beemob",
     "game:bell*",
     "game:blockfalling",
     "game:boat*",
@@ -26,7 +24,17 @@
     "game:strawdummy",
     "game:testship",
     "game:thrown*",
-    "game:villager-*"
+    "game:villager-*",
+
+    "game:elf-*",
+    "game:goblin-*",
+    "game:halfing-*",
+    "game:human-*",
+    "game:kobold-*",
+    "game:orc-*",
+    "fantasycreatures:*",
+    "rustboundmagic:*",
+    "rustcreatures:*"
   ],
   "BlockPatchBiomes": {
     "flotsam-driftwood-*": {

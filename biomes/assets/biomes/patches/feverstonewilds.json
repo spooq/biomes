@@ -292,7 +292,18 @@
     "value": {
       "*": {
         "biorealm": [
-          "central palearctic"
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
         ]
       }
     }

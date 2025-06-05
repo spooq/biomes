@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using ProperVersion;
 using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Common;
@@ -21,8 +22,12 @@ namespace Biomes
         public static void Init(BiomesModSystem mod)
         {
             biomesMod = mod;
+
+            SemVer vsVersion;
+
             harmony = new Harmony(biomesMod.Mod.Info.ModID);
-            harmony.PatchAll();
+
+            harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"), typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix"));
         }
 
         public static void Shutdown()
@@ -30,8 +35,6 @@ namespace Biomes
             harmony.UnpatchAll(biomesMod.Mod.Info.ModID);
         }
 
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
         public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance, out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldgenRandom)
         {
             __state = __instance.WorldGenConds;
