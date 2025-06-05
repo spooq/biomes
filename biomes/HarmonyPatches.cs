@@ -33,13 +33,13 @@ namespace Biomes
             {
                 harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
                               typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_11"),
-                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix__1_20_11"));
+                              typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_11"));
 
                 harmony.Patch(typeof(ForestFloorSystem).GetMethod("GenPatches"),
-                                  typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_11"),
-                                  typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_11"));
+                              typeof(HarmonyPatches).GetMethod("genPatchesTreePrefix_1_20_11"),
+                              typeof(HarmonyPatches).GetMethod("genPatchesTreePostfix_1_20_11"));
 
-                harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt"),
+                harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt_offthread"),
                               typeof(HarmonyPatches).GetMethod("CanSpawnAt"));
             }
             else
@@ -49,11 +49,11 @@ namespace Biomes
                               typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_0"));
 
                 harmony.Patch(typeof(ForestFloorSystem).GetMethod("GenPatches"),
-                                  typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_0"),
-                                  typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix0"));
+                                  typeof(HarmonyPatches).GetMethod("genPatchesTreePrefix_1_20_0"),
+                                  typeof(HarmonyPatches).GetMethod("genPatchesTreePostfix_1_20_0"));
 
 
-                harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt_offthread"),
+                harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt"),
                               typeof(HarmonyPatches).GetMethod("CanSpawnAt"));
             }
         }
