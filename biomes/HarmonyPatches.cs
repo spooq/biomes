@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
@@ -25,10 +26,15 @@ namespace Biomes
         {
             biomesMod = mod;
 
-            // Version-specific patches
-            FileVersionInfo version = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(BlockFruitTreeBranch)).Location);
-            SemVer semVer = SemVer.Parse(version.ProductVersion.ToString());
-            mod.sapi.Logger.Debug("Biomes detected Vintagestory version {0}", semVer.ToString());
+            // Detect OS
+            SemVer semVer = new SemVer(1, 20, 11); // Linux workaround
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                // Version-specific patches for Windows
+                FileVersionInfo version = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(BlockFruitTreeBranch)).Location);
+                semVer = SemVer.Parse(version.ProductVersion.ToString());
+                mod.sapi.Logger.Debug("Biomes detected Vintagestory version {0}", semVer.ToString());
+            }
 
             // Common code
             harmony = new Harmony(biomesMod.Mod.Info.ModID);

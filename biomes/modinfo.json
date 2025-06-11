@@ -19,7 +19,7 @@
     "Crupette"
   ],
   "description": "Biome system",
-  "version": "1.20.14",
+  "version": "1.20.15",
   "dependencies": {
     "game": ""
   },
