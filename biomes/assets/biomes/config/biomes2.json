@@ -3596,15 +3596,16 @@
     },
     "breadfruit": {
       "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
+        "atlantic afrotropic",
+        "atlantic palearctic",
         "central palearctic",
+        "eastern afrotropic",
         "eastern palearctic",
         "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
         "pacific neotropic",
         "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
         "australasian",
         "oceania"
       ],
@@ -3970,6 +3971,7 @@
     "jackfruit": {
       "biorealm": [
         "atlantic afrotropic",
+        "atlantic palearctic",
         "central palearctic",
         "eastern afrotropic",
         "eastern palearctic",
@@ -3985,33 +3987,21 @@
     },
     "cempedak": {
       "biorealm": [
-        "atlantic afrotropic",
         "central palearctic",
-        "eastern afrotropic",
         "eastern palearctic",
-        "pacific palearctic",
-        "pacific nearctic",
-        "atlantic nearctic",
+        "pacific palearctic", 
         "pacific neotropic",
-        "atlantic neotropic",
-        "australasian",
-        "oceania"
+        "atlantic neotropic"
       ],
       "bioriver": "both"
     },
     "marang": {
       "biorealm": [
-        "atlantic afrotropic",
         "central palearctic",
-        "eastern afrotropic",
         "eastern palearctic",
-        "pacific palearctic",
-        "pacific nearctic",
-        "atlantic nearctic",
+        "pacific palearctic", 
         "pacific neotropic",
-        "atlantic neotropic",
-        "australasian",
-        "oceania"
+        "atlantic neotropic"
       ],
       "bioriver": "both"
     },
