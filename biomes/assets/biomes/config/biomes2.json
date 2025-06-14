@@ -3660,6 +3660,12 @@
       ],
       "bioriver": "both"
     },
+      "lemon": {
+      "biorealm": [
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
     "cocoa": {
       "biorealm": [
         "pacific neotropic",
