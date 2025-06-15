@@ -50,7 +50,7 @@
         "pacific neotropic",
         "atlantic neotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "false"
     },
@@ -68,7 +68,7 @@
         "pacific neotropic",
         "atlantic neotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "false"
     },
@@ -85,7 +85,7 @@
         "pacific neotropic",
         "atlantic neotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "false"
     },
@@ -135,7 +135,7 @@
         "pacific neotropic",
         "atlantic neotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "false"
     },
@@ -152,7 +152,7 @@
         "pacific neotropic",
         "atlantic neotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "false"
     },
@@ -3607,7 +3607,7 @@
         "pacific neotropic",
         "atlantic neotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "both"
     },
@@ -3987,7 +3987,7 @@
         "pacific neotropic",
         "atlantic neotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "both"
     },
