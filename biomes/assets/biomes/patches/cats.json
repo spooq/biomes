@@ -1,0 +1,89 @@
+[
+  {
+    "file": "cats:entities/land/cat-female.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-ocelot": {
+        "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+        ]
+      },
+      "*-serval": {
+        "biorealm": [
+        "atlantic palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+        ]
+      },
+      "*-european": {
+        "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "cats" } ]
+  },
+  {
+    "file": "cats:entities/land/cat-kitten.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-ocelot": {
+        "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+        ]
+      },
+      "*-serval": {
+        "biorealm": [
+        "atlantic palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+        ]
+      },
+      "*-european": {
+        "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "cats" } ]
+  },
+  {
+    "file": "cats:entities/land/cat-male.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "value": {
+      "*-ocelot": {
+        "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+        ]
+      },
+      "*-serval": {
+        "biorealm": [
+        "atlantic palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+        ]
+      },
+      "*-european": {
+        "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+        ]
+      }
+    },
+    "side": "server",
+    "dependsOn": [ { "modid": "cats" } ]
+  }
+]
