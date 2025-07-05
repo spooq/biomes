@@ -204,7 +204,7 @@
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
-    "file": "thecritterpack:entities/land/duck/duck-baby.json",
+    "file": "thecritterpack:entities/land/duck/mallard/mallard-duck-baby.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -221,7 +221,7 @@
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
-    "file": "thecritterpack:entities/land/duck/duck-female.json",
+    "file": "thecritterpack:entities/land/duck/mallard/mallard-duck-female.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -238,7 +238,7 @@
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
-    "file": "thecritterpack:entities/land/duck/duck-male.json",
+    "file": "thecritterpack:entities/land/duck/mallard/mallard-duck-male.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -250,6 +250,75 @@
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/land/duck/mallard/mallard-duck-nest.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/land/duck/pekin/pekin-duck-baby.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/land/duck/pekin/pekin-duck-female.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/land/duck/pekin/pekin-duck-male.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    },
+    "dependsOn": [ { "modid": "thecritterpack" } ]
+  },
+  {
+    "file": "thecritterpack:entities/land/duck/pekin/pekin-duck-nest.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
       ]
     },
     "dependsOn": [ { "modid": "thecritterpack" } ]
@@ -314,7 +383,7 @@
     "dependsOn": [ { "modid": "thecritterpack" } ]
   },
   {
-    "file": "thecritterpack:entities/land/snail/snaily.json",
+    "file": "thecritterpack:entities/land/snail/snail-default.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
