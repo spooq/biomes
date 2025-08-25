@@ -1,6 +1,6 @@
 [
   {
-    "file": "game:entities/water/bass.json",
+    "file": "game:entities/animal/fish/bass.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
@@ -22,7 +22,7 @@
     }
   },
   {
-    "file": "game:entities/water/salmon.json",
+    "file": "game:entities/animal/fish/salmon.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
