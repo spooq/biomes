@@ -1482,7 +1482,8 @@
         "eastern afrotropic",
         "australasian",
         "oceanic"
-      ]
+      ],
+      "bioriver": "false"
     },
     "reefledge-*": {
       "biorealm": [
@@ -1498,7 +1499,8 @@
         "eastern afrotropic",
         "australasian",
         "oceanic"
-      ]
+      ],
+      "bioriver": "false"
     },
     "reefstructure-*": {
       "biorealm": [
@@ -1514,7 +1516,8 @@
         "eastern afrotropic",
         "australasian",
         "oceanic"
-      ]
+      ],
+      "bioriver": "false"
     },
     "aquatic-decor-*": {
       "biorealm": [
@@ -1530,7 +1533,8 @@
         "eastern afrotropic",
         "australasian",
         "oceanic"
-      ]
+      ],
+      "bioriver": "false"
     },
     "fern-cinnamonfern": {
       "biorealm": [
