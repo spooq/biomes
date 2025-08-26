@@ -33,5 +33,232 @@
         "pacific palearctic"
       ]
     }
+  },
+  {
+    "file": "game:entities/animal/fish/saltwater-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "fish-saltwater-amberjack-yellowtail-*": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "fish-saltwater-barracuda-great-*": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian"
+        ]
+      },
+      "fish-saltwater-bream-sea-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic neotropic",
+          "atlantic palearctic"
+        ]
+      },
+      "fish-saltwater-coelacanth-common-*": {
+        "biorealm": [
+          "central palearctic",
+          "eastern afrotropic"
+        ]
+      },
+      "fish-saltwater-grouper-black-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic neotropic"
+        ]
+      },
+      "fish-saltwater-gurnard-cape-*": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "fish-saltwater-haddock-common-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic"
+        ]
+      },
+      "fish-saltwater-hake-silver-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-saltwater-herring-atlantic-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic"
+        ]
+      },
+      "fish-saltwater-mackerel-atlantic-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "fish-saltwater-mahi-mahi-common-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "fish-saltwater-perch-pacific-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "pacific palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "fish-saltwater-pollock-alaska-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "pacific palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "fish-saltwater-salmon-pink-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "fish-saltwater-snapper-red-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-saltwater-sturgeon-atlantic-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic"
+        ]
+      },
+      "fish-saltwater-tuna-skipjack-*": {
+        "biorealm": [
+          "pacific palearctic",
+          "eastern palearctic",
+          "central palearctic",
+          "eastern afrotropic",
+          "atlantic palearctic",
+          "atlantic nearctic",
+          "atlantic neotropic",
+          "pacific nearctic"
+        ]
+      },
+      "fish-saltwater-wolf-bering-*": {
+        "biorealm": [
+          "pacific palearctic",
+          "eastern palearctic",
+          "pacific nearctic"
+        ]
+      },
+      "fish-saltwater-wreckfish-atlantic-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic",
+          "atlantic neotropic",
+          "australasian",
+          "oceanic"
+        ]
+      }
+    }
+  },
+  {
+    "file": "game:entities/animal/fish/reef-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "fish-reef-angel-bicolor-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "pacific palearctic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "fish-reef-butterfly-copperband-*": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-butterfly-blackwedged-*": {
+        "biorealm": [
+          "central palearctic",
+          "eastern afrotropic"
+        ]
+      },
+      "fish-reef-clown-*-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-puffer-longspine-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-tang-banded-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-tang-powderblue-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "central palearctic"
+        ]
+      },
+      "fish-reef-trigger-titan-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-wrasse-creole-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic neotropic"
+        ]
+      }
+    }
   }
 ]
