@@ -20,6 +20,7 @@
     "game:mechhelper",
     "game:player*",
     "game:shiver-*",
+    "game:*skeleton*",
     "game:spear-*",
     "game:strawdummy",
     "game:testship",
