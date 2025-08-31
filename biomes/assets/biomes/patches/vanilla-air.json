@@ -1,6 +1,6 @@
 [
   {
-    "file": "game:entities/air/beemob.json",
+    "file": "game:entities/animal/invertebrate/beemob.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
