@@ -1,6 +1,6 @@
 [
   {
-    "file": "game:entities/air/butterfly.json",
+    "file": "game:entities/animal/invertebrate/butterfly.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
