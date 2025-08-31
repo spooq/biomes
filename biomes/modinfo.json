@@ -20,7 +20,7 @@
     "NiCH518"
   ],
   "description": "Biome system",
-  "version": "1.20.18",
+  "version": "1.21.0",
   "dependencies": {
     "game": ""
   },
