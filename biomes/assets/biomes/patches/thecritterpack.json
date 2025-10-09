@@ -450,7 +450,8 @@
     "side": "server",
     "value": {
       "biorealm": [
-        "australasian"
+        "australasian",
+        "oceanic"
       ]
     },
     "dependsOn": [
@@ -466,7 +467,8 @@
     "side": "server",
     "value": {
       "biorealm": [
-        "australasian"
+        "australasian",
+        "oceanic"
       ]
     },
     "dependsOn": [
@@ -482,7 +484,8 @@
     "side": "server",
     "value": {
       "biorealm": [
-        "australasian"
+        "australasian",
+        "oceanic"
       ]
     },
     "dependsOn": [
@@ -628,7 +631,7 @@
         "eastern afrotropic",
         "atlantic afrotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ]
     },
     "dependsOn": [
@@ -671,7 +674,7 @@
         "eastern afrotropic",
         "atlantic afrotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ]
     },
     "dependsOn": [
