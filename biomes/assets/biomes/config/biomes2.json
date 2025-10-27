@@ -2636,6 +2636,93 @@
       ],
       "bioriver": "both"
     },
+    "shrubberrybush-newhusktomato-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-tomato-*": {
+      "biorealm": [
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-wildtomato-*": {
+      "biorealm": [
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-falsetomato-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-eggplant-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-hairyeggplant-*": {
+      "biorealm": [
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-jalapeno-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-habanero-*": {
+      "biorealm": [
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-tabasco-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-redbellpepper-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-orangebellpepper-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-yellowbellpepper-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-greenbellpepper-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
     "shrubberrybush-naranjilla-*": {
       "biorealm": [
         "pacific nearctic",
