@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using Cake.Common;
 using Cake.Common.IO;
 using Cake.Common.Tools.DotNet;
@@ -8,9 +10,9 @@ using Cake.Frosting;
 using Cake.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.IO;
 using Vintagestory.API.Common;
+
+namespace CakeBuild;
 
 public static class Program
 {
@@ -24,18 +26,18 @@ public static class Program
 
 public class BuildContext : FrostingContext
 {
-    public const string ProjectName = "biomes";
-    public string BuildConfiguration { get; set; }
+    public const string ProjectName = "biomes_rebuilt";
+    public string BuildConfiguration { get; }
     public string Version { get; }
     public string Name { get; }
-    public bool SkipJsonValidation { get; set; }
+    public bool SkipJsonValidation { get; }
 
     public BuildContext(ICakeContext context)
         : base(context)
     {
         BuildConfiguration = context.Argument("configuration", "Release");
         SkipJsonValidation = context.Argument("skipJsonValidation", false);
-        var modInfo = context.DeserializeJsonFromFile<ModInfo>($"../{BuildContext.ProjectName}/modinfo.json");
+        var modInfo = context.DeserializeJsonFromFile<ModInfo>($"../{ProjectName}/modinfo.json");
         Version = modInfo.Version;
         Name = modInfo.ModID;
     }
@@ -50,6 +52,7 @@ public sealed class ValidateJsonTask : FrostingTask<BuildContext>
         {
             return;
         }
+
         var jsonFiles = context.GetFiles($"../{BuildContext.ProjectName}/assets/**/*.json");
         foreach (var file in jsonFiles)
         {
@@ -60,7 +63,8 @@ public sealed class ValidateJsonTask : FrostingTask<BuildContext>
             }
             catch (JsonException ex)
             {
-                throw new Exception($"Validation failed for JSON file: {file.FullPath}{Environment.NewLine}{ex.Message}", ex);
+                throw new Exception(
+                    $"Validation failed for JSON file: {file.FullPath}{Environment.NewLine}{ex.Message}", ex);
             }
         }
     }
@@ -96,9 +100,19 @@ public sealed class PackageTask : FrostingTask<BuildContext>
         context.EnsureDirectoryExists("../Releases");
         context.CleanDirectory("../Releases");
         context.EnsureDirectoryExists($"../Releases/{context.Name}");
-        context.CopyFiles($"../{BuildContext.ProjectName}/bin/{context.BuildConfiguration}/Mods/mod/publish/*", $"../Releases/{context.Name}");
-        context.CopyDirectory($"../{BuildContext.ProjectName}/assets", $"../Releases/{context.Name}/assets");
+        context.CopyFiles($"../{BuildContext.ProjectName}/bin/{context.BuildConfiguration}/Mods/mod/publish/*",
+            $"../Releases/{context.Name}");
+        if (context.DirectoryExists($"../{BuildContext.ProjectName}/assets"))
+        {
+            context.CopyDirectory($"../{BuildContext.ProjectName}/assets", $"../Releases/{context.Name}/assets");
+        }
+
         context.CopyFile($"../{BuildContext.ProjectName}/modinfo.json", $"../Releases/{context.Name}/modinfo.json");
+        if (context.FileExists($"../{BuildContext.ProjectName}/modicon.png"))
+        {
+            context.CopyFile($"../{BuildContext.ProjectName}/modicon.png", $"../Releases/{context.Name}/modicon.png");
+        }
+
         context.Zip($"../Releases/{context.Name}", $"../Releases/{context.Name}_{context.Version}.zip");
     }
 }
