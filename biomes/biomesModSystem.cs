@@ -114,7 +114,7 @@ public class BiomesModSystem : ModSystem
 
         // Realms config
         RealmsConfig =
-            JsonConvert.DeserializeObject<RealmsConfig>(sapi.Assets.Get($"{Mod.Info.ModID}:config/realms.json")
+            JsonConvert.DeserializeObject<RealmsConfig>(sapi.Assets.Get("biomes:config/realms.json")
                 .ToText())!;
 
         // BiomeConfig v2 is a superset of v1
@@ -153,9 +153,9 @@ public class BiomesModSystem : ModSystem
         }
 
         // User config
-        UserConfig = sapi.LoadModConfig<BiomeUserConfig>($"{Mod.Info.ModID}.json");
+        UserConfig = sapi.LoadModConfig<BiomeUserConfig>("biomes.json");
         UserConfig ??= new BiomeUserConfig();
-        sapi.StoreModConfig(UserConfig, $"{Mod.Info.ModID}.json");
+        sapi.StoreModConfig(UserConfig, "biomes.json");
 
         if (UserConfig.FlipNorthSouth)
         {

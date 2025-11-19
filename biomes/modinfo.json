@@ -1,7 +1,7 @@
 {
   "type": "code",
-  "modid": "biomes",
-  "name": "biomes",
+  "modid": "biomesrechungused",
+  "name": "Biomes Rechungused",
   "authors": [
     "Crabb",
     "Hieronymus",
@@ -21,9 +21,9 @@
     "actioninja"
   ],
   "description": "Biome system",
-  "version": "1.21.0",
+  "version": "1.21.2",
   "dependencies": {
-    "game": ""
+    "game": "1.21.0"
   },
   "side": "Server"
 }
