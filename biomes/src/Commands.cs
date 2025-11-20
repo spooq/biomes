@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Biomes.util;
 using HarmonyLib;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -68,7 +69,7 @@ public class Commands
     private TextCommandResult OnTreesCommand(TextCommandCallingArgs args)
     {
         var chunkRealms = new List<string>();
-        if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
+        if (ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
             EnumCommandStatus.Error)
             return new TextCommandResult
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
@@ -86,7 +87,7 @@ public class Commands
     private TextCommandResult OnFruitTreesCommand(TextCommandCallingArgs args)
     {
         var chunkRealms = new List<string>();
-        if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
+        if (ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
             EnumCommandStatus.Error)
             return new TextCommandResult
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
@@ -104,7 +105,7 @@ public class Commands
     private TextCommandResult OnBlockPatchCommand(TextCommandCallingArgs args)
     {
         var chunkRealms = new List<string>();
-        if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
+        if (ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
             EnumCommandStatus.Error)
             return new TextCommandResult
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
@@ -122,7 +123,7 @@ public class Commands
     private TextCommandResult OnEntityCommand(TextCommandCallingArgs args)
     {
         var chunkRealms = new List<string>();
-        if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
+        if (ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
             EnumCommandStatus.Error)
             return new TextCommandResult
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
@@ -142,7 +143,7 @@ public class Commands
     private TextCommandResult OnUnconfiguredCommand(TextCommandCallingArgs args)
     {
         var chunkRealms = new List<string>();
-        if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
+        if (ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
             EnumCommandStatus.Error)
             return new TextCommandResult
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
@@ -162,7 +163,7 @@ public class Commands
     private TextCommandResult OnWhitelistCommand(TextCommandCallingArgs args)
     {
         var chunkRealms = new List<string>();
-        if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
+        if (ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
             EnumCommandStatus.Error)
             return new TextCommandResult
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
@@ -180,7 +181,7 @@ public class Commands
     private TextCommandResult OnShowBiomeCommand(TextCommandCallingArgs args)
     {
         var chunkHemisphere = EnumHemisphere.North;
-        if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapHemispherePropertyName,
+        if (ModProperty.Get(args.Caller, BiomesModSystem.MapHemispherePropertyName,
                 ref chunkHemisphere) ==
             EnumCommandStatus.Error)
             return new TextCommandResult
@@ -188,7 +189,7 @@ public class Commands
         var hemisphereStr = Enum.GetName(typeof(EnumHemisphere), chunkHemisphere).ToLower();
 
         var chunkRealms = new List<string>();
-        if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
+        if (ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref chunkRealms) ==
             EnumCommandStatus.Error)
             return new TextCommandResult
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
@@ -200,14 +201,14 @@ public class Commands
         if (_biomesMod.IsRiversModInstalled)
         {
             var cr = false;
-            if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapChunkRiverBoolPropertyName, ref cr) !=
+            if (ModProperty.Get(args.Caller, BiomesModSystem.MapChunkRiverBoolPropertyName, ref cr) !=
                 EnumCommandStatus.Error)
                 chunkRiver = cr ? "true" : "false";
             else
                 chunkRiver = "not set";
 
             bool[] arr = null;
-            if (BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapChunkRiverArrayPropertyName, ref arr) !=
+            if (ModProperty.Get(args.Caller, BiomesModSystem.MapChunkRiverArrayPropertyName, ref arr) !=
                 EnumCommandStatus.Error)
             {
                 var blockPos = args.Caller.Entity.Pos.AsBlockPos;
@@ -237,7 +238,7 @@ public class Commands
         if (Enum.TryParse(args.Parsers[0].GetValue() as string, out EnumHemisphere hemisphere))
             return new TextCommandResult
             {
-                Status = BiomesModSystem.SetModPropertyForCallerChunk(args.Caller,
+                Status = ModProperty.Set(args.Caller,
                     BiomesModSystem.MapHemispherePropertyName, hemisphere)
             };
 
@@ -248,7 +249,7 @@ public class Commands
     private TextCommandResult OnAddRealmCommand(TextCommandCallingArgs args)
     {
         var currentRealms = new List<string>();
-        BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref currentRealms);
+        ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref currentRealms);
         if (Unsafe.IsNullRef(ref currentRealms))
             currentRealms = new List<string>();
 
@@ -257,7 +258,7 @@ public class Commands
 
         return new TextCommandResult
         {
-            Status = BiomesModSystem.SetModPropertyForCallerChunk(args.Caller, BiomesModSystem.MapRealmPropertyName,
+            Status = ModProperty.Set(args.Caller, BiomesModSystem.MapRealmPropertyName,
                 currentRealms.Distinct()),
             StatusMessage = currentRealms?.Join(delimiter: ",")
         };
@@ -266,7 +267,7 @@ public class Commands
     private TextCommandResult OnRemoveRealmCommand(TextCommandCallingArgs args)
     {
         var currentRealms = new List<string>(0);
-        BiomesModSystem.GetModProperty(args.Caller, BiomesModSystem.MapRealmPropertyName, ref currentRealms);
+        ModProperty.Get(args.Caller, BiomesModSystem.MapRealmPropertyName, ref currentRealms);
         if (Unsafe.IsNullRef(ref currentRealms))
             currentRealms = new List<string>();
 
@@ -275,7 +276,7 @@ public class Commands
 
         return new TextCommandResult
         {
-            Status = BiomesModSystem.SetModPropertyForCallerChunk(args.Caller, BiomesModSystem.MapRealmPropertyName,
+            Status = ModProperty.Set(args.Caller, BiomesModSystem.MapRealmPropertyName,
                 currentRealms.Distinct()),
             StatusMessage = currentRealms?.Join(delimiter: ",")
         };

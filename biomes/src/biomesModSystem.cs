@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Biomes.util;
 using Newtonsoft.Json;
 using ProtoBuf;
 using Vintagestory.API.Common;
@@ -85,7 +86,7 @@ public class BiomesModSystem : ModSystem
     public const string MapChunkRiverBoolPropertyName = "bioriverbool";
     public BiomeConfigv2 BiomeConfig;
     public RealmCache Cache;
-    public Commands commands;
+    private Commands _commands;
 
     public bool IsRiversModInstalled;
 
@@ -96,7 +97,7 @@ public class BiomesModSystem : ModSystem
 
     public bool TagOnChunkGen = true;
 
-    public BiomeUserConfig UserConfig;
+    public BiomeUserConfig UserConfig { get; private set; }
 
     public override bool ShouldLoad(EnumAppSide side)
     {
@@ -237,7 +238,7 @@ public class BiomesModSystem : ModSystem
         sapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.Vegetation, "standard");
         sapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
 
-        commands = new Commands(this, sapi);
+        _commands = new Commands(this, sapi);
     }
 
     public override void AssetsLoaded(ICoreAPI api)
@@ -291,8 +292,8 @@ public class BiomesModSystem : ModSystem
                         chunkHasRiver = true;
                 }
 
-                SetModProperty(chunk.MapChunk, MapChunkRiverArrayPropertyName, ref blockHasRiver);
-                SetModProperty(chunk.MapChunk, MapChunkRiverBoolPropertyName, ref chunkHasRiver);
+                ModProperty.Set(chunk.MapChunk, MapChunkRiverArrayPropertyName, ref blockHasRiver);
+                ModProperty.Set(chunk.MapChunk, MapChunkRiverBoolPropertyName, ref chunkHasRiver);
             }
         }
     }
@@ -320,8 +321,8 @@ public class BiomesModSystem : ModSystem
         realmNames = realmNames.Distinct().ToList();
 
         realmNames.Capacity = realmNames.Count;
-        SetModProperty(mapChunk, MapHemispherePropertyName, ref hemisphere);
-        SetModProperty(mapChunk, MapRealmPropertyName, ref realmNames);
+        ModProperty.Set(mapChunk, MapHemispherePropertyName, ref hemisphere);
+        ModProperty.Set(mapChunk, MapRealmPropertyName, ref realmNames);
     }
 
     public bool IsWhiteListed(string name)
@@ -360,13 +361,13 @@ public class BiomesModSystem : ModSystem
         if (blockPos == null)
         {
             var isRiver = false;
-            if (GetModProperty(mapChunk, MapChunkRiverBoolPropertyName, ref isRiver) == EnumCommandStatus.Error)
+            if (ModProperty.Get(mapChunk, MapChunkRiverBoolPropertyName, ref isRiver) == EnumCommandStatus.Error)
                 return true;
             return isRiver;
         }
 
         bool[] boolArray = null;
-        if (GetModProperty(mapChunk, MapChunkRiverArrayPropertyName, ref boolArray) == EnumCommandStatus.Error)
+        if (ModProperty.Get(mapChunk, MapChunkRiverArrayPropertyName, ref boolArray) == EnumCommandStatus.Error)
             return true;
 
         return boolArray[
@@ -377,7 +378,7 @@ public class BiomesModSystem : ModSystem
     public List<string>? GetChunkRealms(IMapChunk mapChunk)
     {
         var realms = new List<string>();
-        if (GetModProperty(mapChunk, MapRealmPropertyName, ref realms) == EnumCommandStatus.Error)
+        if (ModProperty.Get(mapChunk, MapRealmPropertyName, ref realms) == EnumCommandStatus.Error)
             return null;
         return realms;
     }
@@ -386,7 +387,7 @@ public class BiomesModSystem : ModSystem
         Dictionary<string, BiomeConfigItem> biomeConfig, BlockPos blockPos = null)
     {
         var chunkRealms = new List<string>();
-        if (GetModProperty(mapChunk, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+        if (ModProperty.Get(mapChunk, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
             return true;
 
         foreach (var item in biomeConfig)
@@ -409,7 +410,7 @@ public class BiomesModSystem : ModSystem
 
         // Test map chunk attributes
         var chunkRealms = new List<string>();
-        if (GetModProperty(mapChunk, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
+        if (ModProperty.Get(mapChunk, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
             return true;
 
         // Only blessed animals get in.
@@ -449,34 +450,4 @@ public class BiomesModSystem : ModSystem
             currentRealm = 0;
     }
 
-    public static EnumCommandStatus SetModPropertyForCallerChunk(Caller caller, string name, object value)
-    {
-        var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);
-        return SetModProperty(chunk, name, ref value);
-    }
-
-    public static EnumCommandStatus SetModProperty<T>(IMapChunk? chunk, string name, ref T value)
-    {
-        if (chunk == null)
-            return EnumCommandStatus.Error;
-
-        chunk.SetModdata(name, value);
-        chunk.MarkDirty();
-        return EnumCommandStatus.Success;
-    }
-
-    public static EnumCommandStatus GetModProperty<T>(Caller caller, string name, ref T value)
-    {
-        var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);
-        return GetModProperty(chunk, name, ref value);
-    }
-
-    public static EnumCommandStatus GetModProperty<T>(IMapChunk? chunk, string name, ref T value)
-    {
-        if (chunk == null)
-            return EnumCommandStatus.Error;
-
-        value = chunk.GetModdata<T>(name);
-        return value == null ? EnumCommandStatus.Error : EnumCommandStatus.Success;
-    }
 }
