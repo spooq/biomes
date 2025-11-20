@@ -21,7 +21,7 @@
     "actioninja"
   ],
   "description": "Biome system",
-  "version": "1.21.2",
+  "version": "1.21.3",
   "dependencies": {
     "game": "1.21.0"
   },
