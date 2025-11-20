@@ -1,11 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using HarmonyLib;
-using ProperVersion;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
@@ -14,7 +10,7 @@ using Vintagestory.GameContent;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
 using Vintagestory.ServerMods.NoObf;
-
+// ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Global
 
 namespace Biomes;
@@ -22,57 +18,14 @@ namespace Biomes;
 [HarmonyPatch]
 public static class HarmonyPatches
 {
-    public static Harmony harmony;
-    public static BiomesModSystem biomesMod;
+    private static Harmony harmony = null!;
+    private static BiomesModSystem biomesMod = null!;
 
     public static void Init(BiomesModSystem mod)
     {
         biomesMod = mod;
-
-        // Detect OS
-        var semVer = new SemVer(1, 20, 11); // Linux workaround
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            // Version-specific patches for Windows
-            var version = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(BlockFruitTreeBranch)).Location);
-            semVer = SemVer.Parse(version.ProductVersion);
-            mod.sapi.Logger.Debug("Biomes detected Vintagestory version {0}", semVer.ToString());
-        }
-
-        // Common code
         harmony = new Harmony(biomesMod.Mod.Info.ModID);
         harmony.PatchAll();
-
-        if (semVer >= new SemVer(1, 20, 11))
-        {
-            harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
-                typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_11"),
-                typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_11"));
-
-            harmony.Patch(
-                typeof(ForestFloorSystem).GetMethod("GenPatches", BindingFlags.NonPublic | BindingFlags.Instance),
-                new HarmonyMethod(typeof(HarmonyPatches).GetMethod("genPatchesTreePrefix_1_20_11")),
-                new HarmonyMethod(typeof(HarmonyPatches).GetMethod("genPatchesTreePostfix_1_20_11")));
-
-            harmony.Patch(typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt_offthread"),
-                typeof(HarmonyPatches).GetMethod("CanSpawnAt"));
-        }
-        else
-        {
-            harmony.Patch(typeof(BlockFruitTreeBranch).GetMethod("TryPlaceBlockForWorldGen"),
-                typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPrefix_1_20_0"),
-                typeof(HarmonyPatches).GetMethod("TryPlaceBlockForWorldGenPostfix_1_20_0"));
-
-            harmony.Patch(
-                typeof(ForestFloorSystem).GetMethod("GenPatches", BindingFlags.NonPublic | BindingFlags.Instance),
-                new HarmonyMethod(typeof(HarmonyPatches).GetMethod("genPatchesTreePrefix_1_20_0")),
-                new HarmonyMethod(typeof(HarmonyPatches).GetMethod("genPatchesTreePostfix_1_20_0")));
-
-            harmony.Patch(
-                typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt",
-                    BindingFlags.NonPublic | BindingFlags.Instance),
-                typeof(HarmonyPatches).GetMethod("CanSpawnAt"));
-        }
     }
 
     public static void Shutdown()
@@ -80,20 +33,8 @@ public static class HarmonyPatches
         harmony.UnpatchAll(biomesMod.Mod.Info.ModID);
     }
 
-    public static bool TryPlaceBlockForWorldGenPrefix_1_20_11(ref BlockFruitTreeBranch __instance,
-        out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace,
-        IRandom worldgenRandom, BlockPatchAttributes attributes)
-    {
-        return TryPlaceBlockForWorldGenPrefix(ref __instance, out __state, blockAccessor, pos);
-    }
-
-    public static bool TryPlaceBlockForWorldGenPrefix_1_20_0(ref BlockFruitTreeBranch __instance,
-        out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace,
-        LCGRandom worldgenRandom)
-    {
-        return TryPlaceBlockForWorldGenPrefix(ref __instance, out __state, blockAccessor, pos);
-    }
-
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
     public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance,
         out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos)
     {
@@ -101,7 +42,7 @@ public static class HarmonyPatches
 
         biomesMod.originalFruitTrees ??= __state;
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-        var realms = biomesMod.GetChunkRealms(chunk);
+        var realms = BiomesModSystem.GetChunkRealms(chunk);
 
         var cached =
             biomesMod.Cache.GetCachedFruitTrees(realms, ref __state, ref biomesMod.BiomeConfig.FruitTreeBiomes);
@@ -110,41 +51,17 @@ public static class HarmonyPatches
         return true;
     }
 
-    public static void TryPlaceBlockForWorldGenPostfix_1_20_11(ref BlockFruitTreeBranch __instance,
-        FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace,
-        IRandom worldgenRandom, BlockPatchAttributes attributes)
-    {
-        TryPlaceBlockForWorldGenPostfix(ref __instance, __state);
-    }
-
-    public static void TryPlaceBlockForWorldGenPostfix_1_20_0(ref BlockFruitTreeBranch __instance,
-        FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace,
-        LCGRandom worldgenRandom)
-    {
-        TryPlaceBlockForWorldGenPostfix(ref __instance, __state);
-    }
-
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
     public static void TryPlaceBlockForWorldGenPostfix(ref BlockFruitTreeBranch __instance,
         FruitTreeWorldGenConds[] __state)
     {
         __instance.WorldGenConds = __state;
     }
 
-    public static bool genPatchesTreePrefix_1_20_11(ref ForestFloorSystem __instance,
-        out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess,
-        EnumTreeType treetype, IRandom rnd)
-    {
-        return genPatchesTreePrefix(ref __instance, out __state, blockAccessor, pos);
-    }
-
-    public static bool genPatchesTreePrefix_1_20_0(ref ForestFloorSystem __instance,
-        out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess,
-        EnumTreeType treetype, LCGRandom rnd)
-    {
-        return genPatchesTreePrefix(ref __instance, out __state, blockAccessor, pos);
-    }
-
-    public static bool genPatchesTreePrefix(ref ForestFloorSystem __instance,
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
+    public static bool GenPatchesTreePrefix(ref ForestFloorSystem __instance,
         out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos)
     {
         var underTreeField = Traverse.Create(__instance).Field("underTreePatches");
@@ -156,7 +73,7 @@ public static class HarmonyPatches
         __state = (underTreeValue, onTreeValue);
 
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-        var realms = biomesMod.GetChunkRealms(chunk);
+        var realms = BiomesModSystem.GetChunkRealms(chunk);
         if (realms == null) return true;
 
         var cachedUnderTree = biomesMod.Cache.GetCachedUnderTreePatches(realms, ref underTreeValue,
@@ -169,22 +86,10 @@ public static class HarmonyPatches
 
         return true;
     }
-
-    public static void genPatchesTreePostfix_1_20_11(ref ForestFloorSystem __instance,
-        (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess,
-        EnumTreeType treetype, IRandom rnd)
-    {
-        genPatchesTreePostfix(ref __instance, __state);
-    }
-
-    public static void genPatchesTreePostfix_1_20_0(ref ForestFloorSystem __instance,
-        (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos, float forestNess,
-        EnumTreeType treetype, LCGRandom rnd)
-    {
-        genPatchesTreePostfix(ref __instance, __state);
-    }
-
-    public static void genPatchesTreePostfix(ref ForestFloorSystem __instance,
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
+    public static void GenPatchesTreePostfix(ref ForestFloorSystem __instance,
         (List<BlockPatch>, List<BlockPatch>) __state)
     {
         Traverse.Create(__instance).Field("underTreePatches").SetValue(__state.Item1);
@@ -201,7 +106,7 @@ public static class HarmonyPatches
         __state = bpc!.PatchesNonTree;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = biomesMod.GetChunkRealms(chunk);
+        var realms = BiomesModSystem.GetChunkRealms(chunk);
         if (realms == null) return true;
 
         bpc.PatchesNonTree = biomesMod.Cache.GetCachedGroundPatches(realms, ref bpc.PatchesNonTree,
@@ -229,7 +134,7 @@ public static class HarmonyPatches
         __state = treeGenProps!.ShrubGens;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = biomesMod.GetChunkRealms(chunk);
+        var realms = BiomesModSystem.GetChunkRealms(chunk);
         if (realms == null) return true;
 
         realms.Sort(StringComparer.Ordinal);
@@ -259,7 +164,7 @@ public static class HarmonyPatches
         __state = treeGenProps!.TreeGens;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = biomesMod.GetChunkRealms(chunk);
+        var realms = BiomesModSystem.GetChunkRealms(chunk);
         if (realms == null) return true;
 
         treeGenProps.TreeGens =
@@ -287,6 +192,8 @@ public static class HarmonyPatches
     }
 
     // Run-time spawn
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
     public static bool CanSpawnAt(ref Vec3d __result, EntityProperties type, Vec3i spawnPosition,
         RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
     {

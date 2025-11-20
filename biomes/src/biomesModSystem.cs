@@ -42,10 +42,10 @@ public class BiomeConfigItem
 
 public class BiomeConfigv1
 {
-    public Dictionary<string, List<string>> BlockPatchBiomes = new();
-    public List<string> EntitySpawnWhiteList = new();
-    public Dictionary<string, List<string>> FruitTreeBiomes = new();
-    public Dictionary<string, List<string>> TreeBiomes = new();
+    public readonly Dictionary<string, List<string>> BlockPatchBiomes = new();
+    public readonly List<string> EntitySpawnWhiteList = new();
+    public readonly Dictionary<string, List<string>> FruitTreeBiomes = new();
+    public readonly Dictionary<string, List<string>> TreeBiomes = new();
 }
 
 public class BiomeConfigv2
@@ -160,9 +160,7 @@ public class BiomesModSystem : ModSystem
 
         if (UserConfig.FlipNorthSouth)
         {
-            var tmp = RealmsConfig.NorthernRealms;
-            RealmsConfig.NorthernRealms = RealmsConfig.SouthernRealms;
-            RealmsConfig.SouthernRealms = tmp;
+            (RealmsConfig.NorthernRealms, RealmsConfig.SouthernRealms) = (RealmsConfig.SouthernRealms, RealmsConfig.NorthernRealms);
         }
 
         foreach (var item in UserConfig.EntitySpawnWhiteList)
@@ -204,7 +202,6 @@ public class BiomesModSystem : ModSystem
 
                 strs.Clear();
                 output = "FruitTrees: ";
-                var fruitTreeList = new List<string>();
                 foreach (var item in BiomeConfig.FruitTreeBiomes)
                 foreach (var fruitTreeBlock in fruitTreeBlocks)
                 foreach (var fruitTreeWorldGenConds in fruitTreeBlock.Attributes["worldgen"]
@@ -330,27 +327,22 @@ public class BiomesModSystem : ModSystem
         return BiomeConfig.EntitySpawnWhiteList.Any(x => WildcardUtil.Match(x, name));
     }
 
-    public bool CheckSeason(BlockPos pos, string[] seasons)
+    public bool CheckSeason(BlockPos? pos, string[]? seasons)
     {
-        if (pos is null || seasons is null || !seasons.Any() || seasons.Contains("all"))
+        if (pos is null || seasons is null || seasons.Length == 0 || seasons.Contains("all"))
             return true;
 
-        switch (sapi.World.Calendar.GetSeason(pos))
+        return sapi.World.Calendar.GetSeason(pos) switch
         {
-            case EnumSeason.Spring:
-                return seasons.Contains("spring");
-            case EnumSeason.Summer:
-                return seasons.Contains("summer");
-            case EnumSeason.Fall:
-                return seasons.Contains("fall");
-            case EnumSeason.Winter:
-                return seasons.Contains("winter");
-            default:
-                return true;
-        }
+            EnumSeason.Spring => seasons.Contains("spring"),
+            EnumSeason.Summer => seasons.Contains("summer"),
+            EnumSeason.Fall => seasons.Contains("fall"),
+            EnumSeason.Winter => seasons.Contains("winter"),
+            _ => true
+        };
     }
 
-    public bool CheckRiver(IMapChunk mapChunk, string biomeRiver, BlockPos blockPos = null)
+    public bool CheckRiver(IMapChunk mapChunk, string? biomeRiver, BlockPos? blockPos = null)
     {
         // NOTE: Right now, river implies fresh-water only.
         if (string.IsNullOrEmpty(biomeRiver) || biomeRiver == "both" || !IsRiversModInstalled)
@@ -375,32 +367,12 @@ public class BiomesModSystem : ModSystem
             blockPos.X % sapi.WorldManager.ChunkSize];
     }
 
-    public List<string>? GetChunkRealms(IMapChunk mapChunk)
+    public static List<string>? GetChunkRealms(IMapChunk mapChunk)
     {
         var realms = new List<string>();
         if (ModProperty.Get(mapChunk, MapRealmPropertyName, ref realms) == EnumCommandStatus.Error)
             return null;
         return realms;
-    }
-
-    public bool AllowBlockPatchSpawn(IMapChunk mapChunk, BlockPatch blockPatch,
-        Dictionary<string, BiomeConfigItem> biomeConfig, BlockPos blockPos = null)
-    {
-        var chunkRealms = new List<string>();
-        if (ModProperty.Get(mapChunk, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-            return true;
-
-        foreach (var item in biomeConfig)
-            if (blockPatch.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)))
-                return item.Value.biorealm.Intersect(chunkRealms).Any() &&
-                       CheckRiver(mapChunk, item.Value.bioriver, blockPos);
-
-        if (UserConfig.Debug)
-            foreach (var item in blockPatch.blockCodes)
-                if (!biomeConfig.ContainsKey(item))
-                    sapi.Logger.Debug($"BlockPatch code {item} is not blessed");
-
-        return false;
     }
 
     public bool AllowEntitySpawn(IMapChunk mapChunk, EntityProperties type, BlockPos blockPos = null)
