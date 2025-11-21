@@ -193,10 +193,10 @@ public static class HarmonyPatches
 
     // Run-time spawn
     [HarmonyPrefix]
-    [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
+    [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt_offthread")]
     public static bool CanSpawnAt(ref Vec3d __result, EntityProperties type, Vec3i spawnPosition,
         RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
     {
-        return chunkCol.Any() && biomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
+        return chunkCol.Length != 0 && biomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
     }
 }
