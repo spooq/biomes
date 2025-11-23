@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Biomes.util;
 using HarmonyLib;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -40,10 +41,8 @@ public static class HarmonyPatches
     {
         __state = __instance.WorldGenConds;
 
-        biomesMod.originalFruitTrees ??= __state;
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-        var realms = BiomesModSystem.GetChunkRealms(chunk);
-
+        var realms = Util.GetChunkRealms(chunk);
         var cached =
             biomesMod.Cache.GetCachedFruitTrees(realms, ref __state, ref biomesMod.BiomeConfig.FruitTreeBiomes);
 
@@ -73,7 +72,7 @@ public static class HarmonyPatches
         __state = (underTreeValue, onTreeValue);
 
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-        var realms = BiomesModSystem.GetChunkRealms(chunk);
+        var realms = Util.GetChunkRealms(chunk);
         if (realms == null) return true;
 
         var cachedUnderTree = biomesMod.Cache.GetCachedUnderTreePatches(realms, ref underTreeValue,
@@ -106,7 +105,7 @@ public static class HarmonyPatches
         __state = bpc!.PatchesNonTree;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = BiomesModSystem.GetChunkRealms(chunk);
+        var realms = Util.GetChunkRealms(chunk);
         if (realms == null) return true;
 
         bpc.PatchesNonTree = biomesMod.Cache.GetCachedGroundPatches(realms, ref bpc.PatchesNonTree,
@@ -134,7 +133,7 @@ public static class HarmonyPatches
         __state = treeGenProps!.ShrubGens;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = BiomesModSystem.GetChunkRealms(chunk);
+        var realms = Util.GetChunkRealms(chunk);
         if (realms == null) return true;
 
         realms.Sort(StringComparer.Ordinal);
@@ -164,7 +163,7 @@ public static class HarmonyPatches
         __state = treeGenProps!.TreeGens;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = BiomesModSystem.GetChunkRealms(chunk);
+        var realms = Util.GetChunkRealms(chunk);
         if (realms == null) return true;
 
         treeGenProps.TreeGens =
@@ -188,15 +187,16 @@ public static class HarmonyPatches
     public static bool CanSpawnAtPosition(ref bool __result, IBlockAccessor blockAccessor, EntityProperties type,
         BlockPos pos, BaseSpawnConditions sc)
     {
-        return __result = biomesMod.AllowEntitySpawn(blockAccessor.GetMapChunkAtBlockPos(pos), type, pos);
+        __result = biomesMod.Entities.IsSpawnValid(blockAccessor.GetMapChunkAtBlockPos(pos), type, pos);
+        return __result;
     }
 
     // Run-time spawn
     [HarmonyPrefix]
     [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt_offthread")]
-    public static bool CanSpawnAt(ref Vec3d __result, EntityProperties type, Vec3i spawnPosition,
+    public static bool CanSpawnAt(ref Vec3d? __result, EntityProperties type, Vec3i spawnPosition,
         RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
     {
-        return chunkCol.Length != 0 && biomesMod.AllowEntitySpawn(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
+        return chunkCol.Length != 0 && biomesMod.Entities.IsSpawnValid(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
     }
 }

@@ -1,0 +1,33 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+
+namespace Biomes.util;
+
+public struct ByteField : IEquatable<ByteField>
+{
+    public byte Value;
+    
+    public ByteField(byte value) => Value = value;
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public bool GetBit(int bit) => (Value & (1 << bit)) == 1;
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void SetBit(int bit, bool value) => Value = (byte)(Value & (1 << bit));
+    
+    public override string ToString() => Value.ToString();
+    public override bool Equals([NotNullWhen(true)] object? obj)
+    {
+        return base.Equals(obj);
+    }
+
+    public bool Equals(ByteField other)
+    {
+        return Value == other.Value;
+    }
+
+    public override int GetHashCode()
+    {
+        return Value.GetHashCode();
+    }
+}

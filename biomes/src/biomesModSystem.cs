@@ -72,28 +72,30 @@ public class BiomeNameAndCoords
     [ProtoMember(2)] public int chunkZ;
 }
 
+
+// HERE YE, HERE YE
+// Biomes is a mod that a significant portion runs in a very hot loop,
+// that being worldgen. The hot path code is deliberately written to use the
+// fastest as is reasonable constructs.
+// No super low level shenanigans are used, but attention was paid to things
+// such as choice of hashing algorithm and avoiding heavy constructs like linq in favor of
+// just imperative iteration.
+// This is not a lack of best practice, it was a deliberate choice for speed’s sake.
+// Please keep this in mind for any changes you wish to make. If you are unsure how to
+// implement an idea that needs hot path code, make an issue or ask in the discord thread
+// about it.
 public class BiomesModSystem : ModSystem
 {
-    public const string MapRealmPropertyName = "biorealm";
-    public const string MapRiverPropertyName = "bioriver";
-    public const string MapHemispherePropertyName = "hemisphere";
-
-    public const string EntityRealmPropertyName = "biorealm";
-    public const string EntityRiverPropertyName = "bioriver";
-    public const string EntitySeasonPropertyName = "bioseason";
-
-    public const string MapChunkRiverArrayPropertyName = "bioriverarray";
-    public const string MapChunkRiverBoolPropertyName = "bioriverbool";
-    public BiomeConfigv2 BiomeConfig;
-    public RealmCache Cache;
+    public BiomeConfigv2 BiomeConfig = null!;
+    public RealmCache Cache = null!;
+    public Entities Entities = null!;
     private Commands _commands;
 
-    public bool IsRiversModInstalled;
+    public bool IsRiversModInstalled = false;
 
-    public FruitTreeWorldGenConds[] originalFruitTrees = null;
-    public RealmsConfig RealmsConfig;
+    public RealmsConfig RealmsConfig = null!;
 
-    public ICoreServerAPI sapi;
+    public ICoreServerAPI _vsapi;
 
     public bool TagOnChunkGen = true;
 
@@ -108,21 +110,22 @@ public class BiomesModSystem : ModSystem
     {
         base.StartServerSide(api);
 
-        sapi = api;
+        _vsapi = api;
         Cache = new RealmCache();
+        Entities = new Entities(_vsapi);
 
         HarmonyPatches.Init(this);
 
         // Realms config
         RealmsConfig =
-            JsonConvert.DeserializeObject<RealmsConfig>(sapi.Assets.Get("biomes:config/realms.json")
+            JsonConvert.DeserializeObject<RealmsConfig>(_vsapi.Assets.Get("biomes:config/realms.json")
                 .ToText())!;
 
         // BiomeConfig v2 is a superset of v1
         BiomeConfig = new BiomeConfigv2();
 
         // Version 1 config file format
-        foreach (var biomeAsset in sapi.Assets.GetMany("config/biomes.json"))
+        foreach (var biomeAsset in _vsapi.Assets.GetMany("config/biomes.json"))
         {
             var tmp = JsonConvert.DeserializeObject<BiomeConfigv1>(biomeAsset.ToText())!;
 
@@ -139,7 +142,7 @@ public class BiomesModSystem : ModSystem
         }
 
         // Version 2 config file format
-        foreach (var biomeAsset in sapi.Assets.GetMany("config/biomes2.json"))
+        foreach (var biomeAsset in _vsapi.Assets.GetMany("config/biomes2.json"))
         {
             var tmp = JsonConvert.DeserializeObject<BiomeConfigv2>(biomeAsset.ToText())!;
 
@@ -154,9 +157,9 @@ public class BiomesModSystem : ModSystem
         }
 
         // User config
-        UserConfig = sapi.LoadModConfig<BiomeUserConfig>("biomes.json");
+        UserConfig = _vsapi.LoadModConfig<BiomeUserConfig>("biomes.json");
         UserConfig ??= new BiomeUserConfig();
-        sapi.StoreModConfig(UserConfig, "biomes.json");
+        _vsapi.StoreModConfig(UserConfig, "biomes.json");
 
         if (UserConfig.FlipNorthSouth)
         {
@@ -165,6 +168,8 @@ public class BiomesModSystem : ModSystem
 
         foreach (var item in UserConfig.EntitySpawnWhiteList)
             BiomeConfig.EntitySpawnWhiteList.Add(item);
+        
+        Entities.BuildCaches(UserConfig);
 
         if (UserConfig.Debug)
         {
@@ -172,7 +177,7 @@ public class BiomesModSystem : ModSystem
 
             List<BlockPatchWithComment> bpc = new();
             var blockpatchesfiles =
-                api.Assets.GetMany<BlockPatchWithComment[]>(sapi.World.Logger, "worldgen/blockpatches/");
+                api.Assets.GetMany<BlockPatchWithComment[]>(_vsapi.World.Logger, "worldgen/blockpatches/");
             foreach (var patches in blockpatchesfiles.Values)
                 bpc.AddRange(patches);
 
@@ -223,8 +228,8 @@ public class BiomesModSystem : ModSystem
                 strs.Clear();
                 output = "Entities: ";
                 foreach (var type in api.World.EntityTypes)
-                    if (type.Attributes != null && type.Attributes.KeyExists(EntityRealmPropertyName))
-                        if (type.Attributes[EntityRealmPropertyName].AsArray<string>().Contains(realm))
+                    if (type.Attributes != null && type.Attributes.KeyExists(ModPropName.Entity.Realm))
+                        if (type.Attributes[ModPropName.Entity.Realm].AsArray<string>().Contains(realm))
                             strs.Add(type.Code.ToString());
                 api.Logger.Debug(output + string.Join(',', strs.Distinct().Order()));
             }
@@ -232,18 +237,21 @@ public class BiomesModSystem : ModSystem
 
         BiomeConfig.EntitySpawnWhiteList = BiomeConfig.EntitySpawnWhiteList.Distinct().ToList();
 
-        sapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.Vegetation, "standard");
-        sapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
+        _vsapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.Vegetation, "standard");
+        _vsapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
 
-        _commands = new Commands(this, sapi);
+        _commands = new Commands(this, _vsapi);
     }
 
     public override void AssetsLoaded(ICoreAPI api)
     {
         base.AssetsLoaded(api);
 
+        /*
         IsRiversModInstalled = api.ModLoader.GetModSystem("RiversMod") != null ||
                                api.ModLoader.GetModSystem("RiverGenMod") != null;
+                               */
+        
     }
 
     public override void Dispose()
@@ -277,20 +285,20 @@ public class BiomesModSystem : ModSystem
                 var flowVectorZ = SerializerUtil.Deserialize<float[]>(arrayZ);
 
                 var chunkHasRiver = false;
-                var blockHasRiver = new bool[sapi.WorldManager.ChunkSize * sapi.WorldManager.ChunkSize];
-                for (var x = 0; x < sapi.WorldManager.ChunkSize; x++)
-                for (var z = 0; z < sapi.WorldManager.ChunkSize; z++)
+                var blockHasRiver = new bool[_vsapi.WorldManager.ChunkSize * _vsapi.WorldManager.ChunkSize];
+                for (var x = 0; x < _vsapi.WorldManager.ChunkSize; x++)
+                for (var z = 0; z < _vsapi.WorldManager.ChunkSize; z++)
                 {
-                    var xMag = flowVectorX[z * sapi.WorldManager.ChunkSize + x];
-                    var zMag = flowVectorZ[z * sapi.WorldManager.ChunkSize + x];
+                    var xMag = flowVectorX[z * _vsapi.WorldManager.ChunkSize + x];
+                    var zMag = flowVectorZ[z * _vsapi.WorldManager.ChunkSize + x];
                     var isRiver = float.Abs(xMag) > float.Epsilon || float.Abs(zMag) > float.Epsilon;
-                    blockHasRiver[z * sapi.WorldManager.ChunkSize + x] = isRiver;
+                    blockHasRiver[z * _vsapi.WorldManager.ChunkSize + x] = isRiver;
                     if (isRiver)
                         chunkHasRiver = true;
                 }
 
-                ModProperty.Set(chunk.MapChunk, MapChunkRiverArrayPropertyName, ref blockHasRiver);
-                ModProperty.Set(chunk.MapChunk, MapChunkRiverBoolPropertyName, ref chunkHasRiver);
+                ModProperty.Set(chunk.MapChunk, ModPropName.MapChunk.RiverArray, ref blockHasRiver);
+                ModProperty.Set(chunk.MapChunk, ModPropName.MapChunk.RiverBool, ref chunkHasRiver);
             }
         }
     }
@@ -300,9 +308,9 @@ public class BiomesModSystem : ModSystem
         if (!TagOnChunkGen)
             return;
 
-        var blockPos = new BlockPos(chunkX * sapi.WorldManager.ChunkSize, 0,
-            chunkZ * sapi.WorldManager.ChunkSize, 0);
-        var hemisphere = sapi.World.Calendar.GetHemisphere(blockPos);
+        var blockPos = new BlockPos(chunkX * _vsapi.WorldManager.ChunkSize, 0,
+            chunkZ * _vsapi.WorldManager.ChunkSize, 0);
+        var hemisphere = _vsapi.World.Calendar.GetHemisphere(blockPos);
         int currentRealm;
         var realmNames = new List<string>(4);
         CalculateValues(chunkX - 1, chunkZ, hemisphere, out currentRealm);
@@ -318,28 +326,8 @@ public class BiomesModSystem : ModSystem
         realmNames = realmNames.Distinct().ToList();
 
         realmNames.Capacity = realmNames.Count;
-        ModProperty.Set(mapChunk, MapHemispherePropertyName, ref hemisphere);
-        ModProperty.Set(mapChunk, MapRealmPropertyName, ref realmNames);
-    }
-
-    public bool IsWhiteListed(string name)
-    {
-        return BiomeConfig.EntitySpawnWhiteList.Any(x => WildcardUtil.Match(x, name));
-    }
-
-    public bool CheckSeason(BlockPos? pos, string[]? seasons)
-    {
-        if (pos is null || seasons is null || seasons.Length == 0 || seasons.Contains("all"))
-            return true;
-
-        return sapi.World.Calendar.GetSeason(pos) switch
-        {
-            EnumSeason.Spring => seasons.Contains("spring"),
-            EnumSeason.Summer => seasons.Contains("summer"),
-            EnumSeason.Fall => seasons.Contains("fall"),
-            EnumSeason.Winter => seasons.Contains("winter"),
-            _ => true
-        };
+        ModProperty.Set(mapChunk, ModPropName.Map.Hemisphere, ref hemisphere);
+        ModProperty.Set(mapChunk, ModPropName.Map.Realm, ref realmNames);
     }
 
     public bool CheckRiver(IMapChunk mapChunk, string? biomeRiver, BlockPos? blockPos = null)
@@ -353,56 +341,18 @@ public class BiomesModSystem : ModSystem
         if (blockPos == null)
         {
             var isRiver = false;
-            if (ModProperty.Get(mapChunk, MapChunkRiverBoolPropertyName, ref isRiver) == EnumCommandStatus.Error)
+            if (ModProperty.Get(mapChunk, ModPropName.MapChunk.RiverBool, ref isRiver) == EnumCommandStatus.Error)
                 return true;
             return isRiver;
         }
 
         bool[] boolArray = null;
-        if (ModProperty.Get(mapChunk, MapChunkRiverArrayPropertyName, ref boolArray) == EnumCommandStatus.Error)
+        if (ModProperty.Get(mapChunk, ModPropName.MapChunk.RiverArray, ref boolArray) == EnumCommandStatus.Error)
             return true;
 
         return boolArray[
-            blockPos.Z % sapi.WorldManager.ChunkSize * sapi.WorldManager.ChunkSize +
-            blockPos.X % sapi.WorldManager.ChunkSize];
-    }
-
-    public static List<string>? GetChunkRealms(IMapChunk mapChunk)
-    {
-        var realms = new List<string>();
-        if (ModProperty.Get(mapChunk, MapRealmPropertyName, ref realms) == EnumCommandStatus.Error)
-            return null;
-        return realms;
-    }
-
-    public bool AllowEntitySpawn(IMapChunk mapChunk, EntityProperties type, BlockPos blockPos = null)
-    {
-        if (IsWhiteListed(type.Code))
-            return true;
-
-        // Test map chunk attributes
-        var chunkRealms = new List<string>();
-        if (ModProperty.Get(mapChunk, MapRealmPropertyName, ref chunkRealms) == EnumCommandStatus.Error)
-            return true;
-
-        // Only blessed animals get in.
-        if (type.Attributes == null || !type.Attributes.KeyExists(EntityRealmPropertyName))
-        {
-            if (UserConfig.Debug)
-                sapi.Logger.Debug($"Entity {type.Code} is not blessed");
-            return false;
-        }
-
-        var entityNativeRealms = type.Attributes[EntityRealmPropertyName].AsArray<string>();
-        var result = entityNativeRealms.Intersect(chunkRealms).Any();
-
-        if (IsRiversModInstalled && type.Attributes.KeyExists(EntityRiverPropertyName))
-            result = result && CheckRiver(mapChunk, type.Attributes[EntityRiverPropertyName].AsString(), blockPos);
-
-        if (type.Attributes.KeyExists(EntitySeasonPropertyName))
-            result = result && CheckSeason(blockPos, type.Attributes[EntityRiverPropertyName].AsArray<string>());
-
-        return result;
+            blockPos.Z % _vsapi.WorldManager.ChunkSize * _vsapi.WorldManager.ChunkSize +
+            blockPos.X % _vsapi.WorldManager.ChunkSize];
     }
 
     private void CalculateValues(int chunkX, int chunkZ, EnumHemisphere hemisphere, out int currentRealm)
@@ -411,7 +361,7 @@ public class BiomesModSystem : ModSystem
             ? RealmsConfig.NorthernRealms.Count
             : RealmsConfig.SouthernRealms.Count;
 
-        var worldWidthInChunks = sapi.WorldManager.MapSizeX / sapi.WorldManager.ChunkSize;
+        var worldWidthInChunks = _vsapi.WorldManager.MapSizeX / _vsapi.WorldManager.ChunkSize;
         var realmWidthInChunks = worldWidthInChunks / (float)realmCount;
         currentRealm = 0;
         if (realmWidthInChunks != 0)

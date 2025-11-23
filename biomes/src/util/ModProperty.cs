@@ -2,6 +2,29 @@ using Vintagestory.API.Common;
 
 namespace Biomes.util;
 
+internal static class ModPropName
+{
+    internal static class Map
+    {
+        public const string Realm = "biorealm";
+        public const string River = "bioriver";
+        public const string Hemisphere = "hemisphere";
+    }
+
+    internal static class Entity
+    {
+        public const string Realm = "biorealm";
+        public const string River = "bioriver";
+        public const string Season = "bioseason";
+    }
+
+    internal static class MapChunk
+    {
+        public const string RiverArray = "bioriverarray";
+        public const string RiverBool = "bioriverbool";
+    }
+}
+
 internal static class ModProperty
 {
     public static EnumCommandStatus Get<T>(IMapChunk? chunk, string name, ref T value)
