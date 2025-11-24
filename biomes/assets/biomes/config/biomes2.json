@@ -98,7 +98,6 @@
       ],
       "bioriver": "true"
     },
-
     "aquaticplant-bladderwrack": {
       "biorealm": [
         "atlantic palearctic",
@@ -183,7 +182,6 @@
         "atlantic palearctic",
         "pacific nearctic",
         "atlantic nearctic"
-
       ],
       "bioriver": "both"
     },
@@ -1520,6 +1518,23 @@
       ],
       "bioriver": "false"
     },
+    "aquatic-worms-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
     "aquatic-decor-*": {
       "biorealm": [
         "pacific nearctic",
@@ -1687,6 +1702,25 @@
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lupine-red-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lupine-orange-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lupine-white-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
       ],
       "bioriver": "both"
     },
@@ -2633,6 +2667,93 @@
       "biorealm": [
         "atlantic palearctic",
         "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-newhusktomato-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-tomato-*": {
+      "biorealm": [
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-wildtomato-*": {
+      "biorealm": [
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-falsetomato-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-eggplant-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-hairyeggplant-*": {
+      "biorealm": [
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-jalapeno-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-habanero-*": {
+      "biorealm": [
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-tabasco-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-redbellpepper-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-orangebellpepper-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-yellowbellpepper-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "shrubberrybush-greenbellpepper-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic"
       ],
       "bioriver": "both"
     },
@@ -3729,7 +3850,7 @@
       ],
       "bioriver": "both"
     },
-      "lemon": {
+    "lemon": {
       "biorealm": [
         "eastern palearctic"
       ],
@@ -4064,7 +4185,7 @@
       "biorealm": [
         "central palearctic",
         "eastern palearctic",
-        "pacific palearctic", 
+        "pacific palearctic",
         "pacific neotropic",
         "atlantic neotropic"
       ],
@@ -4074,7 +4195,7 @@
       "biorealm": [
         "central palearctic",
         "eastern palearctic",
-        "pacific palearctic", 
+        "pacific palearctic",
         "pacific neotropic",
         "atlantic neotropic"
       ],
@@ -4752,6 +4873,16 @@
         "central palearctic"
       ],
       "bioriver": "both"
+    },
+    "oldkapok": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic"
+      ]
     },
     "blackpoplar": {
       "biorealm": [

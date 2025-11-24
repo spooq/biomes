@@ -1,6 +1,6 @@
 [
   {
-    "file": "thecritterpack:entities/animal/bird/crow/c_crow.json",
+    "file": "thecritterpack:entities/animal/bird/crow/crow-baby.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -27,7 +27,34 @@
     ]
   },
   {
-    "file": "thecritterpack:entities/animal/bird/crow/crow_flying.json",
+    "file": "thecritterpack:entities/animal/bird/crow/crow-adult.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ]
+  },
+  {
+    "file": "thecritterpack:entities/animal/bird/crow/crow-flying.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -417,6 +444,57 @@
     ]
   },
   {
+    "file": "thecritterpack:entities/animal/bird/swan/black/black-swan-baby.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ]
+  },
+  {
+    "file": "thecritterpack:entities/animal/bird/swan/black/black-swan-female.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ]
+  },
+  {
+    "file": "thecritterpack:entities/animal/bird/swan/black/black-swan-male.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ]
+  },
+  {
     "file": "thecritterpack:entities/animal/bird/waxwing/waxwing_f.json",
     "op": "addmerge",
     "path": "/attributes",
@@ -449,7 +527,24 @@
     ]
   },
   {
-    "file": "thecritterpack:entities/animal/extra/crab-both.json",
+    "file": "thecritterpack:entities/animal/bird/owl/brown-owl-f.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ]
+  },
+  {
+    "file": "thecritterpack:entities/animal/extra/crab/crab-both.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -519,7 +614,7 @@
     ]
   },
   {
-    "file": "thecritterpack:entities/animal/extra/snail/snaily.json",
+    "file": "thecritterpack:entities/animal/extra/snail/snail-default.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -536,7 +631,23 @@
         "eastern afrotropic",
         "atlantic afrotropic",
         "australasian",
-        "oceania"
+        "oceanic"
+      ]
+    },
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ]
+  },
+  {
+    "file": "thecritterpack:entities/animal/extra/snail/helix-snail.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic"
       ]
     },
     "dependsOn": [
@@ -563,7 +674,7 @@
         "eastern afrotropic",
         "atlantic afrotropic",
         "australasian",
-        "oceania"
+        "oceanic"
       ]
     },
     "dependsOn": [
@@ -694,7 +805,7 @@
     ]
   },
   {
-    "file": "thecritterpack:entities/animal/mammal/hoofed/yak/yak-calf.json",
+    "file": "thecritterpack:entities/animal/mammal/hooved/yak/yak-calf.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -711,7 +822,7 @@
     ]
   },
   {
-    "file": "thecritterpack:entities/animal/mammal/hoofed/yak/yak-female.json",
+    "file": "thecritterpack:entities/animal/mammal/hooved/yak/yak-female.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -728,7 +839,7 @@
     ]
   },
   {
-    "file": "thecritterpack:entities/animal/mammal/hoofed/yak/yak-male.json",
+    "file": "thecritterpack:entities/animal/mammal/hooved/yak/yak-male.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
