@@ -112,13 +112,13 @@ public class BiomesModSystem : ModSystem
 
         _vsapi = api;
         Cache = new RealmCache();
-        Entities = new Entities(_vsapi);
+        Entities = new Entities(this, _vsapi);
 
         HarmonyPatches.Init(this);
 
         // Realms config
         RealmsConfig =
-            JsonConvert.DeserializeObject<RealmsConfig>(_vsapi.Assets.Get("biomes:config/realms.json")
+            JsonConvert.DeserializeObject<RealmsConfig>(_vsapi.Assets.Get($"{Mod.Info.ModID}:config/realms.json")
                 .ToText())!;
 
         // BiomeConfig v2 is a superset of v1

@@ -10,8 +10,9 @@ using Vintagestory.API.Util;
 
 namespace Biomes;
 
-public class Entities(ICoreServerAPI vsapi)
+public class Entities(BiomesModSystem mod, ICoreServerAPI vsapi)
 {
+    private BiomesModSystem _mod = mod;
     private ICoreServerAPI _vsapi = vsapi;
     
     // bytemask with all 4 seasons set
@@ -43,7 +44,7 @@ public class Entities(ICoreServerAPI vsapi)
     // *always* spawning entities.
     public void BuildCaches(BiomeUserConfig userConfig)
     {
-        var whitelistConfig = JsonConvert.DeserializeObject<List<string>>(_vsapi.Assets.Get("biomes:config/whitelist.json").ToText());
+        var whitelistConfig = JsonConvert.DeserializeObject<List<string>>(_vsapi.Assets.Get($"{_mod.Mod.Info.ModID}:config/whitelist.json").ToText());
         whitelistConfig?.AddRange(userConfig.EntitySpawnWhiteList);
         GenWhitelist(whitelistConfig!);
 

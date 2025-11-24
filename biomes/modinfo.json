@@ -1,9 +1,11 @@
 {
   "type": "code",
-  "modid": "biomesrechungused",
-  "name": "Biomes Rechungused",
+  "modid": "biomes",
+  "name": "Biomes",
   "authors": [
     "Crabb",
+    "actioninja",
+    "Hydromancerx",
     "Hieronymus",
     "TenthArchitect",
     "Sheepon",
@@ -12,16 +14,14 @@
     "BraniyaKz",
     "Clint",
     "ComitatesSaxoni",
-    "Hydromancerx",
     "RaptorMother",
     "Crumps",
     "Churburby",
     "Crupette",
-    "NiCH518",
-    "actioninja"
+    "NiCH518"
   ],
-  "description": "Biome system",
-  "version": "1.21.4",
+  "description": "Separates the world into distinct biomes to increase world variety",
+  "version": "1.21.1",
   "dependencies": {
     "game": "1.21.0"
   },
