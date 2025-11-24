@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <DataFolderName>VintagestoryData</DataFolderName>
+    <GameDirectory>/home/actioninja/vintagestory</GameDirectory>
+    <EnterWorldOnStartup>false</EnterWorldOnStartup>
+  </PropertyGroup>
+</Project>
