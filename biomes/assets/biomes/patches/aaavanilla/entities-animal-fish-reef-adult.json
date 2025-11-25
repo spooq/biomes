@@ -1,0 +1,80 @@
+[
+  {
+    "file": "game:entities/animal/fish/reef-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "fish-reef-angel-bicolor-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "pacific palearctic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "fish-reef-butterfly-copperband-*": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-butterfly-blackwedged-*": {
+        "biorealm": [
+          "central palearctic",
+          "eastern afrotropic"
+        ]
+      },
+      "fish-reef-clown-*-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-puffer-longspine-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-tang-banded-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-tang-powderblue-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "central palearctic"
+        ]
+      },
+      "fish-reef-trigger-titan-*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "central palearctic",
+          "eastern palearctic",
+          "australasian"
+        ]
+      },
+      "fish-reef-wrasse-creole-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic neotropic"
+        ]
+      }
+    }
+  }
+]

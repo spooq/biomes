@@ -1,40 +1,5 @@
 [
   {
-    "file": "game:entities/animal/fish/bass.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ]
-    }
-  },
-  {
-    "file": "game:entities/animal/fish/salmon.json",
-    "op": "addmerge",
-    "path": "/attributes",
-    "side": "Server",
-    "value": {
-      "biorealm": [
-        "pacific nearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ]
-    }
-  },
-  {
     "file": "game:entities/animal/fish/saltwater-adult.json",
     "op": "addmerge",
     "path": "/attributesByType",
@@ -179,84 +144,6 @@
           "atlantic neotropic",
           "australasian",
           "oceanic"
-        ]
-      }
-    }
-  },
-  {
-    "file": "game:entities/animal/fish/reef-adult.json",
-    "op": "addmerge",
-    "path": "/attributesByType",
-    "side": "Server",
-    "value": {
-      "fish-reef-angel-bicolor-*": {
-        "biorealm": [
-          "eastern afrotropic",
-          "pacific palearctic",
-          "australasian",
-          "oceanic"
-        ]
-      },
-      "fish-reef-butterfly-copperband-*": {
-        "biorealm": [
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "australasian"
-        ]
-      },
-      "fish-reef-butterfly-blackwedged-*": {
-        "biorealm": [
-          "central palearctic",
-          "eastern afrotropic"
-        ]
-      },
-      "fish-reef-clown-*-*": {
-        "biorealm": [
-          "eastern afrotropic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "australasian"
-        ]
-      },
-      "fish-reef-puffer-longspine-*": {
-        "biorealm": [
-          "pacific nearctic",
-          "atlantic afrotropic",
-          "eastern afrotropic",
-          "central palearctic",
-          "eastern palearctic",
-          "pacific palearctic",
-          "australasian"
-        ]
-      },
-      "fish-reef-tang-banded-*": {
-        "biorealm": [
-          "eastern afrotropic",
-          "central palearctic",
-          "eastern palearctic",
-          "australasian"
-        ]
-      },
-      "fish-reef-tang-powderblue-*": {
-        "biorealm": [
-          "eastern afrotropic",
-          "central palearctic"
-        ]
-      },
-      "fish-reef-trigger-titan-*": {
-        "biorealm": [
-          "eastern afrotropic",
-          "central palearctic",
-          "eastern palearctic",
-          "australasian"
-        ]
-      },
-      "fish-reef-wrasse-creole-*": {
-        "biorealm": [
-          "atlantic nearctic",
-          "atlantic neotropic"
         ]
       }
     }

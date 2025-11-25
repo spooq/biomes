@@ -1,0 +1,83 @@
+[
+  {
+    "file": "game:entities/animal/mammal/hooved/deer-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "deer-whitetail-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "deer-redbrocket-*": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "deer-marsh-*": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "deer-caribou-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "deer-water-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "deer-pudu-*": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "deer-elk-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "deer-taruca-*": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "deer-chital-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "deer-guemal-*": {
+        "biorealm": [
+          "pacific neotropic"
+        ]
+      },
+      "deer-pampas-*": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "deer-fallow-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      }
+    }
+  }
+]

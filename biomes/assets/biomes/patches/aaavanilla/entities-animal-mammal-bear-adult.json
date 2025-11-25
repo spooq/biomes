@@ -1,0 +1,50 @@
+[
+  {
+    "file": "game:entities/animal/mammal/bear-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "bear-black-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific nearctic",
+          "pacific palearctic"
+        ]
+      },
+      "bear-brown-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific nearctic",
+          "pacific palearctic"
+        ]
+      },
+      "bear-panda-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "bear-polar-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific nearctic",
+          "pacific palearctic"
+        ]
+      },
+      "bear-sun-*": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
+    }
+  }
+]
