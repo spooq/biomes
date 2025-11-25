@@ -1,0 +1,18 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "primitivesurvival"
+      }
+    ],
+    "file": "primitivesurvival:entities/land/snake-blackrat.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    }
+  }
+]

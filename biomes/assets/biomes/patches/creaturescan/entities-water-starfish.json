@@ -1,0 +1,24 @@
+[
+  {
+    "file": "creaturescan:entities/water/starfish.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    }
+  }
+]

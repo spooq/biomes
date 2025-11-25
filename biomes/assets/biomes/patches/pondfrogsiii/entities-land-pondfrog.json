@@ -1,0 +1,55 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "pondfrogsiii"
+      }
+    ],
+    "file": "pondfrogsiii:entities/land/pondfrog.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-aurora-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-boylii-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-cascadae-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-draytonii-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-luteiventris-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-muscosa-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-pretiosa-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-sierrae-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      }
+    }
+  }
+]

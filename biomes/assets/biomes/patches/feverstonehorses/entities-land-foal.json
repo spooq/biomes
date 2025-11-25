@@ -1,0 +1,34 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonehorses"
+      }
+    ],
+    "file": "feverstonehorses:entities/land/foal.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "server",
+    "value": {
+      "*-arabian": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "*-donkey": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "*-draft": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    }
+  }
+]

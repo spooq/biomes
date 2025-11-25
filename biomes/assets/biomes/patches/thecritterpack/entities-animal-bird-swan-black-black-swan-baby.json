@@ -1,0 +1,19 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ],
+    "file": "thecritterpack:entities/animal/bird/swan/black/black-swan-baby.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "australasian",
+        "oceanic"
+      ]
+    }
+  }
+]

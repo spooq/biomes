@@ -1,0 +1,29 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ],
+    "file": "thecritterpack:entities/animal/extra/woodlouse/woodlouse.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic",
+        "pacific nearctic",
+        "atlantic neotropic",
+        "pacific neotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "eastern afrotropic",
+        "atlantic afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    }
+  }
+]

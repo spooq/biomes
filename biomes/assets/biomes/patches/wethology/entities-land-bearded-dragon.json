@@ -1,0 +1,19 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ],
+    "file": "wethology:entities/land/bearded-dragon.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "australasian",
+        "pacific palearctic"
+      ]
+    }
+  }
+]

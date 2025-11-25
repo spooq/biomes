@@ -1,0 +1,13 @@
+[
+  {
+    "file": "creaturescan:entities/land/cassowary-egg.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "australasian"
+      ]
+    }
+  }
+]

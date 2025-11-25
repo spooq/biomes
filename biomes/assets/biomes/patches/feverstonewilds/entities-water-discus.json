@@ -1,0 +1,20 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/water/discus.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      }
+    }
+  }
+]

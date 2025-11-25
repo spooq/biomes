@@ -1,0 +1,21 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "OrnamentalFish"
+      }
+    ],
+    "file": "ornamentalfish:entities/water/betta.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-wild": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
+    }
+  }
+]

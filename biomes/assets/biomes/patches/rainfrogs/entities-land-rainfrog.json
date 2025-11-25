@@ -1,0 +1,113 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "rainfrogs"
+      }
+    ],
+    "file": "rainfrogs:entities/land/rainfrog.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-acutirostris": {
+        "biorealm": [
+          "atlantic afrotropic"
+        ]
+      },
+      "*-adspersus": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-bagginsi": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-carruthersi": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-fichus": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-fuscus": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-gibbosus": {
+        "biorealm": [
+          "atlantic afrotropic"
+        ]
+      },
+      "*-macrops": {
+        "biorealm": [
+          "atlantic afrotropic"
+        ]
+      },
+      "*-montanus": {
+        "biorealm": [
+          "atlantic afrotropic"
+        ]
+      },
+      "*-mossambicus": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-namaquensis": {
+        "biorealm": [
+          "atlantic afrotropic"
+        ]
+      },
+      "*-ombelanonga": {
+        "biorealm": [
+          "atlantic afrotropic"
+        ]
+      },
+      "*-passmorei": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-pentheri": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-poweri": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-rosei": {
+        "biorealm": [
+          "atlantic afrotropic"
+        ]
+      },
+      "*-sopranus": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-sylvestris": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      },
+      "*-verrucosus": {
+        "biorealm": [
+          "eastern afrotropic"
+        ]
+      }
+    }
+  }
+]

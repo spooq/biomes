@@ -1,0 +1,18 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "leopardgeckos"
+      }
+    ],
+    "file": "leopardgeckos:entities/land/leopardgecko.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic"
+      ]
+    }
+  }
+]

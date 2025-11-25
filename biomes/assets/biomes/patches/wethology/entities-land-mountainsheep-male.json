@@ -1,0 +1,19 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ],
+    "file": "wethology:entities/land/mountainsheep-male.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ]
+    }
+  }
+]

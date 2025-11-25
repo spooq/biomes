@@ -1,0 +1,18 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "OrnamentalFish"
+      }
+    ],
+    "file": "ornamentalfish:entities/water/goldfish.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-wild": {
+        "biorealm": []
+      }
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/land/direwolf.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      }
+    }
+  }
+]

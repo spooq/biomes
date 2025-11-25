@@ -1,0 +1,22 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/water/buromenfish.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "oceania"
+        ]
+      }
+    }
+  }
+]

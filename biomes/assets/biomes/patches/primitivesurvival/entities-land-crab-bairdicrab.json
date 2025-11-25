@@ -1,0 +1,19 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "primitivesurvival"
+      }
+    ],
+    "file": "primitivesurvival:entities/land/crab-bairdicrab.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic nearctic"
+      ]
+    }
+  }
+]

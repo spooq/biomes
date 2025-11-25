@@ -1,0 +1,19 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "primitivesurvival"
+      }
+    ],
+    "file": "primitivesurvival:entities/land/snake-coachwhip.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic",
+        "pacific nearctic"
+      ]
+    }
+  }
+]

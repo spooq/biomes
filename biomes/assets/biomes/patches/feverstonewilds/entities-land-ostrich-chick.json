@@ -1,0 +1,22 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/land/ostrich-chick.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic"
+        ]
+      }
+    }
+  }
+]

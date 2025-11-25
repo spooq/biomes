@@ -1,0 +1,20 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/land/faunling.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      }
+    }
+  }
+]

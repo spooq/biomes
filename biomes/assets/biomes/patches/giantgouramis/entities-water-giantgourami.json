@@ -1,0 +1,36 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "giantgouramis"
+      }
+    ],
+    "file": "giantgouramis:entities/water/giantgourami.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-exodon": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "*-goramy": {
+        "biorealm": [
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-laticlavius": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      },
+      "*-septemfasciatus": {
+        "biorealm": [
+          "pacific palearctic"
+        ]
+      }
+    }
+  }
+]

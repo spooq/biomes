@@ -1,0 +1,23 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/land/bison.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "file": "creaturescan:entities/land/salamander.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-bluespotted": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-marbled": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-red": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-tennesseecave": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-tiger": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ],
+    "file": "wethology:entities/water/fish.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-bass": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-coral-fish": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "*-salmon": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "*-sea-bass": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "*-snakehead": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "*-sunfish": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "*-trout": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
+    }
+  }
+]

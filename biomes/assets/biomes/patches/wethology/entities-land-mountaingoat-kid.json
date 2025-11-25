@@ -1,0 +1,18 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ],
+    "file": "wethology:entities/land/mountaingoat-kid.json",
+    "op": "add",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic"
+      ]
+    }
+  }
+]

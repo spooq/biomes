@@ -1,0 +1,39 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ],
+    "file": "wethology:entities/water/stingray.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-fresh": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-sea": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      }
+    }
+  }
+]

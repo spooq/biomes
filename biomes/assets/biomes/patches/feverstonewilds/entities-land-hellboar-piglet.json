@@ -1,0 +1,21 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/land/hellboar-piglet.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "eastern afrotropic",
+          "atlantic afrotropic"
+        ]
+      }
+    }
+  }
+]

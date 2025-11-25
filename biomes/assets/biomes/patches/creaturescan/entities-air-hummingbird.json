@@ -1,0 +1,22 @@
+[
+  {
+    "file": "creaturescan:entities/air/hummingbird.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-green": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-rubythroat": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "file": "creaturescan:entities/land/gardensnail.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ]
+    }
+  }
+]

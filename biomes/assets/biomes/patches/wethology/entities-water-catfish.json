@@ -1,0 +1,41 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "wethology"
+      }
+    ],
+    "file": "wethology:entities/water/catfish.json",
+    "op": "add",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-catfish": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "*-catfish-ripsaw": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      }
+    }
+  }
+]

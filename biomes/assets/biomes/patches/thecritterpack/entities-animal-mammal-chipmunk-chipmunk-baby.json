@@ -1,0 +1,19 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ],
+    "file": "thecritterpack:entities/animal/mammal/chipmunk/chipmunk-baby.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    }
+  }
+]

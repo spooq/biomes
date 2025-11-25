@@ -1,0 +1,15 @@
+[
+  {
+    "file": "creaturescan:entities/land/tiger-cub.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
+  }
+]

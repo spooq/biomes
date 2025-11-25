@@ -1,0 +1,15 @@
+[
+  {
+    "file": "creaturescan:entities/water/hippo-female.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
+  }
+]

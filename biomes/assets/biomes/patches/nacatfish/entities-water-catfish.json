@@ -1,0 +1,18 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "nacatfish"
+      }
+    ],
+    "file": "nacatfish:entities/water/catfish.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    }
+  }
+]

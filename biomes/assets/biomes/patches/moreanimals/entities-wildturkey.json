@@ -1,0 +1,18 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ],
+    "file": "moreanimals:entities/wildturkey.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic nearctic"
+      ]
+    }
+  }
+]

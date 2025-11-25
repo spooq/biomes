@@ -1,0 +1,35 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "nasalamanders"
+      }
+    ],
+    "file": "nasalamanders:entities/land/nasalamanders.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-marbeled": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-red": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "*-speckledblack": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "*-spotted": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      }
+    }
+  }
+]

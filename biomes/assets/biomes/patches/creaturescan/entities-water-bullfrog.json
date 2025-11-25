@@ -1,0 +1,14 @@
+[
+  {
+    "file": "creaturescan:entities/water/bullfrog.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    }
+  }
+]

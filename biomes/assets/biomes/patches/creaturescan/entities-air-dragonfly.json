@@ -1,0 +1,37 @@
+[
+  {
+    "file": "creaturescan:entities/air/dragonfly.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-blue": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic",
+          "australasian",
+          "oceanic"
+        ]
+      },
+      "*-brownhawker": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "*-demoiselle": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "file": "creaturescan:entities/land/puma-cub.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic"
+      ]
+    }
+  }
+]

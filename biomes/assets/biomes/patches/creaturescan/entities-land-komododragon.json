@@ -1,0 +1,13 @@
+[
+  {
+    "file": "creaturescan:entities/land/komododragon.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific palearctic"
+      ]
+    }
+  }
+]

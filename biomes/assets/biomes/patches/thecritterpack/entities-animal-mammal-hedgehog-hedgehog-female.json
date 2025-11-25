@@ -1,0 +1,19 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ],
+    "file": "thecritterpack:entities/animal/mammal/hedgehog/hedgehog-female.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ]
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ],
+    "file": "thecritterpack:entities/animal/bird/duck/duck-nest.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "thecritterpack"
+      }
+    ],
+    "file": "thecritterpack:entities/animal/mammal/squirrel/squirrel-male.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "server",
+    "value": {
+      "squirrel-male-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic"
+        ]
+      }
+    }
+  }
+]

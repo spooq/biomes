@@ -1,0 +1,18 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ],
+    "file": "moreanimals:entities/goldenpheasant-chick.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "eastern palearctic"
+      ]
+    }
+  }
+]

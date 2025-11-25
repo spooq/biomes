@@ -1,0 +1,14 @@
+[
+  {
+    "file": "creaturescan:entities/land/camel-male.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ]
+    }
+  }
+]

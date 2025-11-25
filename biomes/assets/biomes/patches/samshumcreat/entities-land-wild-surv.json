@@ -1,0 +1,29 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "samshumcreat"
+      }
+    ],
+    "file": "game:entities/land/wild-surv.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ]
+    }
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/water/stingray.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "pacific nearctic",
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "eastern afrotropic",
+          "atlantic afrotropic",
+          "australasian",
+          "oceania"
+        ]
+      }
+    }
+  }
+]

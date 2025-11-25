@@ -1,0 +1,18 @@
+[
+  {
+    "file": "creaturescan:entities/water/crawfish.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "australasian",
+        "oceanic"
+      ]
+    }
+  }
+]

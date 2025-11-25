@@ -1,0 +1,20 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "moreanimals"
+      }
+    ],
+    "file": "moreanimals:entities/pheasant.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
+  }
+]

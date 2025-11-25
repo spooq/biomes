@@ -1,0 +1,14 @@
+[
+  {
+    "file": "creaturescan:entities/water/flamejellyfish.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
+  }
+]

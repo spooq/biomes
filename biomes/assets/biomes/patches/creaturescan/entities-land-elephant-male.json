@@ -1,0 +1,17 @@
+[
+  {
+    "file": "creaturescan:entities/land/elephant-male.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
+  }
+]
