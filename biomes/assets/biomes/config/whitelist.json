@@ -34,5 +34,6 @@
   "game:orc-*",
   "fantasycreatures:*",
   "rustboundmagic:*",
-  "rustcreatures:*"
+  "rustcreatures:*",
+  "wrustbound:*"
 ]
