@@ -1,0 +1,45 @@
+[
+  {
+    "file": "game:entities/animal/mammal/hare-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "hare-arctic-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "hare-cape-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "hare-european-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "hare-indian-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "hare-jackblack-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "hare-scrub-*": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      }
+    }
+  }
+]

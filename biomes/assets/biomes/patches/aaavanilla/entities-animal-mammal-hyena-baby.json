@@ -1,0 +1,15 @@
+[
+  {
+    "file": "game:entities/animal/mammal/hyena-baby.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "eastern afrotropic"
+      ]
+    }
+  }
+]

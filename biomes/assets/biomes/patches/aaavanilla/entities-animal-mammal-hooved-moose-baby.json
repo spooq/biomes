@@ -1,0 +1,17 @@
+[
+  {
+    "file": "game:entities/animal/mammal/hooved/moose-baby.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ]
+    }
+  }
+]

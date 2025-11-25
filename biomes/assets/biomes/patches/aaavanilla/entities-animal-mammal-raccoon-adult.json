@@ -1,0 +1,14 @@
+[
+  {
+    "file": "game:entities/animal/mammal/raccoon-adult.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ]
+    }
+  }
+]

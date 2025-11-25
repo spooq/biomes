@@ -113,7 +113,7 @@ public sealed class PackageTask : FrostingTask<BuildContext>
             context.CopyFile($"../{BuildContext.ProjectName}/modicon.png", $"../Releases/{context.Name}/modicon.png");
         }
 
-        context.CopyFile("./LICENSE", $"../Releases/{context.Name}/LICENSE");
+        context.CopyFile("../LICENSE", $"../Releases/{context.Name}/LICENSE");
         context.Zip($"../Releases/{context.Name}", $"../Releases/{context.Name}_{context.Version}.zip");
     }
 }

@@ -1,0 +1,13 @@
+[
+  {
+    "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "server",
+    "value": {
+      "biorealm": [
+        "pacific nearctic"
+      ]
+    }
+  }
+]

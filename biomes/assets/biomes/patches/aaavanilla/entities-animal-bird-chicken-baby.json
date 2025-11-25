@@ -1,0 +1,16 @@
+[
+  {
+    "file": "game:entities/animal/bird/chicken-baby.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ]
+    }
+  }
+]

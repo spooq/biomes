@@ -40,7 +40,7 @@
   <!-- References to libraries that are being used in project -->
   <ItemGroup>
     <!-- ImGui for debug tools (requires ImGui mod installed if you call ImGui methods) -->
-    <PackageReference Include="VSImGui" Version="0.0.6" />
+    <!-- <PackageReference Include="VSImGui" Version="0.0.6" /> -->
     <!-- Vintage Story libraries -->
     <Reference Include="VintagestoryLib" HintPath="$(GameDirectory)/VintagestoryLib.dll" Private="false"/>
     <Reference Include="VintagestoryAPI" HintPath="$(GameDirectory)/VintagestoryAPI.dll" Private="false"/>

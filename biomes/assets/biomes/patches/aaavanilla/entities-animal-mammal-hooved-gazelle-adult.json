@@ -1,0 +1,17 @@
+[
+  {
+    "file": "game:entities/animal/mammal/hooved/gazelle-adult.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ]
+    }
+  }
+]

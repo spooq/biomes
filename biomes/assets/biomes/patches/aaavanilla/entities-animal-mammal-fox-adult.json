@@ -1,0 +1,30 @@
+[
+  {
+    "file": "game:entities/animal/mammal/fox-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "server",
+    "value": {
+      "fox-red-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "fox-arctic-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      }
+    }
+  }
+]

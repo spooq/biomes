@@ -1,0 +1,71 @@
+[
+  {
+    "file": "game:entities/animal/mammal/hooved/goat-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "goat-angora-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "goat-ibexalp-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "goat-ibexnub-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic"
+        ]
+      },
+      "goat-markhor-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "goat-mountain-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "goat-muskox-*": {
+        "biorealm": [
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific nearctic",
+          "pacific palearctic"
+        ]
+      },
+      "goat-nubian-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "goat-sirohi-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "goat-takingold-*": {
+        "biorealm": [
+          "eastern palearctic"
+        ]
+      },
+      "goat-turdag-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      },
+      "goat-valais-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      }
+    }
+  }
+]
