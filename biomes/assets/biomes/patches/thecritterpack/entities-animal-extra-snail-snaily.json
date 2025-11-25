@@ -5,7 +5,7 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/extra/snail/snail-default.json",
+    "file": "thecritterpack:entities/animal/extra/snail/snaily.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
@@ -22,7 +22,7 @@
         "eastern afrotropic",
         "atlantic afrotropic",
         "australasian",
-        "oceanic"
+        "oceania"
       ]
     }
   }

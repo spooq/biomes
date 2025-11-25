@@ -1,6 +1,11 @@
 [
   {
-    "file": "feverstonewilds:entities/land/golem.json",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "file": "feverstonewilds:entities/water/ghostfish.json",
     "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",

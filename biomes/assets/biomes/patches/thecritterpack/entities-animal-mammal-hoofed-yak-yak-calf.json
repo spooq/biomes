@@ -5,14 +5,14 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/bird/owl/brown-owl-f.json",
+    "file": "thecritterpack:entities/animal/mammal/hoofed/yak/yak-calf.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
       "biorealm": [
-        "atlantic palearctic",
-        "central palearctic"
+        "central palearctic",
+        "eastern palearctic"
       ]
     }
   }

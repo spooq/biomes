@@ -5,14 +5,15 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/bird/swan/black/black-swan-female.json",
+    "file": "thecritterpack:entities/animal/bird/swan/mute/mute-sawn-female.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
       "biorealm": [
-        "australasian",
-        "oceanic"
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
       ]
     }
   }

@@ -5,14 +5,14 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/mammal/hooved/yak/yak-calf.json",
+    "file": "thecritterpack:entities/animal/bird/swan/black/black-swawn-female.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
       "biorealm": [
-        "central palearctic",
-        "eastern palearctic"
+        "australasian",
+        "oceania"
       ]
     }
   }

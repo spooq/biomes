@@ -81,5 +81,7 @@
 
 
   <ItemGroup>
+    <Folder Include="assets\biomes\config\whitelist\" />
+    <Folder Include="assets\biomes\config\winters\" />
     <Folder Include="assets\biomes\patches\aaavanilla\" />
   </ItemGroup></Project>

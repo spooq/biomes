@@ -1,0 +1,40 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "cats"
+      }
+    ],
+    "file": "cats:entities/land/cat-female.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "side": "Server",
+    "value": {
+      "*-european": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "*-house": {
+        "biorealm": []
+      },
+      "*-ocelot": {
+        "biorealm": [
+          "pacific nearctic",
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "*-serval": {
+        "biorealm": [
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      }
+    }
+  }
+]

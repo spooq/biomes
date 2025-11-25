@@ -5,14 +5,14 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/bird/swan/trumpeter/trumpeter-swan-female.json",
+    "file": "thecritterpack:entities/animal/mammal/hoofed/yak/yak-female.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
       "biorealm": [
-        "atlantic nearctic",
-        "pacific nearctic"
+        "central palearctic",
+        "eastern palearctic"
       ]
     }
   }

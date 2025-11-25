@@ -22,11 +22,20 @@
           "eastern palearctic"
         ]
       },
-      "*-draft": {
+      "*-percheron": {
         "biorealm": [
-          "atlantic palearctic",
-          "central palearctic",
-          "eastern palearctic"
+          "atlantic palearctic"
+        ]
+      },
+      "*-quarter": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "*-shire": {
+        "biorealm": [
+          "atlantic palearctic"
         ]
       }
     }
