@@ -10,10 +10,10 @@ using Vintagestory.API.Util;
 
 namespace Biomes;
 
-public class Entities(BiomesModSystem mod, ICoreServerAPI vsapi)
+public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
 {
     private BiomesModSystem _mod = mod;
-    private ICoreServerAPI _vsapi = vsapi;
+    private ICoreAPI _vsapi = vsapi;
     
     // bytemask with all 4 seasons set
     private const byte AllSeasons = 0b0000_1111;
@@ -25,10 +25,12 @@ public class Entities(BiomesModSystem mod, ICoreServerAPI vsapi)
     // value dict is biome: seasons
     private readonly Dictionary<AssetLocation, HashSet<string>> _entityRealmCache = new();
     private readonly Dictionary<AssetLocation, ByteField> _entitySeasonCache = new();
+    
+    private HashSet<AssetLocation> _alreadyRecordedNoHit;
 
     public void GenWhitelist(List<string> whitelistSpecified)
     {
-        foreach (var entity in _vsapi.World.LoadedEntities.Values)
+        foreach (var entity in _vsapi.World.EntityTypes)
         {
             var code = entity.Code.ToString();
             
@@ -48,14 +50,13 @@ public class Entities(BiomesModSystem mod, ICoreServerAPI vsapi)
         whitelistConfig?.AddRange(userConfig.EntitySpawnWhiteList);
         GenWhitelist(whitelistConfig!);
 
-        foreach (var entity in _vsapi.World.LoadedEntities.Values)
+        foreach (var entity in _vsapi.World.EntityTypes)
         {
-            var entityProps = entity.Properties;
-            var validRealms = entityProps.Attributes[ModPropName.Entity.Realm];
+            var validRealms = entity.Attributes?[ModPropName.Entity.Realm];
             if (validRealms != null)
             {
                 var cacheRealms = new HashSet<string>();
-                foreach (var realm in validRealms.AsArray<string>())
+                foreach (var realm in validRealms.AsArray<string>([]))
                 {
                     cacheRealms.Add(realm);
                 }
@@ -68,10 +69,11 @@ public class Entities(BiomesModSystem mod, ICoreServerAPI vsapi)
             
             
             
-            var validSeasons = entityProps.Attributes[ModPropName.Entity.Season];
+            var validSeasons = entity.Attributes[ModPropName.Entity.Season];
+            // TODO: Diagnose if this if else is even needed, seems like the value might always end up as non-null
             if (validSeasons != null)
             {
-                var seasons = validSeasons.AsArray<string>();
+                var seasons = validSeasons.AsArray<string>([]);
                 var seasonsBitfield = new ByteField(0);
                 foreach (var season in seasons)
                 {
@@ -110,7 +112,14 @@ public class Entities(BiomesModSystem mod, ICoreServerAPI vsapi)
         var validRealms = _entityRealmCache.Get(code);
         if (validRealms == null)
         {
-            _vsapi.Logger.Warning($"Entity \"{type.Code}\" has no cache data, likely has no compat data for Biomes. Report This!");
+            if (_alreadyRecordedNoHit == null) _alreadyRecordedNoHit = new();
+            if (!_alreadyRecordedNoHit.Contains(code))
+            {
+                _vsapi.Logger.Warning(
+                    $"Entity \"{type.Code}\" has no cache data, likely has no compat data for Biomes. Report This!");
+                _alreadyRecordedNoHit.Add(code);
+            }
+
             return true;
         }
 

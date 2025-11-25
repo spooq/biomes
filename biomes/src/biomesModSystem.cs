@@ -106,26 +106,28 @@ public class BiomesModSystem : ModSystem
         return side == EnumAppSide.Server;
     }
 
-    public override void StartServerSide(ICoreServerAPI api)
+    public override void StartPre(ICoreAPI api)
     {
-        base.StartServerSide(api);
+        base.StartPre(api);
 
-        _vsapi = api;
         Cache = new RealmCache();
-        Entities = new Entities(this, _vsapi);
+        Entities = new Entities(this, api);
+    }
 
-        HarmonyPatches.Init(this);
-
-        // Realms config
+    public override void AssetsLoaded(ICoreAPI api)
+    {
+        base.AssetsLoaded(api);
+        
+                // Realms config
         RealmsConfig =
-            JsonConvert.DeserializeObject<RealmsConfig>(_vsapi.Assets.Get($"{Mod.Info.ModID}:config/realms.json")
+            JsonConvert.DeserializeObject<RealmsConfig>(api.Assets.Get($"{Mod.Info.ModID}:config/realms.json")
                 .ToText())!;
 
         // BiomeConfig v2 is a superset of v1
         BiomeConfig = new BiomeConfigv2();
 
         // Version 1 config file format
-        foreach (var biomeAsset in _vsapi.Assets.GetMany("config/biomes.json"))
+        foreach (var biomeAsset in api.Assets.GetMany("config/biomes.json"))
         {
             var tmp = JsonConvert.DeserializeObject<BiomeConfigv1>(biomeAsset.ToText())!;
 
@@ -142,7 +144,7 @@ public class BiomesModSystem : ModSystem
         }
 
         // Version 2 config file format
-        foreach (var biomeAsset in _vsapi.Assets.GetMany("config/biomes2.json"))
+        foreach (var biomeAsset in api.Assets.GetMany("config/biomes2.json"))
         {
             var tmp = JsonConvert.DeserializeObject<BiomeConfigv2>(biomeAsset.ToText())!;
 
@@ -157,9 +159,9 @@ public class BiomesModSystem : ModSystem
         }
 
         // User config
-        UserConfig = _vsapi.LoadModConfig<BiomeUserConfig>("biomes.json");
+        UserConfig = api.LoadModConfig<BiomeUserConfig>("biomes.json");
         UserConfig ??= new BiomeUserConfig();
-        _vsapi.StoreModConfig(UserConfig, "biomes.json");
+        api.StoreModConfig(UserConfig, "biomes.json");
 
         if (UserConfig.FlipNorthSouth)
         {
@@ -169,7 +171,26 @@ public class BiomesModSystem : ModSystem
         foreach (var item in UserConfig.EntitySpawnWhiteList)
             BiomeConfig.EntitySpawnWhiteList.Add(item);
         
+        BiomeConfig.EntitySpawnWhiteList = BiomeConfig.EntitySpawnWhiteList.Distinct().ToList();
+        /*
+        IsRiversModInstalled = api.ModLoader.GetModSystem("RiversMod") != null ||
+                               api.ModLoader.GetModSystem("RiverGenMod") != null;
+                               */
+    }
+
+    
+    public override void AssetsFinalize(ICoreAPI api)
+    {
+        base.AssetsFinalize(api);   
         Entities.BuildCaches(UserConfig);
+    }
+    
+    public override void StartServerSide(ICoreServerAPI api)
+    {
+        base.StartServerSide(api);
+        _vsapi = api;
+        HarmonyPatches.Init(this);
+
 
         if (UserConfig.Debug)
         {
@@ -235,7 +256,6 @@ public class BiomesModSystem : ModSystem
             }
         }
 
-        BiomeConfig.EntitySpawnWhiteList = BiomeConfig.EntitySpawnWhiteList.Distinct().ToList();
 
         _vsapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.Vegetation, "standard");
         _vsapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
@@ -243,16 +263,6 @@ public class BiomesModSystem : ModSystem
         _commands = new Commands(this, _vsapi);
     }
 
-    public override void AssetsLoaded(ICoreAPI api)
-    {
-        base.AssetsLoaded(api);
-
-        /*
-        IsRiversModInstalled = api.ModLoader.GetModSystem("RiversMod") != null ||
-                               api.ModLoader.GetModSystem("RiverGenMod") != null;
-                               */
-        
-    }
 
     public override void Dispose()
     {
