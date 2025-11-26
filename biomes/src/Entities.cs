@@ -94,9 +94,17 @@ public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
                             break;
                     }
                 }
-                _entitySeasonCache[entity.Code] =  seasonsBitfield;
+                // TODO: Hack, properly investigate the whole "attributes always returns empty object" problem
+                if (seasonsBitfield.Equals(new ByteField(0)))
+                {
+                    
+                    _entitySeasonCache[entity.Code] = new ByteField(AllSeasons);
+                }
+                else
+                {
+                    _entitySeasonCache[entity.Code] =  seasonsBitfield;
+                }
             }
-            else
             {
                 _entitySeasonCache[entity.Code] = new ByteField(AllSeasons);
             }
