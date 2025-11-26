@@ -21,7 +21,7 @@
     "NiCH518"
   ],
   "description": "Separates the world into distinct biomes to increase world variety",
-  "version": "2.0.0-dev.2",
+  "version": "2.0.0-dev.3",
   "dependencies": {
     "game": "1.21.0"
   },
