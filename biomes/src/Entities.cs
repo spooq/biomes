@@ -4,6 +4,7 @@ using Biomes.util;
 using Newtonsoft.Json;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
+using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
@@ -52,8 +53,9 @@ public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
 
         foreach (var entity in _vsapi.World.EntityTypes)
         {
+            // only ever null if we have no attributes
             var validRealms = entity.Attributes?[ModPropName.Entity.Realm];
-            if (validRealms != null)
+            if (validRealms is { Exists: true })
             {
                 var cacheRealms = new HashSet<string>();
                 foreach (var realm in validRealms.AsArray<string>([]))
@@ -69,9 +71,9 @@ public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
             
             
             
-            var validSeasons = entity.Attributes[ModPropName.Entity.Season];
-            // TODO: Diagnose if this if else is even needed, seems like the value might always end up as non-null
-            if (validSeasons != null)
+            // Now we know Attributes isn't null, so we can just assert
+            var validSeasons = entity.Attributes![ModPropName.Entity.Season];
+            if (validSeasons.Exists)
             {
                 var seasons = validSeasons.AsArray<string>([]);
                 var seasonsBitfield = new ByteField(0);
@@ -94,17 +96,9 @@ public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
                             break;
                     }
                 }
-                // TODO: Hack, properly investigate the whole "attributes always returns empty object" problem
-                if (seasonsBitfield.Equals(new ByteField(0)))
-                {
-                    
-                    _entitySeasonCache[entity.Code] = new ByteField(AllSeasons);
-                }
-                else
-                {
-                    _entitySeasonCache[entity.Code] =  seasonsBitfield;
-                }
+                _entitySeasonCache[entity.Code] =  seasonsBitfield;
             }
+            else
             {
                 _entitySeasonCache[entity.Code] = new ByteField(AllSeasons);
             }
