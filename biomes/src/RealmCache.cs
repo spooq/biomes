@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Vintagestory.API.Common;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 using Vintagestory.ServerMods.NoObf;
@@ -12,7 +13,8 @@ namespace Biomes;
 public class RealmCache
 {
     public const string KeySeparator = ";";
-    private readonly Dictionary<string, FruitTreeWorldGenConds[]> _fruitTreeCache = new(StringComparer.Ordinal);
+    // realm : tree base code: filtered variant genconds
+    private readonly Dictionary<string, Dictionary<AssetLocation, FruitTreeWorldGenConds[]>> _fruitTreeCache = new(StringComparer.Ordinal);
     private readonly Dictionary<string, BlockPatch[]> _patchCache = new(StringComparer.Ordinal);
     private readonly Dictionary<string, TreeVariant[]> _shrubCache = new(StringComparer.Ordinal);
     private readonly Dictionary<string, TreeVariant[]> _treeCache = new(StringComparer.Ordinal);
@@ -70,7 +72,7 @@ public class RealmCache
         _underTreePatch[ToCacheKey(realms)] = validList;
     }
 
-    private void GenShrubCache(List<string> overlappingRealms, ref TreeVariant[] treeVariants,
+    private void GenShrubCache(List<string> realms, ref TreeVariant[] treeVariants,
         ref Dictionary<string, BiomeConfigItem> biomeConfig)
     {
         List<TreeVariant> validList = new();
@@ -79,15 +81,15 @@ public class RealmCache
         foreach (var item in biomeConfig)
         {
             if (!WildcardUtil.Match(item.Key, treeVariant.Generator.GetName())) continue;
-            if (!item.Value.biorealm.Intersect(overlappingRealms).Any()) continue;
+            if (!item.Value.biorealm.Intersect(realms).Any()) continue;
             validList.Add(treeVariant);
             break;
         }
 
-        _shrubCache[ToCacheKey(overlappingRealms)] = validList.ToArray();
+        _shrubCache[ToCacheKey(realms)] = validList.ToArray();
     }
 
-    private void GenFruitTreeCache(List<string> overlappingRealms, ref FruitTreeWorldGenConds[] treeVariants,
+    private void GenFruitTreeCache(List<string> realms, AssetLocation treecode, ref FruitTreeWorldGenConds[] treeVariants,
         ref Dictionary<string, BiomeConfigItem> biomeConfig)
     {
         List<FruitTreeWorldGenConds> validList = new();
@@ -96,12 +98,12 @@ public class RealmCache
         foreach (var item in biomeConfig)
         {
             if (!WildcardUtil.Match(item.Key, treeVariant.Type)) continue;
-            if (!item.Value.biorealm.Intersect(overlappingRealms).Any()) continue;
+            if (!item.Value.biorealm.Intersect(realms).Any()) continue;
             validList.Add(treeVariant);
             break;
         }
 
-        _fruitTreeCache[ToCacheKey(overlappingRealms)] = validList.ToArray();
+        _fruitTreeCache[ToCacheKey(realms)][treecode] = validList.ToArray();
     }
 
     private void GenTreeCache(List<string> overlappingRealms, ref TreeVariant[] treeVariants,
@@ -121,6 +123,7 @@ public class RealmCache
         _treeCache[ToCacheKey(overlappingRealms)] = validList.ToArray();
     }
 
+    // todo: kill this, eventually replace with storing cache lookup keys as the gen data
     private static string ToCacheKey(List<string> realms)
     {
         realms.Sort(StringComparer.Ordinal);
@@ -138,14 +141,22 @@ public class RealmCache
         return ref cached;
     }
 
-    public ref FruitTreeWorldGenConds[] GetCachedFruitTrees(List<string> realms,
+    // fruit trees are special, the base code can contain many variants within tree variants so we need to cache two
+    // levels of realm : code : valid variantd 
+    public ref FruitTreeWorldGenConds[] GetCachedFruitTrees(List<string> realms, AssetLocation code,
         ref FruitTreeWorldGenConds[] treeVariants, ref Dictionary<string, BiomeConfigItem> biomeConfig)
     {
         var cacheKey = ToCacheKey(realms);
-        ref var cached = ref CollectionsMarshal.GetValueRefOrNullRef(_fruitTreeCache, cacheKey);
+        if (!_fruitTreeCache.ContainsKey(cacheKey))
+        {
+            _fruitTreeCache[cacheKey] = new();
+        }
+
+        ref var variantCache = ref CollectionsMarshal.GetValueRefOrNullRef(_fruitTreeCache, cacheKey);
+        ref var cached = ref CollectionsMarshal.GetValueRefOrNullRef(variantCache, code);
         if (!Unsafe.IsNullRef(ref cached)) return ref cached;
-        GenFruitTreeCache(realms, ref treeVariants, ref biomeConfig);
-        cached = ref CollectionsMarshal.GetValueRefOrNullRef(_fruitTreeCache, cacheKey);
+        GenFruitTreeCache(realms, code, ref treeVariants, ref biomeConfig);
+        cached = ref CollectionsMarshal.GetValueRefOrNullRef(variantCache, code);
         return ref cached;
     }
 

@@ -38,12 +38,13 @@ public static class HarmonyPatches
     public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance,
         out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos)
     {
+        var code = __instance.Code!;
         __state = __instance.WorldGenConds;
 
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
         var realms = Util.GetChunkRealms(chunk);
         var cached =
-            biomesMod.Cache.GetCachedFruitTrees(realms, ref __state, ref biomesMod.BiomeConfig.FruitTreeBiomes);
+            biomesMod.Cache.GetCachedFruitTrees(realms, code, ref __state, ref biomesMod.BiomeConfig.FruitTreeBiomes);
 
         __instance.WorldGenConds = cached;
         return true;
