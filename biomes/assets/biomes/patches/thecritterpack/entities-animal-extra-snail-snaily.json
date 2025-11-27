@@ -5,7 +5,7 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/extra/snail/snaily.json",
+    "file": "thecritterpack:entities/animal/extra/snail/snail-default.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
