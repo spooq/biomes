@@ -5,7 +5,7 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/bird/swan/mute/mute-sawn-female.json",
+    "file": "thecritterpack:entities/animal/bird/swan/mute/mute-swan-female.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",

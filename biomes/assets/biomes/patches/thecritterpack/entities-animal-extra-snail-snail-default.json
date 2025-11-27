@@ -5,22 +5,22 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/bird/crow/crow_flying.json",
+    "file": "thecritterpack:entities/animal/extra/snail/snail-default.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
       "biorealm": [
-        "pacific nearctic",
         "atlantic nearctic",
+        "pacific nearctic",
+        "atlantic neotropic",
+        "pacific neotropic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
         "eastern afrotropic",
+        "atlantic afrotropic",
         "australasian",
         "oceanic"
       ]

@@ -5,7 +5,7 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/mammal/hoofed/yak/yak-calf.json",
+    "file": "thecritterpack:entities/animal/mammal/hooved/yak/yak-calf.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
