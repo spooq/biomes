@@ -5,7 +5,7 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/bird/crow/c_crow.json",
+    "file": "thecritterpack:entities/animal/bird/crow/crow-adult.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
