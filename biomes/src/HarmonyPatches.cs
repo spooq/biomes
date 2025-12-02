@@ -19,18 +19,18 @@ namespace Biomes;
 public static class HarmonyPatches
 {
     private static Harmony harmony = null!;
-    private static BiomesModSystem biomesMod = null!;
+    private static BiomesModSystem _mod = null!;
 
     public static void Init(BiomesModSystem mod)
     {
-        biomesMod = mod;
-        harmony = new Harmony(biomesMod.Mod.Info.ModID);
+        _mod = mod;
+        harmony = new Harmony(_mod.Mod.Info.ModID);
         harmony.PatchAll();
     }
 
     public static void Shutdown()
     {
-        harmony.UnpatchAll(biomesMod.Mod.Info.ModID);
+        harmony.UnpatchAll(_mod.Mod.Info.ModID);
     }
 
     [HarmonyPrefix]
@@ -44,7 +44,7 @@ public static class HarmonyPatches
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
         var realms = Util.GetChunkRealms(chunk);
         var cached =
-            biomesMod.Cache.GetCachedFruitTrees(realms, code, ref __state, ref biomesMod.BiomeConfig.FruitTreeBiomes);
+            _mod.Cache.GetCachedFruitTrees(realms, code, ref __state, ref _mod.BiomeConfig.FruitTreeBiomes);
 
         __instance.WorldGenConds = cached;
         return true;
@@ -75,12 +75,12 @@ public static class HarmonyPatches
         var realms = Util.GetChunkRealms(chunk);
         if (realms == null) return true;
 
-        var cachedUnderTree = biomesMod.Cache.GetCachedUnderTreePatches(realms, ref underTreeValue,
-            ref biomesMod.BiomeConfig.BlockPatchBiomes);
+        var cachedUnderTree = _mod.Cache.GetCachedUnderTreePatches(realms, ref underTreeValue,
+            ref _mod.BiomeConfig.BlockPatchBiomes);
         underTreeField.SetValue(cachedUnderTree);
 
         var cachedOnTree =
-            biomesMod.Cache.GetCachedTreePatches(realms, ref onTreeValue, ref biomesMod.BiomeConfig.BlockPatchBiomes);
+            _mod.Cache.GetCachedTreePatches(realms, ref onTreeValue, ref _mod.BiomeConfig.BlockPatchBiomes);
         onTreeField.SetValue(cachedOnTree);
 
         return true;
@@ -108,8 +108,8 @@ public static class HarmonyPatches
         var realms = Util.GetChunkRealms(chunk);
         if (realms == null) return true;
 
-        bpc.PatchesNonTree = biomesMod.Cache.GetCachedGroundPatches(realms, ref bpc.PatchesNonTree,
-            ref biomesMod.BiomeConfig.BlockPatchBiomes);
+        bpc.PatchesNonTree = _mod.Cache.GetCachedGroundPatches(realms, ref bpc.PatchesNonTree,
+            ref _mod.BiomeConfig.BlockPatchBiomes);
         return true;
     }
 
@@ -138,7 +138,7 @@ public static class HarmonyPatches
 
         realms.Sort(StringComparer.Ordinal);
         treeGenProps.ShrubGens =
-            biomesMod.Cache.GetCachedShrubs(realms, ref treeGenProps.ShrubGens, ref biomesMod.BiomeConfig.TreeBiomes);
+            _mod.Cache.GetCachedShrubs(realms, ref treeGenProps.ShrubGens, ref _mod.BiomeConfig.TreeBiomes);
         return true;
     }
 
@@ -167,7 +167,7 @@ public static class HarmonyPatches
         if (realms == null) return true;
 
         treeGenProps.TreeGens =
-            biomesMod.Cache.GetCachedTrees(realms, ref treeGenProps.TreeGens, ref biomesMod.BiomeConfig.TreeBiomes);
+            _mod.Cache.GetCachedTrees(realms, ref treeGenProps.TreeGens, ref _mod.BiomeConfig.TreeBiomes);
         return true;
     }
 
@@ -187,7 +187,7 @@ public static class HarmonyPatches
     public static bool CanSpawnAtPosition(ref bool __result, IBlockAccessor blockAccessor, EntityProperties type,
         BlockPos pos, BaseSpawnConditions sc)
     {
-        __result = biomesMod.Entities.IsSpawnValid(blockAccessor.GetMapChunkAtBlockPos(pos), type, pos);
+        __result = _mod.Entities.IsSpawnValid(blockAccessor.GetMapChunkAtBlockPos(pos), type, pos);
         return __result;
     }
 
@@ -197,6 +197,6 @@ public static class HarmonyPatches
     public static bool CanSpawnAt(ref Vec3d? __result, EntityProperties type, Vec3i spawnPosition,
         RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
     {
-        return chunkCol.Length != 0 && biomesMod.Entities.IsSpawnValid(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
+        return chunkCol.Length != 0 && _mod.Entities.IsSpawnValid(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
     }
 }

@@ -3,14 +3,50 @@
     "Client": {
       "commandName": "Executable",
       "executablePath": "dotnet",
-      "commandLineArgs": "\"/home/actioninja/vintagestory//Vintagestory.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
-      "workingDirectory": "/home/actioninja/vintagestory/"
+      "commandLineArgs": "\"$(GameDirectory)/Vintagestory.dll\" --tracelog --dataPath \"$(DataFolder)\" --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(GameDirectory)"
     },
     "Server": {
       "commandName": "Executable",
       "executablePath": "dotnet",
-      "commandLineArgs": "\"/home/actioninja/vintagestory//VintagestoryServer.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
-      "workingDirectory": "/home/actioninja/vintagestory/"
+      "commandLineArgs": "\"$(GameDirectory)/VintagestoryServer.dll\" --tracelog --dataPath \"$(DataFolder)\" --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(GameDirectory)"
+    },
+    "Entities Client": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "commandLineArgs": "\"$(GameDirectory)/Vintagestory.dll\" --tracelog --dataPath \"$(EntityDataFolder)\" --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(GameDirectory)"
+    },
+    "Entities Server": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "commandLineArgs": "\"$(GameDirectory)/VintagestoryServer.dll\" --tracelog --dataPath \"$(EntityDataFolder)\" --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(GameDirectory)"
+    },
+    "Plants Client": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "commandLineArgs": "\"$(GameDirectory)/Vintagestory.dll\" --tracelog --dataPath \"$(PlantDataFolder)\" --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(GameDirectory)"
+    },
+    "Plants Server": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "commandLineArgs": "\"$(GameDirectory)/VintagestoryServer.dll\" --tracelog --dataPath \"$(PlantDataFolder)\" --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(GameDirectory)"
+    },
+    "Full Client": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "commandLineArgs": "\"$(GameDirectory)/Vintagestory.dll\" --tracelog --dataPath \"$(FullDataFolder)\" --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(GameDirectory)"
+    },
+    "Full Server": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "commandLineArgs": "\"$(GameDirectory)/VintagestoryServer.dll\" --tracelog --dataPath \"$(FullDataFolder)\" --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(GameDirectory)"
     }
   }
 }
