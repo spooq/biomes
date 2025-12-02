@@ -5,7 +5,7 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/extra/crab-both.json",
+    "file": "thecritterpack:entities/animal/extra/crab/crab-both.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",

@@ -5,22 +5,22 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/extra/woodlouse/woodlouse.json",
+    "file": "thecritterpack:entities/animal/bird/crow/crow-adult.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
     "value": {
       "biorealm": [
-        "atlantic nearctic",
         "pacific nearctic",
-        "atlantic neotropic",
-        "pacific neotropic",
+        "atlantic nearctic",
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic",
-        "eastern afrotropic",
+        "pacific neotropic",
+        "atlantic neotropic",
         "atlantic afrotropic",
+        "eastern afrotropic",
         "australasian",
         "oceanic"
       ]
