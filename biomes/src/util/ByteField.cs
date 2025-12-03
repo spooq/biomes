@@ -3,14 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace Biomes.util;
 
-public struct ByteField : IEquatable<ByteField>
+public struct ByteField(byte value) : IEquatable<ByteField>
 {
-    public byte Value;
-
-    public ByteField(byte value)
-    {
-        Value = value;
-    }
+    public byte Value = value;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool GetBit(int bit)
@@ -22,6 +17,12 @@ public struct ByteField : IEquatable<ByteField>
     public void SetBit(int bit, bool value)
     {
         Value = (byte)(value ? Value | (1 << bit) : Value & ~(1 << bit));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void ToggleBit(int bit)
+    {
+        Value = (byte)(Value ^ (1 << bit));
     }
 
     public override string ToString()
@@ -42,5 +43,15 @@ public struct ByteField : IEquatable<ByteField>
     public override int GetHashCode()
     {
         return Value.GetHashCode();
+    }
+
+    public static bool operator ==(ByteField left, ByteField right)
+    {
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(ByteField left, ByteField right)
+    {
+        return !(left == right);
     }
 }

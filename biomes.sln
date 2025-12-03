@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "biomes", "biomes\biomes.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeBuild", "CakeBuild\CakeBuild.csproj", "{75BC5872-48FC-4303-A8DA-7AD94E65DC8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiomesTest", "BiomesTest\BiomesTest.csproj", "{702D8EE7-76F8-4AFC-8E30-E1AA8D44E86B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{75BC5872-48FC-4303-A8DA-7AD94E65DC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75BC5872-48FC-4303-A8DA-7AD94E65DC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75BC5872-48FC-4303-A8DA-7AD94E65DC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{702D8EE7-76F8-4AFC-8E30-E1AA8D44E86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{702D8EE7-76F8-4AFC-8E30-E1AA8D44E86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{702D8EE7-76F8-4AFC-8E30-E1AA8D44E86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702D8EE7-76F8-4AFC-8E30-E1AA8D44E86B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
