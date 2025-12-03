@@ -901,6 +901,11 @@
           "central palearctic"
         ]
       },
+      "*-reedbutterfly": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
       "*-rockgraylingmale": {
         "biorealm": [
           "atlantic palearctic"

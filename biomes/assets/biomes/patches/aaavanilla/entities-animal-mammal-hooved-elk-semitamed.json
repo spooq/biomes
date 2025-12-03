@@ -1,0 +1,11 @@
+[
+  {
+    "file": "game:entities/animal/mammal/hooved/elk-semitamed.json",
+    "op": "addMerge",
+    "path": "/attributes",
+    "value": {
+      "biorealm": []
+    },
+    "side": "Server"
+  }
+]
