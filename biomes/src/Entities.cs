@@ -60,6 +60,11 @@ public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
                 var cacheRealms = new HashSet<string>();
                 foreach (var realm in validRealms.AsArray<string>([]))
                 {
+                    if (!_mod.RealmsConfig.AllRealms().Contains(realm))
+                    {
+                        _mod.Mod.Logger.Error($"Didn't load invalid realm \"{realm}\" off of \"{entity.Code}\", this is an error");
+                        continue;
+                    }
                     cacheRealms.Add(realm);
                 }
                 _entityRealmCache[entity.Code] = cacheRealms;
@@ -106,8 +111,10 @@ public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
 
     }
 
-    public bool IsSpawnValid(IMapChunk mapChunk, EntityProperties type, BlockPos blockPos = null)
+    public bool IsSpawnValid(IMapChunk? mapChunk, EntityProperties type, BlockPos blockPos = null)
     {
+        if (mapChunk == null) return false;
+        
         var code = type.Code!;
         if (Whitelist.Contains(code)) return true;
 
@@ -122,7 +129,7 @@ public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
                 _alreadyRecordedNoHit.Add(code);
             }
 
-            return true;
+            return false;
         }
 
         var chunkRealms = new List<string>();
@@ -136,7 +143,7 @@ public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
             valid = true;
             break;
         }
-        if (valid) return true;
+        if (!valid) return false;
 
         if (_entitySeasonCache.ContainsKey(code))
         {
