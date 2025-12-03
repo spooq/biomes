@@ -6,15 +6,29 @@ namespace Biomes.util;
 public struct ByteField : IEquatable<ByteField>
 {
     public byte Value;
-    
-    public ByteField(byte value) => Value = value;
-    
+
+    public ByteField(byte value)
+    {
+        Value = value;
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool GetBit(int bit) => (Value & (1 << bit)) == 1;
+    public bool GetBit(int bit)
+    {
+        return (Value & (1 << bit)) == 1;
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void SetBit(int bit, bool value) => Value = (byte)(Value & (1 << bit));
-    
-    public override string ToString() => Value.ToString();
+    public void SetBit(int bit, bool value)
+    {
+        Value = (byte)(value ? Value | (1 << bit) : Value & ~(1 << bit));
+    }
+
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
+
     public override bool Equals([NotNullWhen(true)] object? obj)
     {
         return base.Equals(obj);
