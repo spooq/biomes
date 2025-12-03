@@ -1,78 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using Biomes.util;
-using Newtonsoft.Json;
-using ProtoBuf;
 using Vintagestory.API.Common;
-using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
-using Vintagestory.GameContent;
-using Vintagestory.ServerMods.NoObf;
 
 namespace Biomes;
-
-public class RealmsConfig
-{
-    public List<string> NorthernRealms = new();
-    public List<string> SouthernRealms = new();
-
-    public List<string> AllRealms()
-    {
-        return NorthernRealms.Union(SouthernRealms).ToList();
-    }
-}
-
-// Preserve block patch comments for debugging
-[JsonObject(MemberSerialization.OptIn)]
-public class BlockPatchWithComment
-{
-    [JsonProperty] public AssetLocation[] blockCodes;
-
-    [JsonProperty] public string comment;
-}
-
-public class BiomeConfigItem
-{
-    public List<string> biorealm = new();
-    public string bioriver = "both";
-}
-
-public class BiomeConfigv1
-{
-    public readonly Dictionary<string, List<string>> BlockPatchBiomes = new();
-    public readonly List<string> EntitySpawnWhiteList = new();
-    public readonly Dictionary<string, List<string>> FruitTreeBiomes = new();
-    public readonly Dictionary<string, List<string>> TreeBiomes = new();
-}
-
-public class BiomeConfigv2
-{
-    public Dictionary<string, BiomeConfigItem> BlockPatchBiomes = new();
-    public List<string> EntitySpawnWhiteList = new();
-    public Dictionary<string, BiomeConfigItem> FruitTreeBiomes = new();
-    public Dictionary<string, BiomeConfigItem> TreeBiomes = new();
-}
-
-public class BiomeUserConfig
-{
-    public bool Debug = false;
-    public List<string> EntitySpawnWhiteList = new();
-    public bool FlipNorthSouth = false;
-}
-
-[ProtoContract]
-public class BiomeNameAndCoords
-{
-    [ProtoMember(3)] public string biome;
-    [ProtoMember(1)] public int chunkX;
-
-    [ProtoMember(2)] public int chunkZ;
-}
-
-
 // HERE YE, HERE YE
 // Biomes is a mod that a significant portion runs in a very hot loop,
 // that being worldgen. The hot path code is deliberately written to use the
@@ -86,20 +19,17 @@ public class BiomeNameAndCoords
 // about it.
 public class BiomesModSystem : ModSystem
 {
-    public BiomeConfigv2 BiomeConfig = null!;
     public RealmCache Cache = null!;
     public Entities Entities = null!;
     private Commands _commands;
+    public BiomesConfig Config = new();
 
     public bool IsRiversModInstalled = false;
 
-    public RealmsConfig RealmsConfig = null!;
+    private ICoreServerAPI _vsapi = null!;
 
-    public ICoreServerAPI _vsapi;
+    public readonly bool TagOnChunkGen = true;
 
-    public bool TagOnChunkGen = true;
-
-    public BiomeUserConfig UserConfig { get; private set; }
 
     public override bool ShouldLoad(EnumAppSide side)
     {
@@ -118,71 +48,15 @@ public class BiomesModSystem : ModSystem
     {
         base.AssetsLoaded(api);
         
-                // Realms config
-        RealmsConfig =
-            JsonConvert.DeserializeObject<RealmsConfig>(api.Assets.Get($"{Mod.Info.ModID}:config/realms.json")
-                .ToText())!;
-
-        // BiomeConfig v2 is a superset of v1
-        BiomeConfig = new BiomeConfigv2();
-
-        // Version 1 config file format
-        foreach (var biomeAsset in api.Assets.GetMany("config/biomes.json"))
-        {
-            var tmp = JsonConvert.DeserializeObject<BiomeConfigv1>(biomeAsset.ToText())!;
-
-            foreach (var item in tmp.EntitySpawnWhiteList)
-                BiomeConfig.EntitySpawnWhiteList.Add(item);
-            foreach (var item in tmp.TreeBiomes)
-                BiomeConfig.TreeBiomes[item.Key] = new BiomeConfigItem { biorealm = item.Value, bioriver = "both" };
-            foreach (var item in tmp.FruitTreeBiomes)
-                BiomeConfig.FruitTreeBiomes[item.Key] = new BiomeConfigItem
-                    { biorealm = item.Value, bioriver = "both" };
-            foreach (var item in tmp.BlockPatchBiomes)
-                BiomeConfig.BlockPatchBiomes[item.Key] = new BiomeConfigItem
-                    { biorealm = item.Value, bioriver = "both" };
-        }
-
-        // Version 2 config file format
-        foreach (var biomeAsset in api.Assets.GetMany("config/biomes2.json"))
-        {
-            var tmp = JsonConvert.DeserializeObject<BiomeConfigv2>(biomeAsset.ToText())!;
-
-            foreach (var item in tmp.EntitySpawnWhiteList)
-                BiomeConfig.EntitySpawnWhiteList.Add(item);
-            foreach (var item in tmp.TreeBiomes)
-                BiomeConfig.TreeBiomes[item.Key] = item.Value;
-            foreach (var item in tmp.FruitTreeBiomes)
-                BiomeConfig.FruitTreeBiomes[item.Key] = item.Value;
-            foreach (var item in tmp.BlockPatchBiomes)
-                BiomeConfig.BlockPatchBiomes[item.Key] = item.Value;
-        }
-
-        // User config
-        UserConfig = api.LoadModConfig<BiomeUserConfig>("biomes.json");
-        UserConfig ??= new BiomeUserConfig();
-        api.StoreModConfig(UserConfig, "biomes.json");
-
-        if (UserConfig.FlipNorthSouth)
-        {
-            (RealmsConfig.NorthernRealms, RealmsConfig.SouthernRealms) = (RealmsConfig.SouthernRealms, RealmsConfig.NorthernRealms);
-        }
-
-        foreach (var item in UserConfig.EntitySpawnWhiteList)
-            BiomeConfig.EntitySpawnWhiteList.Add(item);
+        Config.LoadConfigs(this, api);
         
-        BiomeConfig.EntitySpawnWhiteList = BiomeConfig.EntitySpawnWhiteList.Distinct().ToList();
-        /*
-        IsRiversModInstalled = api.ModLoader.GetModSystem("RiversMod") != null ||
-                               api.ModLoader.GetModSystem("RiverGenMod") != null;
-                               */
     }
 
     
     public override void AssetsFinalize(ICoreAPI api)
     {
         base.AssetsFinalize(api);   
-        Entities.BuildCaches(UserConfig);
+        Entities.BuildCaches(Config);
     }
     
     public override void StartServerSide(ICoreServerAPI api)
@@ -190,72 +64,6 @@ public class BiomesModSystem : ModSystem
         base.StartServerSide(api);
         _vsapi = api;
         HarmonyPatches.Init(this);
-
-
-        if (UserConfig.Debug)
-        {
-            var treeGenProps = api.Assets.Get("worldgen/treengenproperties.json").ToObject<TreeGenProperties>();
-
-            List<BlockPatchWithComment> bpc = new();
-            var blockpatchesfiles =
-                api.Assets.GetMany<BlockPatchWithComment[]>(_vsapi.World.Logger, "worldgen/blockpatches/");
-            foreach (var patches in blockpatchesfiles.Values)
-                bpc.AddRange(patches);
-
-            var fruitTreeBlocks = api.World.Blocks.Where(x => x is BlockFruitTreeBranch).ToList();
-
-            foreach (var realm in RealmsConfig.AllRealms())
-            {
-                api.Logger.Debug($"BioRealm: {realm}");
-
-                var output = "Trees: ";
-                List<string> strs = new();
-                foreach (var item in BiomeConfig.TreeBiomes)
-                foreach (var treeGenConfig in treeGenProps.TreeGens)
-                    if (WildcardUtil.Match(item.Key, treeGenConfig.Generator.GetName()))
-                        if (item.Value.biorealm.Contains(realm))
-                            strs.Add(treeGenConfig.Generator.GetName());
-                api.Logger.Debug(output + string.Join(',', strs.Distinct().Order()));
-
-                strs.Clear();
-                output = "Shrubs: ";
-                foreach (var item in BiomeConfig.TreeBiomes)
-                foreach (var treeGenConfig in treeGenProps.ShrubGens)
-                    if (WildcardUtil.Match(item.Key, treeGenConfig.Generator.GetName()))
-                        if (item.Value.biorealm.Contains(realm))
-                            strs.Add(treeGenConfig.Generator.GetName());
-                api.Logger.Debug(output + string.Join(',', strs.Distinct().Order()));
-
-                strs.Clear();
-                output = "FruitTrees: ";
-                foreach (var item in BiomeConfig.FruitTreeBiomes)
-                foreach (var fruitTreeBlock in fruitTreeBlocks)
-                foreach (var fruitTreeWorldGenConds in fruitTreeBlock.Attributes["worldgen"]
-                             .AsObject<FruitTreeWorldGenConds[]>())
-                    if (WildcardUtil.Match(item.Key, fruitTreeWorldGenConds.Type))
-                        if (item.Value.biorealm.Contains(realm))
-                            strs.Add(fruitTreeWorldGenConds.Type);
-                api.Logger.Debug(output + string.Join(',', strs.Distinct().Order()));
-
-                strs.Clear();
-                output = "BlockPatches: ";
-                foreach (var item in BiomeConfig.BlockPatchBiomes)
-                foreach (var blockPatch in bpc)
-                    if (blockPatch.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x)))
-                        if (item.Value.biorealm.Contains(realm))
-                            strs.Add(blockPatch.comment);
-                api.Logger.Debug(output + string.Join(',', strs.Distinct())); // dont order these
-
-                strs.Clear();
-                output = "Entities: ";
-                foreach (var type in api.World.EntityTypes)
-                    if (type.Attributes != null && type.Attributes.KeyExists(ModPropName.Entity.Realm))
-                        if (type.Attributes[ModPropName.Entity.Realm].AsArray<string>().Contains(realm))
-                            strs.Add(type.Code.ToString());
-                api.Logger.Debug(output + string.Join(',', strs.Distinct().Order()));
-            }
-        }
-
 
         _vsapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.Vegetation, "standard");
         _vsapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
@@ -268,15 +76,6 @@ public class BiomesModSystem : ModSystem
     {
         HarmonyPatches.Shutdown();
         base.Dispose();
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private string NorthOrSouth(EnumHemisphere hemisphere, int realm)
-    {
-        // modconfig.flipworld exchanges the lists, so we always choose the same here no matter what
-        return hemisphere == EnumHemisphere.North
-            ? RealmsConfig.NorthernRealms[realm]
-            : RealmsConfig.SouthernRealms[realm];
     }
 
     public void OnChunkColumnGeneration(IChunkColumnGenerateRequest request)
@@ -312,7 +111,17 @@ public class BiomesModSystem : ModSystem
             }
         }
     }
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private string NorthOrSouth(EnumHemisphere hemisphere, int realm)
+    {
+        // modconfig.flipworld exchanges the lists, so we always choose the same here no matter what
+        return hemisphere == EnumHemisphere.North
+            ? Config.Realms.NorthernRealms[realm]
+            : Config.Realms.SouthernRealms[realm];
+    }
 
+    
     public void OnMapChunkGeneration(IMapChunk mapChunk, int chunkX, int chunkZ)
     {
         if (!TagOnChunkGen)
@@ -368,8 +177,8 @@ public class BiomesModSystem : ModSystem
     private void CalculateValues(int chunkX, int chunkZ, EnumHemisphere hemisphere, out int currentRealm)
     {
         var realmCount = hemisphere == EnumHemisphere.North
-            ? RealmsConfig.NorthernRealms.Count
-            : RealmsConfig.SouthernRealms.Count;
+            ? Config.Realms.NorthernRealms.Count
+            : Config.Realms.SouthernRealms.Count;
 
         var worldWidthInChunks = _vsapi.WorldManager.MapSizeX / _vsapi.WorldManager.ChunkSize;
         var realmWidthInChunks = worldWidthInChunks / (float)realmCount;

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Vintagestory.API.Common;
@@ -13,6 +10,8 @@ namespace Biomes;
 public class RealmCache
 {
     public const string KeySeparator = ";";
+    
+    // fruit trees are special because the parent code can have multiple fruit tree variants
     // realm : tree base code: filtered variant genconds
     private readonly Dictionary<string, Dictionary<AssetLocation, FruitTreeWorldGenConds[]>> _fruitTreeCache = new(StringComparer.Ordinal);
     private readonly Dictionary<string, BlockPatch[]> _patchCache = new(StringComparer.Ordinal);
@@ -22,7 +21,7 @@ public class RealmCache
     private readonly Dictionary<string, List<BlockPatch>> _underTreePatch = new(StringComparer.Ordinal);
 
     private void GenBlockPatchCache(List<string> realms, ref BlockPatch[] blockPatches,
-        ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref Dictionary<string, ConfigItem> biomeConfig)
     {
         List<BlockPatch> validList = new();
 
@@ -39,7 +38,7 @@ public class RealmCache
     }
 
     private void GenTreePatchCache(List<string> realms, ref List<BlockPatch> blockPatches,
-        ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref Dictionary<string, ConfigItem> biomeConfig)
     {
         List<BlockPatch> validList = new();
 
@@ -56,7 +55,7 @@ public class RealmCache
     }
 
     private void GenUnderTreePatchCache(List<string> realms, ref List<BlockPatch> blockPatches,
-        ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref Dictionary<string, ConfigItem> biomeConfig)
     {
         List<BlockPatch> validList = new();
 
@@ -73,7 +72,7 @@ public class RealmCache
     }
 
     private void GenShrubCache(List<string> realms, ref TreeVariant[] treeVariants,
-        ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref Dictionary<string, ConfigItem> biomeConfig)
     {
         List<TreeVariant> validList = new();
 
@@ -90,7 +89,7 @@ public class RealmCache
     }
 
     private void GenFruitTreeCache(List<string> realms, AssetLocation treecode, ref FruitTreeWorldGenConds[] treeVariants,
-        ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref Dictionary<string, ConfigItem> biomeConfig)
     {
         List<FruitTreeWorldGenConds> validList = new();
 
@@ -107,7 +106,7 @@ public class RealmCache
     }
 
     private void GenTreeCache(List<string> overlappingRealms, ref TreeVariant[] treeVariants,
-        ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref Dictionary<string, ConfigItem> biomeConfig)
     {
         List<TreeVariant> validList = new();
 
@@ -131,7 +130,7 @@ public class RealmCache
     }
 
     public ref TreeVariant[] GetCachedTrees(List<string> realms, ref TreeVariant[] treeVariants,
-        ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref Dictionary<string, ConfigItem> biomeConfig)
     {
         var cacheKey = ToCacheKey(realms);
         ref var cached = ref CollectionsMarshal.GetValueRefOrNullRef(_treeCache, cacheKey);
@@ -144,7 +143,7 @@ public class RealmCache
     // fruit trees are special, the base code can contain many variants within tree variants so we need to cache two
     // levels of realm : code : valid variantd 
     public ref FruitTreeWorldGenConds[] GetCachedFruitTrees(List<string> realms, AssetLocation code,
-        ref FruitTreeWorldGenConds[] treeVariants, ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref FruitTreeWorldGenConds[] treeVariants, ref Dictionary<string, ConfigItem> biomeConfig)
     {
         var cacheKey = ToCacheKey(realms);
         if (!_fruitTreeCache.ContainsKey(cacheKey))
@@ -161,7 +160,7 @@ public class RealmCache
     }
 
     public ref TreeVariant[] GetCachedShrubs(List<string> realms, ref TreeVariant[] treeVariants,
-        ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        ref Dictionary<string, ConfigItem> biomeConfig)
     {
         var cacheKey = ToCacheKey(realms);
         ref var cached = ref CollectionsMarshal.GetValueRefOrNullRef(_shrubCache, cacheKey);
@@ -172,7 +171,7 @@ public class RealmCache
     }
 
     public ref BlockPatch[] GetCachedGroundPatches(
-        List<string> realms, ref BlockPatch[] blockPatches, ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        List<string> realms, ref BlockPatch[] blockPatches, ref Dictionary<string, ConfigItem> biomeConfig)
     {
         var cacheKey = ToCacheKey(realms);
         ref var cached = ref CollectionsMarshal.GetValueRefOrNullRef(_patchCache, cacheKey);
@@ -183,7 +182,7 @@ public class RealmCache
     }
 
     public ref List<BlockPatch> GetCachedTreePatches(
-        List<string> realms, ref List<BlockPatch> blockPatches, ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        List<string> realms, ref List<BlockPatch> blockPatches, ref Dictionary<string, ConfigItem> biomeConfig)
     {
         var cacheKey = ToCacheKey(realms);
         ref var cached = ref CollectionsMarshal.GetValueRefOrNullRef(_treePatchCache, cacheKey);
@@ -194,7 +193,7 @@ public class RealmCache
     }
 
     public ref List<BlockPatch> GetCachedUnderTreePatches(
-        List<string> realms, ref List<BlockPatch> blockPatches, ref Dictionary<string, BiomeConfigItem> biomeConfig)
+        List<string> realms, ref List<BlockPatch> blockPatches, ref Dictionary<string, ConfigItem> biomeConfig)
     {
         var cacheKey = ToCacheKey(realms);
         ref var cached = ref CollectionsMarshal.GetValueRefOrNullRef(_underTreePatch, cacheKey);

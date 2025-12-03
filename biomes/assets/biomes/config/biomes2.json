@@ -1,42 +1,4 @@
 {
-  "EntitySpawnWhiteList": [
-    "game:animalbot-*",
-    "game:armorstand*",
-    "game:arrow-*",
-    "game:bell*",
-    "game:blockfalling",
-    "game:boat*",
-    "game:bowtorn*",
-    "game:chunky",
-    "game:drifter*",
-    "game:echochamber",
-    "game:eidolon-*",
-    "game:elevator",
-    "game:erel*",
-    "game:humanoid-*",
-    "game:item",
-    "game:library*",
-    "game:locust-*",
-    "game:mechhelper",
-    "game:player*",
-    "game:shiver-*",
-    "game:*skeleton*",
-    "game:spear-*",
-    "game:strawdummy",
-    "game:testship",
-    "game:thrown*",
-    "game:villager-*",
-
-    "game:elf-*",
-    "game:goblin-*",
-    "game:halfing-*",
-    "game:human-*",
-    "game:kobold-*",
-    "game:orc-*",
-    "fantasycreatures:*",
-    "rustboundmagic:*",
-    "rustcreatures:*"
-  ],
   "BlockPatchBiomes": {
     "flotsam-driftwood-*": {
       "biorealm": [

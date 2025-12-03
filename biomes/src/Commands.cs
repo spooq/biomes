@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using Biomes.util;
 using HarmonyLib;
@@ -52,14 +49,14 @@ public class Commands
             .EndSubCommand()
             .BeginSubCommand("add")
             .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm",
-                _biomesMod.RealmsConfig.NorthernRealms.Union(_biomesMod.RealmsConfig.SouthernRealms)
+                _biomesMod.Config.Realms.AllRealms()
                     .Select(i => i.Replace(' ', '_'))
                     .ToArray()))
             .HandleWith(OnAddRealmCommand)
             .EndSubCommand()
             .BeginSubCommand("remove")
             .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm",
-                _biomesMod.RealmsConfig.NorthernRealms.Union(_biomesMod.RealmsConfig.SouthernRealms)
+                _biomesMod.Config.Realms.AllRealms()
                     .Select(i => i.Replace(' ', '_'))
                     .ToArray()))
             .HandleWith(OnRemoveRealmCommand)
@@ -75,7 +72,7 @@ public class Commands
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
         var trees = new List<string>();
-        foreach (var item in _biomesMod.BiomeConfig.TreeBiomes)
+        foreach (var item in _biomesMod.Config.Trees)
             if (item.Value.biorealm.Intersect(chunkRealms).Any())
                 trees.Add(item.Key);
 
@@ -93,7 +90,7 @@ public class Commands
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
         var trees = new List<string>();
-        foreach (var item in _biomesMod.BiomeConfig.FruitTreeBiomes)
+        foreach (var item in _biomesMod.Config.FruitTrees)
             if (item.Value.biorealm.Intersect(chunkRealms).Any())
                 trees.Add(item.Key);
 
@@ -111,7 +108,7 @@ public class Commands
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
         var bp = new List<string>();
-        foreach (var item in _biomesMod.BiomeConfig.BlockPatchBiomes)
+        foreach (var item in _biomesMod.Config.BlockPatches)
             if (item.Value.biorealm.Intersect(chunkRealms).Any())
                 bp.Add(item.Key);
 
