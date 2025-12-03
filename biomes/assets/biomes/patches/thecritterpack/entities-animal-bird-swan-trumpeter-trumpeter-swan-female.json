@@ -5,7 +5,7 @@
         "modid": "thecritterpack"
       }
     ],
-    "file": "thecritterpack:entities/animal/bird/swan/trumpeter/trumpeter-swawn-female.json",
+    "file": "thecritterpack:entities/animal/bird/swan/trumpeter/trumpeter-swan-female.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
