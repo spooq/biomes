@@ -3,6 +3,8 @@
 Biomes is a mod for Vintage Story that divides the world into large, discrete biomes to make the world feel more varied
 and alive. Different regions will have their own flavor and travel will feel more meaningful.
 
+The mod should be downloaded and installed from the [VS ModDB Page.](https://mods.vintagestory.at/biomes)
+
 ## Documentation
 
 TBA
