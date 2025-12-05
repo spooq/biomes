@@ -1,3 +1,4 @@
+using Biomes.RealmGen;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Vintagestory.API.Common;
@@ -109,6 +110,13 @@ public class UserConfig
     public readonly bool Debug = false;
     public readonly List<string> EntitySpawnWhiteList = [];
     public readonly bool FlipNorthSouth = false;
+
+    public readonly RealmGenConfig RealmGenerationConfig = new BlendedRealmConfig
+    {
+        ChunkHorizontalBlendThreshold = 0.001,
+        ChunkLatBlendThreshold = 0.01
+    };
+
     [JsonConverter(typeof(StringEnumConverter))]
     public readonly NoSupportSpawningMode SpawnMode = NoSupportSpawningMode.AllowButWarn;
 }

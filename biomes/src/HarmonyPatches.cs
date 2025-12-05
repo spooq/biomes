@@ -8,6 +8,7 @@ using Vintagestory.GameContent;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
 using Vintagestory.ServerMods.NoObf;
+
 // ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Global
 
@@ -83,7 +84,7 @@ public static class HarmonyPatches
 
         return true;
     }
-    
+
     [HarmonyPostfix]
     [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
     public static void GenPatchesTreePostfix(ref ForestFloorSystem __instance,

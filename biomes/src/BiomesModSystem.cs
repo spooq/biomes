@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Biomes.RealmGen;
 using Biomes.util;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
@@ -6,6 +6,7 @@ using Vintagestory.API.Server;
 using Vintagestory.API.Util;
 
 namespace Biomes;
+
 // HERE YE, HERE YE
 // Biomes is a mod that a significant portion runs in a very hot loop,
 // that being worldgen. The hot path code is deliberately written to use the
@@ -19,16 +20,16 @@ namespace Biomes;
 // about it.
 public class BiomesModSystem : ModSystem
 {
-    public RealmCache Cache = null!;
-    public Entities Entities = null!;
+    public readonly bool TagOnChunkGen = true;
     private Commands _commands;
-    public BiomesConfig Config = new();
-
-    public bool IsRiversModInstalled = false;
 
     private ICoreServerAPI _vsapi = null!;
+    public RealmCache Cache = null!;
+    public BiomesConfig Config = new();
+    public Entities Entities = null!;
 
-    public readonly bool TagOnChunkGen = true;
+    public bool IsRiversModInstalled = false;
+    public IRealmGen RealmGen = null!;
 
 
     public override bool ShouldLoad(EnumAppSide side)
@@ -47,18 +48,18 @@ public class BiomesModSystem : ModSystem
     public override void AssetsLoaded(ICoreAPI api)
     {
         base.AssetsLoaded(api);
-        
+
         Config.LoadConfigs(this, api);
-        
+        RealmGen = IRealmGen.BuildGenerator(Config);
     }
 
-    
+
     public override void AssetsFinalize(ICoreAPI api)
     {
-        base.AssetsFinalize(api);   
+        base.AssetsFinalize(api);
         Entities.BuildCaches(Config);
     }
-    
+
     public override void StartServerSide(ICoreServerAPI api)
     {
         base.StartServerSide(api);
@@ -111,17 +112,7 @@ public class BiomesModSystem : ModSystem
             }
         }
     }
-    
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private string NorthOrSouth(EnumHemisphere hemisphere, int realm)
-    {
-        // modconfig.flipworld exchanges the lists, so we always choose the same here no matter what
-        return hemisphere == EnumHemisphere.North
-            ? Config.Realms.NorthernRealms[realm]
-            : Config.Realms.SouthernRealms[realm];
-    }
 
-    
     public void OnMapChunkGeneration(IMapChunk mapChunk, int chunkX, int chunkZ)
     {
         if (!TagOnChunkGen)
@@ -130,21 +121,7 @@ public class BiomesModSystem : ModSystem
         var blockPos = new BlockPos(chunkX * _vsapi.WorldManager.ChunkSize, 0,
             chunkZ * _vsapi.WorldManager.ChunkSize, 0);
         var hemisphere = _vsapi.World.Calendar.GetHemisphere(blockPos);
-        int currentRealm;
-        var realmNames = new List<string>(4);
-        CalculateValues(chunkX - 1, chunkZ, hemisphere, out currentRealm);
-        realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-        CalculateValues(chunkX + 1, chunkZ, hemisphere, out currentRealm);
-        realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-        CalculateValues(chunkX, chunkZ - 1, hemisphere, out currentRealm);
-        realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-        CalculateValues(chunkX, chunkZ + 1, hemisphere, out currentRealm);
-        realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-        CalculateValues(chunkX, chunkZ, hemisphere, out currentRealm);
-        realmNames.Add(NorthOrSouth(hemisphere, currentRealm));
-        realmNames = realmNames.Distinct().ToList();
-
-        realmNames.Capacity = realmNames.Count;
+        var realmNames = RealmGen.GetRealmsForBlockPos(_vsapi, blockPos);
         ModProperty.Set(mapChunk, ModPropName.Map.Hemisphere, ref hemisphere);
         ModProperty.Set(mapChunk, ModPropName.Map.Realm, ref realmNames);
     }
@@ -173,22 +150,4 @@ public class BiomesModSystem : ModSystem
             blockPos.Z % _vsapi.WorldManager.ChunkSize * _vsapi.WorldManager.ChunkSize +
             blockPos.X % _vsapi.WorldManager.ChunkSize];
     }
-
-    private void CalculateValues(int chunkX, int chunkZ, EnumHemisphere hemisphere, out int currentRealm)
-    {
-        var realmCount = hemisphere == EnumHemisphere.North
-            ? Config.Realms.NorthernRealms.Count
-            : Config.Realms.SouthernRealms.Count;
-
-        var worldWidthInChunks = _vsapi.WorldManager.MapSizeX / _vsapi.WorldManager.ChunkSize;
-        var realmWidthInChunks = worldWidthInChunks / (float)realmCount;
-        currentRealm = 0;
-        if (realmWidthInChunks != 0)
-            currentRealm = (int)(chunkX / realmWidthInChunks);
-        if (currentRealm >= realmCount)
-            currentRealm = realmCount - 1;
-        if (currentRealm < 0)
-            currentRealm = 0;
-    }
-
 }
