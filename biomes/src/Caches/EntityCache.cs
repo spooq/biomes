@@ -8,15 +8,12 @@ namespace Biomes.Caches;
 
 public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
 {
-    // bytemask with all 4 seasons set
-    private const byte AllSeasons = 0b0000_1111;
-    private readonly Dictionary<AssetLocation, HashSet<string>> _entityRealmCache = new();
-    private readonly Dictionary<AssetLocation, ByteField> _entitySeasonCache = new();
+    private readonly Dictionary<AssetLocation, BiomeData> _entityCache = new(new Fnv1aAssetLocationComparer());
 
-    public readonly HashSet<AssetLocation> Whitelist = [];
+    public readonly HashSet<AssetLocation> Whitelist = new(new Fnv1aAssetLocationComparer());
 
     // Explicitly not initialized unless we have a nohit found
-    private HashSet<AssetLocation>? _alreadyRecordedNoHit;
+    private HashSet<AssetLocation>? _alreadyRecordedNoHit = new(new Fnv1aAssetLocationComparer());
 
     public void GenWhitelist(List<string> whitelistSpecified)
     {
@@ -42,63 +39,54 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
 
         foreach (var entity in vsapi.World.EntityTypes)
         {
+            var biomeData = new BiomeData(0);
             // only ever null if we have no attributes
             var validRealms = entity.Attributes?[ModPropName.Entity.Realm];
             if (validRealms is { Exists: true })
-            {
-                var cacheRealms = new HashSet<string>();
-                foreach (var realm in validRealms.AsArray<string>([]))
+                foreach (var realm in validRealms.AsArray<string>())
                 {
-                    if (!mod.Config.ValidRealms.Contains(realm))
+                    if (!config.ValidRealmIndexes.TryGetValue(realm, out var index))
                     {
                         mod.Mod.Logger.Error(
-                            $"Didn't load invalid realm \"{realm}\" off of \"{entity.Code}\", this is an error");
+                            $"Didn't load invalid realm \"{realm}\" off of \"{entity.Code}\", please report this to biomes!");
                         continue;
                     }
 
-                    cacheRealms.Add(realm);
+                    biomeData.SetRealm(index, true);
                 }
-
-                _entityRealmCache[entity.Code] = cacheRealms;
-            }
             else
-            {
                 continue;
-            }
 
 
             // Now we know Attributes isn't null, so we can just assert
             var validSeasons = entity.Attributes![ModPropName.Entity.Season];
             if (validSeasons.Exists)
             {
-                var seasons = validSeasons.AsArray<string>([]);
-                var seasonsBitfield = new ByteField(0);
-                foreach (var season in seasons)
-                {
-                    var caseStrip = season.ToLowerInvariant();
-                    switch (caseStrip)
-                    {
-                        case "spring":
-                            seasonsBitfield.SetBit((int)EnumSeason.Spring, true);
-                            break;
-                        case "summer":
-                            seasonsBitfield.SetBit((int)EnumSeason.Summer, true);
-                            break;
-                        case "fall":
-                            seasonsBitfield.SetBit((int)EnumSeason.Fall, true);
-                            break;
-                        case "winter":
-                            seasonsBitfield.SetBit((int)EnumSeason.Winter, true);
-                            break;
-                    }
-                }
+                var seasons = validSeasons.AsArray<string>([]).ToList();
 
-                _entitySeasonCache[entity.Code] = seasonsBitfield;
+                foreach (var seasonStr in seasons) biomeData.SetSeason(seasonStr, true);
             }
             else
             {
-                _entitySeasonCache[entity.Code] = new ByteField(AllSeasons);
+                // no season data set = valid for all seasons
+                biomeData.SetAllSeasons(true);
             }
+
+            var riverMode = entity.Attributes![ModPropName.Entity.River];
+            if (riverMode.Exists)
+            {
+                var riverModeStr = riverMode.ToString();
+                var riverEnum = BioRiverExtensions.FromString(riverModeStr);
+                biomeData.SetFromBioRiver(riverEnum);
+            }
+            else
+            {
+                // No data = either one
+                biomeData.SetRiver(true);
+                biomeData.SetNoRiver(true);
+            }
+
+            _entityCache[entity.Code] = biomeData;
         }
     }
 
@@ -109,8 +97,8 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
         var code = type.Code!;
         if (Whitelist.Contains(code)) return true;
 
-        var validRealms = _entityRealmCache.Get(code);
-        if (validRealms == null)
+        BiomeData entityData;
+        if (!_entityCache.TryGetValue(code, out entityData))
         {
             _alreadyRecordedNoHit ??= [];
             if (mod.Config.User.SpawnMode.ShouldWarn() &&
@@ -124,32 +112,16 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
             return mod.Config.User.SpawnMode.ShouldAllowByDefaut();
         }
 
-        var chunkRealms = new List<string>();
-        if (ModProperty.Get(mapChunk, ModPropName.Map.Realm, ref chunkRealms) == EnumCommandStatus.Error)
+        var chunkData = new BiomeData(0);
+        if (ModProperty.Get(mapChunk, ModPropName.MapChunk.BiomeData, ref chunkData) == EnumCommandStatus.Error)
             return true;
 
-        // Not a fan of this nonsense with holding a valid boolean and returning early and so on
-        // Convolutes the control flow, so hopefully comments clarify it
-        var valid = false;
-        foreach (var realm in chunkRealms)
-        {
-            // If it's not a valid realm, continue through chunk realms
-            if (!validRealms.Contains(realm)) continue;
-            // reaches here if it is valid, setting valid
-            valid = true;
-            break;
-        }
+        if (!chunkData.CheckRealmAndRiverAgainst(entityData)) return false;
 
-        // If we're not in a valid realm, we can just skip out early and avoid the season check
-        if (!valid) return false;
+        // If all season, we can short out here and not actually do a season check
+        if (entityData.IsAllSeason()) return true;
 
-        // now if we are in a valid realm, check for season data. If there's no season data, assume all seasons are valid
-        // and return true
-        if (!_entitySeasonCache.TryGetValue(code, out var validSeasons)) return true;
-
-        // finally if we do have season data, get the current season and check if the entity's valid seasons are in the
-        // cached season data
-        var currentSeason = vsapi.World.Calendar.GetSeason(blockPos);
-        return validSeasons.GetBit((int)currentSeason);
+        var currentSeason = Util.FastInlinedGetSeason(vsapi, blockPos);
+        return entityData.GetSeason(currentSeason);
     }
 }

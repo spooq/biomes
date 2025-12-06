@@ -1,10 +1,10 @@
 ﻿using Biomes.Caches;
 using Biomes.RealmGen;
 using Biomes.Utils;
+using ProtoBuf.Meta;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
-using Vintagestory.API.Util;
 
 namespace Biomes;
 
@@ -26,10 +26,10 @@ public class BiomesModSystem : ModSystem
 
     private ICoreServerAPI _vsapi = null!;
 
-    public Cache Cache = null!;
+    public Cache Cache;
     public BiomesConfig Config = new();
 
-    public bool IsRiversModInstalled = false;
+    public bool IsRiversModInstalled;
     public IRealmGen RealmGen = null!;
 
 
@@ -42,6 +42,9 @@ public class BiomesModSystem : ModSystem
     {
         base.StartPre(api);
 
+        RuntimeTypeModel.Default.Add(typeof(BiomeData), false).SetSurrogate(typeof(BiomeDataSurrogate));
+
+
         Cache = new Cache(this, api);
     }
 
@@ -51,6 +54,8 @@ public class BiomesModSystem : ModSystem
 
         Config.LoadConfigs(this, api);
         RealmGen = IRealmGen.BuildGenerator(Config);
+
+        IsRiversModInstalled = api.ModLoader.IsModEnabled("rivers") || api.ModLoader.IsModEnabled("rivergen");
     }
 
 
@@ -67,7 +72,8 @@ public class BiomesModSystem : ModSystem
         HarmonyPatches.Init(this);
 
         _vsapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.Vegetation, "standard");
-        _vsapi.Event.MapChunkGeneration(OnMapChunkGeneration, "standard");
+        _vsapi.Event.ChunkColumnLoaded += OnChunkLoaded;
+        _vsapi.Event.ChunkColumnLoaded += OnChunkUnloaded;
 
         _commands = new Commands(this, _vsapi);
     }
@@ -79,75 +85,84 @@ public class BiomesModSystem : ModSystem
         base.Dispose();
     }
 
-    public void OnChunkColumnGeneration(IChunkColumnGenerateRequest request)
+    // Migrate old data
+    private void OnChunkLoaded(Vec2i chunkPos, IWorldChunk[] chunks)
     {
-        if (!IsRiversModInstalled)
-            return;
-
-        foreach (var chunk in request.Chunks)
+        if (!Config.User.AutoMigrateOldData) return;
+        foreach (var chunk in chunks)
         {
-            var arrayX = chunk.GetModdata("flowVectorsX");
-            var arrayZ = chunk.GetModdata("flowVectorsZ");
+            var biomeData = new BiomeData(0);
 
-            if (arrayX != null && arrayZ != null)
+            var oldRealmData = chunk.MapChunk.GetModdata<List<string>>(ModPropName.Map.Realm);
+            if (oldRealmData == null) continue;
+
+            foreach (var realm in oldRealmData) biomeData.SetRealm(Config.ValidRealmIndexes[realm], true);
+
+            if (IsRiversModInstalled)
             {
-                var flowVectorX = SerializerUtil.Deserialize<float[]>(arrayX);
-                var flowVectorZ = SerializerUtil.Deserialize<float[]>(arrayZ);
-
-                var chunkHasRiver = false;
-                var blockHasRiver = new bool[_vsapi.WorldManager.ChunkSize * _vsapi.WorldManager.ChunkSize];
-                for (var x = 0; x < _vsapi.WorldManager.ChunkSize; x++)
-                for (var z = 0; z < _vsapi.WorldManager.ChunkSize; z++)
-                {
-                    var xMag = flowVectorX[z * _vsapi.WorldManager.ChunkSize + x];
-                    var zMag = flowVectorZ[z * _vsapi.WorldManager.ChunkSize + x];
-                    var isRiver = float.Abs(xMag) > float.Epsilon || float.Abs(zMag) > float.Epsilon;
-                    blockHasRiver[z * _vsapi.WorldManager.ChunkSize + x] = isRiver;
-                    if (isRiver)
-                        chunkHasRiver = true;
-                }
-
-                ModProperty.Set(chunk.MapChunk, ModPropName.MapChunk.RiverArray, ref blockHasRiver);
-                ModProperty.Set(chunk.MapChunk, ModPropName.MapChunk.RiverBool, ref chunkHasRiver);
+                var oldRiverBool = chunk.MapChunk.GetModdata<bool>(ModPropName.MapChunk.RiverBool);
+                if (oldRiverBool)
+                    biomeData.SetRiver(true);
+                else
+                    biomeData.SetNoRiver(true);
             }
+            else
+            {
+                biomeData.SetRiver(true);
+                biomeData.SetNoRiver(true);
+            }
+
+
+            chunk.MapChunk.SetModdata(ModPropName.MapChunk.BiomeData, biomeData);
+
+            chunk.MapChunk.RemoveModdata(ModPropName.Map.Realm);
+            chunk.MapChunk.RemoveModdata(ModPropName.Map.Hemisphere);
+            chunk.MapChunk.RemoveModdata(ModPropName.Map.River);
+
+            chunk.MapChunk.RemoveModdata(ModPropName.MapChunk.RiverArray);
+            chunk.MapChunk.RemoveModdata(ModPropName.MapChunk.RiverBool);
+            chunk.MapChunk.MarkDirty();
         }
     }
 
-    public void OnMapChunkGeneration(IMapChunk mapChunk, int chunkX, int chunkZ)
+    // Eventually will be used for cache eviction
+    private void OnChunkUnloaded(Vec2i chunkCoord, IWorldChunk[] chunks)
+    {
+    }
+
+    private void OnChunkColumnGeneration(IChunkColumnGenerateRequest request)
     {
         if (!TagOnChunkGen)
             return;
 
-        var blockPos = new BlockPos(chunkX * _vsapi.WorldManager.ChunkSize, 0,
-            chunkZ * _vsapi.WorldManager.ChunkSize, 0);
-        var hemisphere = _vsapi.World.Calendar.GetHemisphere(blockPos);
-        var realmNames = RealmGen.GetRealmsForBlockPos(_vsapi, blockPos);
-        ModProperty.Set(mapChunk, ModPropName.Map.Hemisphere, ref hemisphere);
-        ModProperty.Set(mapChunk, ModPropName.Map.Realm, ref realmNames);
-    }
 
-    public bool CheckRiver(IMapChunk mapChunk, string? biomeRiver, BlockPos? blockPos = null)
-    {
-        // NOTE: Right now, river implies fresh-water only.
-        if (string.IsNullOrEmpty(biomeRiver) || biomeRiver == "both" || !IsRiversModInstalled)
-            return true;
-
-        // GenVegetationAndPatches.genPatches/genTrees/genShrubs only provides us with chunkX and chunkY, not the actual blockpos
-        // In that case, use MapChunkRiverArrayPropertyName
-        if (blockPos == null)
+        foreach (var chunk in request.Chunks)
         {
-            var isRiver = false;
-            if (ModProperty.Get(mapChunk, ModPropName.MapChunk.RiverBool, ref isRiver) == EnumCommandStatus.Error)
-                return true;
-            return isRiver;
+            var biomeData = new BiomeData(0);
+
+            var blockPos = new BlockPos(request.ChunkX * _vsapi.WorldManager.ChunkSize, 0,
+                request.ChunkZ * _vsapi.WorldManager.ChunkSize, 0);
+            var realms = RealmGen.GetRealmsForBlockPos(_vsapi, blockPos);
+
+            foreach (var realm in realms) biomeData.SetRealm(Config.ValidRealmIndexes[realm], true);
+
+            if (IsRiversModInstalled)
+            {
+                var flowVectors = chunk.GetModdata("flowVectors");
+                if (flowVectors != null)
+                    biomeData.SetRiver(true);
+                else
+                    biomeData.SetNoRiver(true);
+            }
+            else
+            {
+                // No rivers mod = always valid whether it s a river
+                biomeData.SetRiver(true);
+                biomeData.SetNoRiver(true);
+            }
+
+            chunk.MapChunk.SetModdata(ModPropName.MapChunk.BiomeData, biomeData);
+            chunk.MapChunk.MarkDirty();
         }
-
-        bool[] boolArray = null;
-        if (ModProperty.Get(mapChunk, ModPropName.MapChunk.RiverArray, ref boolArray) == EnumCommandStatus.Error)
-            return true;
-
-        return boolArray[
-            blockPos.Z % _vsapi.WorldManager.ChunkSize * _vsapi.WorldManager.ChunkSize +
-            blockPos.X % _vsapi.WorldManager.ChunkSize];
     }
 }

@@ -41,9 +41,11 @@ public static class HarmonyPatches
         __state = __instance.WorldGenConds;
 
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-        var realms = Util.GetChunkRealms(chunk);
+        var biomeData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
+        if (biomeData.IsNullData()) return true;
+
         var cached =
-            _mod.Cache.Vegetation.GetFruitTrees(realms, code, ref __state, ref _mod.Config.FruitTrees);
+            _mod.Cache.Vegetation.GetFruitTrees(biomeData, code, ref __state);
 
         __instance.WorldGenConds = cached;
         return true;
@@ -71,15 +73,14 @@ public static class HarmonyPatches
         __state = (underTreeValue, onTreeValue);
 
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
-        var realms = Util.GetChunkRealms(chunk);
-        if (realms == null) return true;
+        var biomeData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
+        if (biomeData.IsNullData()) return true;
 
-        var cachedUnderTree = _mod.Cache.Vegetation.GetUnderTreePatches(realms, ref underTreeValue,
-            ref _mod.Config.BlockPatches);
+        var cachedUnderTree = _mod.Cache.Vegetation.GetUnderTreePatches(biomeData, ref underTreeValue);
         underTreeField.SetValue(cachedUnderTree);
 
         var cachedOnTree =
-            _mod.Cache.Vegetation.GetTreePatches(realms, ref onTreeValue, ref _mod.Config.BlockPatches);
+            _mod.Cache.Vegetation.GetTreePatches(biomeData, ref onTreeValue);
         onTreeField.SetValue(cachedOnTree);
 
         return true;
@@ -104,11 +105,10 @@ public static class HarmonyPatches
         __state = bpc!.PatchesNonTree;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = Util.GetChunkRealms(chunk);
-        if (realms == null) return true;
+        var biomeData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
+        if (biomeData.IsNullData()) return true;
 
-        bpc.PatchesNonTree = _mod.Cache.Vegetation.GetGroundPatches(realms, ref bpc.PatchesNonTree,
-            ref _mod.Config.BlockPatches);
+        bpc.PatchesNonTree = _mod.Cache.Vegetation.GetGroundPatches(biomeData, ref bpc.PatchesNonTree);
         return true;
     }
 
@@ -132,12 +132,11 @@ public static class HarmonyPatches
         __state = treeGenProps!.ShrubGens;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = Util.GetChunkRealms(chunk);
-        if (realms == null) return true;
+        var biomeData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
+        if (biomeData.IsNullData()) return true;
 
-        realms.Sort(StringComparer.Ordinal);
         treeGenProps.ShrubGens =
-            _mod.Cache.Vegetation.GetShrubs(realms, ref treeGenProps.ShrubGens, ref _mod.Config.Trees);
+            _mod.Cache.Vegetation.GetShrubs(biomeData, ref treeGenProps.ShrubGens);
         return true;
     }
 
@@ -162,11 +161,11 @@ public static class HarmonyPatches
         __state = treeGenProps!.TreeGens;
 
         var chunk = blockAccessor.GetMapChunk(chunkX, chunkZ);
-        var realms = Util.GetChunkRealms(chunk);
-        if (realms == null) return true;
+        var biomeData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
+        if (biomeData.IsNullData()) return true;
 
         treeGenProps.TreeGens =
-            _mod.Cache.Vegetation.GetTrees(realms, ref treeGenProps.TreeGens, ref _mod.Config.Trees);
+            _mod.Cache.Vegetation.GetTrees(biomeData, ref treeGenProps.TreeGens);
         return true;
     }
 

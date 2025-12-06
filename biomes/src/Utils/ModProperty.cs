@@ -22,6 +22,7 @@ internal static class ModPropName
     {
         public const string RiverArray = "bioriverarray";
         public const string RiverBool = "bioriverbool";
+        public const string BiomeData = "biomes:biomedata";
     }
 }
 

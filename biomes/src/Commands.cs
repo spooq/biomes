@@ -25,6 +25,9 @@ public class Commands
             .BeginSubCommand("show")
             .HandleWith(OnShowBiomeCommand)
             .EndSubCommand()
+            .BeginSubCommand("showtwo")
+            .HandleWith(OnShow2BiomeCommand)
+            .EndSubCommand()
             .BeginSubCommand("tree")
             .HandleWith(OnTreesCommand)
             .EndSubCommand()
@@ -227,6 +230,33 @@ public class Commands
             Status = EnumCommandStatus.Success,
             StatusMessage =
                 $"Hemisphere: {hemisphereStr}\nRealms: {realmsStr}\nChunk has river: {chunkRiver}\nBlock has river: {blockRiver}"
+        };
+    }
+
+    private TextCommandResult OnShow2BiomeCommand(TextCommandCallingArgs args)
+    {
+        var chunk = args.Caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(args.Caller.Entity.Pos.AsBlockPos);
+
+        _mod.Mod.Logger.Error($"chunk: ${chunk}");
+        var biomeData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
+        if (biomeData.IsNullData())
+            return new TextCommandResult
+                { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
+
+        var realms = new List<string>();
+        foreach (var (key, value) in _mod.Config.ValidRealmIndexes)
+            if (biomeData.GetRealm(value))
+                realms.Add(key);
+
+        var realmsStr = realms.Join(delimiter: ",");
+
+        var validRiver = biomeData.GetRiver();
+        var validNoRiver = biomeData.GetNoRiver();
+        return new TextCommandResult
+        {
+            Status = EnumCommandStatus.Success,
+            StatusMessage =
+                $"Realms: {realmsStr}\nValid For River Spawns: {validRiver}\nValid for No River Spawns: {validNoRiver}"
         };
     }
 

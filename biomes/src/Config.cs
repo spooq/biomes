@@ -50,6 +50,21 @@ public enum BioRiver
     RiverOnly
 }
 
+public static class BioRiverExtensions
+{
+    public static BioRiver FromString(string value)
+    {
+        var lowercase = value.ToLowerInvariant();
+        return lowercase switch
+        {
+            "false" or "noriver" => BioRiver.NoRiver,
+            "both" => BioRiver.Both,
+            "true" or "riveronly" => BioRiver.RiverOnly,
+            _ => throw new JsonSerializationException($"Unknown bioriver value: {value}")
+        };
+    }
+}
+
 public struct ConfigItem
 {
     public List<string> biorealm = [];
@@ -57,6 +72,27 @@ public struct ConfigItem
 
     public ConfigItem()
     {
+    }
+
+    public BiomeData ToBiomeData(BiomesConfig config)
+    {
+        var biomeDataValue = 0;
+        foreach (var realm in biorealm)
+        {
+            var mask = 1 << config.ValidRealmIndexes[realm];
+            biomeDataValue |= mask;
+        }
+
+        var riverMask = river switch
+        {
+            BioRiver.NoRiver => BiomeData.NoRiverMask,
+            BioRiver.Both => BiomeData.BothMask,
+            BioRiver.RiverOnly => BiomeData.RiverMask,
+            _ => throw new ArgumentOutOfRangeException("What?")
+        };
+        biomeDataValue |= riverMask;
+
+        return new BiomeData(biomeDataValue);
     }
 }
 
@@ -91,9 +127,9 @@ public static class SpawningModeMethods
 
 public class UserConfig
 {
+    public readonly bool AutoMigrateOldData = true;
     public readonly bool Debug = false;
     public readonly List<string> EntitySpawnWhiteList = [];
-    public readonly bool FlipNorthSouth = false;
 
     public readonly RealmGenConfig RealmGenerationConfig = new BlendedRealmConfig
     {
@@ -109,6 +145,8 @@ public class UserConfig
 
 public class BiomesConfig
 {
+    public const int MaxValidRealms = BiomeData.SeasonsBitOffset;
+
     public Dictionary<string, ConfigItem> BlockPatches = [];
     public Dictionary<string, ConfigItem> FruitTrees = [];
 
@@ -130,6 +168,7 @@ public class BiomesConfig
 
     public void LoadConfigs(BiomesModSystem mod, ICoreAPI api)
     {
+        LoadValidRealms(mod, api);
         LoadLegacyConfigs(mod, api);
         LoadUserConfig(api);
         LoadWhitelist(mod, api);
@@ -139,6 +178,9 @@ public class BiomesConfig
     {
         var asset = api.Assets.Get($"{mod.Mod.Info.ModID}:config/realms.json").ToText()!;
         ValidRealms = JsonConvert.DeserializeObject<List<string>>(asset)!;
+        // Arbitrary magic number picked to give 8 bits of headroom
+        if (ValidRealms.Count > MaxValidRealms)
+            throw new Exception($"Realms has too many specified realms, must be < {MaxValidRealms}");
 
         for (var i = 0; i < ValidRealms.Count; i += 1) ValidRealmIndexes[ValidRealms[i]] = i;
     }

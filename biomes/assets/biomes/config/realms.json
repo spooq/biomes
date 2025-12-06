@@ -1,3 +1,9 @@
+// WARNING WARNING WARNING: READ THIS OR ELSE EXPLODE
+// This file represents a canonical list of all valid realms.
+// It is used internally, and changing the order represents a *breaking world gen change*
+// If you want to remove a specific biome or reorder biomes, use the user mod config
+// If you want to add a new biome, *put it at the end* or face consequences.
+// This list must not exceed 16 values due to internal data representation reasons.
 [
   "pacific nearctic",
   "atlantic nearctic",

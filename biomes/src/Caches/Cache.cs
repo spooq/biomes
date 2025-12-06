@@ -2,8 +2,8 @@ using Vintagestory.API.Common;
 
 namespace Biomes.Caches;
 
-public class Cache(BiomesModSystem mod, ICoreAPI api)
+public readonly struct Cache(BiomesModSystem mod, ICoreAPI api)
 {
-    public VegetationCache Vegetation { get; } = new();
+    public VegetationCache Vegetation { get; } = new(mod);
     public EntityCache Entities { get; } = new(mod, api);
 }
