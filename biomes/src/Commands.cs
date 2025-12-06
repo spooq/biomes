@@ -1,5 +1,5 @@
 using System.Runtime.CompilerServices;
-using Biomes.util;
+using Biomes.Utils;
 using HarmonyLib;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;

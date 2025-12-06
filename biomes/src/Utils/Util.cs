@@ -1,6 +1,6 @@
 using Vintagestory.API.Common;
 
-namespace Biomes.util;
+namespace Biomes.Utils;
 
 public class Util
 {

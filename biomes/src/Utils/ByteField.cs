@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace Biomes.util;
+namespace Biomes.Utils;
 
 public struct ByteField(byte value) : IEquatable<ByteField>
 {

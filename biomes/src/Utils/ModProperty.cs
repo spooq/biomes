@@ -1,6 +1,6 @@
 using Vintagestory.API.Common;
 
-namespace Biomes.util;
+namespace Biomes.Utils;
 
 internal static class ModPropName
 {

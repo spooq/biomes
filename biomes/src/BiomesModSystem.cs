@@ -1,5 +1,5 @@
 ﻿using Biomes.RealmGen;
-using Biomes.util;
+using Biomes.Utils;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;

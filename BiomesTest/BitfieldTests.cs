@@ -1,4 +1,4 @@
-using Biomes.util;
+using Biomes.Utils;
 
 namespace BiomesTest;
 
