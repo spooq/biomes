@@ -49,7 +49,7 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
                 var cacheRealms = new HashSet<string>();
                 foreach (var realm in validRealms.AsArray<string>([]))
                 {
-                    if (!mod.Config.Realms.AllRealms().Contains(realm))
+                    if (!mod.Config.ValidRealms.Contains(realm))
                     {
                         mod.Mod.Logger.Error(
                             $"Didn't load invalid realm \"{realm}\" off of \"{entity.Code}\", this is an error");

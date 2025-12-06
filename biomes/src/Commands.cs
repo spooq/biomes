@@ -49,14 +49,14 @@ public class Commands
             .EndSubCommand()
             .BeginSubCommand("add")
             .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm",
-                _mod.Config.Realms.AllRealms()
+                _mod.Config.ValidRealms
                     .Select(i => i.Replace(' ', '_'))
                     .ToArray()))
             .HandleWith(OnAddRealmCommand)
             .EndSubCommand()
             .BeginSubCommand("remove")
             .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm",
-                _mod.Config.Realms.AllRealms()
+                _mod.Config.ValidRealms
                     .Select(i => i.Replace(' ', '_'))
                     .ToArray()))
             .HandleWith(OnRemoveRealmCommand)

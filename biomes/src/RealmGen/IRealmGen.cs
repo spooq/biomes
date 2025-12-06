@@ -7,6 +7,29 @@ using Vintagestory.API.Server;
 
 namespace Biomes.RealmGen;
 
+public static class DefaultRealmOrder
+{
+    public static readonly List<string> Northern =
+    [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+    ];
+
+    public static readonly List<string> Southern =
+    [
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+    ];
+}
+
 // this is required to not result in an infinite recursion when reading, json.net sucks
 public class NoAttributeConvertersContractResolver : DefaultContractResolver
 {
@@ -81,8 +104,8 @@ public interface IRealmGen
     {
         return config.User.RealmGenerationConfig switch
         {
-            BlendedRealmConfig blendedRealmConfig => new BlendedRealmGen(config.Realms, blendedRealmConfig),
-            ClassicGenConfig => new ClassicRealmGen(config),
+            BlendedRealmConfig blendedRealmConfig => new BlendedRealmGen(blendedRealmConfig),
+            ClassicGenConfig classicGenConfig => new ClassicRealmGen(classicGenConfig),
             _ => throw new ArgumentOutOfRangeException(nameof(config))
         };
     }

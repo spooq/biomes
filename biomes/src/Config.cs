@@ -60,22 +60,6 @@ public struct ConfigItem
     }
 }
 
-public class RealmsConfig(List<string> northernRealms, List<string> southernRealms)
-{
-    public readonly List<string> NorthernRealms = northernRealms;
-    public readonly List<string> SouthernRealms = southernRealms;
-
-    public List<string> AllRealms()
-    {
-        return NorthernRealms.Union(SouthernRealms).ToList();
-    }
-
-    public RealmsConfig Flipped()
-    {
-        return new RealmsConfig(SouthernRealms, NorthernRealms);
-    }
-}
-
 public enum NoSupportSpawningMode
 {
     Allow,
@@ -114,7 +98,9 @@ public class UserConfig
     public readonly RealmGenConfig RealmGenerationConfig = new BlendedRealmConfig
     {
         ChunkHorizontalBlendThreshold = 0.001,
-        ChunkLatBlendThreshold = 0.01
+        ChunkLatBlendThreshold = 0.01,
+        NorthernRealms = DefaultRealmOrder.Northern,
+        SouthernRealms = DefaultRealmOrder.Southern
     };
 
     [JsonConverter(typeof(StringEnumConverter))]
@@ -126,9 +112,12 @@ public class BiomesConfig
     public Dictionary<string, ConfigItem> BlockPatches = [];
     public Dictionary<string, ConfigItem> FruitTrees = [];
 
-    public RealmsConfig Realms = new([], []);
     public Dictionary<string, ConfigItem> Trees = [];
+
+
     public UserConfig User = new();
+    public Dictionary<string, int> ValidRealmIndexes = new();
+    public List<string> ValidRealms = [];
 
     public List<string> Whitelist = [];
 
@@ -137,22 +126,21 @@ public class BiomesConfig
         User = api.LoadModConfig<UserConfig>("biomes.json");
         User ??= new UserConfig();
         api.StoreModConfig(User, "biomes.json");
-
-        if (User.FlipNorthSouth) Realms = Realms.Flipped();
     }
 
     public void LoadConfigs(BiomesModSystem mod, ICoreAPI api)
     {
-        LoadRealms(mod, api);
         LoadLegacyConfigs(mod, api);
         LoadUserConfig(api);
         LoadWhitelist(mod, api);
     }
 
-    public void LoadRealms(BiomesModSystem mod, ICoreAPI api)
+    public void LoadValidRealms(BiomesModSystem mod, ICoreAPI api)
     {
         var asset = api.Assets.Get($"{mod.Mod.Info.ModID}:config/realms.json").ToText()!;
-        Realms = JsonConvert.DeserializeObject<RealmsConfig>(asset)!;
+        ValidRealms = JsonConvert.DeserializeObject<List<string>>(asset)!;
+
+        for (var i = 0; i < ValidRealms.Count; i += 1) ValidRealmIndexes[ValidRealms[i]] = i;
     }
 
     public void LoadLegacyConfigs(BiomesModSystem mod, ICoreAPI api)

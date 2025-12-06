@@ -8,11 +8,15 @@ namespace Biomes.RealmGen;
 public class ClassicGenConfig : RealmGenConfig
 {
     public const string TypeKey = "classic";
+
+    public List<string> NorthernRealms = DefaultRealmOrder.Northern;
+
+    public List<string> SouthernRealms = DefaultRealmOrder.Southern;
 }
 
 // original generation style from 1.0. Slow and deeply flawed, included purely as a compatibility measure for those
 // who really don't want odd realm generation at borders of existing world.
-public class ClassicRealmGen(BiomesConfig config) : IRealmGen
+public class ClassicRealmGen(ClassicGenConfig config) : IRealmGen
 {
     public List<string> GetRealmsForBlockPos(ICoreServerAPI api, BlockPos blockPos)
     {
@@ -42,16 +46,16 @@ public class ClassicRealmGen(BiomesConfig config) : IRealmGen
     {
         // modconfig.flipworld exchanges the lists, so we always choose the same here no matter what
         return hemisphere == EnumHemisphere.North
-            ? config.Realms.NorthernRealms[realm]
-            : config.Realms.SouthernRealms[realm];
+            ? config.NorthernRealms[realm]
+            : config.SouthernRealms[realm];
     }
 
 
     private int CalculateValues(ICoreServerAPI api, int chunkX, int chunkZ, EnumHemisphere hemisphere)
     {
         var realmCount = hemisphere == EnumHemisphere.North
-            ? config.Realms.NorthernRealms.Count
-            : config.Realms.SouthernRealms.Count;
+            ? config.NorthernRealms.Count
+            : config.SouthernRealms.Count;
 
         var worldWidthInChunks = api.WorldManager.MapSizeX / api.WorldManager.ChunkSize;
         var realmWidthInChunks = worldWidthInChunks / (float)realmCount;

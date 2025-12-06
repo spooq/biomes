@@ -8,18 +8,20 @@ public class BlendedRealmConfig : RealmGenConfig
     public const string TypeKey = "blended";
     public double ChunkHorizontalBlendThreshold = 0.001;
     public double ChunkLatBlendThreshold = 0.01;
+    public List<string> NorthernRealms = DefaultRealmOrder.Northern;
+    public List<string> SouthernRealms = DefaultRealmOrder.Southern;
 }
 
 public class BlendedRealmGen : IRealmGen
 {
     private readonly List<Rect> _rects = [];
 
-    public BlendedRealmGen(RealmsConfig realmsConfig, BlendedRealmConfig blendedRealmConfig)
+    public BlendedRealmGen(BlendedRealmConfig blendedRealmConfig)
     {
         var index = 0;
-        var northernCount = realmsConfig.NorthernRealms.Count;
+        var northernCount = blendedRealmConfig.NorthernRealms.Count;
         var northSlice = 1.0 / northernCount;
-        foreach (var northern in realmsConfig.NorthernRealms)
+        foreach (var northern in blendedRealmConfig.NorthernRealms)
         {
             var xMin = Math.Max(0, index * northSlice - blendedRealmConfig.ChunkHorizontalBlendThreshold);
             var xMax = Math.Min(1.0, (index + 1) * northSlice + blendedRealmConfig.ChunkHorizontalBlendThreshold);
@@ -28,10 +30,10 @@ public class BlendedRealmGen : IRealmGen
             index += 1;
         }
 
-        var southernCount = realmsConfig.SouthernRealms.Count;
+        var southernCount = blendedRealmConfig.SouthernRealms.Count;
         var southSlice = 1.0 / southernCount;
         index = 0;
-        foreach (var southern in realmsConfig.SouthernRealms)
+        foreach (var southern in blendedRealmConfig.SouthernRealms)
         {
             var xMin = Math.Max(0, index * southSlice - blendedRealmConfig.ChunkHorizontalBlendThreshold);
             var xMax = Math.Min(1.0, (index + 1) * southSlice + blendedRealmConfig.ChunkHorizontalBlendThreshold);
