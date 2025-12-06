@@ -9,13 +9,13 @@ namespace Biomes;
 
 public class Commands
 {
-    private readonly BiomesModSystem _biomesMod;
+    private readonly BiomesModSystem _mod;
     private readonly ICoreServerAPI _sapi;
 
 
     public Commands(BiomesModSystem mod, ICoreServerAPI sapi)
     {
-        _biomesMod = mod;
+        _mod = mod;
         _sapi = sapi;
 
         _sapi.ChatCommands.Create("biomes")
@@ -49,14 +49,14 @@ public class Commands
             .EndSubCommand()
             .BeginSubCommand("add")
             .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm",
-                _biomesMod.Config.Realms.AllRealms()
+                _mod.Config.Realms.AllRealms()
                     .Select(i => i.Replace(' ', '_'))
                     .ToArray()))
             .HandleWith(OnAddRealmCommand)
             .EndSubCommand()
             .BeginSubCommand("remove")
             .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm",
-                _biomesMod.Config.Realms.AllRealms()
+                _mod.Config.Realms.AllRealms()
                     .Select(i => i.Replace(' ', '_'))
                     .ToArray()))
             .HandleWith(OnRemoveRealmCommand)
@@ -72,7 +72,7 @@ public class Commands
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
         var trees = new List<string>();
-        foreach (var item in _biomesMod.Config.Trees)
+        foreach (var item in _mod.Config.Trees)
             if (item.Value.biorealm.Intersect(chunkRealms).Any())
                 trees.Add(item.Key);
 
@@ -90,7 +90,7 @@ public class Commands
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
         var trees = new List<string>();
-        foreach (var item in _biomesMod.Config.FruitTrees)
+        foreach (var item in _mod.Config.FruitTrees)
             if (item.Value.biorealm.Intersect(chunkRealms).Any())
                 trees.Add(item.Key);
 
@@ -108,7 +108,7 @@ public class Commands
                 { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
 
         var bp = new List<string>();
-        foreach (var item in _biomesMod.Config.BlockPatches)
+        foreach (var item in _mod.Config.BlockPatches)
             if (item.Value.biorealm.Intersect(chunkRealms).Any())
                 bp.Add(item.Key);
 
@@ -148,7 +148,7 @@ public class Commands
         var entityTypes = new List<string>();
         foreach (var entity in _sapi.World.EntityTypes)
             if ((entity.Attributes == null || !entity.Attributes.KeyExists(ModPropName.Entity.Realm)) &&
-                !_biomesMod.Entities.Whitelist.Contains(entity.Code))
+                !_mod.Cache.Entities.Whitelist.Contains(entity.Code))
                 entityTypes.Add(entity.Code);
 
         var msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
@@ -167,7 +167,7 @@ public class Commands
 
         var entityTypes = new List<string>();
         foreach (var entity in _sapi.World.EntityTypes)
-            if (_biomesMod.Entities.Whitelist.Contains(entity.Code))
+            if (_mod.Cache.Entities.Whitelist.Contains(entity.Code))
                 entityTypes.Add(entity.Code);
 
         var msg = entityTypes.Order().Distinct().Join(delimiter: "\r\n");
@@ -195,7 +195,7 @@ public class Commands
         var riversModNotInstalled = Lang.Get("chunknotgenwithrivers");
         var chunkRiver = riversModNotInstalled;
         var blockRiver = riversModNotInstalled;
-        if (_biomesMod.IsRiversModInstalled)
+        if (_mod.IsRiversModInstalled)
         {
             var cr = false;
             if (ModProperty.Get(args.Caller, ModPropName.MapChunk.RiverBool, ref cr) !=

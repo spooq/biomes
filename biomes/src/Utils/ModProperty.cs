@@ -31,7 +31,7 @@ internal static class ModProperty
     {
         if (chunk == null)
             return EnumCommandStatus.Error;
-        
+
         value = chunk.GetModdata<T>(name);
         return value == null ? EnumCommandStatus.Error : EnumCommandStatus.Success;
     }
@@ -46,12 +46,12 @@ internal static class ModProperty
     {
         if (chunk == null)
             return EnumCommandStatus.Error;
-        
+
         chunk.SetModdata(name, value);
         chunk.MarkDirty();
         return EnumCommandStatus.Success;
     }
-    
+
     public static EnumCommandStatus Set(Caller caller, string name, object value)
     {
         var chunk = caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(caller.Entity.Pos.AsBlockPos);

@@ -13,7 +13,6 @@ public class NoAttributeConvertersContractResolver : DefaultContractResolver
     protected override JsonContract CreateContract(Type objectType)
     {
         var contract = base.CreateContract(objectType);
-        // Remove any converter that may have been attached via attribute on the type
         contract.Converter = null;
         return contract;
     }
@@ -21,7 +20,6 @@ public class NoAttributeConvertersContractResolver : DefaultContractResolver
     protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
     {
         var prop = base.CreateProperty(member, memberSerialization);
-        // Remove converters that may have been attached via attribute on the property
         prop.Converter = null;
         return prop;
     }

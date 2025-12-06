@@ -43,7 +43,7 @@ public static class HarmonyPatches
         var chunk = blockAccessor.GetMapChunkAtBlockPos(pos);
         var realms = Util.GetChunkRealms(chunk);
         var cached =
-            _mod.Cache.GetCachedFruitTrees(realms, code, ref __state, ref _mod.Config.FruitTrees);
+            _mod.Cache.Vegetation.GetFruitTrees(realms, code, ref __state, ref _mod.Config.FruitTrees);
 
         __instance.WorldGenConds = cached;
         return true;
@@ -74,12 +74,12 @@ public static class HarmonyPatches
         var realms = Util.GetChunkRealms(chunk);
         if (realms == null) return true;
 
-        var cachedUnderTree = _mod.Cache.GetCachedUnderTreePatches(realms, ref underTreeValue,
+        var cachedUnderTree = _mod.Cache.Vegetation.GetUnderTreePatches(realms, ref underTreeValue,
             ref _mod.Config.BlockPatches);
         underTreeField.SetValue(cachedUnderTree);
 
         var cachedOnTree =
-            _mod.Cache.GetCachedTreePatches(realms, ref onTreeValue, ref _mod.Config.BlockPatches);
+            _mod.Cache.Vegetation.GetTreePatches(realms, ref onTreeValue, ref _mod.Config.BlockPatches);
         onTreeField.SetValue(cachedOnTree);
 
         return true;
@@ -107,7 +107,7 @@ public static class HarmonyPatches
         var realms = Util.GetChunkRealms(chunk);
         if (realms == null) return true;
 
-        bpc.PatchesNonTree = _mod.Cache.GetCachedGroundPatches(realms, ref bpc.PatchesNonTree,
+        bpc.PatchesNonTree = _mod.Cache.Vegetation.GetGroundPatches(realms, ref bpc.PatchesNonTree,
             ref _mod.Config.BlockPatches);
         return true;
     }
@@ -137,7 +137,7 @@ public static class HarmonyPatches
 
         realms.Sort(StringComparer.Ordinal);
         treeGenProps.ShrubGens =
-            _mod.Cache.GetCachedShrubs(realms, ref treeGenProps.ShrubGens, ref _mod.Config.Trees);
+            _mod.Cache.Vegetation.GetShrubs(realms, ref treeGenProps.ShrubGens, ref _mod.Config.Trees);
         return true;
     }
 
@@ -166,7 +166,7 @@ public static class HarmonyPatches
         if (realms == null) return true;
 
         treeGenProps.TreeGens =
-            _mod.Cache.GetCachedTrees(realms, ref treeGenProps.TreeGens, ref _mod.Config.Trees);
+            _mod.Cache.Vegetation.GetTrees(realms, ref treeGenProps.TreeGens, ref _mod.Config.Trees);
         return true;
     }
 
@@ -186,7 +186,7 @@ public static class HarmonyPatches
     public static bool CanSpawnAtPosition(ref bool __result, IBlockAccessor blockAccessor, EntityProperties type,
         BlockPos pos, BaseSpawnConditions sc)
     {
-        __result = _mod.Entities.IsSpawnValid(blockAccessor.GetMapChunkAtBlockPos(pos), type, pos);
+        __result = _mod.Cache.Entities.IsSpawnValid(blockAccessor.GetMapChunkAtBlockPos(pos), type, pos);
         return __result;
     }
 
@@ -196,6 +196,7 @@ public static class HarmonyPatches
     public static bool CanSpawnAt(ref Vec3d? __result, EntityProperties type, Vec3i spawnPosition,
         RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
     {
-        return chunkCol.Length != 0 && _mod.Entities.IsSpawnValid(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
+        return chunkCol.Length != 0 &&
+               _mod.Cache.Entities.IsSpawnValid(chunkCol[0].MapChunk, type, spawnPosition.AsBlockPos);
     }
 }

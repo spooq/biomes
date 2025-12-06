@@ -4,9 +4,9 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 
-namespace Biomes;
+namespace Biomes.Caches;
 
-public class Entities(BiomesModSystem mod, ICoreAPI vsapi)
+public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
 {
     // bytemask with all 4 seasons set
     private const byte AllSeasons = 0b0000_1111;

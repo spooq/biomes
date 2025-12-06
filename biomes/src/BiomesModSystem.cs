@@ -1,4 +1,5 @@
-﻿using Biomes.RealmGen;
+﻿using Biomes.Caches;
+using Biomes.RealmGen;
 using Biomes.Utils;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
@@ -24,9 +25,9 @@ public class BiomesModSystem : ModSystem
     private Commands _commands;
 
     private ICoreServerAPI _vsapi = null!;
-    public RealmCache Cache = null!;
+
+    public Cache Cache = null!;
     public BiomesConfig Config = new();
-    public Entities Entities = null!;
 
     public bool IsRiversModInstalled = false;
     public IRealmGen RealmGen = null!;
@@ -41,8 +42,7 @@ public class BiomesModSystem : ModSystem
     {
         base.StartPre(api);
 
-        Cache = new RealmCache();
-        Entities = new Entities(this, api);
+        Cache = new Cache(this, api);
     }
 
     public override void AssetsLoaded(ICoreAPI api)
@@ -57,7 +57,7 @@ public class BiomesModSystem : ModSystem
     public override void AssetsFinalize(ICoreAPI api)
     {
         base.AssetsFinalize(api);
-        Entities.BuildCaches(Config);
+        Cache.Entities.BuildCaches(Config);
     }
 
     public override void StartServerSide(ICoreServerAPI api)
