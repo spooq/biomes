@@ -42,7 +42,8 @@ public class BiomesModSystem : ModSystem
     {
         base.StartPre(api);
 
-        RuntimeTypeModel.Default.Add(typeof(BiomeData), false).SetSurrogate(typeof(BiomeDataSurrogate));
+        if (!RuntimeTypeModel.Default.IsDefined(typeof(BiomeData)))
+            RuntimeTypeModel.Default.Add(typeof(BiomeData), false).SetSurrogate(typeof(BiomeDataSurrogate));
 
 
         Cache = new Cache(this, api);
@@ -132,7 +133,6 @@ public class BiomesModSystem : ModSystem
         Cache.ChunkData.CacheData(new FastVec2i(chunkPos.X, chunkPos.Y), chunkBiomeData);
     }
 
-    // Eventually will be used for cache eviction
     private void OnChunkUnloaded(Vec2i chunkCoord, IWorldChunk[] chunks)
     {
         var fastvec = new FastVec2i(chunkCoord.X, chunkCoord.Y);

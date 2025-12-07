@@ -183,4 +183,15 @@ public struct BiomeData(int initialValue)
             return Unsafe.As<uint, int>(ref result);
         }
     }
+
+    public List<string> RealmNames(BiomesConfig config)
+    {
+        List<string> outList = [];
+
+        foreach (var (name, index) in config.ValidRealmIndexes)
+            if (GetRealm(index))
+                outList.Add(name);
+
+        return outList;
+    }
 }
