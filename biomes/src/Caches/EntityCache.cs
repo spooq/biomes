@@ -90,15 +90,12 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
         }
     }
 
-    public bool IsSpawnValid(IMapChunk? mapChunk, EntityProperties type, BlockPos blockPos = null)
+    public bool IsSpawnValid(EntityProperties type, BlockPos blockPos = null)
     {
-        if (mapChunk == null) return false;
-
         var code = type.Code!;
         if (Whitelist.Contains(code)) return true;
 
-        BiomeData entityData;
-        if (!_entityCache.TryGetValue(code, out entityData))
+        if (!_entityCache.TryGetValue(code, out var entityData))
         {
             _alreadyRecordedNoHit ??= [];
             if (mod.Config.User.SpawnMode.ShouldWarn() &&
@@ -112,9 +109,7 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
             return mod.Config.User.SpawnMode.ShouldAllowByDefaut();
         }
 
-        var chunkData = new BiomeData(0);
-        if (ModProperty.Get(mapChunk, ModPropName.MapChunk.BiomeData, ref chunkData) == EnumCommandStatus.Error)
-            return true;
+        var chunkData = mod.Cache.ChunkData.GetBiomeData(blockPos);
 
         if (!chunkData.CheckRealmAndRiverAgainst(entityData)) return false;
 
