@@ -77,17 +77,36 @@ public struct BiomeData(int initialValue)
         return Value.Data == new BitVector32(0).Data;
     }
 
+    public bool CheckRealmsAgainst(BiomeData biomeData)
+    {
+        var ourRealms = Value.Data & AllRealmsMask;
+        var theirRealms = biomeData.Value.Data & AllRealmsMask;
+        return (ourRealms & theirRealms) != 0;
+    }
+
+    public bool CheckRiverAgainst(BiomeData biomeData)
+    {
+        var ourRiver = Value.Data & BothMask;
+        var theirRiver = biomeData.Value.Data & BothMask;
+        return (ourRiver & theirRiver) != 0;
+    }
+
+    public bool CheckSeasonAgainst(BiomeData biomeData)
+    {
+        var ourSeasons = Value.Data & AllSeasonsMask;
+        var theirSeasons = biomeData.Value.Data & AllSeasonsMask;
+
+        return (ourSeasons & theirSeasons) != 0;
+    }
+
     public bool CheckAgainst(BiomeData biomeData)
     {
-        return (Value.Data & biomeData.Value.Data) != 0;
+        return CheckRealmsAgainst(biomeData) && CheckRiverAgainst(biomeData) && CheckSeasonAgainst(biomeData);
     }
 
     public bool CheckRealmAndRiverAgainst(BiomeData biomeData)
     {
-        var ourNoSeasons = Value.Data & ~AllSeasonsMask;
-        var theirsNoSeasons = biomeData.Value.Data & ~AllSeasonsMask;
-
-        return (ourNoSeasons & theirsNoSeasons) != 0;
+        return CheckRealmsAgainst(biomeData) && CheckRiverAgainst(biomeData);
     }
 
 

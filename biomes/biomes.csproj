@@ -33,7 +33,7 @@
     <DataFolder>$(UserConfigDir)\$(DataFolderName)</DataFolder>
     <EntityDataFolder>$(UserConfigDir)/$(EntityDataFolderName)</EntityDataFolder>
     <PlantDataFolder>$(UserConfigDir)/$(PlantDataFolderName)</PlantDataFolder>
-    <FullDataFolder>UserConfigDir/$(FullDataFolderName)</FullDataFolder>
+    <FullDataFolder>$(UserConfigDir)/$(FullDataFolderName)</FullDataFolder>
     <AditionalModsFolder>$(UserConfigDir)\$(DataFolderName)\Mods</AditionalModsFolder>
     <WorldName>test_biomes</WorldName>
     <ModDir>$(ProjectDir)\$(OutputDir)</ModDir>

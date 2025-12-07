@@ -35,7 +35,7 @@ public class VegetationCache(BiomesModSystem mod)
         {
             if (!blockPatch.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x))) continue;
             var validBiomeData = item.Value.ToBiomeData(mod.Config);
-            if (!biomeData.CheckAgainst(validBiomeData)) continue;
+            if (!biomeData.CheckRealmAndRiverAgainst(validBiomeData)) continue;
             validList.Add(blockPatch);
             break;
         }
@@ -52,7 +52,7 @@ public class VegetationCache(BiomesModSystem mod)
         {
             if (!blockPatch.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x))) continue;
             var validBiomeData = item.Value.ToBiomeData(mod.Config);
-            if (!biomeData.CheckAgainst(validBiomeData)) continue;
+            if (!biomeData.CheckRealmAndRiverAgainst(validBiomeData)) continue;
             validList.Add(blockPatch);
             break;
         }
@@ -69,7 +69,7 @@ public class VegetationCache(BiomesModSystem mod)
         {
             if (!blockPatch.blockCodes.Select(x => x.Path).Any(x => WildcardUtil.Match(item.Key, x))) continue;
             var validBiomeData = item.Value.ToBiomeData(mod.Config);
-            if (!biomeData.CheckAgainst(validBiomeData)) continue;
+            if (!biomeData.CheckRealmAndRiverAgainst(validBiomeData)) continue;
             validList.Add(blockPatch);
             break;
         }
@@ -86,7 +86,7 @@ public class VegetationCache(BiomesModSystem mod)
         {
             if (!WildcardUtil.Match(item.Key, treeVariant.Generator.GetName())) continue;
             var validBiomeData = item.Value.ToBiomeData(mod.Config);
-            if (!biomeData.CheckAgainst(validBiomeData)) continue;
+            if (!biomeData.CheckRealmAndRiverAgainst(validBiomeData)) continue;
             validList.Add(treeVariant);
             break;
         }
@@ -105,7 +105,7 @@ public class VegetationCache(BiomesModSystem mod)
         {
             if (!WildcardUtil.Match(item.Key, treeVariant.Type)) continue;
             var validBiomeData = item.Value.ToBiomeData(mod.Config);
-            if (!biomeData.CheckAgainst(validBiomeData)) continue;
+            if (!biomeData.CheckRealmAndRiverAgainst(validBiomeData)) continue;
             validList.Add(treeVariant);
             break;
         }
@@ -122,7 +122,7 @@ public class VegetationCache(BiomesModSystem mod)
         {
             if (!WildcardUtil.Match(item.Key, treeVariant.Generator.GetName())) continue;
             var validBiomeData = item.Value.ToBiomeData(mod.Config);
-            if (!biomeData.CheckAgainst(validBiomeData)) continue;
+            if (!biomeData.CheckRealmAndRiverAgainst(validBiomeData)) continue;
             validList.Add(treeVariant);
             break;
         }
