@@ -23,7 +23,7 @@
     "ShaeTsu"
   ],
   "description": "Separates the world into distinct biomes to increase world variety",
-  "version": "2.0.0-dev.7",
+  "version": "2.0.0-dev.8",
   "dependencies": {
     "game": "1.21.0"
   },
