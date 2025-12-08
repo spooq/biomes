@@ -127,20 +127,43 @@ public static class SpawningModeMethods
 
 public class UserConfig
 {
-    public readonly bool AutoMigrateOldData = true;
-    public readonly bool Debug = false;
-    public readonly List<string> EntitySpawnWhiteList = [];
+    public bool AutoMigrateOldData = true;
+    public bool Debug;
+    public List<string> EntitySpawnWhiteList = [];
 
-    public readonly RealmGenConfig RealmGenerationConfig = new BlendedRealmConfig
+    public RealmGenConfig RealmGenerationConfig = new BlendedRealmConfig
     {
         ChunkHorizontalBlendThreshold = 0.001,
         ChunkLatBlendThreshold = 0.01,
-        NorthernRealms = DefaultRealmOrder.Northern,
-        SouthernRealms = DefaultRealmOrder.Southern
+        NorthernRealms = [],
+        SouthernRealms = []
     };
 
     [JsonConverter(typeof(StringEnumConverter))]
-    public readonly NoSupportSpawningMode SpawnMode = NoSupportSpawningMode.AllowButWarn;
+    public NoSupportSpawningMode SpawnMode = NoSupportSpawningMode.AllowButWarn;
+
+    // json.net is a stupid library that is bad and sucks
+    // it merges lists by default instead of overwriting keys. Why.
+    // if you use class defaults like any normal person would expect to work, it creates a new instance then
+    // helpfully merges the new defaults with what was parsed and then returns that. On a pure function.
+    // What the fuck.
+    public static UserConfig DefaultConfig()
+    {
+        return new UserConfig
+        {
+            AutoMigrateOldData = true,
+            Debug = false,
+            EntitySpawnWhiteList = [],
+            RealmGenerationConfig = new BlendedRealmConfig
+            {
+                ChunkHorizontalBlendThreshold = 0.001,
+                ChunkLatBlendThreshold = 0.01,
+                NorthernRealms = DefaultRealmOrder.Northern,
+                SouthernRealms = DefaultRealmOrder.Southern
+            },
+            SpawnMode = NoSupportSpawningMode.Allow
+        };
+    }
 }
 
 public class BiomesConfig
@@ -162,7 +185,8 @@ public class BiomesConfig
     private void LoadUserConfig(ICoreAPI api)
     {
         User = api.LoadModConfig<UserConfig>("biomes.json");
-        User ??= new UserConfig();
+        User ??= UserConfig.DefaultConfig();
+
         api.StoreModConfig(User, "biomes.json");
     }
 

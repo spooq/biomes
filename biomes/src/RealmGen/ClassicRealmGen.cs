@@ -9,9 +9,9 @@ public class ClassicGenConfig : RealmGenConfig
 {
     public const string TypeKey = "classic";
 
-    public List<string> NorthernRealms = DefaultRealmOrder.Northern;
+    public List<string> NorthernRealms = [];
 
-    public List<string> SouthernRealms = DefaultRealmOrder.Southern;
+    public List<string> SouthernRealms = [];
 }
 
 // original generation style from 1.0. Slow and deeply flawed, included purely as a compatibility measure for those

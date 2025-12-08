@@ -8,8 +8,8 @@ public class BlendedRealmConfig : RealmGenConfig
     public const string TypeKey = "blended";
     public double ChunkHorizontalBlendThreshold = 0.001;
     public double ChunkLatBlendThreshold = 0.01;
-    public List<string> NorthernRealms = DefaultRealmOrder.Northern;
-    public List<string> SouthernRealms = DefaultRealmOrder.Southern;
+    public List<string> NorthernRealms = [];
+    public List<string> SouthernRealms = [];
 }
 
 public class BlendedRealmGen : IRealmGen
