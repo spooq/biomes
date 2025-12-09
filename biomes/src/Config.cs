@@ -187,6 +187,16 @@ public class BiomesConfig
         User = api.LoadModConfig<UserConfig>("biomes.json");
         User ??= UserConfig.DefaultConfig();
 
+        // TODO: User config needs an overhaul in general, hack to fix a critical issue
+        if (User.RealmGenerationConfig is BlendedRealmConfig realmConf)
+            // this doesn't make sense as a config and means you likely have an old config
+            if (realmConf.NorthernRealms.Count == 0 &&
+                realmConf.SouthernRealms.Count == 0)
+            {
+                realmConf.NorthernRealms = DefaultRealmOrder.Northern;
+                realmConf.SouthernRealms = DefaultRealmOrder.Southern;
+            }
+
         api.StoreModConfig(User, "biomes.json");
     }
 
