@@ -96,7 +96,8 @@ public sealed class PackageTask : FrostingTask<BuildContext>
         context.EnsureDirectoryExists("../Releases");
         context.CleanDirectory("../Releases");
         context.EnsureDirectoryExists($"../Releases/{context.Name}");
-        context.CopyFiles($"../{BuildContext.ProjectName}/bin/{context.BuildConfiguration}/Mods/biomes/publish/*",
+        context.CopyFiles(
+            $"../{BuildContext.ProjectName}/bin/{context.BuildConfiguration}/Mods/{context.Name}/publish/*",
             $"../Releases/{context.Name}");
         if (context.DirectoryExists($"../{BuildContext.ProjectName}/assets"))
             context.CopyDirectory($"../{BuildContext.ProjectName}/assets", $"../Releases/{context.Name}/assets");
@@ -106,6 +107,8 @@ public sealed class PackageTask : FrostingTask<BuildContext>
             context.CopyFile($"../{BuildContext.ProjectName}/modicon.png", $"../Releases/{context.Name}/modicon.png");
 
         context.CopyFile("../LICENSE", $"../Releases/{context.Name}/LICENSE");
+        if (!context.FileExists($"../Releases/{context.Name}/Biomes.dll"))
+            throw new CakeException("Biomes.dll wasn't in the expected place, packaging failed");
         context.Zip($"../Releases/{context.Name}", $"../Releases/{context.Name}_{context.Version}.zip");
     }
 }
