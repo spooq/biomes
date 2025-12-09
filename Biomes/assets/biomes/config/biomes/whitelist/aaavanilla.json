@@ -29,5 +29,9 @@
   "game:shiver-*",
   //humanoids
   "game:humanoid-*",
-  "game:villager-*"
+  "game:villager-*",
+  
+  // tame elk
+  "game:semitameddeer*",
+  "game:tamedeer*"
 ]
