@@ -3,6 +3,7 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
         <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
+        <RootNamespace>CakeBuild</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

@@ -26,11 +26,7 @@ public static class Program
 
 public class BuildContext : FrostingContext
 {
-    public const string ProjectName = "biomes";
-    public string BuildConfiguration { get; }
-    public string Version { get; }
-    public string Name { get; }
-    public bool SkipJsonValidation { get; }
+    public const string ProjectName = "Biomes";
 
     public BuildContext(ICakeContext context)
         : base(context)
@@ -41,6 +37,11 @@ public class BuildContext : FrostingContext
         Version = modInfo.Version;
         Name = modInfo.ModID;
     }
+
+    public string BuildConfiguration { get; }
+    public string Version { get; }
+    public string Name { get; }
+    public bool SkipJsonValidation { get; }
 }
 
 [TaskName("ValidateJson")]
@@ -48,14 +49,10 @@ public sealed class ValidateJsonTask : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        if (context.SkipJsonValidation)
-        {
-            return;
-        }
+        if (context.SkipJsonValidation) return;
 
         var jsonFiles = context.GetFiles($"../{BuildContext.ProjectName}/assets/**/*.json");
         foreach (var file in jsonFiles)
-        {
             try
             {
                 var json = File.ReadAllText(file.FullPath);
@@ -66,7 +63,6 @@ public sealed class ValidateJsonTask : FrostingTask<BuildContext>
                 throw new Exception(
                     $"Validation failed for JSON file: {file.FullPath}{Environment.NewLine}{ex.Message}", ex);
             }
-        }
     }
 }
 
@@ -103,15 +99,11 @@ public sealed class PackageTask : FrostingTask<BuildContext>
         context.CopyFiles($"../{BuildContext.ProjectName}/bin/{context.BuildConfiguration}/Mods/biomes/publish/*",
             $"../Releases/{context.Name}");
         if (context.DirectoryExists($"../{BuildContext.ProjectName}/assets"))
-        {
             context.CopyDirectory($"../{BuildContext.ProjectName}/assets", $"../Releases/{context.Name}/assets");
-        }
 
         context.CopyFile($"../{BuildContext.ProjectName}/modinfo.json", $"../Releases/{context.Name}/modinfo.json");
         if (context.FileExists($"../{BuildContext.ProjectName}/modicon.png"))
-        {
             context.CopyFile($"../{BuildContext.ProjectName}/modicon.png", $"../Releases/{context.Name}/modicon.png");
-        }
 
         context.CopyFile("../LICENSE", $"../Releases/{context.Name}/LICENSE");
         context.Zip($"../Releases/{context.Name}", $"../Releases/{context.Name}_{context.Version}.zip");
