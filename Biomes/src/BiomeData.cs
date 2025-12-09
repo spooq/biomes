@@ -172,18 +172,13 @@ public struct BiomeData(int initialValue)
     {
         switch (bioRiver)
         {
-            case BioRiver.NoRiver:
-                SetNoRiver(true);
-                break;
+            case BioRiver.NoRiver: SetNoRiver(true); break;
             case BioRiver.Both:
                 SetNoRiver(true);
                 SetRiver(true);
                 break;
-            case BioRiver.RiverOnly:
-                SetRiver(true);
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(bioRiver), bioRiver, null);
+            case BioRiver.RiverOnly: SetRiver(true); break;
+            default: throw new ArgumentOutOfRangeException(nameof(bioRiver), bioRiver, null);
         }
     }
 

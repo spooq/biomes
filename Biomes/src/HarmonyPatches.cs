@@ -32,8 +32,12 @@ public static class HarmonyPatches
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
-    public static bool TryPlaceBlockForWorldGenPrefix(ref BlockFruitTreeBranch __instance,
-        out FruitTreeWorldGenConds[] __state, IBlockAccessor blockAccessor, BlockPos pos)
+    public static bool TryPlaceBlockForWorldGenPrefix(
+        ref BlockFruitTreeBranch __instance,
+        out FruitTreeWorldGenConds[] __state,
+        IBlockAccessor blockAccessor,
+        BlockPos pos
+    )
     {
         var code = __instance.Code!;
         __state = __instance.WorldGenConds;
@@ -41,8 +45,7 @@ public static class HarmonyPatches
         var biomeData = _mod.Cache.ChunkData.GetBiomeData(pos);
         if (biomeData.IsNullData()) return true;
 
-        var cached =
-            _mod.Cache.Vegetation.GetFruitTrees(biomeData, code, ref __state);
+        var cached = _mod.Cache.Vegetation.GetFruitTrees(biomeData, code, ref __state);
 
         __instance.WorldGenConds = cached;
         return true;
@@ -50,16 +53,22 @@ public static class HarmonyPatches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
-    public static void TryPlaceBlockForWorldGenPostfix(ref BlockFruitTreeBranch __instance,
-        FruitTreeWorldGenConds[] __state)
+    public static void TryPlaceBlockForWorldGenPostfix(
+        ref BlockFruitTreeBranch __instance,
+        FruitTreeWorldGenConds[] __state
+    )
     {
         __instance.WorldGenConds = __state;
     }
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-    public static bool GenPatchesTreePrefix(ref ForestFloorSystem __instance,
-        out (List<BlockPatch>, List<BlockPatch>) __state, IBlockAccessor blockAccessor, BlockPos pos)
+    public static bool GenPatchesTreePrefix(
+        ref ForestFloorSystem __instance,
+        out (List<BlockPatch>, List<BlockPatch>) __state,
+        IBlockAccessor blockAccessor,
+        BlockPos pos
+    )
     {
         var underTreeField = Traverse.Create(__instance).Field("underTreePatches");
         var underTreeValue = underTreeField.GetValue() as List<BlockPatch>;
@@ -75,8 +84,7 @@ public static class HarmonyPatches
         var cachedUnderTree = _mod.Cache.Vegetation.GetUnderTreePatches(biomeData, ref underTreeValue);
         underTreeField.SetValue(cachedUnderTree);
 
-        var cachedOnTree =
-            _mod.Cache.Vegetation.GetTreePatches(biomeData, ref onTreeValue);
+        var cachedOnTree = _mod.Cache.Vegetation.GetTreePatches(biomeData, ref onTreeValue);
         onTreeField.SetValue(cachedOnTree);
 
         return true;
@@ -84,8 +92,10 @@ public static class HarmonyPatches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-    public static void GenPatchesTreePostfix(ref ForestFloorSystem __instance,
-        (List<BlockPatch>, List<BlockPatch>) __state)
+    public static void GenPatchesTreePostfix(
+        ref ForestFloorSystem __instance,
+        (List<BlockPatch>, List<BlockPatch>) __state
+    )
     {
         Traverse.Create(__instance).Field("underTreePatches").SetValue(__state.Item1);
         Traverse.Create(__instance).Field("onTreePatches").SetValue(__state.Item2);
@@ -93,8 +103,13 @@ public static class HarmonyPatches
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genPatches")]
-    public static bool genPatchesPrefix(ref GenVegetationAndPatches __instance, out BlockPatch[] __state, int chunkX,
-        int chunkZ, bool postPass)
+    public static bool genPatchesPrefix(
+        ref GenVegetationAndPatches __instance,
+        out BlockPatch[] __state,
+        int chunkX,
+        int chunkZ,
+        bool postPass
+    )
     {
         var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
         __state = bpc!.PatchesNonTree;
@@ -108,8 +123,13 @@ public static class HarmonyPatches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genPatches")]
-    public static void genPatchesPostfix(ref GenVegetationAndPatches __instance, BlockPatch[] __state, int chunkX,
-        int chunkZ, bool postPass)
+    public static void genPatchesPostfix(
+        ref GenVegetationAndPatches __instance,
+        BlockPatch[] __state,
+        int chunkX,
+        int chunkZ,
+        bool postPass
+    )
     {
         var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
         bpc.PatchesNonTree = __state;
@@ -117,8 +137,12 @@ public static class HarmonyPatches
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
-    public static bool genShrubsPrefix(ref GenVegetationAndPatches __instance, out TreeVariant[] __state,
-        int chunkX, int chunkZ)
+    public static bool genShrubsPrefix(
+        ref GenVegetationAndPatches __instance,
+        out TreeVariant[] __state,
+        int chunkX,
+        int chunkZ
+    )
     {
         var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
         var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
@@ -127,15 +151,18 @@ public static class HarmonyPatches
         var biomeData = _mod.Cache.ChunkData.GetBiomeData(chunkX, chunkZ);
         if (biomeData.IsNullData()) return true;
 
-        treeGenProps.ShrubGens =
-            _mod.Cache.Vegetation.GetShrubs(biomeData, ref treeGenProps.ShrubGens);
+        treeGenProps.ShrubGens = _mod.Cache.Vegetation.GetShrubs(biomeData, ref treeGenProps.ShrubGens);
         return true;
     }
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
-    public static void genShrubsPostfix(ref GenVegetationAndPatches __instance, TreeVariant[] __state, int chunkX,
-        int chunkZ)
+    public static void genShrubsPostfix(
+        ref GenVegetationAndPatches __instance,
+        TreeVariant[] __state,
+        int chunkX,
+        int chunkZ
+    )
     {
         var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
         var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
@@ -144,8 +171,12 @@ public static class HarmonyPatches
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genTrees")]
-    public static bool genTreesPrefix(ref GenVegetationAndPatches __instance, out TreeVariant[] __state, int chunkX,
-        int chunkZ)
+    public static bool genTreesPrefix(
+        ref GenVegetationAndPatches __instance,
+        out TreeVariant[] __state,
+        int chunkX,
+        int chunkZ
+    )
     {
         var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
         var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
@@ -154,15 +185,18 @@ public static class HarmonyPatches
         var biomeData = _mod.Cache.ChunkData.GetBiomeData(chunkX, chunkZ);
         if (biomeData.IsNullData()) return true;
 
-        treeGenProps.TreeGens =
-            _mod.Cache.Vegetation.GetTrees(biomeData, ref treeGenProps.TreeGens);
+        treeGenProps.TreeGens = _mod.Cache.Vegetation.GetTrees(biomeData, ref treeGenProps.TreeGens);
         return true;
     }
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genTrees")]
-    public static void GenTreesPostfix(ref GenVegetationAndPatches __instance, TreeVariant[] __state, int chunkX,
-        int chunkZ)
+    public static void GenTreesPostfix(
+        ref GenVegetationAndPatches __instance,
+        TreeVariant[] __state,
+        int chunkX,
+        int chunkZ
+    )
     {
         var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
         var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
@@ -172,8 +206,13 @@ public static class HarmonyPatches
     // World-gen spawn
     [HarmonyPrefix]
     [HarmonyPatch(typeof(GenCreatures), "CanSpawnAtPosition")]
-    public static bool CanSpawnAtPosition(ref bool __result, IBlockAccessor blockAccessor, EntityProperties type,
-        BlockPos pos, BaseSpawnConditions sc)
+    public static bool CanSpawnAtPosition(
+        ref bool __result,
+        IBlockAccessor blockAccessor,
+        EntityProperties type,
+        BlockPos pos,
+        BaseSpawnConditions sc
+    )
     {
         __result = _mod.Cache.Entities.IsSpawnValid(type, pos);
         return __result;
@@ -182,10 +221,14 @@ public static class HarmonyPatches
     // Run-time spawn
     [HarmonyPrefix]
     [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt_offthread")]
-    public static bool CanSpawnAt(ref Vec3d? __result, EntityProperties type, Vec3i spawnPosition,
-        RuntimeSpawnConditions sc, IWorldChunk[] chunkCol)
+    public static bool CanSpawnAt(
+        ref Vec3d? __result,
+        EntityProperties type,
+        Vec3i spawnPosition,
+        RuntimeSpawnConditions sc,
+        IWorldChunk[] chunkCol
+    )
     {
-        return chunkCol.Length != 0 &&
-               _mod.Cache.Entities.IsSpawnValid(type, spawnPosition.AsBlockPos);
+        return chunkCol.Length != 0 && _mod.Cache.Entities.IsSpawnValid(type, spawnPosition.AsBlockPos);
     }
 }

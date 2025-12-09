@@ -18,44 +18,48 @@ public class Commands
         _sapi = sapi;
 
         _sapi.ChatCommands.Create("biomes")
-            .WithDescription("Biomes main command")
-            .RequiresPlayer()
-            .RequiresPrivilege(Privilege.gamemode)
-            .BeginSubCommand("show")
-            .HandleWith(OnShowBiomeCommand)
-            .EndSubCommand()
-            .BeginSubCommand("tree")
-            .HandleWith(OnTreesCommand)
-            .EndSubCommand()
-            .BeginSubCommand("fruit")
-            .HandleWith(OnFruitTreesCommand)
-            .EndSubCommand()
-            .BeginSubCommand("blockpatch")
-            .HandleWith(OnBlockPatchCommand)
-            .EndSubCommand()
-            .BeginSubCommand("entity")
-            .HandleWith(OnEntityCommand)
-            .EndSubCommand()
-            .BeginSubCommand("whitelist")
-            .HandleWith(OnWhitelistCommand)
-            .EndSubCommand()
-            .BeginSubCommand("unconfigured")
-            .HandleWith(OnUnconfiguredCommand)
-            .EndSubCommand()
-            .BeginSubCommand("add")
-            .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm",
-                _mod.Config.ValidRealms
-                    .Select(i => i.Replace(' ', '_'))
-                    .ToArray()))
-            .HandleWith(OnAddRealmCommand)
-            .EndSubCommand()
-            .BeginSubCommand("remove")
-            .WithArgs(sapi.ChatCommands.Parsers.WordRange("realm",
-                _mod.Config.ValidRealms
-                    .Select(i => i.Replace(' ', '_'))
-                    .ToArray()))
-            .HandleWith(OnRemoveRealmCommand)
-            .EndSubCommand();
+             .WithDescription("Biomes main command")
+             .RequiresPlayer()
+             .RequiresPrivilege(Privilege.gamemode)
+             .BeginSubCommand("show")
+             .HandleWith(OnShowBiomeCommand)
+             .EndSubCommand()
+             .BeginSubCommand("tree")
+             .HandleWith(OnTreesCommand)
+             .EndSubCommand()
+             .BeginSubCommand("fruit")
+             .HandleWith(OnFruitTreesCommand)
+             .EndSubCommand()
+             .BeginSubCommand("blockpatch")
+             .HandleWith(OnBlockPatchCommand)
+             .EndSubCommand()
+             .BeginSubCommand("entity")
+             .HandleWith(OnEntityCommand)
+             .EndSubCommand()
+             .BeginSubCommand("whitelist")
+             .HandleWith(OnWhitelistCommand)
+             .EndSubCommand()
+             .BeginSubCommand("unconfigured")
+             .HandleWith(OnUnconfiguredCommand)
+             .EndSubCommand()
+             .BeginSubCommand("add")
+             .WithArgs(
+                 sapi.ChatCommands.Parsers.WordRange(
+                     "realm",
+                     _mod.Config.ValidRealms.Select(i => i.Replace(' ', '_')).ToArray()
+                 )
+             )
+             .HandleWith(OnAddRealmCommand)
+             .EndSubCommand()
+             .BeginSubCommand("remove")
+             .WithArgs(
+                 sapi.ChatCommands.Parsers.WordRange(
+                     "realm",
+                     _mod.Config.ValidRealms.Select(i => i.Replace(' ', '_')).ToArray()
+                 )
+             )
+             .HandleWith(OnRemoveRealmCommand)
+             .EndSubCommand();
     }
 
     private TextCommandResult OnTreesCommand(TextCommandCallingArgs args)
@@ -129,14 +133,13 @@ public class Commands
     {
         var entityTypes = new List<string>();
         foreach (var entity in _sapi.World.EntityTypes)
-            if ((entity.Attributes == null || !entity.Attributes.KeyExists(ModPropName.Entity.Realm)) &&
-                !_mod.Cache.Entities.Whitelist.Contains(entity.Code))
+            if ((entity.Attributes == null || !entity.Attributes.KeyExists(ModPropName.Entity.Realm))
+                && !_mod.Cache.Entities.Whitelist.Contains(entity.Code))
                 entityTypes.Add(entity.Code);
 
         var msg = entityTypes.Order().Distinct().Join(delimiter: "\n");
         _sapi.Logger.Debug($"Biomes Unconfigured Entities:\n{msg}");
-        return new TextCommandResult
-            { Status = EnumCommandStatus.Success, StatusMessage = msg };
+        return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = msg };
     }
 
     private TextCommandResult OnWhitelistCommand(TextCommandCallingArgs args)
@@ -155,7 +158,9 @@ public class Commands
         var biomeData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
         if (biomeData.IsNullData())
             return new TextCommandResult
-                { Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes") };
+            {
+                Status = EnumCommandStatus.Error, StatusMessage = Lang.Get("chunknotgenwithbiomes")
+            };
 
         var realms = biomeData.RealmNames(_mod.Config);
 
@@ -166,8 +171,8 @@ public class Commands
         return new TextCommandResult
         {
             Status = EnumCommandStatus.Success,
-            StatusMessage =
-                $"Realms: {realmsStr}\nValid For River Spawns: {validRiver}\nValid for No River Spawns: {validNoRiver}"
+            StatusMessage = $"Realms: {realmsStr}\nValid For River Spawns: {validRiver
+            }\nValid for No River Spawns: {validNoRiver}"
         };
     }
 
@@ -182,11 +187,7 @@ public class Commands
 
         chunk.SetModdata(ModPropName.MapChunk.BiomeData, chunkData);
 
-        return new TextCommandResult
-        {
-            Status = EnumCommandStatus.Success,
-            StatusMessage = "Added to realms list"
-        };
+        return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = "Added to realms list" };
     }
 
     private TextCommandResult OnRemoveRealmCommand(TextCommandCallingArgs args)
@@ -200,10 +201,6 @@ public class Commands
 
         chunk.SetModdata(ModPropName.MapChunk.BiomeData, chunkData);
 
-        return new TextCommandResult
-        {
-            Status = EnumCommandStatus.Success,
-            StatusMessage = "Removed from realms list"
-        };
+        return new TextCommandResult { Status = EnumCommandStatus.Success, StatusMessage = "Removed from realms list" };
     }
 }

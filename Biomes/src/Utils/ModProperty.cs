@@ -30,8 +30,7 @@ internal static class ModProperty
 {
     public static EnumCommandStatus Get<T>(IMapChunk? chunk, string name, ref T value)
     {
-        if (chunk == null)
-            return EnumCommandStatus.Error;
+        if (chunk == null) return EnumCommandStatus.Error;
 
         value = chunk.GetModdata<T>(name);
         return value == null ? EnumCommandStatus.Error : EnumCommandStatus.Success;
@@ -45,8 +44,7 @@ internal static class ModProperty
 
     public static EnumCommandStatus Set<T>(IMapChunk? chunk, string name, ref T value)
     {
-        if (chunk == null)
-            return EnumCommandStatus.Error;
+        if (chunk == null) return EnumCommandStatus.Error;
 
         chunk.SetModdata(name, value);
         chunk.MarkDirty();

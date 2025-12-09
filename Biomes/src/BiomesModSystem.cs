@@ -22,7 +22,7 @@ namespace Biomes;
 public class BiomesModSystem : ModSystem
 {
     public readonly bool TagOnChunkGen = true;
-    private Commands _commands;
+    private Commands _commands = null!;
 
     private ICoreServerAPI _vsapi = null!;
 
@@ -142,8 +142,7 @@ public class BiomesModSystem : ModSystem
 
     private void OnChunkColumnGeneration(IChunkColumnGenerateRequest request)
     {
-        if (!TagOnChunkGen)
-            return;
+        if (!TagOnChunkGen) return;
 
         // Full chunk column isn't needed because mapchunk is the same for all of them
         var mapChunk = request.Chunks[0].MapChunk;
@@ -151,8 +150,12 @@ public class BiomesModSystem : ModSystem
 
         var biomeData = new BiomeData(0);
 
-        var blockPos = new BlockPos(request.ChunkX * _vsapi.WorldManager.ChunkSize, 0,
-            request.ChunkZ * _vsapi.WorldManager.ChunkSize, 0);
+        var blockPos = new BlockPos(
+            request.ChunkX * _vsapi.WorldManager.ChunkSize,
+            0,
+            request.ChunkZ * _vsapi.WorldManager.ChunkSize,
+            0
+        );
         var realms = RealmGen.GetRealmsForBlockPos(_vsapi, blockPos);
 
         foreach (var realm in realms) biomeData.SetRealm(Config.ValidRealmIndexes[realm], true);

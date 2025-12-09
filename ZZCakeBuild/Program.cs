@@ -18,9 +18,7 @@ public static class Program
 {
     public static int Main(string[] args)
     {
-        return new CakeHost()
-            .UseContext<BuildContext>()
-            .Run(args);
+        return new CakeHost().UseContext<BuildContext>().Run(args);
     }
 }
 
@@ -28,8 +26,7 @@ public class BuildContext : FrostingContext
 {
     public const string ProjectName = "Biomes";
 
-    public BuildContext(ICakeContext context)
-        : base(context)
+    public BuildContext(ICakeContext context) : base(context)
     {
         BuildConfiguration = context.Argument("configuration", "Release");
         SkipJsonValidation = context.Argument("skipJsonValidation", false);
@@ -61,7 +58,9 @@ public sealed class ValidateJsonTask : FrostingTask<BuildContext>
             catch (JsonException ex)
             {
                 throw new Exception(
-                    $"Validation failed for JSON file: {file.FullPath}{Environment.NewLine}{ex.Message}", ex);
+                    $"Validation failed for JSON file: {file.FullPath}{Environment.NewLine}{ex.Message}",
+                    ex
+                );
             }
     }
 }
@@ -72,18 +71,16 @@ public sealed class BuildTask : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        context.DotNetClean($"../{BuildContext.ProjectName}/{BuildContext.ProjectName}.csproj",
-            new DotNetCleanSettings
-            {
-                Configuration = context.BuildConfiguration
-            });
+        context.DotNetClean(
+            $"../{BuildContext.ProjectName}/{BuildContext.ProjectName}.csproj",
+            new DotNetCleanSettings { Configuration = context.BuildConfiguration }
+        );
 
 
-        context.DotNetPublish($"../{BuildContext.ProjectName}/{BuildContext.ProjectName}.csproj",
-            new DotNetPublishSettings
-            {
-                Configuration = context.BuildConfiguration
-            });
+        context.DotNetPublish(
+            $"../{BuildContext.ProjectName}/{BuildContext.ProjectName}.csproj",
+            new DotNetPublishSettings { Configuration = context.BuildConfiguration }
+        );
     }
 }
 
@@ -98,7 +95,8 @@ public sealed class PackageTask : FrostingTask<BuildContext>
         context.EnsureDirectoryExists($"../Releases/{context.Name}");
         context.CopyFiles(
             $"../{BuildContext.ProjectName}/bin/{context.BuildConfiguration}/Mods/{context.Name}/publish/*",
-            $"../Releases/{context.Name}");
+            $"../Releases/{context.Name}"
+        );
         if (context.DirectoryExists($"../{BuildContext.ProjectName}/assets"))
             context.CopyDirectory($"../{BuildContext.ProjectName}/assets", $"../Releases/{context.Name}/assets");
 
@@ -115,6 +113,4 @@ public sealed class PackageTask : FrostingTask<BuildContext>
 
 [TaskName("Default")]
 [IsDependentOn(typeof(PackageTask))]
-public class DefaultTask : FrostingTask
-{
-}
+public class DefaultTask : FrostingTask { }

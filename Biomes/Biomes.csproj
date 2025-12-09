@@ -1,84 +1,84 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>bin\$(Configuration)\Mods\biomes</OutputPath>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <OutputPath>bin\$(Configuration)\Mods\biomes</OutputPath>
+    </PropertyGroup>
 
-  <!-- Loading local settings file -->
-  <Import Project="Properties\localSettings.props" Condition="Exists('Properties\localSettings.props')" />
+    <!-- Loading local settings file -->
+    <Import Project="Properties\localSettings.props" Condition="Exists('Properties\localSettings.props')"/>
 
-  <PropertyGroup>
-    <!-- Detect platform -->
-    <IsWindows Condition="'$(OS)' == 'Windows_NT'">true</IsWindows>
-    <IsWindows Condition="'$(IsWindows)' == ''">false</IsWindows>
+    <PropertyGroup>
+        <!-- Detect platform -->
+        <IsWindows Condition="'$(OS)' == 'Windows_NT'">true</IsWindows>
+        <IsWindows Condition="'$(IsWindows)' == ''">false</IsWindows>
 
-    <!-- Platform-specific config dir -->
-    <UserConfigDir Condition="'$(IsWindows)' == 'true'">$(APPDATA)</UserConfigDir>
-    <UserConfigDir Condition="'$(IsWindows)' != 'true'">$(HOME)/.config</UserConfigDir>
-  </PropertyGroup>
+        <!-- Platform-specific config dir -->
+        <UserConfigDir Condition="'$(IsWindows)' == 'true'">$(APPDATA)</UserConfigDir>
+        <UserConfigDir Condition="'$(IsWindows)' != 'true'">$(HOME)/.config</UserConfigDir>
+    </PropertyGroup>
 
-  <!-- Paths -->
-  <PropertyGroup>
-    <ProjectDir>$(MSBuildProjectDirectory)</ProjectDir>
-    <OutputDir>bin\$(Configuration)\Mods</OutputDir>
-    <ExternalLibDir>$(ProjectDir)\external</ExternalLibDir>
-    <GameDirectory Condition="'$(GameDirectory)' == ''">$(VINTAGE_STORY)</GameDirectory>
-  </PropertyGroup>
+    <!-- Paths -->
+    <PropertyGroup>
+        <ProjectDir>$(MSBuildProjectDirectory)</ProjectDir>
+        <OutputDir>bin\$(Configuration)\Mods</OutputDir>
+        <ExternalLibDir>$(ProjectDir)\external</ExternalLibDir>
+        <GameDirectory Condition="'$(GameDirectory)' == ''">$(VINTAGE_STORY)</GameDirectory>
+    </PropertyGroup>
 
-  <!-- Startup settings -->
-  <PropertyGroup>
-    <DataFolder>$(UserConfigDir)\$(DataFolderName)</DataFolder>
-    <EntityDataFolder>$(UserConfigDir)/$(EntityDataFolderName)</EntityDataFolder>
-    <PlantDataFolder>$(UserConfigDir)/$(PlantDataFolderName)</PlantDataFolder>
-    <FullDataFolder>$(UserConfigDir)/$(FullDataFolderName)</FullDataFolder>
-    <AditionalModsFolder>$(UserConfigDir)\$(DataFolderName)\Mods</AditionalModsFolder>
-    <WorldName>test_biomes</WorldName>
-    <ModDir>$(ProjectDir)\$(OutputDir)</ModDir>
-    <EnterWorldCommand Condition="'$(EnterWorldOnStartup)' == 'true'">"-o" "$(WorldName)"</EnterWorldCommand>
-  </PropertyGroup>
+    <!-- Startup settings -->
+    <PropertyGroup>
+        <DataFolder>$(UserConfigDir)\$(DataFolderName)</DataFolder>
+        <EntityDataFolder>$(UserConfigDir)/$(EntityDataFolderName)</EntityDataFolder>
+        <PlantDataFolder>$(UserConfigDir)/$(PlantDataFolderName)</PlantDataFolder>
+        <FullDataFolder>$(UserConfigDir)/$(FullDataFolderName)</FullDataFolder>
+        <AditionalModsFolder>$(UserConfigDir)\$(DataFolderName)\Mods</AditionalModsFolder>
+        <WorldName>test_biomes</WorldName>
+        <ModDir>$(ProjectDir)\$(OutputDir)</ModDir>
+        <EnterWorldCommand Condition="'$(EnterWorldOnStartup)' == 'true'">"-o" "$(WorldName)"</EnterWorldCommand>
+    </PropertyGroup>
 
-  <!-- References to libraries that are being used in project -->
-  <ItemGroup>
-    <!-- ImGui for debug tools (requires ImGui mod installed if you call ImGui methods) -->
-    <!-- <PackageReference Include="VSImGui" Version="0.0.6" /> -->
-    <!-- Vintage Story libraries -->
-    <Reference Include="VintagestoryLib" HintPath="$(GameDirectory)/VintagestoryLib.dll" Private="false"/>
-    <Reference Include="VintagestoryAPI" HintPath="$(GameDirectory)/VintagestoryAPI.dll" Private="false"/>
-    <Reference Include="VSSurvivalMod" HintPath="$(GameDirectory)/Mods/VSSurvivalMod.dll" Private="false"/>
-    <Reference Include="VSEssentials" HintPath="$(GameDirectory)/Mods/VSEssentials.dll" Private="false"/>
-    <Reference Include="VSCreativeMod" HintPath="$(GameDirectory)/Mods/VSCreativeMod.dll" Private="false"/>
-    <Reference Include="Newtonsoft.Json" HintPath="$(GameDirectory)/Lib/Newtonsoft.Json.dll" Private="false"/>
-    <Reference Include="0Harmony" HintPath="$(GameDirectory)/Lib/0Harmony.dll" Private="false"/>
-    <Reference Include="protobuf-net" HintPath="$(GameDirectory)/Lib/protobuf-net.dll" Private="false"/>
-    <Reference Include="cairo-sharp" HintPath="$(GameDirectory)/Lib/cairo-sharp.dll" Private="false"/>
-    <Reference Include="JsonDiffPatch" HintPath="$(GameDirectory)/Lib/JsonDiffPatch.dll" Private="false"/>
-    <Reference Include="cairo-sharp" HintPath="$(GameDirectory)/Lib/cairo-sharp.dll" Private="false"/>
-    <Reference Include="Tavis.JsonPatch" HintPath="$(GameDirectory)/Lib/Tavis.JsonPatch.dll" Private="false"/>
-    <Reference Include="SkiaSharp" HintPath="$(GameDirectory)/Lib/SkiaSharp.dll" Private="false"/>
-    <Reference Include="$(GameDirectory)/Lib/OpenTK*.dll" Private="false"/>
-    <!-- External libraries -->
-    <Reference Include="$(ExternalLibDir)/**/*.dll" Private="false" Condition="'$(ExternalLibDir)' != ''" />
-  </ItemGroup>
+    <!-- References to libraries that are being used in project -->
+    <ItemGroup>
+        <!-- ImGui for debug tools (requires ImGui mod installed if you call ImGui methods) -->
+        <!-- <PackageReference Include="VSImGui" Version="0.0.6" /> -->
+        <!-- Vintage Story libraries -->
+        <Reference Include="VintagestoryLib" HintPath="$(GameDirectory)/VintagestoryLib.dll" Private="false"/>
+        <Reference Include="VintagestoryAPI" HintPath="$(GameDirectory)/VintagestoryAPI.dll" Private="false"/>
+        <Reference Include="VSSurvivalMod" HintPath="$(GameDirectory)/Mods/VSSurvivalMod.dll" Private="false"/>
+        <Reference Include="VSEssentials" HintPath="$(GameDirectory)/Mods/VSEssentials.dll" Private="false"/>
+        <Reference Include="VSCreativeMod" HintPath="$(GameDirectory)/Mods/VSCreativeMod.dll" Private="false"/>
+        <Reference Include="Newtonsoft.Json" HintPath="$(GameDirectory)/Lib/Newtonsoft.Json.dll" Private="false"/>
+        <Reference Include="0Harmony" HintPath="$(GameDirectory)/Lib/0Harmony.dll" Private="false"/>
+        <Reference Include="protobuf-net" HintPath="$(GameDirectory)/Lib/protobuf-net.dll" Private="false"/>
+        <Reference Include="cairo-sharp" HintPath="$(GameDirectory)/Lib/cairo-sharp.dll" Private="false"/>
+        <Reference Include="JsonDiffPatch" HintPath="$(GameDirectory)/Lib/JsonDiffPatch.dll" Private="false"/>
+        <Reference Include="cairo-sharp" HintPath="$(GameDirectory)/Lib/cairo-sharp.dll" Private="false"/>
+        <Reference Include="Tavis.JsonPatch" HintPath="$(GameDirectory)/Lib/Tavis.JsonPatch.dll" Private="false"/>
+        <Reference Include="SkiaSharp" HintPath="$(GameDirectory)/Lib/SkiaSharp.dll" Private="false"/>
+        <Reference Include="$(GameDirectory)/Lib/OpenTK*.dll" Private="false"/>
+        <!-- External libraries -->
+        <Reference Include="$(ExternalLibDir)/**/*.dll" Private="false" Condition="'$(ExternalLibDir)' != ''"/>
+    </ItemGroup>
 
-  <Target Name="EnsureSettingsJson" BeforeTargets="ModInfo" Condition="!Exists('Properties\localSettings.props')">
-    <MakeDir Directories="Properties" />
-    <WriteLinesToFile File="Properties\localSettings.props" Overwrite="true" Lines="&lt;Project&gt;&#xD;&#xA;  &lt;PropertyGroup&gt;&#xD;&#xA;    &lt;DataFolderName&gt;VintagestoryData&lt;/DataFolderName&gt;&#xD;&#xA;    &lt;GameDirectory&gt;&lt;/GameDirectory&gt;&#xD;&#xA;    &lt;EnterWorldOnStartup&gt;false&lt;/EnterWorldOnStartup&gt;&#xD;&#xA;    &lt;/PropertyGroup&gt;&#xD;&#xA;&lt;/Project&gt;" />
-    <Error Text="Local settings file was missing, generated a new one. Run build again." />
-  </Target>
+    <Target Name="EnsureSettingsJson" BeforeTargets="ModInfo" Condition="!Exists('Properties\localSettings.props')">
+        <MakeDir Directories="Properties"/>
+        <WriteLinesToFile File="Properties\localSettings.props" Overwrite="true" Lines="&lt;Project&gt;&#xD;&#xA;  &lt;PropertyGroup&gt;&#xD;&#xA;    &lt;DataFolderName&gt;VintagestoryData&lt;/DataFolderName&gt;&#xD;&#xA;    &lt;GameDirectory&gt;&lt;/GameDirectory&gt;&#xD;&#xA;    &lt;EnterWorldOnStartup&gt;false&lt;/EnterWorldOnStartup&gt;&#xD;&#xA;    &lt;/PropertyGroup&gt;&#xD;&#xA;&lt;/Project&gt;"/>
+        <Error Text="Local settings file was missing, generated a new one. Run build again."/>
+    </Target>
 
 
-  <ItemGroup>
-    <Content Include="assets\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="modinfo.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="../LICENSE">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+    <ItemGroup>
+        <Content Include="assets\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="modinfo.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="../LICENSE">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
 </Project>

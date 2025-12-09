@@ -36,10 +36,13 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
-
   {
     "file": "africanmonitorlizards:entities/land/varanus-juvenile.json",
     "op": "addmerge",
@@ -77,7 +80,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -252,7 +259,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -427,7 +438,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -482,7 +497,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -494,7 +513,11 @@
         "australasian"
       ]
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -506,7 +529,11 @@
         "australasian"
       ]
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -518,7 +545,11 @@
         "central palearctic"
       ]
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -567,7 +598,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -579,7 +614,11 @@
         "oceanic"
       ]
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -623,7 +662,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -678,7 +721,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -733,7 +780,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -788,7 +839,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -843,7 +898,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -898,7 +957,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -1118,7 +1181,11 @@
         ]
       }
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {
@@ -1130,7 +1197,11 @@
         "pacific palearctic"
       ]
     },
-    "dependsOn": [ { "modid": "hieronymusreptiles" } ],
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
     "side": "Server"
   },
   {

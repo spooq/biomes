@@ -5,16 +5,15 @@
   "game:armorstand*",
   "game:arrow-*",
   "game:blockfalling",
-  "game:boat*",
+  // little hack to make all types of boats including modded ones spawn properly
+  "*boat*",
   "game:item",
   "game:thrown*",
   "game:spear-*",
   "game:*skeleton*",
   "game:strawdummy",
-
   // important base entities
   "game:player*",
-
   // lore mobs
   "game:animalbot-*",
   "game:bell*",

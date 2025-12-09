@@ -45,27 +45,20 @@ public class ClassicRealmGen(ClassicGenConfig config) : IRealmGen
     private string NorthOrSouth(EnumHemisphere hemisphere, int realm)
     {
         // modconfig.flipworld exchanges the lists, so we always choose the same here no matter what
-        return hemisphere == EnumHemisphere.North
-            ? config.NorthernRealms[realm]
-            : config.SouthernRealms[realm];
+        return hemisphere == EnumHemisphere.North ? config.NorthernRealms[realm] : config.SouthernRealms[realm];
     }
 
 
     private int CalculateValues(ICoreServerAPI api, int chunkX, int chunkZ, EnumHemisphere hemisphere)
     {
-        var realmCount = hemisphere == EnumHemisphere.North
-            ? config.NorthernRealms.Count
-            : config.SouthernRealms.Count;
+        var realmCount = hemisphere == EnumHemisphere.North ? config.NorthernRealms.Count : config.SouthernRealms.Count;
 
         var worldWidthInChunks = api.WorldManager.MapSizeX / api.WorldManager.ChunkSize;
         var realmWidthInChunks = worldWidthInChunks / (float)realmCount;
         var currentRealm = 0;
-        if (realmWidthInChunks != 0)
-            currentRealm = (int)(chunkX / realmWidthInChunks);
-        if (currentRealm >= realmCount)
-            currentRealm = realmCount - 1;
-        if (currentRealm < 0)
-            currentRealm = 0;
+        if (realmWidthInChunks != 0) currentRealm = (int)(chunkX / realmWidthInChunks);
+        if (currentRealm >= realmCount) currentRealm = realmCount - 1;
+        if (currentRealm < 0) currentRealm = 0;
         return currentRealm;
     }
 }

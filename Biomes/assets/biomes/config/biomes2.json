@@ -17,7 +17,6 @@
       ],
       "bioriver": "false"
     },
-
     "*-cauliflower-*": {
       "biorealm": [
         "atlantic palearctic",
@@ -25,8 +24,6 @@
       ],
       "bioriver": "both"
     },
-
-
     "*-pepperbell-*": {
       "biorealm": [
         "pacific neotropic",
@@ -34,7 +31,6 @@
       ],
       "bioriver": "both"
     },
-
     "*-sugarbeet-*": {
       "biorealm": [
         "atlantic palearctic",
@@ -188,7 +184,6 @@
       ],
       "bioriver": "both"
     },
-
     "*-pepperdules-*": {
       "biorealm": [
         "atlantic palearctic"
@@ -237,7 +232,6 @@
       ],
       "bioriver": "both"
     },
-
     "*-wakame-*": {
       "biorealm": [
         "eastern palearctic"

@@ -21,8 +21,7 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
         {
             var code = entity.Code.ToString();
 
-            if (whitelistSpecified.Any(x => WildcardUtil.Match(x, code)))
-                Whitelist.Add(code);
+            if (whitelistSpecified.Any(x => WildcardUtil.Match(x, code))) Whitelist.Add(code);
         }
     }
 
@@ -48,7 +47,9 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
                     if (!config.ValidRealmIndexes.TryGetValue(realm, out var index))
                     {
                         mod.Mod.Logger.Error(
-                            $"Didn't load invalid realm \"{realm}\" off of \"{entity.Code}\", please report this to biomes!");
+                            $"Didn't load invalid realm \"{realm}\" off of \"{entity.Code
+                            }\", please report this to biomes!"
+                        );
                         continue;
                     }
 
@@ -98,11 +99,12 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
         if (!_entityCache.TryGetValue(code, out var entityData))
         {
             _alreadyRecordedNoHit ??= [];
-            if (mod.Config.User.SpawnMode.ShouldWarn() &&
-                !_alreadyRecordedNoHit.Contains(code))
+            if (mod.Config.User.SpawnMode.ShouldWarn() && !_alreadyRecordedNoHit.Contains(code))
             {
                 vsapi.Logger.Warning(
-                    $"Entity \"{type.Code}\" has no cache data, likely has no compat data for Biomes. Report this to biomes!");
+                    $"Entity \"{type.Code
+                    }\" has no cache data, likely has no compat data for Biomes. Report this to biomes!"
+                );
                 _alreadyRecordedNoHit.Add(code);
             }
 

@@ -23,8 +23,13 @@ public class Configv2
 
 internal class OldFormatEnumConverter : JsonConverter<BioRiver>
 {
-    public override BioRiver ReadJson(JsonReader reader, Type objectType, BioRiver existingValue, bool hasExistingValue,
-        JsonSerializer serializer)
+    public override BioRiver ReadJson(
+        JsonReader reader,
+        Type objectType,
+        BioRiver existingValue,
+        bool hasExistingValue,
+        JsonSerializer serializer
+    )
     {
         var value = reader.Value?.ToString()?.ToLowerInvariant();
         return value switch
@@ -65,14 +70,10 @@ public static class BioRiverExtensions
     }
 }
 
-public struct ConfigItem
+public struct ConfigItem()
 {
     public List<string> biorealm = [];
     public BioRiver river = BioRiver.Both;
-
-    public ConfigItem()
-    {
-    }
 
     public BiomeData ToBiomeData(BiomesConfig config)
     {
@@ -190,8 +191,7 @@ public class BiomesConfig
         // TODO: User config needs an overhaul in general, hack to fix a critical issue
         if (User.RealmGenerationConfig is BlendedRealmConfig realmConf)
             // this doesn't make sense as a config and means you likely have an old config
-            if (realmConf.NorthernRealms.Count == 0 &&
-                realmConf.SouthernRealms.Count == 0)
+            if (realmConf.NorthernRealms.Count == 0 && realmConf.SouthernRealms.Count == 0)
             {
                 realmConf.NorthernRealms = DefaultRealmOrder.Northern;
                 realmConf.SouthernRealms = DefaultRealmOrder.Southern;
@@ -208,7 +208,7 @@ public class BiomesConfig
         LoadWhitelist(mod, api);
     }
 
-    public void LoadValidRealms(BiomesModSystem mod, ICoreAPI api)
+    private void LoadValidRealms(BiomesModSystem mod, ICoreAPI api)
     {
         var asset = api.Assets.Get($"{mod.Mod.Info.ModID}:config/realms.json").ToText()!;
         ValidRealms = JsonConvert.DeserializeObject<List<string>>(asset)!;
@@ -219,15 +219,14 @@ public class BiomesConfig
         for (var i = 0; i < ValidRealms.Count; i += 1) ValidRealmIndexes[ValidRealms[i]] = i;
     }
 
-    public void LoadLegacyConfigs(BiomesModSystem mod, ICoreAPI api)
+    private void LoadLegacyConfigs(BiomesModSystem mod, ICoreAPI api)
     {
         // Version 1 config file format
         foreach (var biomeAsset in api.Assets.GetMany("config/biomes.json"))
         {
             var tmp = JsonConvert.DeserializeObject<Configv1>(biomeAsset.ToText())!;
 
-            foreach (var item in tmp.EntitySpawnWhiteList)
-                Whitelist.Add(item);
+            foreach (var item in tmp.EntitySpawnWhiteList) Whitelist.Add(item);
             foreach (var item in tmp.TreeBiomes)
                 Trees[item.Key] = new ConfigItem { biorealm = item.Value, river = BioRiver.Both };
             foreach (var item in tmp.FruitTreeBiomes)
@@ -241,21 +240,27 @@ public class BiomesConfig
         {
             var tmp = JsonConvert.DeserializeObject<Configv2>(biomeAsset.ToText())!;
 
-            foreach (var item in tmp.EntitySpawnWhiteList)
-                Whitelist.Add(item);
-            foreach (var item in tmp.TreeBiomes)
-                Trees[item.Key] = item.Value;
-            foreach (var item in tmp.FruitTreeBiomes)
-                FruitTrees[item.Key] = item.Value;
-            foreach (var item in tmp.BlockPatchBiomes)
-                BlockPatches[item.Key] = item.Value;
+            foreach (var item in tmp.EntitySpawnWhiteList) Whitelist.Add(item);
+            foreach (var item in tmp.TreeBiomes) Trees[item.Key] = item.Value;
+            foreach (var item in tmp.FruitTreeBiomes) FruitTrees[item.Key] = item.Value;
+            foreach (var item in tmp.BlockPatchBiomes) BlockPatches[item.Key] = item.Value;
         }
     }
 
     private void LoadWhitelist(BiomesModSystem mod, ICoreAPI api)
     {
-        var assets = api.Assets.GetMany("config/whitelist.json");
-        foreach (var whitelistFile in assets)
+        // There's no real harm in checking all whitelists, mildly slows down whitelist generation phase but there isn't
+        // many whitelists and this is only a startup cost
+        var folder = api.Assets.GetMany("config/whitelist/");
+        foreach (var whitelistFile in folder)
+        {
+            var parsed = JsonConvert.DeserializeObject<List<string>>(whitelistFile.ToText());
+            if (parsed != null) Whitelist.AddRange(parsed);
+        }
+
+        // get legacy whitelists now
+        var legacy = api.Assets.GetMany("config/whitelist.json");
+        foreach (var whitelistFile in legacy)
         {
             var parsed = JsonConvert.DeserializeObject<List<string>>(whitelistFile.ToText());
             if (parsed != null) Whitelist.AddRange(parsed);

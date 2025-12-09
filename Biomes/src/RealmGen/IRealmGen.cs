@@ -56,10 +56,7 @@ public class RealmGenConfigConverter : JsonConverter<RealmGenConfig>
     public override void WriteJson(JsonWriter writer, RealmGenConfig? value, JsonSerializer serializer)
     {
         var resolver = new NoAttributeConvertersContractResolver();
-        var clearedSerializer = new JsonSerializer
-        {
-            ContractResolver = resolver
-        };
+        var clearedSerializer = new JsonSerializer { ContractResolver = resolver };
         // Also clear any global converters just in case:
         serializer.Converters.Clear();
 
@@ -77,9 +74,13 @@ public class RealmGenConfigConverter : JsonConverter<RealmGenConfig>
         obj.WriteTo(writer);
     }
 
-    public override RealmGenConfig ReadJson(JsonReader reader, Type objectType, RealmGenConfig? existingValue,
+    public override RealmGenConfig ReadJson(
+        JsonReader reader,
+        Type objectType,
+        RealmGenConfig? existingValue,
         bool hasExistingValue,
-        JsonSerializer serializer)
+        JsonSerializer serializer
+    )
     {
         var obj = JObject.Load(reader);
         var type = obj["type"]?.Value<string>()?.ToLowerInvariant();

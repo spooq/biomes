@@ -25,8 +25,9 @@ public class BlendedRealmGen : IRealmGen
         {
             var xMin = Math.Max(0, index * northSlice - blendedRealmConfig.ChunkHorizontalBlendThreshold);
             var xMax = Math.Min(1.0, (index + 1) * northSlice + blendedRealmConfig.ChunkHorizontalBlendThreshold);
-            _rects.Add(new Rect(new Point(xMin, 1.0),
-                new Point(xMax, 0 - blendedRealmConfig.ChunkLatBlendThreshold), northern));
+            _rects.Add(
+                new Rect(new Point(xMin, 1.0), new Point(xMax, 0 - blendedRealmConfig.ChunkLatBlendThreshold), northern)
+            );
             index += 1;
         }
 
@@ -37,8 +38,13 @@ public class BlendedRealmGen : IRealmGen
         {
             var xMin = Math.Max(0, index * southSlice - blendedRealmConfig.ChunkHorizontalBlendThreshold);
             var xMax = Math.Min(1.0, (index + 1) * southSlice + blendedRealmConfig.ChunkHorizontalBlendThreshold);
-            _rects.Add(new Rect(new Point(xMin, 0 + blendedRealmConfig.ChunkLatBlendThreshold),
-                new Point(xMax, -1.0), southern));
+            _rects.Add(
+                new Rect(
+                    new Point(xMin, 0 + blendedRealmConfig.ChunkLatBlendThreshold),
+                    new Point(xMax, -1.0),
+                    southern
+                )
+            );
             index += 1;
         }
     }
