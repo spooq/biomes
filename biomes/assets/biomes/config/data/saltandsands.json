@@ -1,0 +1,188 @@
+{
+  "BlockPatches": {
+    "bivalvereef-scallop-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "bivalvereef-clam-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "bivalvereef-freshwatermussel-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "saltandsands:coralseed": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-antarctic-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-banded-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-cape-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-chilean-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-egg-*": {
+      "biorealm": [
+        "atlantic nearctic",
+        "atlantic neotropic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-fire-*": {
+      "biorealm": [
+        "pacific palearctic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-green-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-kina-*": {
+      "biorealm": [
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-longspine-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "pacific palearctic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-needle-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-pacificpurple-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic"
+      ],
+      "bioriver": "false"
+    },
+    "urchin-purple-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "urchin-redspined-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "false"
+    },
+    "urchin-tuxedo-*": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    }
+  }
+}

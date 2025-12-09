@@ -1,0 +1,21 @@
+{
+  "BlockPatches": {
+    "crop-pipeleaf-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-treeheath-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    }
+  }
+}

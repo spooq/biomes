@@ -1,0 +1,37 @@
+{
+  "BlockPatches": {
+    "*-beet-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-corn-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "pacific nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-oat-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-potato-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    }
+  },
+  "FruitTrees": {
+    
+  }
+}

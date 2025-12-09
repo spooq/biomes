@@ -1,0 +1,1808 @@
+{
+  "BlockPatches": {
+    "aquatic-decor-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "aquatic-hornwort-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "aquatic-kelp-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    // vanilla block but doesn't technically generate
+    "aquatic-lilyflower-*": {
+      "biorealm": [
+        "atlantic neotropic"
+      ],
+      "bioriver": "true"
+    },
+    "aquatic-lilygiant-*": {
+      "biorealm": [
+        "atlantic neotropic"
+      ],
+      "bioriver": "true"
+    },
+    "aquatic-milfoil*": {
+      "biorealm": [
+        "australasian",
+        "atlantic neotropic",
+        "pacific neotropic"
+      ],
+      "bioriver": "true"
+    },
+    "aquatic-muskgrass-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "aquatic-seagrass-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "flotsam-driftwood-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "aquatic-watercrowfoot-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "pacific nearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "aquaticplant-bladderwrack": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "false"
+    },
+    "aquaticplant-irishmoss": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "false"
+    },
+    "aquaticplant-milfoil*": {
+      "biorealm": [
+        "australasian",
+        "atlantic neotropic",
+        "pacific neotropic"
+      ],
+      "bioriver": "true"
+    },
+    "aquaticplant-sealace": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic nearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "false"
+    },
+    "barrelcactus-normal": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "bonyremains-cowskull-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "bonyremains-ribcage": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "coral*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "fern-cinnamonfern": {
+      "biorealm": [
+        "atlantic nearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "fern-deerfern": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "fern-eaglefern": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "fern-hartstongue": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "floatsam-driftwood-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-catmint-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-cornflower-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-cowparsley-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-croton-*": {
+      "biorealm": [
+        "pacific palearctic",
+        "australasian",
+        "oceanic"
+      ]
+    },
+    "flower-edelweiss-*": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-forgetmenot-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-goldenpoppy-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-heather-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-horsetail-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lilyofthevalley-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lupine-blue-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lupine-purple-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lupine-red-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lupine-orange-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-lupine-white-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-orangemallow-*": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-rafflesia-*": {
+      "biorealm": [
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-redtopgrass-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-westerngorse-*": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-wilddaisy-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "flower-woad-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+
+    "fruittree-branch": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "glowworms-*": {
+      "biorealm": [
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "locustnest-cage": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "looseboulders-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "*loosestones-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "loosegears-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "loosestick-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "meteorite-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-almondmushroom-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "pacific palearctic",
+        "atlantic neotropic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-beardedtooth-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-bitterbolete-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-blacktrumpet-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-chanterelle-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-chickenofthewoods-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-commonmorel-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-deathcap-*": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-deerear-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-devilbolete-*": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-devilstooth-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-dryadsaddle-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-earthball-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-elfinsaddle-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-fieldmushroom-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-flyagaric-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-funeralbell-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-golddropmilkcap-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-greencrackedrussula-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-indigomilkcap-*": {
+      "biorealm": [
+        "atlantic nearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-jackolantern-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-kingbolete-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-livermushroom-*": {
+      "biorealm": [
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-lobster-*": {
+      "biorealm": [
+        "atlantic nearctic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-orangeoakbolete-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-paddystraw-*": {
+      "biorealm": [
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-pinkbonnet-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-pinkoyster-*": {
+      "biorealm": [
+        "pacific palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-puffball-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-redwinecap-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-reishi-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-shiitake-*": {
+      "biorealm": [
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-tinderhoof-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-violetwebcap-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-whiteoyster-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-witchhat-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "reefblock-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "reefledge-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "reefstructure-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "false"
+    },
+    "saguarocactus-segment": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "seashell-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "seaweed*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "silvertorchcactus": {
+      "biorealm": [
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "stalagsection-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "tallfern": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "tallgrass-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "termitemound-*": {
+      "biorealm": [
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    
+    "waterlily": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian"
+      ],
+      "bioriver": "no"
+    },
+    "wildbeehive-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "*-amaranth-*": {
+      "biorealm": [
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-blackcurrant-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-blueberry-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-brownsedge-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    // doesn't generate in vanilla, requires mod to add blockpatch
+    "*-cabbage-*": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-carrot-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-cassava-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-coopersreed-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "*-cranberry-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-flax-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-onion*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-papyrus-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-parsnip-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-peanut-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-pineapple-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-redcurrant-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-rice-*": {
+      "biorealm": [
+        "eastern palearctic",
+        "pacific palearctic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-rye-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-soybean-*": {
+      "biorealm": [
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-spelt-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-sunflower-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "*-turnip-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-tule-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-whitecurrant-*": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    }
+  },
+  "Trees": {
+    "acacia": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "baldcypress": {
+      "biorealm": [
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "baldcypressswamp": {
+      "biorealm": [
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "bamboo-grown-brown": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "bamboo-grown-green": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "bristleconepine": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "crimsonkingmaple": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "deadacacia": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "deadkapok": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "deepforestlarch": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "dwarfbirch": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "ebony": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "pacific palearctic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "englishoak": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "ferntree-normal-trunk": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "fir": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "greenspirecypress": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "himalayanbirch": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "japanesemaple": {
+      "biorealm": [
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "kapok": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "larch": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "largekapok": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "largekapok2": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "mountainmaple": {
+      "biorealm": [
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mountainpine": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "norwaymaple": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "oldenglishoak": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "oldkapok": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic"
+      ]
+    },
+    "pricklymoses": {
+      "biorealm": [
+        "australasian"
+      ],
+      "bioriver": "both"
+    },
+    "purpleheart": {
+      "biorealm": [
+        "pacific nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    },
+    "redwoodpine": {
+      "biorealm": [
+        "pacific nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "riverbirch": {
+      "biorealm": [
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "scotspine": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "silverbirch": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "sugarmaple": {
+      "biorealm": [
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "sugarmaplesmall": {
+      "biorealm": [
+        "atlantic nearctic"
+      ],
+      "bioriver": "both"
+    },
+    "truemulga": {
+      "biorealm": [
+        "australasian"
+      ]
+    },
+    "vineykapok": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "walnut": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic"
+      ],
+      "bioriver": "both"
+    }
+  },
+  "FruitTrees": {
+    "pinkapple": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "redapple": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "yellowapple": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "breadfruit": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "cherry": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "lychee": {
+      "biorealm": [
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mango": {
+      "biorealm": [
+        "eastern palearctic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "olive": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "orange": {
+      "biorealm": [
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "peach": {
+      "biorealm": [
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "pear": {
+      "biorealm": [
+        "central palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "pomegranate": {
+      "biorealm": [
+        "central palearctic"
+      ]
+    }
+  }
+}
