@@ -30,7 +30,6 @@
   //humanoids
   "game:humanoid-*",
   "game:villager-*",
-  
   // tame elk
   "game:semitameddeer*",
   "game:tamedeer*"
