@@ -3,7 +3,7 @@ using Vintagestory.API.Server;
 
 namespace Biomes.RealmGen;
 
-public class BlendedRealmConfig : RealmGenConfig
+internal class BlendedRealmConfig : RealmGenConfig
 {
     public const string TypeKey = "blended";
     public double ChunkHorizontalBlendThreshold = 0.001;
@@ -12,7 +12,7 @@ public class BlendedRealmConfig : RealmGenConfig
     public List<string> SouthernRealms = [];
 }
 
-public class BlendedRealmGen : IRealmGen
+internal class BlendedRealmGen : IRealmGen
 {
     private readonly List<Rect> _rects = [];
 
@@ -73,7 +73,7 @@ public class BlendedRealmGen : IRealmGen
         public readonly double y = y;
     }
 
-    public struct Rect(Point a, Point b, string realm)
+    public readonly struct Rect(Point a, Point b, string realm)
     {
         public readonly Point a = a;
         public readonly Point b = b;

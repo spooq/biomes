@@ -13,26 +13,26 @@ using Vintagestory.ServerMods.NoObf;
 namespace Biomes;
 
 [HarmonyPatch]
-public static class HarmonyPatches
+internal static class HarmonyPatches
 {
     private static Harmony harmony = null!;
     private static BiomesModSystem _mod = null!;
 
-    public static void Init(BiomesModSystem mod)
+    internal static void Init(BiomesModSystem mod)
     {
         _mod = mod;
         harmony = new Harmony(_mod.Mod.Info.ModID);
         harmony.PatchAll();
     }
 
-    public static void Shutdown()
+    internal static void Shutdown()
     {
         harmony.UnpatchAll(_mod.Mod.Info.ModID);
     }
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
-    public static bool TryPlaceBlockForWorldGenPrefix(
+    private static bool TryPlaceBlockForWorldGenPrefix(
         ref BlockFruitTreeBranch __instance,
         out FruitTreeWorldGenConds[] __state,
         IBlockAccessor blockAccessor,
@@ -53,7 +53,7 @@ public static class HarmonyPatches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(BlockFruitTreeBranch), "TryPlaceBlockForWorldGen")]
-    public static void TryPlaceBlockForWorldGenPostfix(
+    private static void TryPlaceBlockForWorldGenPostfix(
         ref BlockFruitTreeBranch __instance,
         FruitTreeWorldGenConds[] __state
     )
@@ -63,7 +63,7 @@ public static class HarmonyPatches
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-    public static bool GenPatchesTreePrefix(
+    private static bool GenPatchesTreePrefix(
         ref ForestFloorSystem __instance,
         out (List<BlockPatch>, List<BlockPatch>) __state,
         IBlockAccessor blockAccessor,
@@ -92,7 +92,7 @@ public static class HarmonyPatches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(ForestFloorSystem), "GenPatches")]
-    public static void GenPatchesTreePostfix(
+    private static void GenPatchesTreePostfix(
         ref ForestFloorSystem __instance,
         (List<BlockPatch>, List<BlockPatch>) __state
     )
@@ -103,7 +103,7 @@ public static class HarmonyPatches
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genPatches")]
-    public static bool genPatchesPrefix(
+    private static bool genPatchesPrefix(
         ref GenVegetationAndPatches __instance,
         out BlockPatch[] __state,
         int chunkX,
@@ -123,7 +123,7 @@ public static class HarmonyPatches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genPatches")]
-    public static void genPatchesPostfix(
+    private static void genPatchesPostfix(
         ref GenVegetationAndPatches __instance,
         BlockPatch[] __state,
         int chunkX,
@@ -137,7 +137,7 @@ public static class HarmonyPatches
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
-    public static bool genShrubsPrefix(
+    private static bool genShrubsPrefix(
         ref GenVegetationAndPatches __instance,
         out TreeVariant[] __state,
         int chunkX,
@@ -157,7 +157,7 @@ public static class HarmonyPatches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genShrubs")]
-    public static void genShrubsPostfix(
+    private static void genShrubsPostfix(
         ref GenVegetationAndPatches __instance,
         TreeVariant[] __state,
         int chunkX,
@@ -171,7 +171,7 @@ public static class HarmonyPatches
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genTrees")]
-    public static bool genTreesPrefix(
+    private static bool genTreesPrefix(
         ref GenVegetationAndPatches __instance,
         out TreeVariant[] __state,
         int chunkX,
@@ -191,7 +191,7 @@ public static class HarmonyPatches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(GenVegetationAndPatches), "genTrees")]
-    public static void GenTreesPostfix(
+    private static void GenTreesPostfix(
         ref GenVegetationAndPatches __instance,
         TreeVariant[] __state,
         int chunkX,
@@ -206,7 +206,7 @@ public static class HarmonyPatches
     // World-gen spawn
     [HarmonyPrefix]
     [HarmonyPatch(typeof(GenCreatures), "CanSpawnAtPosition")]
-    public static bool CanSpawnAtPosition(
+    private static bool CanSpawnAtPosition(
         ref bool __result,
         IBlockAccessor blockAccessor,
         EntityProperties type,
@@ -221,7 +221,7 @@ public static class HarmonyPatches
     // Run-time spawn
     [HarmonyPrefix]
     [HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt_offthread")]
-    public static bool CanSpawnAt(
+    private static bool CanSpawnAt(
         ref Vec3d? __result,
         EntityProperties type,
         Vec3i spawnPosition,

@@ -7,7 +7,7 @@ using Vintagestory.API.Server;
 
 namespace Biomes.RealmGen;
 
-public static class DefaultRealmOrder
+internal static class DefaultRealmOrder
 {
     public static readonly List<string> Northern =
     [
@@ -31,7 +31,7 @@ public static class DefaultRealmOrder
 }
 
 // this is required to not result in an infinite recursion when reading, json.net sucks
-public class NoAttributeConvertersContractResolver : DefaultContractResolver
+internal class NoAttributeConvertersContractResolver : DefaultContractResolver
 {
     protected override JsonContract CreateContract(Type objectType)
     {
@@ -49,9 +49,9 @@ public class NoAttributeConvertersContractResolver : DefaultContractResolver
 }
 
 [JsonConverter(typeof(RealmGenConfigConverter))]
-public abstract class RealmGenConfig;
+internal abstract class RealmGenConfig;
 
-public class RealmGenConfigConverter : JsonConverter<RealmGenConfig>
+internal class RealmGenConfigConverter : JsonConverter<RealmGenConfig>
 {
     public override void WriteJson(JsonWriter writer, RealmGenConfig? value, JsonSerializer serializer)
     {
@@ -97,11 +97,11 @@ public class RealmGenConfigConverter : JsonConverter<RealmGenConfig>
     }
 }
 
-public interface IRealmGen
+internal interface IRealmGen
 {
-    public List<string> GetRealmsForBlockPos(ICoreServerAPI api, BlockPos blockPos);
+    internal List<string> GetRealmsForBlockPos(ICoreServerAPI api, BlockPos blockPos);
 
-    public static IRealmGen BuildGenerator(BiomesConfig config)
+    internal static IRealmGen BuildGenerator(BiomesConfig config)
     {
         return config.User.RealmGenerationConfig switch
         {

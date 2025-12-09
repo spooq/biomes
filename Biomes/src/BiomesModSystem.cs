@@ -1,10 +1,14 @@
-﻿using Biomes.Caches;
+﻿using System.Runtime.CompilerServices;
+using Biomes.Api;
+using Biomes.Caches;
 using Biomes.RealmGen;
 using Biomes.Utils;
 using ProtoBuf.Meta;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
+
+[assembly: InternalsVisibleTo("BiomesTest")]
 
 namespace Biomes;
 
@@ -21,16 +25,15 @@ namespace Biomes;
 // about it.
 public class BiomesModSystem : ModSystem
 {
-    public readonly bool TagOnChunkGen = true;
     private Commands _commands = null!;
+
+    private bool _isRiversModInstalled;
+    private IRealmGen _realmGen = null!;
 
     private ICoreServerAPI _vsapi = null!;
 
-    public Cache Cache;
-    public BiomesConfig Config = new();
-
-    public bool IsRiversModInstalled;
-    public IRealmGen RealmGen = null!;
+    internal Cache Cache;
+    internal BiomesConfig Config = new();
 
 
     public override bool ShouldLoad(EnumAppSide side)
@@ -54,9 +57,9 @@ public class BiomesModSystem : ModSystem
         base.AssetsLoaded(api);
 
         Config.LoadConfigs(this, api);
-        RealmGen = IRealmGen.BuildGenerator(Config);
+        _realmGen = IRealmGen.BuildGenerator(Config);
 
-        IsRiversModInstalled = api.ModLoader.IsModEnabled("rivers") || api.ModLoader.IsModEnabled("rivergen");
+        _isRiversModInstalled = api.ModLoader.IsModEnabled("rivers") || api.ModLoader.IsModEnabled("rivergen");
     }
 
 
@@ -64,6 +67,7 @@ public class BiomesModSystem : ModSystem
     {
         base.AssetsFinalize(api);
         Cache.Entities.BuildCaches(Config);
+        ExternalRegistry.Initialize(this);
     }
 
     public override void StartServerSide(ICoreServerAPI api)
@@ -102,7 +106,7 @@ public class BiomesModSystem : ModSystem
                 var biomeData = new BiomeData(0);
                 foreach (var realm in oldRealmData) biomeData.SetRealm(Config.ValidRealmIndexes[realm], true);
 
-                if (IsRiversModInstalled)
+                if (_isRiversModInstalled)
                 {
                     var oldRiverBool = mapChunk.GetModdata<bool>(ModPropName.MapChunk.RiverBool);
                     if (oldRiverBool)
@@ -142,8 +146,6 @@ public class BiomesModSystem : ModSystem
 
     private void OnChunkColumnGeneration(IChunkColumnGenerateRequest request)
     {
-        if (!TagOnChunkGen) return;
-
         // Full chunk column isn't needed because mapchunk is the same for all of them
         var mapChunk = request.Chunks[0].MapChunk;
         if (mapChunk == null) return;
@@ -156,11 +158,11 @@ public class BiomesModSystem : ModSystem
             request.ChunkZ * _vsapi.WorldManager.ChunkSize,
             0
         );
-        var realms = RealmGen.GetRealmsForBlockPos(_vsapi, blockPos);
+        var realms = _realmGen.GetRealmsForBlockPos(_vsapi, blockPos);
 
         foreach (var realm in realms) biomeData.SetRealm(Config.ValidRealmIndexes[realm], true);
 
-        if (IsRiversModInstalled)
+        if (_isRiversModInstalled)
         {
             var flowVectors = mapChunk.GetModdata("flowVectors");
             if (flowVectors != null)

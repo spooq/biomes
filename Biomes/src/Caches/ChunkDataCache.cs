@@ -1,10 +1,11 @@
+using Biomes.Api;
 using Biomes.Utils;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 
 namespace Biomes.Caches;
 
-public class ChunkDataCache(BiomesModSystem mod, ICoreAPI api)
+internal class ChunkDataCache(BiomesModSystem mod, ICoreAPI api)
 {
     private readonly Dictionary<FastVec2i, BiomeData> _cache = new();
 

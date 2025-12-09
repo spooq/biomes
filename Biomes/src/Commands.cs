@@ -1,3 +1,4 @@
+using Biomes.Api;
 using Biomes.Utils;
 using HarmonyLib;
 using Vintagestory.API.Common;
@@ -6,7 +7,7 @@ using Vintagestory.API.Server;
 
 namespace Biomes;
 
-public class Commands
+internal class Commands
 {
     private readonly BiomesModSystem _mod;
     private readonly ICoreServerAPI _sapi;

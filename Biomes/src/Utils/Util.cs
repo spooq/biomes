@@ -4,7 +4,7 @@ using Vintagestory.API.MathTools;
 
 namespace Biomes.Utils;
 
-public class Util
+internal class Util
 {
     public static List<string>? GetChunkRealms(IMapChunk chunk)
     {

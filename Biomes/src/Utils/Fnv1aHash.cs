@@ -6,7 +6,7 @@ namespace Biomes.Utils;
 // Public domain very fast hashing algorithm for strings when cryptographic security nor hashdos is a concern
 
 // Fast hashing for code lookup
-public static class Fnv1aHash
+internal static class Fnv1aHash
 {
     private const uint FnvPrime = 16777619;
     private const uint EmptyHash = 2166136261;
@@ -27,7 +27,7 @@ public static class Fnv1aHash
     }
 }
 
-public class Fnv1aStringComparer : IEqualityComparer<string>
+internal class Fnv1aStringComparer : IEqualityComparer<string>
 {
     public bool Equals(string? x, string? y)
     {
@@ -40,7 +40,7 @@ public class Fnv1aStringComparer : IEqualityComparer<string>
     }
 }
 
-public class Fnv1aAssetLocationComparer : IEqualityComparer<AssetLocation>
+internal class Fnv1aAssetLocationComparer : IEqualityComparer<AssetLocation>
 {
     public bool Equals(AssetLocation? x, AssetLocation? y)
     {

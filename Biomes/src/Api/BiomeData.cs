@@ -3,12 +3,16 @@ using System.Runtime.CompilerServices;
 using ProtoBuf;
 using Vintagestory.API.Common;
 
-namespace Biomes;
+namespace Biomes.Api;
 
+/// <summary>
+///     This is a trick to get BiomeData to properly protobuf serialize. Basically we just want it to protobuf serialize
+///     as a raw int instead of any kind of fancy type, so we just unpack the BitVector's backing data
+/// </summary>
 [ProtoContract]
 public struct BiomeDataSurrogate
 {
-    [ProtoMember(1)] public int Data { get; set; }
+    [ProtoMember(1)] public int Data { get; init; }
 
     public static implicit operator BiomeDataSurrogate(BiomeData value)
     {
@@ -21,7 +25,17 @@ public struct BiomeDataSurrogate
     }
 }
 
-public struct BiomeData(int initialValue)
+/// <summary>
+///     Internal datatype used to represent biome data within chunks. Represented memory-wise by a single integer which
+///     is a bitfield of 32 boolean values.
+///     You should not generally be using this directly unless you are explicitly adding some kind of exotic new
+///     functionality. If you're just looking to programatically add support for biomes to some kind of plant/entity
+///     spawning, see ExternalRegistry
+///     0-15 are realm bits, they're indexed interally by the mod.
+///     At the moment, fields 22-31 are unoccupied and reserved.
+/// </summary>
+/// <param name="initialValue" >The value to initialize the bitfield with</param>
+public struct BiomeData(int initialValue) : IEquatable<BiomeData>
 {
     // mask which corresponds to all possible regions set if you need to mask it out
     // realm data occupies bits 0-15
@@ -30,8 +44,9 @@ public struct BiomeData(int initialValue)
 
     public const int SeasonsBitOffset = 16;
 
-    // mask which corresponds to all set seasons, season data occupies bits 16-19
+    /// mask which corresponds to all set seasons, season data occupies bits 16-19
     public const int AllSeasonsMask = 0b00000000_00001111_00000000_00000000;
+
     public const int SpringMask = 1 << (SeasonsBitOffset + (int)EnumSeason.Spring);
     public const int SummerMask = 1 << (SeasonsBitOffset + (int)EnumSeason.Summer);
     public const int FallMask = 1 << (SeasonsBitOffset + (int)EnumSeason.Fall);
@@ -187,6 +202,18 @@ public struct BiomeData(int initialValue)
         return (Value.Data & AllSeasonsMask) == AllSeasonsMask;
     }
 
+
+    internal List<string> RealmNames(BiomesConfig config)
+    {
+        List<string> outList = [];
+
+        foreach (var (name, index) in config.ValidRealmIndexes)
+            if (GetRealm(index))
+                outList.Add(name);
+
+        return outList;
+    }
+
     public override int GetHashCode()
     {
         unchecked
@@ -198,14 +225,23 @@ public struct BiomeData(int initialValue)
         }
     }
 
-    public List<string> RealmNames(BiomesConfig config)
+    public bool Equals(BiomeData other)
     {
-        List<string> outList = [];
+        return Value.Equals(other.Value);
+    }
 
-        foreach (var (name, index) in config.ValidRealmIndexes)
-            if (GetRealm(index))
-                outList.Add(name);
+    public override bool Equals(object? obj)
+    {
+        return obj is BiomeData other && Equals(other);
+    }
 
-        return outList;
+    public static bool operator ==(BiomeData left, BiomeData right)
+    {
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(BiomeData left, BiomeData right)
+    {
+        return !(left == right);
     }
 }

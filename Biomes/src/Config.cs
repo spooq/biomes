@@ -1,3 +1,4 @@
+using Biomes.Api;
 using Biomes.RealmGen;
 using Biomes.Utils;
 using Newtonsoft.Json;
@@ -6,7 +7,7 @@ using Vintagestory.API.Common;
 
 namespace Biomes;
 
-public class Configv1
+internal class Configv1
 {
     public readonly Dictionary<string, List<string>> BlockPatchBiomes = new(new Fnv1aStringComparer());
     public readonly List<string> EntitySpawnWhiteList = new();
@@ -14,7 +15,7 @@ public class Configv1
     public readonly Dictionary<string, List<string>> TreeBiomes = new(new Fnv1aStringComparer());
 }
 
-public class Configv2
+internal class Configv2
 {
     public readonly Dictionary<string, ConfigItem> BlockPatchBiomes = new(new Fnv1aStringComparer());
     public readonly List<string> EntitySpawnWhiteList = new();
@@ -48,30 +49,7 @@ internal class OldFormatEnumConverter : JsonConverter<BioRiver>
     }
 }
 
-[JsonConverter(typeof(OldFormatEnumConverter))]
-public enum BioRiver
-{
-    NoRiver,
-    Both,
-    RiverOnly
-}
-
-public static class BioRiverExtensions
-{
-    public static BioRiver FromString(string value)
-    {
-        var lowercase = value.ToLowerInvariant();
-        return lowercase switch
-        {
-            "false" or "noriver" => BioRiver.NoRiver,
-            "both" => BioRiver.Both,
-            "true" or "riveronly" => BioRiver.RiverOnly,
-            _ => throw new JsonSerializationException($"Unknown bioriver value: {value}")
-        };
-    }
-}
-
-public struct ConfigItem()
+internal struct ConfigItem()
 {
     public List<string> biorealm = [];
     public BioRiver bioriver = BioRiver.Both;
@@ -98,7 +76,7 @@ public struct ConfigItem()
     }
 }
 
-public enum NoSupportSpawningMode
+internal enum NoSupportSpawningMode
 {
     Allow,
     AllowButWarn,
@@ -106,7 +84,7 @@ public enum NoSupportSpawningMode
     Deny
 }
 
-public static class SpawningModeMethods
+internal static class SpawningModeMethods
 {
     public static bool ShouldWarn(this NoSupportSpawningMode mode)
     {
@@ -127,7 +105,7 @@ public static class SpawningModeMethods
     }
 }
 
-public class UserConfig
+internal class UserConfig
 {
     public bool AutoMigrateOldData = true;
     public bool Debug;
@@ -168,27 +146,27 @@ public class UserConfig
     }
 }
 
-public class BlockConfig
+internal class BlockConfig
 {
     public readonly Dictionary<string, ConfigItem> BlockPatches = new(new Fnv1aStringComparer());
     public readonly Dictionary<string, ConfigItem> FruitTrees = new(new Fnv1aStringComparer());
     public readonly Dictionary<string, ConfigItem> Trees = new(new Fnv1aStringComparer());
 }
 
-public class BiomesConfig
+internal class BiomesConfig
 {
-    public const int MaxValidRealms = BiomeData.SeasonsBitOffset;
+    internal const int MaxValidRealms = BiomeData.SeasonsBitOffset;
 
-    public readonly Dictionary<string, ConfigItem> BlockPatches = new(new Fnv1aStringComparer());
-    public readonly Dictionary<string, ConfigItem> FruitTrees = new(new Fnv1aStringComparer());
-    public readonly Dictionary<string, ConfigItem> Trees = new(new Fnv1aStringComparer());
-    public readonly Dictionary<string, int> ValidRealmIndexes = new(new Fnv1aStringComparer());
+    internal readonly Dictionary<string, ConfigItem> BlockPatches = new(new Fnv1aStringComparer());
+    internal readonly Dictionary<string, ConfigItem> FruitTrees = new(new Fnv1aStringComparer());
+    internal readonly Dictionary<string, ConfigItem> Trees = new(new Fnv1aStringComparer());
+    internal readonly Dictionary<string, int> ValidRealmIndexes = new(new Fnv1aStringComparer());
 
-    public readonly List<string> Whitelist = [];
+    internal readonly List<string> Whitelist = [];
 
 
-    public UserConfig User = new();
-    public List<string> ValidRealms = [];
+    internal UserConfig User = new();
+    internal List<string> ValidRealms = [];
 
     private void LoadUserConfig(ICoreAPI api)
     {

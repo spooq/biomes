@@ -7,16 +7,16 @@ public class RectTests
     [Fact]
     public void PointInsideWorks()
     {
-        var Rect = new BlendedRealmGen.Rect(
+        var rect = new BlendedRealmGen.Rect(
             new BlendedRealmGen.Point(0.0, 1.0),
             new BlendedRealmGen.Point(1.0, 0.0),
             "doesn't matter"
         );
 
         var pointThatShouldBeInside = new BlendedRealmGen.Point(0.5, 0.5);
-        Assert.True(Rect.PointInside(pointThatShouldBeInside));
+        Assert.True(rect.PointInside(pointThatShouldBeInside));
 
         var pointThatShouldntBeInside = new BlendedRealmGen.Point(1.5, -0.5);
-        Assert.False(Rect.PointInside(pointThatShouldntBeInside));
+        Assert.False(rect.PointInside(pointThatShouldntBeInside));
     }
 }

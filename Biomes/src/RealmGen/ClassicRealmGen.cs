@@ -5,7 +5,7 @@ using Vintagestory.API.Server;
 
 namespace Biomes.RealmGen;
 
-public class ClassicGenConfig : RealmGenConfig
+internal class ClassicGenConfig : RealmGenConfig
 {
     public const string TypeKey = "classic";
 
@@ -16,7 +16,7 @@ public class ClassicGenConfig : RealmGenConfig
 
 // original generation style from 1.0. Slow and deeply flawed, included purely as a compatibility measure for those
 // who really don't want odd realm generation at borders of existing world.
-public class ClassicRealmGen(ClassicGenConfig config) : IRealmGen
+internal class ClassicRealmGen(ClassicGenConfig config) : IRealmGen
 {
     public List<string> GetRealmsForBlockPos(ICoreServerAPI api, BlockPos blockPos)
     {

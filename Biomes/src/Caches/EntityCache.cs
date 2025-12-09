@@ -1,3 +1,4 @@
+using Biomes.Api;
 using Biomes.Utils;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -6,16 +7,16 @@ using Vintagestory.API.Util;
 
 namespace Biomes.Caches;
 
-public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
+internal class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
 {
     private readonly Dictionary<AssetLocation, BiomeData> _entityCache = new(new Fnv1aAssetLocationComparer());
 
-    public readonly HashSet<AssetLocation> Whitelist = new(new Fnv1aAssetLocationComparer());
+    internal readonly HashSet<AssetLocation> Whitelist = new(new Fnv1aAssetLocationComparer());
 
     // Explicitly not initialized unless we have a nohit found
     private HashSet<AssetLocation>? _alreadyRecordedNoHit = new(new Fnv1aAssetLocationComparer());
 
-    public void GenWhitelist(List<string> whitelistSpecified)
+    private void GenWhitelist(List<string> whitelistSpecified)
     {
         foreach (var entity in vsapi.World.EntityTypes)
         {
@@ -25,12 +26,22 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
         }
     }
 
+    internal void RegisterWhitelist(AssetLocation location)
+    {
+        Whitelist.Add(location);
+    }
+
+    internal void RegisterEntity(AssetLocation location, BiomeData biomeData)
+    {
+        _entityCache[location] = biomeData;
+    }
+
     // Build entity info caches
     // This happens after configs are loaded.
     // Unlike world gen stuff which is lazy generated because
     // you may not even be doing world gen, the server is
     // *always* spawning entities.
-    public void BuildCaches(BiomesConfig config)
+    internal void BuildCaches(BiomesConfig config)
     {
         var fullWhitelist = config.Whitelist.ToList();
         fullWhitelist.AddRange(config.User.EntitySpawnWhiteList);
@@ -91,7 +102,7 @@ public class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
         }
     }
 
-    public bool IsSpawnValid(EntityProperties type, BlockPos blockPos = null)
+    internal bool IsSpawnValid(EntityProperties type, BlockPos blockPos = null)
     {
         var code = type.Code!;
         if (Whitelist.Contains(code)) return true;

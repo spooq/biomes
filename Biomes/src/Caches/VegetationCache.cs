@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Biomes.Api;
 using Biomes.Utils;
 using Vintagestory.API.Common;
 using Vintagestory.API.Util;
@@ -8,10 +9,8 @@ using Vintagestory.ServerMods.NoObf;
 
 namespace Biomes.Caches;
 
-public class VegetationCache(BiomesModSystem mod)
+internal class VegetationCache(BiomesModSystem mod)
 {
-    public const string KeySeparator = ";";
-
     // fruit trees are special because the parent code can have multiple fruit tree variants
     // realm : tree base code: filtered variant genconds
     private readonly Dictionary<BiomeData, Dictionary<AssetLocation, FruitTreeWorldGenConds[]>> _fruitTreeCache = new();
