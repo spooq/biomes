@@ -81,4 +81,9 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
+
+
+    <ItemGroup>
+        <Folder Include="assets\biomes\config\biomes\"/>
+    </ItemGroup>
 </Project>

@@ -1,22 +1,6 @@
+// Legacy config for things I could not figure out the source for after spending far too much time going back and forth
 {
   "BlockPatchBiomes": {
-    "waterplant-seagrass-*": {
-      "biorealm": [
-        "atlantic afrotropic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern afrotropic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific nearctic",
-        "atlantic nearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "false"
-    },
     "*-cauliflower-*": {
       "biorealm": [
         "atlantic palearctic",
@@ -250,61 +234,6 @@
       ],
       "bioriver": "both"
     },
-    "bottomberrybush-juniper-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ],
-      "bioriver": "both"
-    },
-    "bottomberrybush-pilo-*": {
-      "biorealm": [
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
-    "bottomberrybush-pistachio-*": {
-      "biorealm": [
-        "atlantic palearctic",
-        "atlantic afrotropic"
-      ],
-      "bioriver": "both"
-    },
-    "bottomberrybush-seamango-*": {
-      "biorealm": [
-        "eastern afrotropic",
-        "pacific palearctic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
-    "bottomtreebush-marita-*": {
-      "biorealm": [
-        "australasian"
-      ],
-      "bioriver": "both"
-    },
-    "bottomtreebush-pistachio-*": {
-      "biorealm": [
-        "atlantic palearctic",
-        "atlantic afrotropic"
-      ],
-      "bioriver": "both"
-    },
-    "bottomtreebush-seamango-*": {
-      "biorealm": [
-        "eastern afrotropic",
-        "pacific palearctic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
     "bugleweed-european-*": {
       "biorealm": [
         "atlantic palearctic"
@@ -326,7 +255,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "log-grown-petrified-*": {
       "biorealm": [
@@ -369,78 +298,6 @@
       "bioriver": "both"
     },
     "talldrygrass-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
-      ],
-      "bioriver": "both"
-    },
-    "topberrybush-kumquat-*": {
-      "biorealm": [
-        "eastern palearctic",
-        "pacific palearctic"
-      ],
-      "bioriver": "both"
-    },
-    "topberrybush-sumac-*": {
-      "biorealm": [
-        "pacific nearctic"
-      ],
-      "bioriver": "both"
-    },
-    "toppricklybush-brambleberry-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian"
-      ],
-      "bioriver": "both"
-    },
-    "toppricklybush-deserthackberry-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic"
-      ],
-      "bioriver": "both"
-    },
-    "toppricklybush-dogrose-*": {
-      "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "eastern afrotropic"
-      ],
-      "bioriver": "both"
-    },
-    "toppricklybush-gooseberry-*": {
-      "biorealm": [
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ],
-      "bioriver": "both"
-    },
-    "waterplant-watermilfoil-*": {
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",

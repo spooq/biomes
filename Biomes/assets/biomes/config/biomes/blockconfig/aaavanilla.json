@@ -15,7 +15,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "aquatic-hornwort-*": {
       "biorealm": [
@@ -32,7 +32,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "aquatic-kelp-*": {
       "biorealm": [
@@ -56,13 +56,13 @@
       "biorealm": [
         "atlantic neotropic"
       ],
-      "bioriver": "true"
+      "bioriver": "riveronly"
     },
     "aquatic-lilygiant-*": {
       "biorealm": [
         "atlantic neotropic"
       ],
-      "bioriver": "true"
+      "bioriver": "riveronly"
     },
     "aquatic-milfoil*": {
       "biorealm": [
@@ -70,7 +70,7 @@
         "atlantic neotropic",
         "pacific neotropic"
       ],
-      "bioriver": "true"
+      "bioriver": "riveronly"
     },
     "aquatic-muskgrass-*": {
       "biorealm": [
@@ -87,7 +87,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "aquatic-seagrass-*": {
       "biorealm": [
@@ -104,7 +104,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "flotsam-driftwood-*": {
       "biorealm": [
@@ -121,7 +121,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "aquatic-watercrowfoot-*": {
       "biorealm": [
@@ -136,14 +136,14 @@
         "atlantic palearctic",
         "atlantic nearctic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "aquaticplant-irishmoss": {
       "biorealm": [
         "atlantic palearctic",
         "atlantic nearctic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "aquaticplant-milfoil*": {
       "biorealm": [
@@ -151,7 +151,7 @@
         "atlantic neotropic",
         "pacific neotropic"
       ],
-      "bioriver": "true"
+      "bioriver": "riveronly"
     },
     "aquaticplant-sealace": {
       "biorealm": [
@@ -161,7 +161,7 @@
         "pacific nearctic",
         "eastern palearctic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "barrelcactus-normal": {
       "biorealm": [
@@ -214,7 +214,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "fern-cinnamonfern": {
       "biorealm": [
@@ -970,7 +970,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "reefledge-*": {
       "biorealm": [
@@ -987,7 +987,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "reefstructure-*": {
       "biorealm": [
@@ -1004,7 +1004,7 @@
         "australasian",
         "oceanic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "saguarocactus-segment": {
       "biorealm": [
@@ -1126,7 +1126,7 @@
         "eastern afrotropic",
         "australasian"
       ],
-      "bioriver": "no"
+      "bioriver": "noriver"
     },
     "wildbeehive-*": {
       "biorealm": [

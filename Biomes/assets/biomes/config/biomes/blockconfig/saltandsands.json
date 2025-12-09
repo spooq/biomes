@@ -160,7 +160,7 @@
         "pacific nearctic",
         "pacific neotropic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "urchin-purple-*": {
       "biorealm": [
@@ -172,13 +172,47 @@
       "biorealm": [
         "pacific nearctic"
       ],
-      "bioriver": "false"
+      "bioriver": "noriver"
     },
     "urchin-tuxedo-*": {
       "biorealm": [
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "waterplant-seagrass-*": {
+      "biorealm": [
+        "atlantic afrotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern afrotropic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "australasian",
+        "oceanic"
+      ],
+      "bioriver": "noriver"
+    },
+    "waterplant-watermilfoil-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic",
         "australasian",
         "oceanic"
       ],

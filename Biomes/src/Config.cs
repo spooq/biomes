@@ -1,4 +1,5 @@
 using Biomes.RealmGen;
+using Biomes.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Vintagestory.API.Common;
@@ -7,18 +8,18 @@ namespace Biomes;
 
 public class Configv1
 {
-    public readonly Dictionary<string, List<string>> BlockPatchBiomes = new();
+    public readonly Dictionary<string, List<string>> BlockPatchBiomes = new(new Fnv1aStringComparer());
     public readonly List<string> EntitySpawnWhiteList = new();
-    public readonly Dictionary<string, List<string>> FruitTreeBiomes = new();
-    public readonly Dictionary<string, List<string>> TreeBiomes = new();
+    public readonly Dictionary<string, List<string>> FruitTreeBiomes = new(new Fnv1aStringComparer());
+    public readonly Dictionary<string, List<string>> TreeBiomes = new(new Fnv1aStringComparer());
 }
 
 public class Configv2
 {
-    public readonly Dictionary<string, ConfigItem> BlockPatchBiomes = new();
+    public readonly Dictionary<string, ConfigItem> BlockPatchBiomes = new(new Fnv1aStringComparer());
     public readonly List<string> EntitySpawnWhiteList = new();
-    public readonly Dictionary<string, ConfigItem> FruitTreeBiomes = new();
-    public readonly Dictionary<string, ConfigItem> TreeBiomes = new();
+    public readonly Dictionary<string, ConfigItem> FruitTreeBiomes = new(new Fnv1aStringComparer());
+    public readonly Dictionary<string, ConfigItem> TreeBiomes = new(new Fnv1aStringComparer());
 }
 
 internal class OldFormatEnumConverter : JsonConverter<BioRiver>
@@ -73,7 +74,7 @@ public static class BioRiverExtensions
 public struct ConfigItem()
 {
     public List<string> biorealm = [];
-    public BioRiver river = BioRiver.Both;
+    public BioRiver bioriver = BioRiver.Both;
 
     public BiomeData ToBiomeData(BiomesConfig config)
     {
@@ -84,7 +85,7 @@ public struct ConfigItem()
             biomeDataValue |= mask;
         }
 
-        var riverMask = river switch
+        var riverMask = bioriver switch
         {
             BioRiver.NoRiver => BiomeData.NoRiverMask,
             BioRiver.Both => BiomeData.BothMask,
@@ -167,21 +168,27 @@ public class UserConfig
     }
 }
 
+public class BlockConfig
+{
+    public readonly Dictionary<string, ConfigItem> BlockPatches = new(new Fnv1aStringComparer());
+    public readonly Dictionary<string, ConfigItem> FruitTrees = new(new Fnv1aStringComparer());
+    public readonly Dictionary<string, ConfigItem> Trees = new(new Fnv1aStringComparer());
+}
+
 public class BiomesConfig
 {
     public const int MaxValidRealms = BiomeData.SeasonsBitOffset;
 
-    public Dictionary<string, ConfigItem> BlockPatches = [];
-    public Dictionary<string, ConfigItem> FruitTrees = [];
+    public readonly Dictionary<string, ConfigItem> BlockPatches = new(new Fnv1aStringComparer());
+    public readonly Dictionary<string, ConfigItem> FruitTrees = new(new Fnv1aStringComparer());
+    public readonly Dictionary<string, ConfigItem> Trees = new(new Fnv1aStringComparer());
+    public readonly Dictionary<string, int> ValidRealmIndexes = new(new Fnv1aStringComparer());
 
-    public Dictionary<string, ConfigItem> Trees = [];
+    public readonly List<string> Whitelist = [];
 
 
     public UserConfig User = new();
-    public Dictionary<string, int> ValidRealmIndexes = new();
     public List<string> ValidRealms = [];
-
-    public List<string> Whitelist = [];
 
     private void LoadUserConfig(ICoreAPI api)
     {
@@ -204,6 +211,7 @@ public class BiomesConfig
     {
         LoadValidRealms(mod, api);
         LoadLegacyConfigs(mod, api);
+        LoadBlockConfigs(mod, api);
         LoadUserConfig(api);
         LoadWhitelist(mod, api);
     }
@@ -228,11 +236,11 @@ public class BiomesConfig
 
             foreach (var item in tmp.EntitySpawnWhiteList) Whitelist.Add(item);
             foreach (var item in tmp.TreeBiomes)
-                Trees[item.Key] = new ConfigItem { biorealm = item.Value, river = BioRiver.Both };
+                Trees[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
             foreach (var item in tmp.FruitTreeBiomes)
-                FruitTrees[item.Key] = new ConfigItem { biorealm = item.Value, river = BioRiver.Both };
+                FruitTrees[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
             foreach (var item in tmp.BlockPatchBiomes)
-                BlockPatches[item.Key] = new ConfigItem { biorealm = item.Value, river = BioRiver.Both };
+                BlockPatches[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
         }
 
         // Version 2 config file format
@@ -247,19 +255,32 @@ public class BiomesConfig
         }
     }
 
+    private void LoadBlockConfigs(BiomesModSystem mod, ICoreAPI api)
+    {
+        var blockconfigs = api.Assets.GetMany("config/biomes/blockconfig");
+        foreach (var blockconfig in blockconfigs)
+        {
+            var parsed = JsonConvert.DeserializeObject<BlockConfig>(blockconfig.ToText());
+            if (parsed == null) continue;
+            foreach (var item in parsed.Trees) Trees[item.Key] = item.Value;
+            foreach (var item in parsed.FruitTrees) FruitTrees[item.Key] = item.Value;
+            foreach (var item in parsed.BlockPatches) BlockPatches[item.Key] = item.Value;
+        }
+    }
+
     private void LoadWhitelist(BiomesModSystem mod, ICoreAPI api)
     {
         // There's no real harm in checking all whitelists, mildly slows down whitelist generation phase but there isn't
         // many whitelists and this is only a startup cost
-        var folder = api.Assets.GetMany("config/whitelist/");
+        var folder = api.Assets.GetMany("config/biomes/whitelist/");
         foreach (var whitelistFile in folder)
         {
             var parsed = JsonConvert.DeserializeObject<List<string>>(whitelistFile.ToText());
             if (parsed != null) Whitelist.AddRange(parsed);
         }
 
-        // get legacy whitelists now
-        var legacy = api.Assets.GetMany("config/whitelist.json");
+        // get single whitelist files now
+        var legacy = api.Assets.GetMany("config/biomes/whitelist.json");
         foreach (var whitelistFile in legacy)
         {
             var parsed = JsonConvert.DeserializeObject<List<string>>(whitelistFile.ToText());
