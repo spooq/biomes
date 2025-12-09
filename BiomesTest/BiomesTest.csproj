@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\biomes\biomes.csproj"/>
+        <ProjectReference Include="..\Biomes\Biomes.csproj"/>
     </ItemGroup>
 
 </Project>

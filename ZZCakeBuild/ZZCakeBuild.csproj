@@ -6,6 +6,8 @@
         <RootNamespace>CakeBuild</RootNamespace>
     </PropertyGroup>
 
+    <Import Project="..\Biomes\Properties\localSettings.props" Condition="Exists('..\Biomes\Properties\localSettings.props')"/>
+
     <ItemGroup>
         <PackageReference Include="Cake.Frosting" Version="5.0.0"/>
         <PackageReference Include="Cake.Json" Version="7.0.1"/>
@@ -14,7 +16,7 @@
 
     <ItemGroup>
         <Reference Include="VintagestoryAPI">
-            <HintPath>/home/actioninja/vintagestory//VintagestoryAPI.dll</HintPath>
+            <HintPath>$(GameDirectory)/VintagestoryAPI.dll</HintPath>
         </Reference>
     </ItemGroup>
 </Project>
