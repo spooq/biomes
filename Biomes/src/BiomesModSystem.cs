@@ -68,6 +68,7 @@ public class BiomesModSystem : ModSystem
         base.AssetsFinalize(api);
         Cache.Entities.BuildCaches(Config);
         ExternalRegistry.Initialize(this);
+        ExternalData.Initialize(this, api);
     }
 
     public override void StartServerSide(ICoreServerAPI api)

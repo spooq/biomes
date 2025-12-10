@@ -1,5 +1,6 @@
 using System.Collections.Specialized;
 using System.Runtime.CompilerServices;
+using Biomes.Utils;
 using ProtoBuf;
 using Vintagestory.API.Common;
 
@@ -37,6 +38,8 @@ public struct BiomeDataSurrogate
 /// <param name="initialValue" >The value to initialize the bitfield with</param>
 public struct BiomeData(int initialValue) : IEquatable<BiomeData>
 {
+    public const string BiomeDataChunkKey = ModPropName.MapChunk.BiomeData;
+
     // mask which corresponds to all possible regions set if you need to mask it out
     // realm data occupies bits 0-15
     // realms aren't manually specified because they're given indexes internally
