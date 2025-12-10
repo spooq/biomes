@@ -198,7 +198,7 @@ internal class BiomesConfig
     {
         var asset = api.Assets.Get($"{mod.Mod.Info.ModID}:config/realms.json").ToText()!;
         ValidRealms = JsonConvert.DeserializeObject<List<string>>(asset)!;
-        // Arbitrary magic number picked to give 8 bits of headroom
+        // Arbitrary magic number picked to give 16 bits of headroom
         if (ValidRealms.Count > MaxValidRealms)
             throw new Exception($"Realms has too many specified realms, must be < {MaxValidRealms}");
 
@@ -214,11 +214,31 @@ internal class BiomesConfig
 
             foreach (var item in tmp.EntitySpawnWhiteList) Whitelist.Add(item);
             foreach (var item in tmp.TreeBiomes)
-                Trees[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value);
+                if (valid)
+                    Trees[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
+                else
+                    mod.Mod.Logger.Error($"{biomeAsset.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
+
             foreach (var item in tmp.FruitTreeBiomes)
-                FruitTrees[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value);
+                if (valid)
+                    FruitTrees[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
+                else
+                    mod.Mod.Logger.Error($"{biomeAsset.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
+
             foreach (var item in tmp.BlockPatchBiomes)
-                BlockPatches[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value);
+                if (valid)
+                    BlockPatches[item.Key] = new ConfigItem { biorealm = item.Value, bioriver = BioRiver.Both };
+                else
+                    mod.Mod.Logger.Error($"{biomeAsset.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
         }
 
         // Version 2 config file format
@@ -227,10 +247,41 @@ internal class BiomesConfig
             var tmp = JsonConvert.DeserializeObject<Configv2>(biomeAsset.ToText())!;
 
             foreach (var item in tmp.EntitySpawnWhiteList) Whitelist.Add(item);
-            foreach (var item in tmp.TreeBiomes) Trees[item.Key] = item.Value;
-            foreach (var item in tmp.FruitTreeBiomes) FruitTrees[item.Key] = item.Value;
-            foreach (var item in tmp.BlockPatchBiomes) BlockPatches[item.Key] = item.Value;
+            foreach (var item in tmp.TreeBiomes)
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value.biorealm);
+                if (valid)
+                    Trees[item.Key] = item.Value;
+                else
+                    mod.Mod.Logger.Error($"{biomeAsset.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
+
+            foreach (var item in tmp.FruitTreeBiomes)
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value.biorealm);
+                if (valid)
+                    FruitTrees[item.Key] = item.Value;
+                else
+                    mod.Mod.Logger.Error($"{biomeAsset.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
+
+            foreach (var item in tmp.BlockPatchBiomes)
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value.biorealm);
+                if (valid)
+                    BlockPatches[item.Key] = item.Value;
+                else
+                    mod.Mod.Logger.Error($"{biomeAsset.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
         }
+    }
+
+    private (bool, string) CheckIfRealmsValid(List<string> realms)
+    {
+        foreach (var realm in realms)
+            if (!ValidRealms.Contains(realm))
+                return (false, realm);
+        return (true, string.Empty);
     }
 
     private void LoadBlockConfigs(BiomesModSystem mod, ICoreAPI api)
@@ -240,9 +291,32 @@ internal class BiomesConfig
         {
             var parsed = JsonConvert.DeserializeObject<BlockConfig>(blockconfig.ToText());
             if (parsed == null) continue;
-            foreach (var item in parsed.Trees) Trees[item.Key] = item.Value;
-            foreach (var item in parsed.FruitTrees) FruitTrees[item.Key] = item.Value;
-            foreach (var item in parsed.BlockPatches) BlockPatches[item.Key] = item.Value;
+            foreach (var item in parsed.Trees)
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value.biorealm);
+                if (valid)
+                    Trees[item.Key] = item.Value;
+                else
+                    mod.Mod.Logger.Error($"{blockconfig.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
+
+            foreach (var item in parsed.FruitTrees)
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value.biorealm);
+                if (valid)
+                    FruitTrees[item.Key] = item.Value;
+                else
+                    mod.Mod.Logger.Error($"{blockconfig.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
+
+            foreach (var item in parsed.BlockPatches)
+            {
+                var (valid, failedName) = CheckIfRealmsValid(item.Value.biorealm);
+                if (valid)
+                    BlockPatches[item.Key] = item.Value;
+                else
+                    mod.Mod.Logger.Error($"{blockconfig.Location}:{item.Key}; {failedName} is not a valid realm name!");
+            }
         }
     }
 
