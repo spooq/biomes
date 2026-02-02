@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using Biomes.Api;
 using Biomes.Utils;
 using Vintagestory.API.Common;
@@ -7,7 +8,7 @@ namespace Biomes.Caches;
 
 internal class ChunkDataCache(BiomesModSystem mod, ICoreAPI api)
 {
-    private readonly Dictionary<FastVec2i, BiomeData> _cache = new();
+    private readonly ConcurrentDictionary<FastVec2i, BiomeData> _cache = new();
 
     public void CacheData(FastVec2i pos, BiomeData biomeData)
     {
@@ -39,6 +40,6 @@ internal class ChunkDataCache(BiomesModSystem mod, ICoreAPI api)
 
     public void Evict(FastVec2i index)
     {
-        _cache.Remove(index);
+        _cache.Remove(index, out _);
     }
 }
