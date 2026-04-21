@@ -1,0 +1,173 @@
+[
+  {
+    "file": "game:entities/animal/fish/freshwater-adult.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "fish-freshwater-alewife-shad-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-chub-river-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-crappie-black-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-crappie-white-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-perch-european-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "fish-freshwater-perch-yellow-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-piranha-black-*": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "fish-freshwater-piranha-red-*": {
+        "biorealm": [
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "fish-freshwater-trout-brown-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-trout-rainbow-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+
+      "fish-freshwater-bass-largemouth-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-bass-smallmouth-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-carp-common-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "pacific neotropic",
+          "atlantic neotropic"
+        ]
+      },
+      "fish-freshwater-carp-grass-*": {
+        "biorealm": [
+          "atlantic neotropic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "fish-freshwater-catfish-blue-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-catfish-channel-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-pickerel-chain-*": {
+        "biorealm": [
+          "atlantic nearctic"
+        ]
+      },
+      "fish-freshwater-salmon-coho-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "pacific palearctic",
+          "eastern palearctic"
+        ]
+      },
+      "fish-freshwater-tilapia-nile-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "eastern afrotropic"
+        ]
+      },
+      "fish-freshwater-tilapia-red-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "eastern afrotropic",
+          "pacific neotropic"
+        ]
+      },
+      "fish-freshwater-walleye-common-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic"
+        ]
+      },
+
+      "fish-freshwater-pike-northern-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      },
+
+      "fish-freshwater-arapaima-arapaima-*": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "fish-freshwater-arapaima-gigas-*": {
+        "biorealm": [
+          "atlantic neotropic"
+        ]
+      },
+      "fish-freshwater-sheatfish-black-*": {
+        "biorealm": [
+          "atlantic palearctic"
+        ]
+      },
+      "fish-freshwater-sheatfish-white-*": {
+        "biorealm": [
+          "central palearctic",
+          "eastern palearctic"
+        ]
+      }
+    }
+  }
+]

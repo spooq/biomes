@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
         <RootNamespace>CakeBuild</RootNamespace>
+        <LangVersion>14</LangVersion>
     </PropertyGroup>
 
     <Import Project="..\Biomes\Properties\localSettings.props" Condition="Exists('..\Biomes\Properties\localSettings.props')"/>

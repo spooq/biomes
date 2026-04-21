@@ -2,17 +2,30 @@
   {
     "file": "game:entities/animal/mammal/hooved/pig-adult.json",
     "op": "addmerge",
-    "path": "/attributes",
+    "path": "/attributesByType",
     "side": "Server",
     "value": {
-      "biorealm": [
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic"
-      ]
+      "pig-eurasian-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "pig-redriver-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic",
+        ]
+      },
+      "pig-warthog-*": {
+        "biorealm": [
+          "atlantic palearctic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      }
     }
   }
 ]
