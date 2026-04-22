@@ -2,6 +2,11 @@
   {
     "file": "feverstonewilds:entities/land/golem.json",
     "op": "addmerge",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
     "path": "/attributesByType",
     "side": "Server",
     "value": {

@@ -4,6 +4,11 @@
     "op": "addmerge",
     "path": "/attributes",
     "side": "Server",
+    "dependsOn": [
+      {
+        "modid": "creaturescan"
+      }
+    ],
     "value": {
       "biorealm": [
         "eastern palearctic",

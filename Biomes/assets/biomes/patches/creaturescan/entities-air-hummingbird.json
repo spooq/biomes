@@ -4,6 +4,11 @@
     "op": "addmerge",
     "path": "/attributesByType",
     "side": "Server",
+    "dependsOn": [
+      {
+        "modid": "creaturescan"
+      }
+    ],
     "value": {
       "*-green": {
         "biorealm": [
