@@ -84,7 +84,6 @@ public class BiomesModSystem : ModSystem
         _commands = new Commands(this, _vsapi);
     }
 
-
     public override void Dispose()
     {
         HarmonyPatches.Shutdown();

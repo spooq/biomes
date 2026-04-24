@@ -33,6 +33,8 @@ public struct BiomeDataSurrogate
 ///     functionality. If you're just looking to programatically add support for biomes to some kind of plant/entity
 ///     spawning, see ExternalRegistry
 ///     0-15 are realm bits, they're indexed interally by the mod.
+///     16-19 are season bits,
+///     20 is the no river bit, 21 is the river bit.
 ///     At the moment, fields 22-31 are unoccupied and reserved.
 /// </summary>
 /// <param name="initialValue" >The value to initialize the bitfield with</param>

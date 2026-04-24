@@ -20,6 +20,12 @@ internal class ChunkDataCache(BiomesModSystem mod, ICoreAPI api)
         if (!_cache.ContainsKey(pos))
         {
             var mapChunk = api.World.BlockAccessor.GetMapChunk(new Vec2i(pos.X, pos.Y));
+            //TODO: This is a bad hack that should probably be fixed eventually.
+            // in 1.22, something changed with the load order or something where occasionally chunks that don't exist yet
+            // queried for spawns that don't exist yet.
+            // I have absolutely no idea why these spawns are being queried or what's happening here, so I instead just
+            // return "yeah the spawn is allowed by biomes"
+            return new BiomeData(int.MaxValue);
             CacheData(pos, mapChunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0)));
         }
 

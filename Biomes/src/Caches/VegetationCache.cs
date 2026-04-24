@@ -12,7 +12,7 @@ namespace Biomes.Caches;
 internal class VegetationCache(BiomesModSystem mod)
 {
     // fruit trees are special because the parent code can have multiple fruit tree variants
-    // realm : tree base code: filtered variant genconds
+    // realm: tree base code: filtered variant genconds
     private readonly Dictionary<BiomeData, Dictionary<AssetLocation, FruitTreeWorldGenConds[]>> _fruitTreeCache = new();
 
     private readonly Dictionary<BiomeData, BlockPatch[]> _patchCache = new();
