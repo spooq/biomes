@@ -25,7 +25,7 @@ internal class ChunkDataCache(BiomesModSystem mod, ICoreAPI api)
             // queried for spawns that don't exist yet.
             // I have absolutely no idea why these spawns are being queried or what's happening here, so I instead just
             // return "yeah the spawn is allowed by biomes"
-            return new BiomeData(int.MaxValue);
+            if (mapChunk == null) return new BiomeData(int.MaxValue);
             CacheData(pos, mapChunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0)));
         }
 

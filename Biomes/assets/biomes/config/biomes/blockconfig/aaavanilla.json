@@ -623,6 +623,18 @@
       ],
       "bioriver": "both"
     },
+    "mushroom-bluemeanie-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic neotropic",
+        "atlantic palearctic",
+        "atlantic afrotropic",
+        "eastern palearctic",
+        "australasian",
+        "oceania"
+      ],
+      "bioriver": "both"
+    },
     "mushroom-chanterelle-*": {
       "biorealm": [
         "pacific nearctic",
@@ -746,6 +758,17 @@
       ],
       "bioriver": "both"
     },
+    "mushroom-foolsconecap-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
     "mushroom-funeralbell-*": {
       "biorealm": [
         "pacific nearctic",
@@ -760,6 +783,16 @@
         "eastern afrotropic",
         "australasian",
         "oceanic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-goldcap-*": {
+      "biorealm": [
+        "atlantic nearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "australasian",
+        "oceania"
       ],
       "bioriver": "both"
     },
@@ -778,6 +811,15 @@
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-honeymushroom-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "central palearctic"
       ],
       "bioriver": "both"
     },
@@ -804,6 +846,25 @@
         "central palearctic",
         "eastern palearctic",
         "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-laughingjim-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic palearctic",
+        "australasian",
+        "oceania"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-libertycap-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic palearctic",
+        "australasian",
+        "oceania"
       ],
       "bioriver": "both"
     },
@@ -910,6 +971,15 @@
       ],
       "bioriver": "both"
     },
+    "mushroom-sickener-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "atlantic palearctic",
+        "pacific palearctic"
+      ],
+      "bioriver": "both"
+    },
     "mushroom-tinderhoof-*": {
       "biorealm": [
         "pacific nearctic",
@@ -926,6 +996,13 @@
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "mushroom-wavycap-*": {
+      "biorealm": [
+        "pacific nearctic",
         "atlantic palearctic"
       ],
       "bioriver": "both"
@@ -1163,6 +1240,12 @@
       ],
       "bioriver": "both"
     },
+    "*-bluebell-*": {
+      "biorealm": [
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
     "*-blueberry-*": {
       "biorealm": [
         "pacific nearctic",
@@ -1241,11 +1324,52 @@
       ],
       "bioriver": "both"
     },
+    "*-daffodil-*": {
+      "biorealm": [
+        "atlantic palearctic",
+      ],
+      "bioriver": "both"
+    },
+    "*-fennel-*": {
+      "biorealm": [
+        "atlantic palearctic",
+      ],
+      "bioriver": "both"
+    },
     "*-flax-*": {
       "biorealm": [
         "atlantic palearctic",
         "central palearctic",
         "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "*-ghostpipe*-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
+      ],
+      "bioriver": "both"
+    },
+    "*-licorice-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+      ],
+      "bioriver": "both"
+    },
+    "*-mugwort-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic",
+        "pacific palearctic",
+        "pacific nearctic",
+        "atlantic nearctic",
       ],
       "bioriver": "both"
     },
