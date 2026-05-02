@@ -25,7 +25,7 @@
   "description": "Separates the world into distinct biomes to increase world variety",
   "version": "2.0.0",
   "dependencies": {
-    "game": "1.22.0"
+    "game": "1.22"
   },
   "side": "Server"
 }
