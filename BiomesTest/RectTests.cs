@@ -1,11 +1,12 @@
 using Biomes.RealmGen;
 
+
 namespace BiomesTest;
 
 public class RectTests
 {
-    [Fact]
-    public void PointInsideWorks()
+    [Test]
+    public async Task PointInsideWorks()
     {
         var rect = new BlendedRealmGen.Rect(
             new BlendedRealmGen.Point(0.0, 1.0),
@@ -14,9 +15,9 @@ public class RectTests
         );
 
         var pointThatShouldBeInside = new BlendedRealmGen.Point(0.5, 0.5);
-        Assert.True(rect.PointInside(pointThatShouldBeInside));
+        await Assert.That(rect.PointInside(pointThatShouldBeInside)).IsTrue();
 
         var pointThatShouldntBeInside = new BlendedRealmGen.Point(1.5, -0.5);
-        Assert.False(rect.PointInside(pointThatShouldntBeInside));
+        await Assert.That(rect.PointInside(pointThatShouldntBeInside)).IsFalse();
     }
 }

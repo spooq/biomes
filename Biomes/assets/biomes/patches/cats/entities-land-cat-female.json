@@ -7,7 +7,7 @@
     ],
     "file": "cats:entities/land/cat-female.json",
     "op": "addmerge",
-    "path": "/attributes",
+    "path": "/attributesByType",
     "side": "Server",
     "value": {
       "*-european": {
