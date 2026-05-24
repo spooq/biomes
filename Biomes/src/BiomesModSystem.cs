@@ -77,7 +77,7 @@ public class BiomesModSystem : ModSystem
         _vsapi = api;
         HarmonyPatches.Init(this);
 
-        _vsapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.Vegetation, "standard");
+        _vsapi.Event.ChunkColumnGeneration(OnChunkColumnGeneration, EnumWorldGenPass.TerrainFeatures, "standard");
         _vsapi.Event.ChunkColumnLoaded += OnChunkLoaded;
         _vsapi.Event.ChunkColumnLoaded += OnChunkUnloaded;
 
@@ -90,7 +90,6 @@ public class BiomesModSystem : ModSystem
         base.Dispose();
     }
 
-    // Migrate old data
     private void OnChunkLoaded(Vec2i chunkPos, IWorldChunk[] chunks)
     {
         // if this doesn't hit, something is really wrong
@@ -172,7 +171,7 @@ public class BiomesModSystem : ModSystem
         }
         else
         {
-            // No rivers mod = always valid whether it s a river
+            // No rivers mod = always valid
             biomeData.SetRiver(true);
             biomeData.SetNoRiver(true);
         }
