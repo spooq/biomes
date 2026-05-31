@@ -631,7 +631,7 @@
         "atlantic afrotropic",
         "eastern palearctic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "both"
     },
@@ -792,7 +792,7 @@
         "eastern palearctic",
         "pacific palearctic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "both"
     },
@@ -855,7 +855,7 @@
         "atlantic neotropic",
         "atlantic palearctic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "both"
     },
@@ -864,7 +864,7 @@
         "pacific nearctic",
         "atlantic palearctic",
         "australasian",
-        "oceania"
+        "oceanic"
       ],
       "bioriver": "both"
     },
