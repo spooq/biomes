@@ -106,9 +106,6 @@ internal class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
     {
         // dunno what causes this, but get outta here
         if (blockPos is null) return true;
-        // As of 1.22, sometimes the game is asking for spawns in dimension 15?? no clue what's up with that.
-        // TODO: figure out if there's a proper method to get "overworld-like" dim ids
-        if (blockPos.dimension != 0) return true;
         var code = type.Code!;
         if (Whitelist.Contains(code)) return true;
 

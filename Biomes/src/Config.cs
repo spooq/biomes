@@ -141,7 +141,7 @@ internal class UserConfig
                 NorthernRealms = DefaultRealmOrder.Northern,
                 SouthernRealms = DefaultRealmOrder.Southern
             },
-            SpawnMode = NoSupportSpawningMode.Allow
+            SpawnMode = NoSupportSpawningMode.AllowButWarn
         };
     }
 }

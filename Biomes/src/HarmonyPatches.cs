@@ -224,11 +224,11 @@ internal static class HarmonyPatches
     private static bool CanSpawnAt(
         ref Vec3d? __result,
         EntityProperties type,
-        Vec3i spawnPosition,
+        BlockPos spawnPosition,
         RuntimeSpawnConditions sc,
         IWorldChunk[] chunkCol
     )
     {
-        return chunkCol.Length != 0 && _mod.Cache.Entities.IsSpawnValid(type, spawnPosition.AsBlockPos);
+        return chunkCol.Length != 0 && _mod.Cache.Entities.IsSpawnValid(type, spawnPosition);
     }
 }
