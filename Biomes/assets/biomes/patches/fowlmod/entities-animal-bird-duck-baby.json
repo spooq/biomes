@@ -1,0 +1,44 @@
+[
+  {
+    "dependsOn": [
+      {
+        "modid": "fowlmod"
+      }
+    ],
+    "file": "fowlmod:entities/animal/bird/duck-baby.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "server",
+    "value": {
+      "duck-mallard-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic"
+        ]
+      },
+      "duck-pekin-*": {
+        "biorealm": [
+          "atlantic neotropic",
+          "pacific neotropic",
+          "atlantic afrotropic",
+          "eastern afrotropic"
+        ]
+      },
+      "duck-blue-*": {
+        "biorealm": [
+          "pacific nearctic",
+          "atlantic nearctic",
+          "atlantic palearctic",
+          "central palearctic",
+          "eastern palearctic",
+          "pacific palearctic",
+          "australasian"
+        ]
+      }
+    }
+  }
+]

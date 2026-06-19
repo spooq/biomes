@@ -5,7 +5,7 @@
         "modid": "thecritterpackcontinued"
       }
     ],
-    "file": "thecritterpack:entities/animal/mammal/hedgehog/hedgehog-female.json",
+    "file": "thecritterpack:entities/animal/bird/owl/brown-owl-f.json",
     "op": "addmerge",
     "path": "/attributes",
     "side": "server",
