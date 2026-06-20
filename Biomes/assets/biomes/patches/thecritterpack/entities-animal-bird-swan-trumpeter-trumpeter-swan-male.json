@@ -2,7 +2,7 @@
   {
     "dependsOn": [
       {
-        "modid": "thecritterpack"
+        "modid": "thecritterpackcontinued"
       }
     ],
     "file": "thecritterpack:entities/animal/bird/swan/trumpeter/trumpeter-swan-male.json",

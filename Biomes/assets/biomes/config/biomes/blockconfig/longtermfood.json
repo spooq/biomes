@@ -1,0 +1,53 @@
+{
+  "BlockPatches": {
+    "crop-corn-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "pacific nearctic",
+        "atlantic neotropic",
+        "atlantic palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "crop-potato-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "crop-sugarbeet-*": {
+      "biorealm": [
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    },
+    "crop-sugarcane-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    },
+    "crop-healbulb-*": {
+      "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
+        "pacific palearctic",
+        "atlantic palearctic",
+        "central palearctic",
+        "eastern palearctic"
+      ],
+      "bioriver": "both"
+    }
+  },
+  "FruitTrees": {
+  }
+}

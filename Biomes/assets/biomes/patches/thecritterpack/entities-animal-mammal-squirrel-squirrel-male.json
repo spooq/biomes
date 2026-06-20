@@ -2,7 +2,7 @@
   {
     "dependsOn": [
       {
-        "modid": "thecritterpack"
+        "modid": "thecritterpackcontinued"
       }
     ],
     "file": "thecritterpack:entities/animal/mammal/squirrel/squirrel-male.json",

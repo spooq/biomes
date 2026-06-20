@@ -1,0 +1,15 @@
+{
+  "BlockPatches": {
+    "crop-pepperbell-*": {
+      "biorealm": [
+        "pacific neotropic",
+        "atlantic neotropic",
+        "atlantic afrotropic",
+        "eastern afrotropic"
+      ],
+      "bioriver": "both"
+    }
+  },
+  "FruitTrees": {
+  }
+}
