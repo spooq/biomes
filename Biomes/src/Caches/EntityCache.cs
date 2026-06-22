@@ -76,7 +76,7 @@ internal class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
             {
                 var seasons = validSeasons.AsArray<string>([]).ToList();
 
-                foreach (var seasonStr in seasons) biomeData.SetSeason(seasonStr, true);
+                foreach (var seasonStr in seasons) biomeData.SetSeason(seasonStr!, true);
             }
             else
             {
@@ -87,7 +87,7 @@ internal class EntityCache(BiomesModSystem mod, ICoreAPI vsapi)
             var riverMode = entity.Attributes![ModPropName.Entity.River];
             if (riverMode.Exists)
             {
-                var riverModeStr = riverMode.ToString();
+                var riverModeStr = riverMode.ToString()!;
                 var riverEnum = BioRiverExtensions.FromString(riverModeStr);
                 biomeData.SetFromBioRiver(riverEnum);
             }

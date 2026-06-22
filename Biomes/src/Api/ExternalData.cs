@@ -11,8 +11,8 @@ namespace Biomes.Api;
 /// </summary>
 public static class ExternalData
 {
-    private static BiomesModSystem _mod;
-    private static ICoreAPI _api;
+    private static BiomesModSystem _mod = null!;
+    private static ICoreAPI _api = null!;
 
     public static void Initialize(BiomesModSystem mod, ICoreAPI api)
     {

@@ -5,9 +5,16 @@
     "path": "/attributes",
     "side": "server",
     "value": {
-      "biorealm": [
-        "pacific nearctic"
-      ]
+      "sheep-bighorn-*": {
+        "biorealm": [
+          "pacific nearctic"
+        ]
+      },
+      "sheep-mouflon-*": {
+        "biorealm": [
+          "central palearctic"
+        ]
+      }
     }
   }
 ]
