@@ -4,18 +4,14 @@
       "biorealm": [
         "pacific neotropic",
         "pacific nearctic",
-        "atlantic neotropic",
-        "atlantic palearctic"
+        "atlantic neotropic"
       ],
       "bioriver": "both"
     },
     "crop-potato-*": {
       "biorealm": [
         "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic"
+        "atlantic neotropic"
       ],
       "bioriver": "both"
     },
@@ -29,10 +25,8 @@
     },
     "crop-sugarcane-*": {
       "biorealm": [
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic"
+        "pacific palearctic",
+        "australasian"
       ],
       "bioriver": "both"
     },
@@ -40,10 +34,10 @@
       "biorealm": [
         "pacific nearctic",
         "atlantic nearctic",
-        "pacific palearctic",
         "atlantic palearctic",
         "central palearctic",
-        "eastern palearctic"
+        "eastern palearctic",
+        "pacific palearctic"		
       ],
       "bioriver": "both"
     }

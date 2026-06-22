@@ -2,10 +2,10 @@
   "BlockPatches": {
     "crop-pepperbell-*": {
       "biorealm": [
+        "pacific nearctic",
+        "atlantic nearctic",
         "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic"
+        "atlantic neotropic"
       ],
       "bioriver": "both"
     }
