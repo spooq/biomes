@@ -2,7 +2,7 @@
   {
     "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
     "op": "addmerge",
-    "path": "/attributes",
+    "path": "/attributesByType",
     "side": "server",
     "value": {
       "sheep-bighorn-*": {
