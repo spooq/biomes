@@ -1860,17 +1860,8 @@
     },
     "breadfruit": {
       "biorealm": [
-        "atlantic afrotropic",
-        "atlantic palearctic",
-        "central palearctic",
         "eastern afrotropic",
-        "eastern palearctic",
         "pacific palearctic",
-        "pacific nearctic",
-        "atlantic nearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "australasian",
         "oceanic"
       ],
       "bioriver": "both"
