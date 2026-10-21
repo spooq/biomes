@@ -7,6 +7,10 @@ using Vintagestory.Server;
 using Vintagestory.ServerMods;
 using Vintagestory.ServerMods.NoObf;
 
+// all kinds of ide errors here from harmony nonsense
+// ReSharper disable RedundantAssignment
+// ReSharper disable UnusedMember.Local
+// ReSharper disable UnusedParameter.Local
 // ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Global
 
@@ -76,15 +80,15 @@ internal static class HarmonyPatches
         var onTreeField = Traverse.Create(__instance).Field("onTreePatches");
         var onTreeValue = onTreeField.GetValue() as List<BlockPatch>;
 
-        __state = (underTreeValue, onTreeValue);
+        __state = (underTreeValue!, onTreeValue!);
 
         var biomeData = _mod.Cache.ChunkData.GetBiomeData(pos);
         if (biomeData.IsNullData()) return true;
 
-        var cachedUnderTree = _mod.Cache.Vegetation.GetUnderTreePatches(biomeData, ref underTreeValue);
+        var cachedUnderTree = _mod.Cache.Vegetation.GetUnderTreePatches(biomeData, ref underTreeValue!);
         underTreeField.SetValue(cachedUnderTree);
 
-        var cachedOnTree = _mod.Cache.Vegetation.GetTreePatches(biomeData, ref onTreeValue);
+        var cachedOnTree = _mod.Cache.Vegetation.GetTreePatches(biomeData, ref onTreeValue!);
         onTreeField.SetValue(cachedOnTree);
 
         return true;
@@ -132,7 +136,7 @@ internal static class HarmonyPatches
     )
     {
         var bpc = Traverse.Create(__instance).Field("bpc").GetValue() as BlockPatchConfig;
-        bpc.PatchesNonTree = __state;
+        bpc!.PatchesNonTree = __state;
     }
 
     [HarmonyPrefix]
@@ -166,7 +170,7 @@ internal static class HarmonyPatches
     {
         var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
         var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
-        treeGenProps.ShrubGens = __state;
+        treeGenProps!.ShrubGens = __state;
     }
 
     [HarmonyPrefix]
@@ -200,7 +204,7 @@ internal static class HarmonyPatches
     {
         var treeSupplier = Traverse.Create(__instance).Field("treeSupplier").GetValue() as WgenTreeSupplier;
         var treeGenProps = Traverse.Create(treeSupplier).Field("treeGenProps").GetValue() as TreeGenProperties;
-        treeGenProps.TreeGens = __state;
+        treeGenProps!.TreeGens = __state;
     }
 
     // World-gen spawn
