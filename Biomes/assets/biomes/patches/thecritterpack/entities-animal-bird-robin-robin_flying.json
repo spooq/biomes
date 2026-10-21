@@ -11,18 +11,8 @@
     "side": "server",
     "value": {
       "biorealm": [
-        "pacific nearctic",
-        "atlantic nearctic",
         "atlantic palearctic",
-        "central palearctic",
-        "eastern palearctic",
-        "pacific palearctic",
-        "pacific neotropic",
-        "atlantic neotropic",
-        "atlantic afrotropic",
-        "eastern afrotropic",
-        "australasian",
-        "oceanic"
+        "central palearctic"
       ]
     }
   }
