@@ -13,10 +13,10 @@
     <Import Project="..\Biomes\Properties\localSettings.props" Condition="Exists('..\Biomes\Properties\localSettings.props')"/>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-        <PackageReference Include="TUnit" Version="1.45.29" />
-        <PackageReference Include="coverlet.collector" Version="6.0.0">
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.11.0"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.4"/>
+        <PackageReference Include="TUnit" Version="1.76.0"/>
+        <PackageReference Include="coverlet.collector" Version="10.1.0">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>

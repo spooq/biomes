@@ -10,9 +10,9 @@
     <Import Project="..\Biomes\Properties\localSettings.props" Condition="Exists('..\Biomes\Properties\localSettings.props')"/>
 
     <ItemGroup>
-        <PackageReference Include="Cake.Frosting" Version="5.0.0"/>
-        <PackageReference Include="Cake.Json" Version="7.0.1"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="Cake.Frosting" Version="6.3.0"/>
+        <PackageReference Include="Cake.Json" Version="11.0.0"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.4"/>
     </ItemGroup>
 
     <ItemGroup>
