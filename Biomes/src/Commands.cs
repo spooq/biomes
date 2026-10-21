@@ -122,7 +122,7 @@ internal class Commands
         foreach (var entity in _sapi.World.EntityTypes)
             if (entity.Attributes != null && entity.Attributes.KeyExists(ModPropName.Entity.Realm))
                 foreach (var realm in entity.Attributes[ModPropName.Entity.Realm])
-                    if (chunkRealms.Contains(realm.ToString()))
+                    if (chunkRealms.Contains(realm.ToString()!))
                         entityTypes.Add(entity.Code);
 
         var msg = entityTypes.Order().Distinct().Join(delimiter: "\n");
@@ -182,9 +182,9 @@ internal class Commands
         var chunk = args.Caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(args.Caller.Entity.Pos.AsBlockPos);
         var chunkData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
 
-        var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
+        var value = (args.Parsers[0].GetValue() as string)?.Replace('_', ' ');
 
-        chunkData.SetRealm(_mod.Config.ValidRealmIndexes[value], true);
+        chunkData.SetRealm(_mod.Config.ValidRealmIndexes[value!], true);
 
         chunk.SetModdata(ModPropName.MapChunk.BiomeData, chunkData);
 
@@ -196,9 +196,9 @@ internal class Commands
         var chunk = args.Caller.Entity.World.BlockAccessor.GetMapChunkAtBlockPos(args.Caller.Entity.Pos.AsBlockPos);
         var chunkData = chunk.GetModdata(ModPropName.MapChunk.BiomeData, new BiomeData(0));
 
-        var value = (args.Parsers[0].GetValue() as string).Replace('_', ' ');
+        var value = (args.Parsers[0].GetValue() as string)?.Replace('_', ' ');
 
-        chunkData.SetRealm(_mod.Config.ValidRealmIndexes[value], false);
+        chunkData.SetRealm(_mod.Config.ValidRealmIndexes[value!], false);
 
         chunk.SetModdata(ModPropName.MapChunk.BiomeData, chunkData);
 
